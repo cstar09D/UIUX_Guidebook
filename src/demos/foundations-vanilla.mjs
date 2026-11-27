@@ -24,17 +24,17 @@ export const foundationMarkup = {
   "text-field": wrap(
     "text-field",
     "프로젝트 이름",
-    '<form id="name-form" novalidate><label class="foundation-label" for="project-name">이름</label><p class="foundation-hint" id="name-hint">2~30자 · 어떤 프로젝트인지 알아볼 수 있게 적으세요.</p><input id="project-name" class="foundation-input" required aria-describedby="name-hint name-error" placeholder="예: 디자인 팀"><p id="name-error" class="foundation-error" role="alert"></p><button class="demo-primary foundation-primary" type="submit">이름 저장</button><p id="name-status" class="foundation-status" role="status">0 / 30자</p></form>',
+    '<form id="name-form" novalidate><label class="foundation-label" for="project-name">이름</label><p class="foundation-hint" id="name-hint">2~30자 · 어떤 프로젝트인지 알아볼 수 있게 적으세요.</p><input id="project-name" class="foundation-input" data-metric-limit="30" required aria-describedby="name-hint name-error" placeholder="예: 디자인 팀"><p id="name-error" class="foundation-error" role="alert"></p><button class="demo-primary foundation-primary" type="submit">이름 저장</button><p id="name-status" class="foundation-status" role="status"></p></form>',
   ),
   textarea: wrap(
     "textarea",
     "검토 의견 남기기",
-    '<form id="feedback-form" novalidate><label class="foundation-label" for="feedback">검토 의견</label><p class="foundation-hint" id="feedback-hint">10~200자 · Enter는 줄바꿈입니다.</p><textarea id="feedback" class="foundation-textarea" required aria-describedby="feedback-hint feedback-count feedback-error"></textarea><div id="feedback-count" class="foundation-count">0 / 200자</div><p id="feedback-error" class="foundation-error" role="alert"></p><button type="submit" class="demo-primary foundation-primary">의견 저장</button><p id="feedback-status" class="foundation-status" role="status"></p></form>',
+    '<form id="feedback-form" novalidate><label class="foundation-label" for="feedback">검토 의견</label><p class="foundation-hint" id="feedback-hint">10~200자 · Enter는 줄바꿈입니다.</p><textarea id="feedback" class="foundation-textarea" required aria-describedby="feedback-hint feedback-count feedback-error"></textarea><div id="feedback-count" class="foundation-count input-metrics" data-counter-for="feedback" data-max-chars="200">0 / 200자</div><p id="feedback-error" class="foundation-error" role="alert"></p><button type="submit" class="demo-primary foundation-primary">의견 저장</button><p id="feedback-status" class="foundation-status" role="status"></p></form>',
   ),
   "search-field": wrap(
     "search-field",
     "UI 노트 검색",
-    '<form id="note-search" role="search" aria-label="예시 노트 검색"><label class="foundation-label" for="note-query">검색어</label><div class="foundation-search-row"><input id="note-query" type="search" class="foundation-input"><button id="note-find" type="submit" class="demo-primary">검색</button></div><div class="foundation-search-options"><button id="note-clear" type="button">검색 초기화</button><label class="foundation-option"><input id="note-failure" type="checkbox">조회 실패 모의</label></div></form><div id="note-results" aria-busy="false" class="foundation-search-results"><ul id="note-items" hidden></ul><p id="note-status" class="foundation-status" role="status">검색어를 입력한 뒤 검색하세요.</p></div>',
+    '<form id="note-search" role="search" aria-label="예시 노트 검색"><label class="foundation-label" for="note-query">검색어</label><div class="foundation-search-row"><input id="note-query" type="search" class="foundation-input" placeholder="예: 모달" aria-describedby="note-search-help"><button id="note-find" type="submit" class="demo-primary">검색</button></div><p class="foundation-search-help" id="note-search-help">검색 예시: <strong>모달 · 하단 · 접이식 · 검색형</strong><br>이 체험은 샘플 노트 4개에서 검색합니다. 예시 단어를 입력하고 Enter 또는 검색 버튼을 누르세요.</p><div class="foundation-search-options"><button id="note-clear" type="button">검색 초기화</button><label class="foundation-option"><input id="note-failure" type="checkbox">조회 실패 모의</label></div></form><div id="note-results" aria-busy="false" class="foundation-search-results"><ul id="note-items" hidden></ul><p id="note-status" class="foundation-status" role="status">검색어를 입력한 뒤 검색하세요.</p></div>',
   ),
   slider: wrap(
     "slider",
@@ -74,6 +74,34 @@ export const foundationMarkup = {
       '</div><section id="inline-message" class="foundation-inline-alert tone-info" role="status" aria-busy="false"><span id="inline-icon" class="foundation-alert-icon" aria-hidden="true">i</span><div><strong id="inline-title">공동 편집 안내</strong><p id="inline-body">변경 내용은 팀원과 함께 확인할 수 있어요.</p><button id="inline-retry" type="button" hidden>다시 시도</button></div></section><label class="foundation-option"><input id="inline-failure" type="checkbox">재시도도 실패</label><p class="foundation-description">관련 작업 가까이에 남아 있는 메시지예요.</p>',
   ),
 };
+const shareMarkup =
+  '<div class="foundation-share-panel" id="icon-share-panel" role="dialog" aria-labelledby="icon-share-title" hidden><div class="foundation-share-heading"><strong id="icon-share-title">공유하기</strong><button type="button" id="share-close" aria-label="공유 목록 닫기">×</button></div><p>공유할 서비스를 선택하세요.</p><div class="foundation-share-services">' +
+  [
+    ["kakao", "카카오톡", "톡"],
+    ["facebook", "페이스북", "f"],
+    ["x", "X", "𝕏"],
+    ["band", "밴드", "B"],
+    ["link", "링크 복사", "↗"],
+  ]
+    .map(
+      ([id, name, glyph]) =>
+        `<button type="button" data-share-service="${name}"><span class="foundation-share-logo brand-${id}" aria-hidden="true">${glyph}</span><span>${name}</span></button>`,
+    )
+    .join("") +
+  '</div><p class="foundation-share-hint">체험용 목록 · 실제 게시 없음</p></div>';
+foundationMarkup["icon-button"] = foundationMarkup["icon-button"]
+  .replace(
+    '<div class="foundation-icon-toolbar">',
+    '<div class="foundation-tools-shell"><div class="foundation-icon-toolbar">',
+  )
+  .replace(
+    'id="icon-share" type="button"',
+    'id="icon-share" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="icon-share-panel"',
+  )
+  .replace(
+    '</div><div class="foundation-note">',
+    "</div>" + shareMarkup + '</div><div class="foundation-note">',
+  );
 function setupButton() {
   const button = document.querySelector("#save-note"),
     failure = document.querySelector("#save-failure"),
@@ -107,14 +135,55 @@ function setupIcon() {
     undo = document.querySelector("#icon-undo"),
     status = document.querySelector("#icon-status");
   document.querySelector("#icon-copy").onclick = () => {
-    document.querySelector("#icon-copy").classList.add("foundation-highlight");
     status.textContent =
       "링크 복사를 모의했어요. 실제 클립보드는 변경하지 않습니다.";
   };
-  document.querySelector("#icon-share").onclick = () => {
-    document.querySelector("#icon-share").classList.add("foundation-highlight");
-    status.textContent = "공유 도구를 선택했어요. 외부 전송은 하지 않습니다.";
+  const share = document.querySelector("#icon-share"),
+    panel = document.querySelector("#icon-share-panel");
+  const close = (focus = true) => {
+    panel.hidden = true;
+    share.setAttribute("aria-expanded", "false");
+    if (focus) share.focus();
   };
+  share.onclick = () => {
+    if (!panel.hidden) {
+      close();
+      return;
+    }
+    panel.hidden = false;
+    panel.style.top = "";
+    const overflow =
+      panel.getBoundingClientRect().bottom - window.innerHeight + 12;
+    if (overflow > 0) panel.style.top = `calc(100% + 8px - ${overflow}px)`;
+    share.setAttribute("aria-expanded", "true");
+    panel.querySelector("[data-share-service]").focus();
+  };
+  document.querySelector("#share-close").onclick = () => close();
+  panel.onclick = (event) => {
+    const option = event.target.closest("[data-share-service]");
+    if (!option) return;
+    const name = option.dataset.shareService;
+    status.textContent =
+      name === "링크 복사"
+        ? "링크 복사를 모의했어요. 실제 클립보드는 변경하지 않습니다."
+        : `${name} 공유를 선택했어요. 실제 게시나 외부 전송은 하지 않습니다.`;
+    close();
+  };
+  panel.onkeydown = (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      event.stopPropagation();
+      close();
+    }
+  };
+  document.addEventListener("pointerdown", (event) => {
+    if (
+      !panel.hidden &&
+      !panel.contains(event.target) &&
+      !share.contains(event.target)
+    )
+      close(false);
+  });
   archive.onclick = () => {
     archive.disabled = true;
     archive.classList.add("foundation-highlight", "is-saved");
@@ -183,12 +252,13 @@ function setupTextField() {
   input.oninput = () => {
     error.textContent = "";
     input.setAttribute("aria-invalid", "false");
-    status.textContent = `${input.value.length} / 30자`;
+    status.textContent = "";
   };
   document.querySelector("#name-form").onsubmit = (e) => {
     e.preventDefault();
     const value = input.value.trim(),
-      invalid = value.length < 2 || value.length > 30;
+      invalid =
+        measureText(value).characters < 2 || measureText(value).characters > 30;
     input.setAttribute("aria-invalid", String(invalid));
     error.textContent = invalid ? "이름을 2~30자로 입력해 주세요." : "";
     status.textContent = invalid ? "" : `“${value}” 이름으로 저장했어요.`;
@@ -204,12 +274,17 @@ function setupTextarea() {
     error.textContent = "";
     status.textContent = "";
     input.setAttribute("aria-invalid", "false");
-    count.textContent = `${input.value.length} / 200자`;
-    count.classList.toggle("foundation-error", input.value.length > 200);
+    count.textContent = formatTextMetrics(input.value, 200);
+    count.classList.toggle(
+      "foundation-error",
+      measureText(input.value).characters > 200,
+    );
   };
   document.querySelector("#feedback-form").onsubmit = (e) => {
     e.preventDefault();
-    const invalid = input.value.trim().length < 10 || input.value.length > 200;
+    const invalid =
+      measureText(input.value.trim()).characters < 10 ||
+      measureText(input.value).characters > 200;
     input.setAttribute("aria-invalid", String(invalid));
     error.textContent = invalid
       ? "의견을 10~200자로 입력해 주세요. 입력 내용은 유지됩니다."

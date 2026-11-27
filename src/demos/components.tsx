@@ -1,3 +1,5 @@
+import { InputMetrics } from "./input-metrics";
+import { measureText, limitText } from "./input-metrics.mjs";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 
 export type SceneProps = {
@@ -108,6 +110,7 @@ export function ModalScene({
   time = 1400,
   reduced = false,
 }: SceneProps) {
+  const metricUid = useId();
   const [open, setOpen] = useState(false);
   const [saved, setSaved] = useState(false);
   const [savedName, setSavedName] = useState("나의 작업 공간");
@@ -137,11 +140,12 @@ export function ModalScene({
       <label className="demo-label">
         공간 이름
         <input
+          id={`${metricUid}-name`}
           value={name}
-          onChange={(event) => setName(event.target.value)}
-          maxLength={30}
+          onChange={(event) => setName(limitText(event.target.value, 30))}
         />
       </label>
+      <InputMetrics value={name} inputId={`${metricUid}-name`} limit={30} />
       <div className="demo-actions">
         <button onClick={close}>취소</button>
         <button
@@ -877,6 +881,7 @@ export function ComboScene({
             </svg>
           </button>
         </div>
+        <InputMetrics value={pText} inputId={`${uid}-input`} />
         {shown && (
           <div
             className="combo-list"

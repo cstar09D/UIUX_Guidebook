@@ -830,9 +830,7 @@ function setupDrag() {
     { id: "design", name: "화면 설계" },
     { id: "prototype", name: "프로토타입" },
   ];
-  let order = [...original],
-    active = "",
-    target = "";
+  let order = [...original];
   function render() {
     list.innerHTML = order
       .map(
@@ -840,13 +838,6 @@ function setupDrag() {
           `<li data-drag-row="${task.id}"><span class="advanced-grip" aria-hidden="true">${grip}</span><strong>${task.name}</strong><div class="advanced-row-actions"><button type="button" data-move="-1" aria-label="${task.name} 위로 이동" ${i === 0 ? "disabled" : ""}>위로</button><button type="button" data-move="1" aria-label="${task.name} 아래로 이동" ${i === order.length - 1 ? "disabled" : ""}>아래로</button></div></li>`,
       )
       .join("");
-  }
-  function clear() {
-    active = "";
-    target = "";
-    list
-      .querySelectorAll("li")
-      .forEach((el) => el.classList.remove("is-dragging", "is-drop-target"));
   }
   function move(id, to) {
     const from = order.findIndex((r) => r.id === id);
@@ -867,55 +858,13 @@ function setupDrag() {
       move(row.dataset.dragRow, i + Number(button.dataset.move));
     }
   };
-  root.onpointerdown = (e) => {
-    if (!e.target.closest(".advanced-grip") || e.button !== 0) return;
-    root.focus({ preventScroll: true });
-    active = e.target.closest("[data-drag-row]").dataset.dragRow;
-    target = active;
-    root.setPointerCapture(e.pointerId);
-    list
-      .querySelector(`[data-drag-row="${active}"]`)
-      .classList.add("is-dragging");
-  };
-  root.onpointermove = (e) => {
-    if (!active) return;
-    const row = document
-      .elementFromPoint(e.clientX, e.clientY)
-      ?.closest("[data-drag-row]");
-    list
-      .querySelectorAll("li")
-      .forEach((el) => el.classList.remove("is-drop-target"));
-    if (row && root.contains(row)) {
-      target = row.dataset.dragRow;
-      row.classList.add("is-drop-target");
-    }
-  };
-  root.onpointerup = (e) => {
-    const id = active,
-      row = document
-        .elementFromPoint(e.clientX, e.clientY)
-        ?.closest("[data-drag-row]"),
-      to = order.findIndex((r) => r.id === target);
-    if (root.hasPointerCapture(e.pointerId))
-      root.releasePointerCapture(e.pointerId);
-    clear();
-    if (id && row && root.contains(row)) move(id, to);
-    else if (id)
-      status.textContent = "이동을 취소했어요. 원래 순서를 유지합니다.";
-  };
-  root.onpointercancel = () => {
-    clear();
-    status.textContent = "이동을 취소했어요. 원래 순서를 유지합니다.";
-  };
-  root.onkeydown = (e) => {
-    if (e.key === "Escape" && active) {
-      e.preventDefault();
-      clear();
-      status.textContent = "이동을 취소했어요. 원래 순서를 유지합니다.";
-    }
-  };
+  const controller = attachSortableDrag(
+    root,
+    move,
+    (message) => (status.textContent = message),
+  );
   document.querySelector("[data-drag-reset]").onclick = () => {
-    clear();
+    controller.cancel();
     order = [...original];
     render();
     status.textContent = "원래 순서로 돌아왔어요.";
@@ -1035,7 +984,7 @@ export const advancedScript = Object.fromEntries(
         : id === "filtering"
           ? `const filterRows=${module.exports.filterRows.toString()};`
           : id === "drag-and-drop"
-            ? `const reorderItems=${module.exports.reorderItems.toString()};`
+            ? `const reorderItems=${module.exports.reorderItems.toString()};const dragInsertIndex=${module.exports.dragInsertIndex.toString()};const attachSortableDrag=${module.exports.attachSortableDrag.toString()};`
             : id === "easing"
               ? `const easingProgress=${module.exports.easingProgress.toString()};`
               : "";

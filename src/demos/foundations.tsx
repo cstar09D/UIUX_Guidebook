@@ -1,3 +1,5 @@
+import { InputMetrics } from "./input-metrics";
+import { measureText, limitText } from "./input-metrics.mjs";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 type SceneProps = {
   preview?: boolean;
@@ -127,12 +129,50 @@ function ToolIcon({ kind }: { kind: "copy" | "archive" | "share" }) {
     </svg>
   );
 }
+const shareServices = [
+  ["kakao", "카카오톡", "톡"],
+  ["facebook", "페이스북", "f"],
+  ["x", "X", "𝕏"],
+  ["band", "밴드", "B"],
+  ["link", "링크 복사", "↗"],
+] as const;
 export function IconButtonScene({ preview = false, time = 1700 }: SceneProps) {
-  const [copied, setCopied] = useState(false),
-    [shared, setShared] = useState(false);
   const [archived, setArchived] = useState(false),
     [message, setMessage] = useState("아이콘 버튼에 키보드로 이동해 보세요.");
   const archive = useRef<HTMLButtonElement>(null);
+  const [shareOpen, setShareOpen] = useState(false);
+  const shareButton = useRef<HTMLButtonElement>(null),
+    sharePanel = useRef<HTMLDivElement>(null),
+    shareId = useId();
+  const shared = preview ? time >= 1500 && time < 2300 : shareOpen;
+  const closeShare = (focus = true) => {
+    setShareOpen(false);
+    if (focus) requestAnimationFrame(() => shareButton.current?.focus());
+  };
+  useEffect(() => {
+    if (preview || !shareOpen) return;
+    const focus = requestAnimationFrame(() => {
+      const panel = sharePanel.current;
+      if (!panel) return;
+      panel.style.top = "";
+      const overflow =
+        panel.getBoundingClientRect().bottom - window.innerHeight + 12;
+      if (overflow > 0) panel.style.top = `calc(100% + 8px - ${overflow}px)`;
+      panel.querySelector<HTMLButtonElement>("[data-share-service]")?.focus();
+    });
+    const outside = (event: PointerEvent) => {
+      if (
+        !sharePanel.current?.contains(event.target as Node) &&
+        !shareButton.current?.contains(event.target as Node)
+      )
+        closeShare(false);
+    };
+    document.addEventListener("pointerdown", outside);
+    return () => {
+      cancelAnimationFrame(focus);
+      document.removeEventListener("pointerdown", outside);
+    };
+  }, [preview, shareOpen]);
   const isArchived = preview ? time > 2300 : archived;
   return (
     <FoundationFrame
@@ -140,49 +180,104 @@ export function IconButtonScene({ preview = false, time = 1700 }: SceneProps) {
       title="노트 도구 모음"
       preview={preview}
     >
-      <div className="foundation-icon-toolbar">
-        <button
-          type="button"
-          aria-label="링크 복사"
-          className={
-            (preview ? time > 700 && time < 2300 : copied)
-              ? "foundation-highlight"
-              : ""
-          }
-          onClick={() => {
-            setCopied(true);
-            setMessage(
-              "링크 복사를 모의했어요. 실제 클립보드는 변경하지 않습니다.",
-            );
-          }}
-        >
-          <ToolIcon kind="copy" />
-        </button>
-        <button
-          ref={archive}
-          type="button"
-          aria-label="보관하기"
-          disabled={isArchived}
-          className={isArchived ? "foundation-highlight is-saved" : ""}
-          title={isArchived ? "보관 완료" : "보관하기"}
-          onClick={() => {
-            setArchived(true);
-            setMessage("노트를 보관했어요. 아래에서 취소할 수 있어요.");
-          }}
-        >
-          <ToolIcon kind="archive" />
-        </button>
-        <button
-          type="button"
-          aria-label="공유하기"
-          className={!preview && shared ? "foundation-highlight" : ""}
-          onClick={() => {
-            setShared(true);
-            setMessage("공유 도구를 선택했어요. 외부 전송은 하지 않습니다.");
-          }}
-        >
-          <ToolIcon kind="share" />
-        </button>
+      <div className="foundation-tools-shell">
+        <div className="foundation-icon-toolbar">
+          <button
+            type="button"
+            aria-label="링크 복사"
+            className={
+              preview && time > 700 && time < 1500 ? "foundation-highlight" : ""
+            }
+            onClick={() => {
+              setMessage(
+                "링크 복사를 모의했어요. 실제 클립보드는 변경하지 않습니다.",
+              );
+            }}
+          >
+            <ToolIcon kind="copy" />
+          </button>
+          <button
+            ref={archive}
+            type="button"
+            aria-label="보관하기"
+            disabled={isArchived}
+            className={isArchived ? "foundation-highlight is-saved" : ""}
+            title={isArchived ? "보관 완료" : "보관하기"}
+            onClick={() => {
+              setArchived(true);
+              setMessage("노트를 보관했어요. 아래에서 취소할 수 있어요.");
+            }}
+          >
+            <ToolIcon kind="archive" />
+          </button>
+          <button
+            type="button"
+            ref={shareButton}
+            aria-label="공유하기"
+            aria-haspopup="dialog"
+            aria-expanded={shared}
+            aria-controls={`${shareId}-panel`}
+            onClick={() => setShareOpen((value) => !value)}
+          >
+            <ToolIcon kind="share" />
+          </button>
+        </div>
+        {shared && (
+          <div
+            ref={sharePanel}
+            id={`${shareId}-panel`}
+            className="foundation-share-panel"
+            role="dialog"
+            aria-labelledby={`${shareId}-title`}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") {
+                event.preventDefault();
+                event.stopPropagation();
+                closeShare();
+              }
+            }}
+          >
+            <div className="foundation-share-heading">
+              <strong id={`${shareId}-title`}>공유하기</strong>
+              <button
+                type="button"
+                aria-label="공유 목록 닫기"
+                onClick={() => closeShare()}
+              >
+                ×
+              </button>
+            </div>
+            <p>공유할 서비스를 선택하세요.</p>
+            <div className="foundation-share-services">
+              {shareServices.map(([id, name, glyph]) => (
+                <button
+                  key={id}
+                  type="button"
+                  data-share-service={name}
+                  onClick={() => {
+                    setMessage(
+                      id === "link"
+                        ? "링크 복사를 모의했어요. 실제 클립보드는 변경하지 않습니다."
+                        : `${name} 공유를 선택했어요. 실제 게시나 외부 전송은 하지 않습니다.`,
+                    );
+                    closeShare();
+                  }}
+                >
+                  <span
+                    className={`foundation-share-logo brand-${id}`}
+                    aria-hidden="true"
+                  >
+                    {glyph}
+                  </span>
+                  <span>{name}</span>
+                </button>
+              ))}
+            </div>
+            <p className="foundation-share-hint">
+              체험용 목록 · 실제 게시 없음
+            </p>
+          </div>
+        )}
       </div>
       <div className="foundation-note">
         <strong>{isArchived ? "보관된 노트" : "이번 주 디자인 노트"}</strong>
@@ -208,9 +303,11 @@ export function IconButtonScene({ preview = false, time = 1700 }: SceneProps) {
         {preview
           ? time > 2300
             ? "보관 완료"
-            : time > 700
-              ? "링크 복사"
-              : "이름이 있는 아이콘 버튼"
+            : time >= 1500
+              ? "공유 서비스 선택"
+              : time > 700
+                ? "링크 복사"
+                : "이름이 있는 아이콘 버튼"
           : message}
       </p>
     </FoundationFrame>
@@ -325,7 +422,10 @@ export function TextFieldScene({ preview = false, time = 1700 }: SceneProps) {
         onSubmit={(e) => {
           e.preventDefault();
           const text = value.trim();
-          if (text.length < 2 || text.length > 30) {
+          if (
+            measureText(text).characters < 2 ||
+            measureText(text).characters > 30
+          ) {
             setError("이름을 2~30자로 입력해 주세요.");
             setSaved("");
             input.current?.focus();
@@ -348,7 +448,7 @@ export function TextFieldScene({ preview = false, time = 1700 }: SceneProps) {
           value={shown}
           required
           aria-invalid={!!error}
-          aria-describedby={`${uid}-hint ${uid}-error`}
+          aria-describedby={`${uid}-hint ${uid}-name-metrics ${uid}-error`}
           placeholder="예: 디자인 팀"
           onChange={(e) => {
             setValue(e.target.value);
@@ -356,6 +456,7 @@ export function TextFieldScene({ preview = false, time = 1700 }: SceneProps) {
             setSaved("");
           }}
         />
+        <InputMetrics value={shown} inputId={`${uid}-name`} limit={30} />
         <p
           id={`${uid}-error`}
           className="foundation-error"
@@ -363,17 +464,11 @@ export function TextFieldScene({ preview = false, time = 1700 }: SceneProps) {
         >
           {error}
         </p>
-        {!preview && (
-          <button className="demo-primary foundation-primary" type="submit">
-            이름 저장
-          </button>
-        )}
+        <button className="demo-primary foundation-primary" type="submit">
+          이름 저장
+        </button>
         <p className="foundation-status" role={preview ? undefined : "status"}>
-          {preview
-            ? time > 2600
-              ? "이름을 저장했어요."
-              : `${shown.length} / 30자`
-            : saved || `${value.length} / 30자`}
+          {preview ? (time > 2600 ? "이름을 저장했어요." : "") : saved}
         </p>
       </form>
     </FoundationFrame>
@@ -397,7 +492,10 @@ export function TextareaScene({ preview = false, time = 1700 }: SceneProps) {
         noValidate
         onSubmit={(e) => {
           e.preventDefault();
-          if (value.trim().length < 10 || value.length > 200) {
+          if (
+            measureText(value.trim()).characters < 10 ||
+            measureText(value).characters > 200
+          ) {
             setError(
               "의견을 10~200자로 입력해 주세요. 입력 내용은 유지됩니다.",
             );
@@ -422,19 +520,15 @@ export function TextareaScene({ preview = false, time = 1700 }: SceneProps) {
           value={shown}
           required
           aria-invalid={!!error}
-          aria-describedby={`${uid}-hint ${uid}-count ${uid}-error`}
+          aria-describedby={`${uid}-hint ${uid}-feedback-metrics ${uid}-error`}
           onChange={(e) => {
             setValue(e.target.value);
             setError("");
             setMessage("");
           }}
         />
-        <div
-          id={`${uid}-count`}
-          className={`foundation-count ${shown.length > 200 ? "foundation-error" : ""}`}
-        >
-          {shown.length} / 200자
-        </div>
+        <InputMetrics value={shown} inputId={`${uid}-feedback`} limit={200} />
+
         <p
           id={`${uid}-error`}
           className="foundation-error"
@@ -442,11 +536,9 @@ export function TextareaScene({ preview = false, time = 1700 }: SceneProps) {
         >
           {error}
         </p>
-        {!preview && (
-          <button type="submit" className="demo-primary foundation-primary">
-            의견 저장
-          </button>
-        )}
+        <button type="submit" className="demo-primary foundation-primary">
+          의견 저장
+        </button>
         <p className="foundation-status" role={preview ? undefined : "status"}>
           {preview
             ? time > 3000
@@ -514,6 +606,8 @@ export function SearchFieldScene({ preview = false, time = 1700 }: SceneProps) {
             readOnly={state === "loading"}
             className="foundation-input"
             id={`${uid}-search`}
+            placeholder="예: 모달"
+            aria-describedby={preview ? undefined : `${uid}-search-help`}
             value={preview ? q : value}
             onCompositionStart={() => {
               composing.current = true;
@@ -538,6 +632,14 @@ export function SearchFieldScene({ preview = false, time = 1700 }: SceneProps) {
             검색
           </button>
         </div>
+        <InputMetrics value={preview ? q : value} inputId={`${uid}-search`} />
+        {!preview && (
+          <p className="foundation-search-help" id={`${uid}-search-help`}>
+            검색 예시: <strong>모달 · 하단 · 접이식 · 검색형</strong>
+            <br />이 체험은 샘플 노트 4개에서 검색합니다. 예시 단어를 입력하고
+            Enter 또는 검색 버튼을 누르세요.
+          </p>
+        )}
         {!preview && (
           <div className="foundation-search-options">
             <button

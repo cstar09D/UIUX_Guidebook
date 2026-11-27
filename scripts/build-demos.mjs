@@ -61,6 +61,42 @@ for (const demo of simulationRegistry) {
   )
     throw Error(`${demo.id}: 시연 메타데이터를 확인하세요.`);
 }
+const metricJS = await readFile("src/demos/input-metrics.mjs", "utf8");
+const metricTree = ts.createSourceFile(
+  "input-metrics.mjs",
+  metricJS,
+  ts.ScriptTarget.Latest,
+  true,
+  ts.ScriptKind.JS,
+);
+const metricFunctions = metricTree.statements
+  .filter(
+    (node) =>
+      ts.isFunctionDeclaration(node) &&
+      ["measureText", "formatTextMetrics", "limitText"].includes(
+        node.name.text,
+      ),
+  )
+  .map((node) =>
+    node
+      .getText(metricTree)
+      .replace(
+        "function measureText(value)",
+        "function measureText(value: string)",
+      )
+      .replace(
+        "function formatTextMetrics(value, limit)",
+        "function formatTextMetrics(value: string, limit?: number)",
+      )
+      .replace(
+        "function limitText(value, limit)",
+        "function limitText(value: string, limit: number)",
+      ),
+  )
+  .join("\n");
+const metricComponent = (
+  await readFile("src/demos/input-metrics.tsx", "utf8")
+).replace(/^import[^;]+;\s*/, "");
 function componentSource(name, file) {
   const { tree } = modules.get(file);
   const declarations = new Map();
@@ -85,10 +121,23 @@ function componentSource(name, file) {
   if (!declarations.has(name))
     throw Error(`${file}: ${name} 함수를 찾을 수 없습니다.`);
   include(name);
-  return tree.statements
-    .filter((node) => ts.isImportDeclaration(node) || needed.has(node))
+  const body = tree.statements
+    .filter((node) => needed.has(node))
     .map((node) => node.getText(tree))
     .join("\n\n");
+  const imports = tree.statements
+    .filter(
+      (node) =>
+        ts.isImportDeclaration(node) &&
+        !node.moduleSpecifier.text.startsWith("./input-metrics"),
+    )
+    .map((node) => node.getText(tree))
+    .join("\n");
+  const metrics =
+    /\b(InputMetrics|measureText|formatTextMetrics|limitText)\b/.test(body)
+      ? metricFunctions + "\n" + metricComponent
+      : "";
+  return imports + "\n" + metrics + "\n" + body;
 }
 function componentCss(source) {
   // Include shared rules and states used by this UI, excluding other UI classes.

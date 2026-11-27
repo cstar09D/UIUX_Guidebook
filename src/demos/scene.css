@@ -1445,6 +1445,9 @@
   min-height: 44px;
   padding: 11px 18px;
 }
+.scene .tooltip-trigger:hover {background:#eaf2ff;border-color:#91b4eb;}
+.scene .tooltip-trigger.is-saved {background:#2d66dc;border-color:#2d66dc;color:#fff;}
+.scene .tooltip-trigger.is-saved:hover {background:#2256c1;border-color:#2256c1;}
 .essential-tooltip {
   position: absolute;
   bottom: calc(100% + 9px);
@@ -2302,6 +2305,7 @@
   white-space: nowrap;
   min-height: 48px;
 }
+.scene .foundation-search-help {margin:10px 0 0;font-size:12px;line-height:1.7;color:#657b9b;overflow-wrap:anywhere;}
 .foundation-search-options {
   display: flex;
   align-items: center;
@@ -2665,7 +2669,7 @@
 .is-preview .foundation-textarea {
   min-height: 69px;
   height: 69px;
-  resize: none;
+  resize: vertical;
 }
 .is-preview .foundation-count {
   font-size: 9px;
@@ -2786,7 +2790,7 @@
   }
 }
 .is-preview.scene-textarea .foundation-hint {
-  display: none;
+  display: block;
 }
 .is-preview.scene-pagination .foundation-page-heading {
   display: none;
@@ -4362,6 +4366,9 @@
   gap: 9px;
   margin: 12px 0;
 }
+.scene-sticky-header .advanced-controls {
+  align-items: center;
+}
 .advanced-controls > label,
 .advanced-label {
   display: flex;
@@ -4753,7 +4760,8 @@
   display: grid;
   gap: 9px;
 }
-.advanced-drag-list > li {
+.advanced-drag-list > li,
+.advanced-drag-ghost {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -4763,7 +4771,8 @@
   border-radius: 9px;
   min-width: 0;
 }
-.advanced-drag-list > li > strong {
+.advanced-drag-list > li > strong,
+.advanced-drag-ghost > strong {
   font-size: 14px;
   font-weight: 500;
   min-width: 0;
@@ -4790,6 +4799,13 @@
 .advanced-drag-list .is-drop-target {
   border-bottom: 3px solid #407ce5;
 }
+.advanced-drag-list > li {position:relative;touch-action:none;cursor:grab;}
+.advanced-sortable-host.is-pointer-dragging,.is-pointer-dragging .advanced-grip {cursor:grabbing;user-select:none;}
+.advanced-drag-ghost {position:fixed;left:0;top:0;z-index:10000;pointer-events:none;cursor:grabbing;box-sizing:border-box;box-shadow:0 12px 30px #285dbb35;border-color:#5790ef;background:#f5f9ff;}
+.advanced-drag-list .is-drop-before::before,.advanced-drag-list .is-drop-after::after {content:"";position:absolute;left:0;right:0;height:3px;background:#3273ed;border-radius:3px;pointer-events:none;}
+.advanced-drag-list .is-drop-before::before {top:-7px;}
+.advanced-drag-list .is-drop-after::after {bottom:-7px;}
+.advanced-drag-list .is-preview-lifted {position:relative;z-index:2;opacity:1;box-shadow:0 8px 20px #285dbb30;}
 .advanced-row-actions {
   display: flex;
   gap: 3px;
@@ -6903,3 +6919,47 @@
 }
 /* On narrow screens, keep the image annotation compact; full specs remain in the panel mode. */
 @media(max-width:380px){.scene .fx-hotspot-bubble{width:max-content;max-width:calc(100% - 16px);}.scene .fx-hotspot-bubble>p{display:none;}}
+
+.scene .input-metrics {margin:6px 0 10px;color:#6d829e;font-size:12px;line-height:1.6;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;}
+.scene .input-metrics.is-over-limit {color:#b34545;}
+.scene.is-preview .input-metrics {margin:3px 0;font-size:8px;}
+
+.foundation-tools-shell {position:relative;}
+.foundation-share-panel {position:absolute;top:calc(100% + 8px);right:0;width:min(320px,100%);padding:14px;box-sizing:border-box;border:1px solid #d9e4f6;border-radius:14px;background:#fff;box-shadow:0 10px 35px #29436d25;z-index:8;}
+.foundation-share-heading {display:flex;align-items:center;justify-content:space-between;gap:8px;color:#24364e;}
+.scene .foundation-share-heading>button {display:grid;place-items:center;padding:0;width:28px;min-height:28px;line-height:1;font-size:21px;}
+.scene .foundation-share-panel>p {font-size:12px;line-height:1.5;margin:7px 0 12px;color:#6c809e;}
+.foundation-share-services {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;}
+.scene .foundation-share-services>button {display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;padding:9px 3px;font-size:12px;line-height:1.4;min-width:0;}
+.foundation-share-logo {display:grid;place-items:center;width:36px;height:36px;border-radius:11px;font-size:22px;font-weight:800;color:white;background:#7186a7;}
+.foundation-share-logo.brand-kakao {background:#fee500;color:#3a2929;font-size:14px;}
+.foundation-share-logo.brand-facebook {background:#1877f2;font-family:Arial,sans-serif;}
+.foundation-share-logo.brand-x {background:#171a21;}
+.foundation-share-logo.brand-band {background:#00c73c;}
+.foundation-share-logo.brand-link {background:#edf3ff;color:#3266d5;}
+.scene .foundation-share-panel>.foundation-share-hint {margin:11px 0 0;font-size:10px;}
+.scene.is-preview .foundation-share-panel {padding:8px;}
+.scene.is-preview .foundation-share-panel p {font-size:8px;margin:4px 0;}
+.scene.is-preview .foundation-share-heading {font-size:10px;}
+.scene.is-preview .foundation-share-services>button {font-size:8px;padding:4px;gap:3px;min-height:0;}
+.scene.is-preview .foundation-share-logo {width:22px;height:22px;font-size:14px;border-radius:6px;}
+
+.scene-text-field .input-metrics,.scene-textarea .input-metrics {text-align:right;}
+/* Keep the complete input form visible in the 320×200 listing stage. */
+.scene.is-preview.scene-textarea .foundation-card h2,
+.scene.is-preview.scene-text-field .foundation-card h2 {font-size:12px;margin-bottom:6px;}
+.scene.is-preview.scene-textarea .foundation-label,
+.scene.is-preview.scene-text-field .foundation-label {font-size:9px;line-height:1.4;margin:4px 0 3px;}
+.scene.is-preview.scene-textarea .foundation-hint,
+.scene.is-preview.scene-text-field .foundation-hint {font-size:8px;line-height:1.4;margin:3px 0 4px;}
+.scene.is-preview.scene-textarea .foundation-textarea {font-size:9px!important;line-height:1.5;min-height:44px;height:44px;padding:5px 7px;}
+.scene.is-preview.scene-textarea .foundation-primary,
+.scene.is-preview.scene-text-field .foundation-primary {font-size:9px;min-height:23px;margin-top:5px;padding:4px 7px;}
+.scene.is-preview.scene-textarea .foundation-status,
+.scene.is-preview.scene-text-field .foundation-status {font-size:8px;line-height:1.4;margin-top:4px;}
+.scene.is-preview.scene-textarea .input-metrics,
+.scene.is-preview.scene-text-field .input-metrics {font-size:7.5px;line-height:1.5;margin:3px 0;}
+
+.scene .advanced-sortable-host:focus {outline:none;}
+.foundation-share-panel {max-height:calc(100vh - 24px);overflow:auto;}
+.scene.is-preview .foundation-share-panel {top:-12px;width:210px;}

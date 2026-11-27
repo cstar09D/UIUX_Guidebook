@@ -1,3 +1,9 @@
+import {
+  measureText,
+  formatTextMetrics,
+  limitText,
+  setupTextMetrics,
+} from "./input-metrics.mjs";
 const sheetActionIcons = [
   '<svg class="sheet-action-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.5 10.5 7-4m-7 7 7 4"/></svg>',
   '<svg class="sheet-action-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 3 5 5-12 12H4v-5zM14 5l5 5"/></svg>',
@@ -18,7 +24,7 @@ export const markup = {
       "나의 작업 공간",
       '<p id="saved">설정을 열고 배경과 포커스를 확인하세요.</p><button class="demo-primary" id="open">설정 열기</button>',
     ) +
-    '<dialog class="demo-dialog" id="dialog" aria-labelledby="title"><button class="demo-close" data-close aria-label="모달 닫기"><svg class="demo-close-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button><span class="demo-symbol">✦</span><h2 id="title">작업 공간 설정</h2><p>함께 일하는 공간에 이름을 지어주세요.</p><label class="demo-label">공간 이름<input id="name" value="나의 작업 공간" maxlength="30"></label><div class="demo-actions"><button data-close>취소</button><button id="save" class="demo-primary">변경 저장</button></div></dialog>',
+    '<dialog class="demo-dialog" id="dialog" aria-labelledby="title"><button class="demo-close" data-close aria-label="모달 닫기"><svg class="demo-close-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button><span class="demo-symbol">✦</span><h2 id="title">작업 공간 설정</h2><p>함께 일하는 공간에 이름을 지어주세요.</p><label class="demo-label">공간 이름<input id="name" value="나의 작업 공간" data-hard-limit="30"></label><div class="demo-actions"><button data-close>취소</button><button id="save" class="demo-primary">변경 저장</button></div></dialog>',
   "bottom-sheet":
     base(
       "sheet",
@@ -451,6 +457,19 @@ Object.assign(
   effectScript,
   backgroundScript,
 );
+for (const id of [
+  "modal",
+  "combobox",
+  "text-field",
+  "textarea",
+  "search-field",
+  "floating-action-button",
+  "bottom-navigation",
+  "stepper",
+]) {
+  script[id] =
+    `(()=>{${measureText.toString()};${formatTextMetrics.toString()};${limitText.toString()};${script[id]};(${setupTextMetrics.toString()})();})();`;
+}
 export function vanillaDocument(id, css, reduced = false) {
   return `<!doctype html>\n<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UI Notes 실행 예제</title><style>body{margin:0}button,input,select{font-family:inherit}[hidden]{display:none!important}${css}</style></head><body>${markup[id]}<script>window.__DEMO__={reduced:${reduced}};if(window.__DEMO__.reduced)document.querySelector('.scene').classList.add('is-reduced');${script[id]}<\/script></body></html>`;
 }

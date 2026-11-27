@@ -1,3 +1,5 @@
+import { InputMetrics } from "./input-metrics";
+import { measureText, limitText } from "./input-metrics.mjs";
 import {
   useEffect,
   useId,
@@ -141,6 +143,10 @@ export function FabScene({ preview = false, time = 1700 }: SceneProps) {
             setName(e.target.value);
             setError("");
           }}
+        />
+        <InputMetrics
+          value={preview ? "다음 아이디어" : name}
+          inputId={`${uid}-name`}
         />
         <p
           id={`${uid}-error`}
@@ -1162,6 +1168,10 @@ export function BottomNavScene({ preview = false, time = 1700 }: SceneProps) {
                 value={preview ? "아이디어 기록" : memo}
                 onChange={(e) => setMemo(e.target.value)}
               />
+              <InputMetrics
+                value={preview ? "아이디어 기록" : memo}
+                inputId={`${uid}-memo`}
+              />
               <p className="pattern-help">
                 다른 화면에 다녀와도 입력을 유지해요.
               </p>
@@ -1466,6 +1476,10 @@ export function StepperScene({ preview = false, time = 1700 }: SceneProps) {
                   setName(e.target.value);
                   setError("");
                 }}
+              />
+              <InputMetrics
+                value={preview ? "디자인 스터디" : name}
+                inputId={`${uid}-name`}
               />
             </>
           ) : current === 1 ? (

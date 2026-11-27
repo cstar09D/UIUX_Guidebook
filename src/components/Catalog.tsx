@@ -612,7 +612,7 @@ export default function Catalog({
 }) {
   const groupNames = ["전체", ...initialCategories];
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("전체");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [sort, setSort] = useState("recommended");
   const [selected, setSelected] = useState<Term | null>(null);
   const [showInfo, setShowInfo] = useState(false);
@@ -679,7 +679,11 @@ export default function Catalog({
   const visibleTerms = useMemo(
     () =>
       initialTerms
-        .filter((t) => category === "전체" || t.category === category)
+        .filter(
+          (t) =>
+            !selectedCategories.length ||
+            selectedCategories.includes(t.category),
+        )
         .map((t) => ({ term: t, score: scoreTerm(t, query) }))
         .filter((t) => t.score > 0)
         .sort((a, b) =>
@@ -690,7 +694,7 @@ export default function Catalog({
               : a.term.order - b.term.order,
         )
         .map((t) => t.term),
-    [initialTerms, query, category, sort],
+    [initialTerms, query, selectedCategories, sort],
   );
   const open = (term: Term, trigger?: HTMLElement) => {
     opener.current = trigger || (document.activeElement as HTMLElement);
@@ -717,7 +721,7 @@ export default function Catalog({
   };
   const search = (value: string) => {
     setQuery(value);
-    setCategory("전체");
+    setSelectedCategories([]);
   };
   return (
     <>
@@ -813,7 +817,7 @@ export default function Catalog({
               <strong>직접 사용하며 UI 패턴을 비교해 보세요.</strong>
               <p>
                 대표 UI의 시연·직접 체험·코드 예제를 확인할 수 있어요.
-                관리자에서는 상세 콘텐츠의 초안·게시·이력·분류와 백업을 로컬에
+                관리자에서는 상세 콘텐츠의 초안·게시·이력·분류와 백업을 DB 서버에
                 저장합니다. 콘텐츠는 순차적으로 확장합니다.
               </p>
             </div>
@@ -831,9 +835,29 @@ export default function Catalog({
             {groupNames.map((c) => (
               <button
                 key={c}
-                className={category === c ? "selected" : ""}
-                aria-pressed={category === c}
-                onClick={() => setCategory(c)}
+                className={
+                  (
+                    c === "전체"
+                      ? !selectedCategories.length
+                      : selectedCategories.includes(c)
+                  )
+                    ? "selected"
+                    : ""
+                }
+                aria-pressed={
+                  c === "전체"
+                    ? !selectedCategories.length
+                    : selectedCategories.includes(c)
+                }
+                onClick={() =>
+                  setSelectedCategories((previous) =>
+                    c === "전체"
+                      ? []
+                      : previous.includes(c)
+                        ? previous.filter((value) => value !== c)
+                        : [...previous, c],
+                  )
+                }
               >
                 {c === "전체" && <Layers2 size={14} />} {c}
                 {c === "전체" && <span>{initialTerms.length}</span>}
@@ -844,9 +868,11 @@ export default function Catalog({
             <h2>
               {query
                 ? `“${query}” 검색 결과`
-                : category === "전체"
+                : !selectedCategories.length
                   ? "UI 컬렉션"
-                  : category}
+                  : selectedCategories.length === 1
+                    ? selectedCategories[0]
+                    : `카테고리 ${selectedCategories.length}개 선택`}
               <span>{visibleTerms.length}</span>
             </h2>
             <div className="list-options">
@@ -888,7 +914,7 @@ export default function Catalog({
               <button
                 onClick={() => {
                   search("");
-                  setCategory("전체");
+                  setSelectedCategories([]);
                 }}
               >
                 전체 UI 보기

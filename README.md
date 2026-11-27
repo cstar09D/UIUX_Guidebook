@@ -1,10 +1,10 @@
 # UI Notes
 
-UI 용어의 모양·움직임·실제 조작을 함께 제공하는 로컬 사이트입니다. 기본 유형 50개·기간 선택 형태 1개·커서/이미지 효과 17개·배경 효과 9개, 총 77개 UI와 콘텐츠 관리 구조를 구현했습니다.
+UI 용어의 모양·움직임·실제 조작을 함께 제공하는 사이트입니다. 기본 유형 50개·기간 선택 형태 1개·커서/이미지 효과 17개·배경 효과 9개, 총 77개 UI와 콘텐츠 관리 구조를 구현했습니다.
 
 ## 실행
 
-Node.js 22.13 이상이 필요합니다.
+Node.js 22가 필요합니다. 로컬 실행과 운영 사이트 모두 Turso DB 서버를 사용합니다. `.env.local`에 `.env.example`의 연결 정보와 관리자 로그인 설정을 넣은 뒤 실행하세요.
 
 ```sh
 npm install
@@ -15,7 +15,7 @@ npm run dev
 - 다크 관리자: http://127.0.0.1:3000/admin
 - 저장된 초안 미리보기: http://127.0.0.1:3000/admin/preview
 
-macOS에서는 `start-prototype.command`로 실행할 수 있습니다. 서버는 127.0.0.1에만 바인딩하며 로컬 단일 관리자 환경입니다. 공개·운영용 인증은 추후 결정합니다.
+macOS에서는 `start-prototype.command`로 실행할 수 있습니다. 개발 서버는 127.0.0.1에만 바인딩합니다. 관리자 로그인 후 편집·게시한 콘텐츠는 Turso에 저장되며, 로컬과 운영 사이트가 같은 DB를 사용하면 함께 반영됩니다. DB 연결 정보가 없을 때 로컬 SQLite로 자동 전환하지 않습니다.
 
 ## 구현 내용
 
@@ -46,7 +46,7 @@ macOS에서는 `start-prototype.command`로 실행할 수 있습니다. 서버�
 
 초안 저장은 사이트에 반영되지 않습니다. 게시 시점의 스냅샷만 목록·검색·상세에 표시합니다. 숨김·휴지통·순서는 즉시 반영하고, 이력 복원은 현재 게시본을 유지한 채 새 초안을 만듭니다.
 
-기존 SQLite 콘텐츠는 첫 실행 시 자동 이전하며 명칭·요약·검색어·숨김·휴지통·순서를 보존합니다. 1단계 8개·2단계 12개·3단계 12개·4단계 12개와 별도 기간 선택 형태는 각각 기존 id를 덮어쓰지 않는 일회성 확장으로 추가하며 초안·게시본·휴지통을 보존합니다. 이전·콘텐츠 확장·가져오기 직전 백업은 `data/backups/`에 생성합니다. 재실행·빌드로 사용자 데이터를 초기화하지 않습니다.
+기존 SQLite 파일은 이전 자료로 보관합니다. SQLite는 테스트·명시적인 이전 작업에서만 `UI_NOTES_DB_PATH`를 지정해 사용하며, 서버 DB 연결 정보가 없을 때의 대체 저장소로 사용하지 않습니다. 기존 SQLite 데이터의 이전 로직은 명칭·요약·검색어·숨김·휴지통·순서를 보존합니다. 1단계 8개·2단계 12개·3단계 12개·4단계 12개와 별도 기간 선택 형태는 각각 기존 id를 덮어쓰지 않는 일회성 확장으로 추가하며 초안·게시본·휴지통을 보존합니다. 운영 중 가져오기 전 복구 지점은 Turso의 `checkpoints` 테이블에 저장합니다. `data/backups/`는 이전 SQLite 작업의 백업 보관 경로입니다. 재실행·빌드로 사용자 데이터를 초기화하지 않습니다.
 
 ## 구조
 
@@ -57,15 +57,15 @@ macOS에서는 `start-prototype.command`로 실행할 수 있습니다. 서버�
 | `src/components/ContentEditor.tsx` | 상세 콘텐츠·화면 예시·직무별 안내·이력 편집 |
 | `src/components/StudioPanels.tsx` | 카테고리·태그·백업·시뮬레이션 등록부 |
 | `src/lib/content.ts` | 콘텐츠 스키마·검증·게시 완성도 검사 |
-| `src/lib/db.ts` | SQLite 이전·트랜잭션·초안/게시·이력·백업 |
+| `src/lib/db.ts` | Turso·SQLite 트랜잭션·초안/게시·이력·백업 |
 | `src/lib/guide-content.ts`, `essentials-guides.ts`, `foundation-guides.ts`, `pattern-guides.ts`, `advanced-guides.ts` | 최초 이전·새 작성에 사용하는 기본 가이드 |
 | `src/demos/registry.ts` | 개발자가 등록하는 실행 동작의 메타데이터 |
 | `src/demos/components.tsx`, `essentials.tsx`, `foundations.tsx`, `patterns.tsx`, `advanced.tsx`, `scenes.tsx` | React 체험·결정 가능한 자동 시연·연결 |
 | `src/demos/vanilla.mjs`, `essentials-vanilla.mjs`, `foundations-vanilla.mjs`, `patterns-vanilla.mjs`, `advanced-vanilla.mjs` | 대응하는 HTML·JavaScript 체험 |
 | `src/demos/scene.css` | UI별 시각 스타일 |
 | `scripts/build-demos.mjs` | 등록 연결 검사·체험 번들·UI별 복사 코드 생성 |
-| `app/api/` | 로컬 관리 API와 게시 콘텐츠 조회 |
-| `data/ui-notes.sqlite` | 로컬 DB, 소스 저장소에서 제외 |
+| `app/api/` | 인증된 관리 API와 게시 콘텐츠 조회 |
+| `data/ui-notes.sqlite` | 이전 SQLite 데이터 보관, 일반 실행에서 사용하지 않음 |
 | `docs/planning/` | 조사·분류·디자인·모션·검토 계획 |
 
 새 동작 등록은 [시뮬레이션 등록 절차](docs/simulation-registration.md)를 따릅니다. 실행 코드와 기본 가이드는 개발자가 추가하고, 관리자에서 실제 콘텐츠를 연결·편집합니다.

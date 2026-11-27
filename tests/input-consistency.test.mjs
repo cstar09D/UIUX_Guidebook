@@ -21,7 +21,7 @@ function component(entry, name, props = {}) {
   };
   const result = buildSync({ entryPoints: [entry], bundle: true, platform: 'node', format: 'cjs', packages: 'external', write: false });
   const module = { exports: {} };
-  runInNewContext(result.outputFiles[0].text, { module, exports: module.exports, require: id => id === 'react' ? react : require(id) });
+  runInNewContext(result.outputFiles[0].text, { module, exports: module.exports, require: id => id === 'react' ? react : require(id), requestAnimationFrame: callback => callback() });
   return () => { cursor = 0; return module.exports[name](props); };
 }
 function all(node, predicate) {
@@ -77,7 +77,7 @@ function nativeCombo() {
   const make = () => ({ attrs: {}, children: [], hidden: false, value: '', textContent: '', setAttribute(k, v) { this.attrs[k] = String(v); }, removeAttribute(k) { delete this.attrs[k]; }, replaceChildren() { this.children = []; this.textContent = ''; }, append(child) { this.children.push(child); }, focus() { this.onfocus?.(); }, contains() { return true; } });
   const nodes = Object.fromEntries(['#city', '#cities', '#combo', '#expand', '#status'].map(id => [id, make()]));
   nodes['#cities'].hidden = true;
-  runInNewContext(script.combobox, { document: { querySelector: selector => nodes[selector], createElement: make, addEventListener() {} } });
+  runInNewContext(script.combobox, { document: { querySelector: selector => nodes[selector], createElement: make, addEventListener() {}, querySelectorAll:()=>[] }, MutationObserver:class {observe(){}},queueMicrotask:fn=>fn() });
   return { input: nodes['#city'], list: nodes['#cities'], status: nodes['#status'] };
 }
 test('HTML 콤보박스도 조합 중 서울 한 개만 표시하고 이전 선택 완료 안내를 지운다', () => {
@@ -178,4 +178,69 @@ test('커스텀 셀렉트는 필수 오류·Tab 확정·문자 탐색·조합 En
   const active = one(render(), n => n.props.role === 'option' && n.props['aria-selected']);
   assert.match(text(active), /분기별/);
   picker().props.onKeyDown(key('Escape')); assert.equal(value(), 'quarterly');
+});
+
+test('툴팁의 보관 상태는 포커스가 사라져도 유지되고 다시 누르면 해제된다',()=>{
+ const render=component('src/demos/essentials.tsx','TooltipScene');
+ const trigger=()=>one(render(),n=>n.props.className?.startsWith('tooltip-trigger'));
+ assert.equal(trigger().props['aria-pressed'],false);
+ trigger().props.onClick();trigger().props.onBlur();
+ assert.equal(trigger().props['aria-pressed'],true);
+ assert.match(trigger().props.className,/is-saved/);
+ trigger().props.onClick();
+ assert.equal(trigger().props['aria-pressed'],false);
+ assert.doesNotMatch(trigger().props.className,/is-saved/);
+ assert.match(text(render()),/보관을 취소했어요/);
+ const preview=component('src/demos/essentials.tsx','TooltipScene',{preview:true,time:2900});
+ assert.equal(one(preview(),n=>n.props.className?.startsWith('tooltip-trigger')).props['aria-pressed'],true);
+});
+test('복사·공유는 보관 상태와 독립적이며 실행 후 선택 색상이 남지 않는다',()=>{
+ const render=component('src/demos/foundations.tsx','IconButtonScene');
+ const tool=name=>one(render(),n=>n.props['aria-label']===name);
+ tool('보관하기').props.onClick();
+ for(const name of ['링크 복사','공유하기']) {
+   tool(name).props.onClick();tool(name).props.onClick();
+   assert.ok(!tool(name).props.className?.includes('foundation-highlight'));
+   assert.equal(tool(name).props['aria-pressed'],undefined);
+   assert.match(tool('보관하기').props.className,/is-saved/);
+ }
+ one(render(),n=>n.type==='button'&&text(n)==='보관 취소').props.onClick();
+ assert.equal(tool('보관하기').props.disabled,false);
+ assert.doesNotMatch(tool('보관하기').props.className,/is-saved/);
+});
+test('HTML 예제도 보관만 유지하고 복사·공유는 선택 상태로 남기지 않는다',()=>{
+ const nodes=new Map();
+ const node=selector=>{if(!nodes.has(selector)){const attrs={},classes=new Set();nodes.set(selector,{style:{},getBoundingClientRect(){return {bottom:0};},hidden:true,textContent:'',getAttribute:k=>attrs[k]||null,setAttribute:(k,v)=>attrs[k]=v,focus(){},classList:{add:(...v)=>v.forEach(x=>classes.add(x)),remove:(...v)=>v.forEach(x=>classes.delete(x)),toggle:(v,on)=>on?classes.add(v):classes.delete(v),contains:v=>classes.has(v)}});}return nodes.get(selector);};
+ const document={querySelector:node,addEventListener(){}};
+ node("#icon-share-panel").querySelector=node;
+ runInNewContext(script['icon-button'],{document,window:{innerHeight:600}});
+ node('#icon-archive').onclick();
+ for(const selector of ['#icon-copy','#icon-share']) {node(selector).onclick();assert.equal(node(selector).classList.contains('foundation-highlight'),false);}
+ assert.equal(node('#icon-archive').classList.contains('is-saved'),true);
+ node('#icon-undo').onclick();assert.equal(node('#icon-archive').classList.contains('is-saved'),false);
+ runInNewContext(script.tooltip,{document});
+ node('#archive-note').onclick();assert.equal(node('#archive-note').getAttribute('aria-pressed'),'true');assert.equal(node('#archive-note').classList.contains('is-saved'),true);
+ node('#archive-note').onclick();assert.equal(node('#archive-note').getAttribute('aria-pressed'),'false');assert.match(node('#tooltip-status').textContent,/보관을 취소/);
+});
+
+test('주제별 필터는 OR 다중 선택·개별 해제·전체 초기화와 검색 조합을 처리한다',()=>{
+ const terms=['입력','피드백','탐색'].map((category,index)=>({id:`item-${index}`,english:`Term ${index}`,pronunciation:'용어',korean:'용어',category,aliases:[],keywords:[],order:index}));
+ const render=component('src/components/Catalog.tsx','default',{initialTerms:terms,initialCategories:['입력','피드백','탐색']});
+ const filters=()=>one(render(),n=>n.props['aria-label']==='주제별 필터');
+ const choose=category=>one(filters(),n=>n.type==='button'&&text(n).includes(category));
+ choose('입력').props.onClick();assert.deepEqual(catalogResult(render()),['item-0']);
+ choose('피드백').props.onClick();assert.deepEqual(catalogResult(render()),['item-0','item-1']);
+ assert.equal(choose('전체').props['aria-pressed'],false);
+ choose('입력').props.onClick();assert.deepEqual(catalogResult(render()),['item-1']);
+ one(render(),n=>n.props['aria-label']==='UI 용어 검색').props.onChange(change('Term 1'));assert.deepEqual(catalogResult(render()),['item-1']);
+ choose('전체').props.onClick();assert.equal(choose('전체').props['aria-pressed'],true);
+ one(render(),n=>n.props['aria-label']==='UI 용어 검색').props.onChange(change(''));assert.equal(catalogResult(render()).length,3);
+});
+test('공유 목록은 서비스 선택·Esc 닫기 후 포커스 복귀를 지원한다',()=>{
+ const render=component('src/demos/foundations.tsx','IconButtonScene');
+ const trigger=()=>one(render(),n=>n.props['aria-label']==='공유하기');
+ trigger().props.onClick();assert.equal(trigger().props['aria-expanded'],true);
+ assert.deepEqual(all(render(),n=>n.props['data-share-service']).map(n=>n.props['data-share-service']),['카카오톡','페이스북','X','밴드','링크 복사']);
+ one(render(),n=>n.props['data-share-service']==='카카오톡').props.onClick();assert.equal(trigger().props['aria-expanded'],false);assert.match(text(render()),/카카오톡 공유/);
+ trigger().props.onClick();one(render(),n=>n.props.role==='dialog').props.onKeyDown(key('Escape'));assert.equal(trigger().props['aria-expanded'],false);
 });

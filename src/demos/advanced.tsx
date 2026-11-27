@@ -1333,27 +1333,194 @@ const dragTasks = [
   { id: "design", name: "화면 설계" },
   { id: "prototype", name: "프로토타입" },
 ];
+export function dragInsertIndex(
+  centers: number[],
+  from: number,
+  centerY: number,
+): number {
+  if (from < 0 || from >= centers.length || !Number.isFinite(centerY))
+    return -1;
+  return centers.filter((center, index) => index !== from && centerY > center)
+    .length;
+}
+export function attachSortableDrag(
+  root: HTMLElement,
+  onMove: (id: string, to: number) => void,
+  announce: (message: string) => void,
+) {
+  const list = root.querySelector<HTMLOListElement>(".advanced-drag-list")!;
+  let drag: {
+    id: string;
+    pointer: number;
+    startX: number;
+    startY: number;
+    offsetX: number;
+    offsetY: number;
+    width: number;
+    height: number;
+    from: number;
+    to: number;
+    moved: boolean;
+    ghost: HTMLElement;
+    row: HTMLElement;
+  } | null = null;
+  const rows = () =>
+    Array.from(list.querySelectorAll<HTMLElement>("[data-drag-row]"));
+  const clear = (notify = false) => {
+    if (!drag) return;
+    const previous = drag;
+    drag = null;
+    previous.ghost.remove();
+    root.classList.remove("is-pointer-dragging");
+    rows().forEach((row) =>
+      row.classList.remove("is-dragging", "is-drop-before", "is-drop-after"),
+    );
+    if (root.hasPointerCapture(previous.pointer))
+      root.releasePointerCapture(previous.pointer);
+    if (notify) announce("이동을 취소했어요. 원래 순서를 유지합니다.");
+  };
+  const point = (e: PointerEvent) => {
+    if (!drag || e.pointerId !== drag.pointer) return;
+    const left = e.clientX - drag.offsetX,
+      top = e.clientY - drag.offsetY;
+    drag.ghost.style.transform = `translate3d(${left}px,${top}px,0)`;
+    drag.moved ||=
+      Math.hypot(e.clientX - drag.startX, e.clientY - drag.startY) >= 4;
+    const rect = list.getBoundingClientRect(),
+      all = rows();
+    const inside =
+      e.clientX >= rect.left - 8 &&
+      e.clientX <= rect.right + 8 &&
+      e.clientY >= rect.top - 8 &&
+      e.clientY <= rect.bottom + 8;
+    drag.to = inside
+      ? dragInsertIndex(
+          all.map((row) => {
+            const r = row.getBoundingClientRect();
+            return r.top + r.height / 2;
+          }),
+          drag.from,
+          top + drag.height / 2,
+        )
+      : -1;
+    all.forEach((row) =>
+      row.classList.remove("is-drop-before", "is-drop-after"),
+    );
+    if (drag.moved && drag.to >= 0 && drag.to !== drag.from)
+      all[drag.to]?.classList.add(
+        drag.to < drag.from ? "is-drop-before" : "is-drop-after",
+      );
+  };
+  const down = (e: PointerEvent) => {
+    if (
+      drag ||
+      e.button !== 0 ||
+      e.isPrimary === false ||
+      !(e.target instanceof Element) ||
+      e.target.closest("button,a,input,textarea,select")
+    )
+      return;
+    const row = e.target.closest<HTMLElement>("[data-drag-row]");
+    if (!row || !list.contains(row)) return;
+    e.preventDefault();
+    root.focus({ preventScroll: true });
+    const rect = row.getBoundingClientRect(),
+      ghost = row.cloneNode(true) as HTMLElement;
+    ghost.removeAttribute("data-drag-row");
+    ghost.removeAttribute("id");
+    ghost.setAttribute("aria-hidden", "true");
+    ghost.inert = true;
+    ghost
+      .querySelectorAll("[id]")
+      .forEach((node) => node.removeAttribute("id"));
+    ghost.className = "advanced-drag-ghost";
+    Object.assign(ghost.style, {
+      width: `${rect.width}px`,
+      height: `${rect.height}px`,
+      transform: `translate3d(${rect.left}px,${rect.top}px,0)`,
+    });
+    root.append(ghost);
+    drag = {
+      id: row.dataset.dragRow!,
+      pointer: e.pointerId,
+      startX: e.clientX,
+      startY: e.clientY,
+      offsetX: e.clientX - rect.left,
+      offsetY: e.clientY - rect.top,
+      width: rect.width,
+      height: rect.height,
+      from: rows().indexOf(row),
+      to: rows().indexOf(row),
+      moved: false,
+      ghost,
+      row,
+    };
+    row.classList.add("is-dragging");
+    root.classList.add("is-pointer-dragging");
+    root.setPointerCapture(e.pointerId);
+    announce(
+      `${row.querySelector("strong")?.textContent} · 누른 채 끌고, 파란 선 위치에 놓으세요. Esc로 취소할 수 있어요.`,
+    );
+  };
+  const up = (e: PointerEvent) => {
+    if (!drag || e.pointerId !== drag.pointer) return;
+    point(e);
+    const { id, to, from, moved } = drag;
+    clear();
+    if (moved && to >= 0 && to !== from) onMove(id, to);
+    else
+      announce(
+        to < 0
+          ? "목록 밖에 놓아 이동을 취소했어요."
+          : moved
+            ? "원래 위치에 놓았어요. 순서를 유지합니다."
+            : "마우스나 손가락을 누른 채 항목을 끌어 이동하세요.",
+      );
+  };
+  const cancel = (e?: PointerEvent) => {
+    if (!e || e.pointerId === drag?.pointer) clear(true);
+  };
+  const lost = (e: PointerEvent) => cancel(e);
+  const key = (e: globalThis.KeyboardEvent) => {
+    if (e.key === "Escape" && drag) {
+      e.preventDefault();
+      e.stopPropagation();
+      clear(true);
+    }
+  };
+  const blur = () => clear(true);
+  root.addEventListener("pointerdown", down);
+  root.addEventListener("pointermove", point);
+  root.addEventListener("pointerup", up);
+  root.addEventListener("pointercancel", cancel);
+  root.addEventListener("lostpointercapture", lost);
+  root.addEventListener("keydown", key);
+  window.addEventListener("blur", blur);
+  return {
+    cancel: clear,
+    destroy() {
+      clear();
+      root.removeEventListener("pointerdown", down);
+      root.removeEventListener("pointermove", point);
+      root.removeEventListener("pointerup", up);
+      root.removeEventListener("pointercancel", cancel);
+      root.removeEventListener("lostpointercapture", lost);
+      root.removeEventListener("keydown", key);
+      window.removeEventListener("blur", blur);
+    },
+  };
+}
 export function DragDropScene({ preview = false, time = 1700 }: SceneProps) {
   const [order, setOrder] = useState(dragTasks),
-    [dragging, setDragging] = useState(""),
-    [target, setTarget] = useState(""),
     [message, setMessage] = useState(
-      "핸들을 끌거나 위·아래 버튼으로 순서를 바꾸세요.",
+      "항목이나 점 핸들을 누른 채 끌어보세요. 위·아래 버튼으로도 이동할 수 있어요.",
     );
   const root = useRef<HTMLDivElement>(null),
-    active = useRef(""),
-    destination = useRef("");
+    controller = useRef<ReturnType<typeof attachSortableDrag> | null>(null);
   const shown = preview && time >= 2600 ? reorderItems(dragTasks, 0, 2) : order;
-  const cancel = () => {
-    active.current = "";
-    destination.current = "";
-    setDragging("");
-    setTarget("");
-    setMessage("이동을 취소했어요. 원래 순서를 유지합니다.");
-  };
   const move = (id: string, to: number) => {
-    const from = order.findIndex((r) => r.id === id);
-    if (to < 0 || to >= order.length) return;
+    const from = order.findIndex((row) => row.id === id);
+    if (from < 0 || to < 0 || to >= order.length || from === to) return;
     setOrder(reorderItems(order, from, to));
     setMessage(`${order[from].name} · ${to + 1}번째로 이동했어요.`);
     requestAnimationFrame(() =>
@@ -1364,71 +1531,33 @@ export function DragDropScene({ preview = false, time = 1700 }: SceneProps) {
         ?.focus(),
     );
   };
+  useEffect(() => {
+    if (preview || !root.current) return;
+    const instance = attachSortableDrag(root.current, move, setMessage);
+    controller.current = instance;
+    return () => {
+      instance.destroy();
+      controller.current = null;
+    };
+  }, [preview, order]);
   return (
     <AdvancedFrame kind="drag-and-drop" title="작업 우선순위" preview={preview}>
-      <div
-        ref={root}
-        tabIndex={-1}
-        onKeyDown={(e) => {
-          if (e.key === "Escape" && active.current) {
-            e.preventDefault();
-            cancel();
-          }
-        }}
-      >
+      <div ref={root} tabIndex={-1} className="advanced-sortable-host">
         <ol className="advanced-drag-list">
           {shown.map((task, i) => (
             <li
               key={task.id}
               data-drag-row={task.id}
-              className={`${dragging === task.id || (preview && time >= 700 && time < 2600 && task.id === "research") ? "is-dragging" : ""} ${target === task.id || (preview && time >= 1500 && time < 2600 && task.id === "prototype") ? "is-drop-target" : ""}`}
+              className={`${preview && time >= 700 && time < 2600 && task.id === "research" ? "is-dragging is-preview-lifted" : ""} ${preview && time >= 1500 && time < 2600 && task.id === "prototype" ? "is-drop-target" : ""}`}
+              style={
+                preview && time >= 700 && time < 2600 && task.id === "research"
+                  ? {
+                      transform: `translate(8px,${Math.min(1, (time - 700) / 1700) * 86}px)`,
+                    }
+                  : undefined
+              }
             >
-              <span
-                className="advanced-grip"
-                aria-hidden="true"
-                onPointerDown={(e) => {
-                  if (e.button !== 0) return;
-                  root.current?.focus({ preventScroll: true });
-                  active.current = task.id;
-                  destination.current = task.id;
-                  setDragging(task.id);
-                  setTarget(task.id);
-                  e.currentTarget.setPointerCapture(e.pointerId);
-                }}
-                onPointerMove={(e) => {
-                  if (!active.current) return;
-                  const row = document
-                    .elementFromPoint(e.clientX, e.clientY)
-                    ?.closest<HTMLElement>("[data-drag-row]");
-                  if (row && root.current?.contains(row)) {
-                    destination.current = row.dataset.dragRow!;
-                    setTarget(destination.current);
-                  }
-                }}
-                onPointerUp={(e) => {
-                  const from = order.findIndex((r) => r.id === active.current),
-                    to = order.findIndex((r) => r.id === destination.current);
-                  const drop = document
-                    .elementFromPoint(e.clientX, e.clientY)
-                    ?.closest<HTMLElement>("[data-drag-row]");
-                  if (
-                    from >= 0 &&
-                    to >= 0 &&
-                    drop &&
-                    root.current?.contains(drop)
-                  )
-                    move(active.current, to);
-                  else if (active.current)
-                    setMessage("이동을 취소했어요. 원래 순서를 유지합니다.");
-                  active.current = "";
-                  destination.current = "";
-                  setDragging("");
-                  setTarget("");
-                  if (e.currentTarget.hasPointerCapture(e.pointerId))
-                    e.currentTarget.releasePointerCapture(e.pointerId);
-                }}
-                onPointerCancel={cancel}
-              >
+              <span className="advanced-grip" aria-hidden="true">
                 <AdvancedIcon kind="grip" />
               </span>
               <strong>{task.name}</strong>
@@ -1463,8 +1592,8 @@ export function DragDropScene({ preview = false, time = 1700 }: SceneProps) {
           type="button"
           data-drag-reset
           onClick={() => {
+            controller.current?.cancel();
             setOrder(dragTasks);
-            cancel();
             setMessage("원래 순서로 돌아왔어요.");
           }}
         >
@@ -1475,7 +1604,7 @@ export function DragDropScene({ preview = false, time = 1700 }: SceneProps) {
         {preview
           ? time >= 2600
             ? "놓은 위치에 순서 반영"
-            : "끌어 놓을 위치 확인"
+            : "항목을 누른 채 끌어 이동"
           : message}
       </p>
     </AdvancedFrame>

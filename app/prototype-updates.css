@@ -216,3 +216,6 @@
 .admin-login-card button:disabled{opacity:.65;cursor:wait;}
 .admin-login-card .admin-login-error{color:#ffb3b3;font-size:13px;margin:4px 0;}
 .admin-login-card>a{font-size:13px;color:#9dafc9;text-underline-offset:4px;}
+
+.alternative-card-caption>.alternative-card-action{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;color:#2866de;font-size:12px;font-weight:650;line-height:1.5;}
+.alternative-card-action svg{display:block;flex:none;}

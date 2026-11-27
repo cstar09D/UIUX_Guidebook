@@ -1,0 +1,16 @@
+{
+  "tests": 63,
+  "build": "passed",
+  "reactAndHtml": [
+    "tooltip-archive-color",
+    "tooltip-archive-undo",
+    "copy-share-not-selected"
+  ],
+  "alternativeCard": {
+    "label": "바로가기 →",
+    "mobileWidth": 390,
+    "captionWidth": 317,
+    "horizontalOverflow": false,
+    "navigation": "tooltip to popover verified"
+  }
+}

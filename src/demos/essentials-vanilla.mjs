@@ -102,7 +102,7 @@ export const essentialMarkup = {
     "QUICK HELP",
     "나중에 다시 볼 노트",
     "보관 버튼에 마우스를 올리거나 키보드로 포커스를 옮겨보세요.",
-    '<div class="tooltip-anchor" id="tooltip-anchor"><button class="tooltip-trigger" id="archive-note" aria-describedby="archive-tip"><svg class="sheet-action-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8h16v13H4zM3 3h18v5H3zM9 12h6"/></svg><span>보관하기</span></button><span id="archive-tip" role="tooltip" class="essential-tooltip" hidden>노트를 목록에서 보관함으로 옮겨요.</span></div><button class="essential-help-button" id="tooltip-help" aria-expanded="false" aria-controls="inline-tooltip-help">도움말 보기</button><p id="inline-tooltip-help" class="essential-inline-help" hidden>보관한 노트는 삭제되지 않으며 보관함에서 다시 꺼낼 수 있어요.</p><p id="tooltip-status" class="essential-caption" role="status">터치에서는 도움말 보기를 이용하세요.</p>',
+    '<div class="tooltip-anchor" id="tooltip-anchor"><button class="tooltip-trigger" id="archive-note" aria-pressed="false" aria-describedby="archive-tip"><svg class="sheet-action-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8h16v13H4zM3 3h18v5H3zM9 12h6"/></svg><span>보관하기</span></button><span id="archive-tip" role="tooltip" class="essential-tooltip" hidden>노트를 목록에서 보관함으로 옮겨요.</span></div><button class="essential-help-button" id="tooltip-help" aria-expanded="false" aria-controls="inline-tooltip-help">도움말 보기</button><p id="inline-tooltip-help" class="essential-inline-help" hidden>보관한 노트는 삭제되지 않아요. 같은 버튼을 다시 누르면 보관을 취소할 수 있어요.</p><p id="tooltip-status" class="essential-caption" role="status">터치에서는 도움말 보기를 이용하세요.</p>',
   ).replace(
     'class="essential-card"',
     'class="essential-card tooltip-demo-card"',
@@ -464,7 +464,17 @@ function setupTooltip() {
       render();
     }
   };
-  trigger.onclick = () => (status.textContent = "노트를 보관했어요.");
+  trigger.onclick = () => {
+    const saved = trigger.getAttribute("aria-pressed") !== "true";
+    trigger.setAttribute("aria-pressed", String(saved));
+    trigger.classList.toggle("is-saved", saved);
+    tip.textContent = saved
+      ? "다시 누르면 보관을 취소해요."
+      : "노트를 목록에서 보관함으로 옮겨요.";
+    status.textContent = saved
+      ? "노트를 보관했어요. 다시 누르면 취소할 수 있어요."
+      : "보관을 취소했어요.";
+  };
   help.onclick = () => {
     inline.hidden = !inline.hidden;
     help.setAttribute("aria-expanded", String(!inline.hidden));

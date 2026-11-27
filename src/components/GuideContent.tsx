@@ -5,6 +5,7 @@ import { effectDefinitions } from "@/lib/effect-definitions";
 import { backgroundDefinitions } from "@/lib/background-content";
 import { sceneMap } from "@/demos/scenes";
 import {
+  ArrowRight,
   BookOpen,
   ChevronDown,
   CheckCircle2,
@@ -65,6 +66,9 @@ function Points({
                   <MotionPreview key={target.demoId} id={target.demoId} />
                   <span className="alternative-card-caption">
                     <strong>{target.english}</strong>
+                    <span className="alternative-card-action">
+                      바로가기 <ArrowRight size={14} aria-hidden="true" />
+                    </span>
                     <span>{target.korean}</span>
                   </span>
                 </a>

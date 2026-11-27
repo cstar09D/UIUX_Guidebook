@@ -89,3 +89,14 @@ test("이징은 같은 끝점·시간 범위와 단조 증가를 유지하며 �
   assert.ok(Math.abs(easingProgress(0.5, "ease-in-out") - 0.5) < 0.00001);
   assert.equal(easingProgress(0.5, "linear"), 0.5);
 });
+
+test('드래그 삽입 위치는 원본을 제외한 행의 중앙선을 기준으로 위·아래 이동을 계산한다',()=>{
+ const {dragInsertIndex}=module.exports;
+ assert.equal(dragInsertIndex([30,90,150],0,30),0);
+ assert.equal(dragInsertIndex([30,90,150],0,100),1);
+ assert.equal(dragInsertIndex([30,90,150],0,160),2);
+ assert.equal(dragInsertIndex([30,90,150],2,20),0);
+ assert.equal(dragInsertIndex([30,90,150],1,90),1);
+ assert.equal(dragInsertIndex([30,90,150],-1,90),-1);
+ assert.equal(dragInsertIndex([30,90,150],1,NaN),-1);
+});

@@ -677,7 +677,9 @@ export function TooltipScene({
   const [dismissed, setDismissed] = useState(false);
   const [help, setHelp] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [message, setMessage] = useState("");
   const uid = useId();
+  const isSaved = preview ? time >= 2800 : saved;
   const open = preview
     ? time >= 700 && time < 2600
     : (hover || focus) && !dismissed;
@@ -702,7 +704,9 @@ export function TooltipScene({
           onMouseLeave={() => setHover(false)}
         >
           <button
-            className="tooltip-trigger"
+            type="button"
+            className={`tooltip-trigger ${isSaved ? "is-saved" : ""}`}
+            aria-pressed={isSaved}
             aria-describedby={`${uid}-tip`}
             onFocus={() => {
               setFocus(true);
@@ -716,7 +720,14 @@ export function TooltipScene({
                 setDismissed(true);
               }
             }}
-            onClick={() => setSaved(true)}
+            onClick={() => {
+              setSaved(!saved);
+              setMessage(
+                saved
+                  ? "보관을 취소했어요."
+                  : "노트를 보관했어요. 다시 누르면 취소할 수 있어요.",
+              );
+            }}
           >
             <svg
               className="sheet-action-glyph"
@@ -739,7 +750,9 @@ export function TooltipScene({
             className="essential-tooltip"
             hidden={!open}
           >
-            노트를 목록에서 보관함으로 옮겨요.
+            {isSaved
+              ? "다시 누르면 보관을 취소해요."
+              : "노트를 목록에서 보관함으로 옮겨요."}
           </span>
         </div>
         {!preview && (
@@ -757,11 +770,12 @@ export function TooltipScene({
               className="essential-inline-help"
               hidden={!help}
             >
-              보관한 노트는 삭제되지 않으며 보관함에서 다시 꺼낼 수 있어요.
+              보관한 노트는 삭제되지 않아요. 같은 버튼을 다시 누르면 보관을
+              취소할 수 있어요.
             </p>
             <p className="essential-caption" role="status">
-              {saved
-                ? "노트를 보관했어요."
+              {message
+                ? message
                 : open
                   ? "Esc로 설명을 닫을 수 있어요."
                   : "터치에서는 도움말 보기를 이용하세요."}

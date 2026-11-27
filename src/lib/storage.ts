@@ -136,9 +136,11 @@ export function createStorage(): StorageConnection {
     throw new Error(
       "Vercel에는 TURSO_DATABASE_URL과 TURSO_AUTH_TOKEN이 필요합니다. 먼저 로컬 데이터를 이전하세요.",
     );
-  const filename =
-    process.env.UI_NOTES_DB_PATH ||
-    path.join(process.cwd(), "data", "ui-notes.sqlite");
+  const filename = process.env.UI_NOTES_DB_PATH;
+  if (!filename)
+    throw new Error(
+      "Turso DB 서버 연결이 필요합니다. TURSO_DATABASE_URL과 TURSO_AUTH_TOKEN을 설정하세요. 로컬 SQLite로 자동 전환하지 않습니다.",
+    );
   mkdirSync(path.dirname(filename), { recursive: true });
   const sqlite = new DatabaseSync(filename);
   sqlite.exec("PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;");

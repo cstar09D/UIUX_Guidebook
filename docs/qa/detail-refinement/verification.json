@@ -1,0 +1,39 @@
+{
+  "testsPassed": 68,
+  "build": "passed",
+  "drag": {
+    "reactOrder": [
+      "design",
+      "prototype",
+      "research"
+    ],
+    "htmlOrder": [
+      "design",
+      "prototype",
+      "research"
+    ],
+    "escapeRestoresOrder": true,
+    "floatingCardFollowsPointer": true
+  },
+  "metrics": {
+    "react": "3 / 200자 · 8 byte (UTF-8)",
+    "html": "3 / 200자 · 8 byte (UTF-8)",
+    "mobileOverflow": false
+  },
+  "sharing": {
+    "react": "카카오톡 selection verified",
+    "html": "페이스북 selection and Escape verified",
+    "mobilePanelInsideViewport": true
+  },
+  "categories": {
+    "multipleSelection": "입력과 검색 + 피드백과 상태",
+    "count": 16,
+    "allResets": true
+  },
+  "textareaPreview": {
+    "cardFullyVisible": true,
+    "hintVisible": true,
+    "saveButtonVisible": true,
+    "metricsAlignment": "right"
+  }
+}
