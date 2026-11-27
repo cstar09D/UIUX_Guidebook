@@ -1,0 +1,50 @@
+[
+  {
+    "viewportWidth": 390,
+    "width": 333,
+    "format": "HTML · JavaScript",
+    "left": 31,
+    "right": 302,
+    "top": 239.7421875,
+    "bottom": 368.9375,
+    "height": 390,
+    "bodyOverflow": 0,
+    "options": 3
+  },
+  {
+    "viewportWidth": 390,
+    "width": 333,
+    "format": "React · TypeScript",
+    "left": 31,
+    "right": 302,
+    "top": 239.7421875,
+    "bottom": 368.9375,
+    "height": 390,
+    "bodyOverflow": 0,
+    "options": 3
+  },
+  {
+    "viewportWidth": 320,
+    "width": 263,
+    "format": "HTML · JavaScript",
+    "left": 31,
+    "right": 217,
+    "top": 254.5859375,
+    "bottom": 382,
+    "height": 390,
+    "bodyOverflow": 0,
+    "options": 3
+  },
+  {
+    "viewportWidth": 320,
+    "width": 263,
+    "format": "React · TypeScript",
+    "left": 31,
+    "right": 232,
+    "top": 239.7421875,
+    "bottom": 368.9375,
+    "height": 390,
+    "bodyOverflow": 0,
+    "options": 3
+  }
+]

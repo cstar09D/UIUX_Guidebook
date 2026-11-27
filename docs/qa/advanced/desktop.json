@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Tree View",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 113.796875,
+    "cardHeight": 302.3984375
+  },
+  {
+    "name": "Carousel",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 85.25,
+    "cardHeight": 359.4921875
+  },
+  {
+    "name": "Data Table",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 24.25,
+    "cardHeight": 481.4921875
+  },
+  {
+    "name": "Snackbar",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 133.25,
+    "cardHeight": 263.4921875
+  },
+  {
+    "name": "Empty State",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 73.1015625,
+    "cardHeight": 383.7890625
+  },
+  {
+    "name": "Sorting",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 75,
+    "cardHeight": 379.9921875
+  },
+  {
+    "name": "Filtering",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 77.5,
+    "cardHeight": 374.9921875
+  },
+  {
+    "name": "Load More",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 122.25,
+    "cardHeight": 285.4921875
+  },
+  {
+    "name": "Drag and Drop",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 87.25,
+    "cardHeight": 355.4921875
+  },
+  {
+    "name": "Responsive Layout",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 79.0546875,
+    "cardHeight": 371.8828125
+  },
+  {
+    "name": "Sticky Header",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 62.75,
+    "cardHeight": 404.4921875
+  },
+  {
+    "name": "Easing",
+    "format": "react",
+    "width": 549,
+    "scrollWidth": 549,
+    "height": 530,
+    "scrollHeight": 530,
+    "cardTop": 59.75,
+    "cardHeight": 410.4921875
+  }
+]

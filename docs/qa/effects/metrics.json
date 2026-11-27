@@ -1,0 +1,1123 @@
+{
+  "metrics": [
+    {
+      "name": "Magnetic Button",
+      "format": "react",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Magnetic Button",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Magnetic Button",
+      "format": "html",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Magnetic Button",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Blend Mode Cursor",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Blend Mode Cursor",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Blend Mode Cursor",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Blend Mode Cursor",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Spotlight",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Spotlight",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Spotlight",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Spotlight",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Tilt Card",
+      "format": "react",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Tilt Card",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Tilt Card",
+      "format": "html",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Tilt Card",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Label",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Label",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Label",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Label",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Trail",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Trail",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Trail",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Trail",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Hover Reveal",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Hover Reveal",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Hover Reveal",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Hover Reveal",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Ripple",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Ripple",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Ripple",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Ripple",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Trail",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Trail",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Trail",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Cursor Trail",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [],
+      "scene": 1
+    },
+    {
+      "name": "Masonry",
+      "format": "react",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Masonry",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Masonry",
+      "format": "html",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Masonry",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Before/After Slider",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Before/After Slider",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Before/After Slider",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Before/After Slider",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Accordion",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Accordion",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Accordion",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Accordion",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Hotspot",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Hotspot",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Hotspot",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Hotspot",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Lightbox",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Lightbox",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Lightbox",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Lightbox",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        },
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Ken Burns Effect",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Ken Burns Effect",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Ken Burns Effect",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Ken Burns Effect",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Magnifier",
+      "format": "react",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Magnifier",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Magnifier",
+      "format": "html",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Image Magnifier",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Halftone",
+      "format": "react",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Halftone",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Halftone",
+      "format": "html",
+      "viewport": 1440,
+      "width": 534,
+      "scroll": 534,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    },
+    {
+      "name": "Halftone",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "imgs": [
+        {
+          "loaded": true
+        }
+      ],
+      "scene": 1
+    }
+  ],
+  "evidence": [
+    {
+      "sel": ".fx-blend-lens",
+      "prop": "opacity",
+      "value": "1"
+    },
+    {
+      "sel": ".fx-blend-lens",
+      "prop": "opacity",
+      "value": "1"
+    },
+    {
+      "sel": ".fx-spot-mask",
+      "prop": "background",
+      "value": "radial-gradient(85px at 72% 35%, transparent 0%, rgba(15, 29, 45, 0.88) 100%)"
+    },
+    {
+      "sel": ".fx-spot-mask",
+      "prop": "background",
+      "value": "radial-gradient(85px at 72% 35%, transparent 0%, rgba(15, 29, 45, 0.88) 100%)"
+    },
+    {
+      "sel": ".fx-tilt-card",
+      "prop": "transform",
+      "value": "perspective(700px) rotateX(3.3deg) rotateY(4.84deg)"
+    },
+    {
+      "sel": ".fx-tilt-card",
+      "prop": "transform",
+      "value": "perspective(700px) rotateX(3.3deg) rotateY(4.84deg)"
+    },
+    {
+      "sel": ".fx-cursor-label",
+      "prop": "opacity",
+      "value": "1"
+    },
+    {
+      "sel": ".fx-cursor-label",
+      "prop": "opacity",
+      "value": "1"
+    },
+    {
+      "sel": ".fx-before",
+      "prop": "clipPath",
+      "value": "inset(0px 100% 0px 0px)"
+    },
+    {
+      "sel": ".fx-before",
+      "prop": "clipPath",
+      "value": "inset(0px 0% 0px 0px)"
+    },
+    {
+      "sel": ".fx-before",
+      "prop": "clipPath",
+      "value": "inset(0px 100% 0px 0px)"
+    },
+    {
+      "sel": ".fx-before",
+      "prop": "clipPath",
+      "value": "inset(0px 0% 0px 0px)"
+    },
+    {
+      "sel": ".fx-ken-window img",
+      "prop": "transform",
+      "value": "scale(1.00241) translate(-0.0328835%, 0.0219223%)"
+    },
+    {
+      "sel": ".fx-ken-window img",
+      "prop": "transform",
+      "value": "scale(1.00196) translate(-0.0267283%, 0.0178189%)"
+    },
+    {
+      "sel": ".fx-magnifier-lens",
+      "prop": "backgroundSize",
+      "value": "1760px 1100px"
+    },
+    {
+      "sel": ".fx-magnifier-lens",
+      "prop": "backgroundSize",
+      "value": "1760px 1100px"
+    },
+    {
+      "sel": ".fx-magnet",
+      "prop": "transform",
+      "value": "translate(16.5px, -13.8709px)"
+    }
+  ],
+  "finalChecks": {
+    "magneticNoVerticalScroll": true,
+    "magneticArrowSize": 16,
+    "hotspotFocusRestored": true,
+    "guideUsesActualScene": true,
+    "alternativeNavigation": "Image Hotspot → Popover",
+    "searchTop": "Image Accordion"
+  }
+}

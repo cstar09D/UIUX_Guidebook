@@ -1,0 +1,383 @@
+{
+  "hotspot": [
+    {
+      "label": "React PC right edge",
+      "width": 440,
+      "left": 103.3984375,
+      "right": 288.3984375,
+      "top": 57.5,
+      "bottom": 129,
+      "height": 275
+    },
+    {
+      "label": "React 320 right edge",
+      "width": 203,
+      "left": 10,
+      "right": 195,
+      "top": 8,
+      "bottom": 79.5,
+      "height": 126.875
+    },
+    {
+      "label": "HTML 320 left edge",
+      "width": 203,
+      "left": 8,
+      "right": 193,
+      "top": 8,
+      "bottom": 96,
+      "height": 126.875
+    },
+    {
+      "label": "React final compact 320",
+      "width": 203,
+      "left": 51.1796875,
+      "right": 176.203125,
+      "top": 17.4375,
+      "bottom": 67.4375,
+      "height": 126.875
+    },
+    {
+      "label": "HTML final compact 320",
+      "width": 203,
+      "left": 80.8359375,
+      "right": 192.8828125,
+      "top": 53.734375,
+      "bottom": 103.734375,
+      "height": 126.875
+    }
+  ],
+  "categories": [
+    {
+      "viewport": 1440,
+      "count": 12,
+      "rows": 2,
+      "width": 1200,
+      "scroll": 1200,
+      "allInside": true,
+      "page": 1425
+    },
+    {
+      "viewport": 768,
+      "count": 12,
+      "rows": 3,
+      "width": 673,
+      "scroll": 673,
+      "allInside": true,
+      "page": 753
+    },
+    {
+      "viewport": 390,
+      "count": 12,
+      "rows": 4,
+      "width": 359,
+      "scroll": 359,
+      "allInside": true,
+      "page": 375
+    },
+    {
+      "viewport": 320,
+      "count": 12,
+      "rows": 6,
+      "width": 289,
+      "scroll": 289,
+      "allInside": true,
+      "page": 305
+    }
+  ],
+  "backgrounds": [
+    {
+      "name": "Mesh Gradient",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Mesh Gradient",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Mesh Gradient",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Mesh Gradient",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Aurora",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Aurora",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Aurora",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Aurora",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Grain",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Grain",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Grain",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Grain",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Dot Grid",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Dot Grid",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Dot Grid",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Dot Grid",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Beams",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Beams",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Beams",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Beams",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Blob",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Blob",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Blob",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Blob",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Glow Orb",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Glow Orb",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Glow Orb",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Glow Orb",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Particles",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Particles",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Particles",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Particles",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Starfield",
+      "format": "react",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Starfield",
+      "format": "react",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    },
+    {
+      "name": "Starfield",
+      "format": "html",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "art": 1
+    },
+    {
+      "name": "Starfield",
+      "format": "html",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "art": 1
+    }
+  ],
+  "finalChecks": {
+    "reactEscThenTab": "사이드 테이블",
+    "htmlEscThenTab": "사이드 테이블",
+    "particles": "24→48",
+    "oldPanelPreserved": true
+  }
+}

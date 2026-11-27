@@ -1,0 +1,34 @@
+{
+  "terms": {
+    "before": 68,
+    "after": 77,
+    "other67Preserved": true,
+    "hotspotChangedFields": [
+      "revision",
+      "guide"
+    ]
+  },
+  "published_terms": {
+    "before": 68,
+    "after": 77,
+    "other67Preserved": true,
+    "hotspotChangedFields": [
+      "revision",
+      "guide"
+    ]
+  },
+  "content_meta": {
+    "before": 68,
+    "after": 77,
+    "other67Preserved": true
+  },
+  "history": {
+    "before": 111,
+    "after": 121,
+    "oldPreserved": true
+  },
+  "settings": {
+    "oldOtherSettingsPreserved": true,
+    "newCategory": "배경 효과"
+  }
+}

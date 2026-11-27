@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Icon Button",
+    "fmt": "react",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 578,
+    "viewport": 578
+  },
+  {
+    "name": "Icon Button",
+    "fmt": "html",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 578,
+    "viewport": 578
+  },
+  {
+    "name": "Checkbox",
+    "fmt": "react",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 578,
+    "viewport": 578
+  },
+  {
+    "name": "Checkbox",
+    "fmt": "html",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 578,
+    "viewport": 578
+  },
+  {
+    "name": "Date Picker (Single)",
+    "fmt": "react",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 578,
+    "viewport": 578
+  },
+  {
+    "name": "Date Picker (Single)",
+    "fmt": "html",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 578,
+    "viewport": 578
+  },
+  {
+    "name": "Date Picker (Range)",
+    "fmt": "react",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 584,
+    "viewport": 584
+  },
+  {
+    "name": "Date Picker (Range)",
+    "fmt": "html",
+    "width": 390,
+    "w": 333,
+    "scroll": 333,
+    "height": 584,
+    "viewport": 584
+  },
+  {
+    "name": "Icon Button",
+    "fmt": "react",
+    "width": 320,
+    "w": 263,
+    "scroll": 263,
+    "height": 424,
+    "viewport": 424
+  },
+  {
+    "name": "Icon Button",
+    "fmt": "html",
+    "width": 320,
+    "w": 263,
+    "scroll": 263,
+    "height": 424,
+    "viewport": 424
+  },
+  {
+    "name": "Checkbox",
+    "fmt": "react",
+    "width": 320,
+    "w": 248,
+    "scroll": 248,
+    "height": 526,
+    "viewport": 424
+  },
+  {
+    "name": "Checkbox",
+    "fmt": "html",
+    "width": 320,
+    "w": 248,
+    "scroll": 248,
+    "height": 526,
+    "viewport": 424
+  },
+  {
+    "name": "Date Picker (Single)",
+    "fmt": "react",
+    "width": 320,
+    "w": 263,
+    "scroll": 263,
+    "height": 424,
+    "viewport": 424
+  },
+  {
+    "name": "Date Picker (Single)",
+    "fmt": "html",
+    "width": 320,
+    "w": 263,
+    "scroll": 263,
+    "height": 424,
+    "viewport": 424
+  },
+  {
+    "name": "Date Picker (Range)",
+    "fmt": "react",
+    "width": 320,
+    "w": 263,
+    "scroll": 263,
+    "height": 584,
+    "viewport": 584
+  },
+  {
+    "name": "Date Picker (Range)",
+    "fmt": "html",
+    "width": 320,
+    "w": 248,
+    "scroll": 248,
+    "height": 594,
+    "viewport": 584
+  }
+]

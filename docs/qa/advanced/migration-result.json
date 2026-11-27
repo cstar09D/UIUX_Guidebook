@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-27",
+  "before": {
+    "terms": 39,
+    "published_terms": 39,
+    "content_meta": 39,
+    "term_versions": 82,
+    "settings": 9
+  },
+  "after": {
+    "terms": 51,
+    "published_terms": 51,
+    "content_meta": 51,
+    "term_versions": 94,
+    "settings": 10
+  },
+  "preserved": {
+    "terms": 39,
+    "published_terms": 39,
+    "content_meta": 39,
+    "term_versions": 82
+  },
+  "oldSettingsUnchanged": 8,
+  "taxonomy": {
+    "before": {
+      "revision": 2,
+      "categories": [
+        "레이어와 도움말",
+        "정보 구조와 콘텐츠",
+        "입력과 검색",
+        "피드백과 상태",
+        "조작과 데이터 탐색",
+        "탐색과 이동",
+        "실행과 선택"
+      ],
+      "tags": []
+    },
+    "after": {
+      "revision": 3,
+      "categories": [
+        "레이어와 도움말",
+        "정보 구조와 콘텐츠",
+        "입력과 검색",
+        "피드백과 상태",
+        "조작과 데이터 탐색",
+        "탐색과 이동",
+        "실행과 선택",
+        "레이아웃과 모션"
+      ],
+      "tags": []
+    }
+  },
+  "added": [
+    {
+      "id": "carousel",
+      "revision": 1
+    },
+    {
+      "id": "data-table",
+      "revision": 1
+    },
+    {
+      "id": "drag-and-drop",
+      "revision": 1
+    },
+    {
+      "id": "easing",
+      "revision": 1
+    },
+    {
+      "id": "empty-state",
+      "revision": 1
+    },
+    {
+      "id": "filtering",
+      "revision": 1
+    },
+    {
+      "id": "load-more",
+      "revision": 1
+    },
+    {
+      "id": "responsive-layout",
+      "revision": 1
+    },
+    {
+      "id": "snackbar",
+      "revision": 1
+    },
+    {
+      "id": "sorting",
+      "revision": 1
+    },
+    {
+      "id": "sticky-header",
+      "revision": 1
+    },
+    {
+      "id": "tree-view",
+      "revision": 1
+    }
+  ],
+  "checkpoint": "catalog-1795750944353-b869e6f8-fe39-4afc-a230-1a812db3891b.json",
+  "checkpointTerms": 39,
+  "checkpointHistory": 82,
+  "previousRawDataSha256": "b2609ce4a68cd4f8091f51b9e9842138f905094cdd2d51a30c0d5cb1291a9141"
+}

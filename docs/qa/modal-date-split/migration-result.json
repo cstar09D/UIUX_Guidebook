@@ -1,0 +1,21 @@
+{
+  "api": 200,
+  "before": 38,
+  "after": 39,
+  "preservedUnrelated": 37,
+  "updatedSingle": 1,
+  "preservedHistory": 80,
+  "historyNow": 82,
+  "backups": [
+    {
+      "file": "catalog-1795742616141-faeda900-a996-4979-b5b1-9391bfa69c63.json",
+      "terms": 38,
+      "history": 80
+    },
+    {
+      "file": "catalog-1795742616160-0b67632f-e8b4-463d-a325-f4947e23c742.json",
+      "terms": 39,
+      "history": 81
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+node_modules/
+.next/
+data/
+public/demo-bundle.js
+src/generated/
+*.tsbuildinfo
+.env*
+
+!.env.example
+.vercel/
+.DS_Store
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

@@ -1,0 +1,6820 @@
+{
+  "scope": "Source-rendered initial live markup and 4 deterministic preview states; not a full interaction assertion",
+  "scenes": [
+    {
+      "id": "modal",
+      "name": "Modal Dialog",
+      "live": {
+        "tags": {
+          "div": 7,
+          "span": 6,
+          "i": 3,
+          "h2": 2,
+          "p": 2,
+          "button": 4,
+          "dialog": 1,
+          "svg": 1,
+          "path": 1,
+          "label": 1,
+          "input": 1
+        },
+        "classes": [
+          "demo-actions",
+          "demo-center",
+          "demo-close",
+          "demo-close-glyph",
+          "demo-dialog",
+          "demo-eyebrow",
+          "demo-help",
+          "demo-label",
+          "demo-primary",
+          "demo-symbol",
+          "mock-action",
+          "mock-app",
+          "mock-brand",
+          "mock-dot",
+          "mock-lines",
+          "mock-top",
+          "scene",
+          "scene-modal"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 8,
+            "span": 5,
+            "i": 3,
+            "strong": 1,
+            "label": 1,
+            "input": 1,
+            "b": 2
+          },
+          "classes": [
+            "is-preview",
+            "mini-backdrop",
+            "mini-blue",
+            "mini-modal",
+            "mini-modal-input",
+            "mini-symbol",
+            "mock-action",
+            "mock-app",
+            "mock-brand",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "scene",
+            "scene-modal"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 8,
+            "span": 5,
+            "i": 3,
+            "strong": 1,
+            "label": 1,
+            "input": 1,
+            "b": 2
+          },
+          "classes": [
+            "is-preview",
+            "mini-backdrop",
+            "mini-blue",
+            "mini-modal",
+            "mini-modal-input",
+            "mini-symbol",
+            "mock-action",
+            "mock-app",
+            "mock-brand",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "scene",
+            "scene-modal"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 8,
+            "span": 5,
+            "i": 3,
+            "strong": 1,
+            "label": 1,
+            "input": 1,
+            "b": 2
+          },
+          "classes": [
+            "is-preview",
+            "mini-backdrop",
+            "mini-blue",
+            "mini-modal",
+            "mini-modal-input",
+            "mini-symbol",
+            "mock-action",
+            "mock-app",
+            "mock-brand",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "scene",
+            "scene-modal"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 8,
+            "span": 6,
+            "i": 3,
+            "strong": 1,
+            "label": 1,
+            "input": 1,
+            "b": 2
+          },
+          "classes": [
+            "is-preview",
+            "mini-backdrop",
+            "mini-blue",
+            "mini-modal",
+            "mini-modal-input",
+            "mini-saved",
+            "mini-symbol",
+            "mock-action",
+            "mock-app",
+            "mock-brand",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "scene",
+            "scene-modal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bottom-sheet",
+      "name": "Bottom Sheet",
+      "live": {
+        "tags": {
+          "div": 7,
+          "span": 16,
+          "i": 4,
+          "strong": 4,
+          "h2": 2,
+          "p": 2,
+          "button": 5,
+          "dialog": 1,
+          "svg": 7,
+          "path": 7,
+          "circle": 3,
+          "small": 3
+        },
+        "classes": [
+          "demo-center",
+          "demo-chevron",
+          "demo-close",
+          "demo-close-glyph",
+          "demo-dialog",
+          "demo-eyebrow",
+          "demo-help",
+          "demo-primary",
+          "demo-sheet",
+          "mock-app",
+          "mock-brand",
+          "mock-card",
+          "mock-card-icon",
+          "mock-dot",
+          "mock-lines",
+          "mock-top",
+          "option-chevron",
+          "scene",
+          "scene-sheet",
+          "sheet-action-glyph",
+          "sheet-drag-area",
+          "sheet-handle",
+          "sheet-option",
+          "sheet-option-icon"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 10,
+            "span": 11,
+            "i": 4,
+            "strong": 2,
+            "svg": 6,
+            "circle": 3,
+            "path": 6
+          },
+          "classes": [
+            "demo-chevron",
+            "is-preview",
+            "mini-backdrop",
+            "mini-sheet",
+            "mini-sheet-row",
+            "mock-app",
+            "mock-brand",
+            "mock-card",
+            "mock-card-icon",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "option-chevron",
+            "scene",
+            "scene-sheet",
+            "sheet-action-glyph",
+            "sheet-handle",
+            "sheet-row-icon"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 10,
+            "span": 11,
+            "i": 4,
+            "strong": 2,
+            "svg": 6,
+            "circle": 3,
+            "path": 6
+          },
+          "classes": [
+            "demo-chevron",
+            "is-preview",
+            "mini-backdrop",
+            "mini-sheet",
+            "mini-sheet-row",
+            "mock-app",
+            "mock-brand",
+            "mock-card",
+            "mock-card-icon",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "option-chevron",
+            "scene",
+            "scene-sheet",
+            "sheet-action-glyph",
+            "sheet-handle",
+            "sheet-row-icon"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 10,
+            "span": 11,
+            "i": 4,
+            "strong": 2,
+            "svg": 6,
+            "circle": 3,
+            "path": 6
+          },
+          "classes": [
+            "demo-chevron",
+            "is-preview",
+            "mini-backdrop",
+            "mini-sheet",
+            "mini-sheet-row",
+            "mock-app",
+            "mock-brand",
+            "mock-card",
+            "mock-card-icon",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "option-chevron",
+            "scene",
+            "scene-sheet",
+            "selected",
+            "sheet-action-glyph",
+            "sheet-handle",
+            "sheet-row-icon"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 10,
+            "span": 11,
+            "i": 4,
+            "strong": 2,
+            "svg": 6,
+            "circle": 3,
+            "path": 6
+          },
+          "classes": [
+            "demo-chevron",
+            "is-preview",
+            "mini-backdrop",
+            "mini-sheet",
+            "mini-sheet-row",
+            "mock-app",
+            "mock-brand",
+            "mock-card",
+            "mock-card-icon",
+            "mock-dot",
+            "mock-lines",
+            "mock-top",
+            "option-chevron",
+            "scene",
+            "scene-sheet",
+            "selected",
+            "sheet-action-glyph",
+            "sheet-handle",
+            "sheet-row-icon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accordion",
+      "name": "Accordion",
+      "live": {
+        "tags": {
+          "div": 9,
+          "span": 7,
+          "h2": 1,
+          "label": 1,
+          "input": 1,
+          "section": 3,
+          "h3": 3,
+          "button": 3,
+          "svg": 3,
+          "path": 3,
+          "p": 4
+        },
+        "classes": [
+          "demo-check",
+          "demo-chevron",
+          "demo-eyebrow",
+          "demo-help",
+          "faq-body",
+          "faq-chevron",
+          "faq-item",
+          "faq-items",
+          "faq-question",
+          "faq-wrap",
+          "is-open",
+          "scene",
+          "scene-accordion"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 9,
+            "section": 3,
+            "h3": 3,
+            "button": 3,
+            "span": 6,
+            "svg": 3,
+            "path": 3,
+            "p": 3
+          },
+          "classes": [
+            "demo-chevron",
+            "faq-body",
+            "faq-chevron",
+            "faq-item",
+            "faq-items",
+            "faq-question",
+            "faq-wrap",
+            "is-preview",
+            "scene",
+            "scene-accordion"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 9,
+            "section": 3,
+            "h3": 3,
+            "button": 3,
+            "span": 6,
+            "svg": 3,
+            "path": 3,
+            "p": 3
+          },
+          "classes": [
+            "demo-chevron",
+            "faq-body",
+            "faq-chevron",
+            "faq-item",
+            "faq-items",
+            "faq-question",
+            "faq-wrap",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-accordion"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 9,
+            "section": 3,
+            "h3": 3,
+            "button": 3,
+            "span": 6,
+            "svg": 3,
+            "path": 3,
+            "p": 3
+          },
+          "classes": [
+            "demo-chevron",
+            "faq-body",
+            "faq-chevron",
+            "faq-item",
+            "faq-items",
+            "faq-question",
+            "faq-wrap",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-accordion"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 9,
+            "section": 3,
+            "h3": 3,
+            "button": 3,
+            "span": 6,
+            "svg": 3,
+            "path": 3,
+            "p": 3
+          },
+          "classes": [
+            "demo-chevron",
+            "faq-body",
+            "faq-chevron",
+            "faq-item",
+            "faq-items",
+            "faq-question",
+            "faq-wrap",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-accordion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton Screen",
+      "live": {
+        "tags": {
+          "div": 8,
+          "label": 2,
+          "select": 2,
+          "option": 6,
+          "button": 1,
+          "span": 5,
+          "i": 2,
+          "p": 1
+        },
+        "classes": [
+          "demo-help",
+          "demo-primary",
+          "loading-options",
+          "profile-card",
+          "profile-heading",
+          "scene",
+          "scene-skeleton",
+          "shimmer",
+          "skeleton-avatar",
+          "skeleton-content",
+          "skeleton-cover",
+          "skeleton-demo",
+          "skeleton-lines",
+          "skeleton-shape",
+          "skeleton-subtitle",
+          "skeleton-title"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 7,
+            "span": 5,
+            "i": 2
+          },
+          "classes": [
+            "is-preview",
+            "profile-card",
+            "profile-heading",
+            "scene",
+            "scene-skeleton",
+            "shimmer",
+            "skeleton-avatar",
+            "skeleton-content",
+            "skeleton-cover",
+            "skeleton-demo",
+            "skeleton-lines",
+            "skeleton-shape",
+            "skeleton-subtitle",
+            "skeleton-title"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 7,
+            "span": 5,
+            "i": 2
+          },
+          "classes": [
+            "is-preview",
+            "profile-card",
+            "profile-heading",
+            "scene",
+            "scene-skeleton",
+            "shimmer",
+            "skeleton-avatar",
+            "skeleton-content",
+            "skeleton-cover",
+            "skeleton-demo",
+            "skeleton-lines",
+            "skeleton-shape",
+            "skeleton-subtitle",
+            "skeleton-title"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 8,
+            "span": 4,
+            "strong": 2,
+            "br": 1,
+            "i": 1,
+            "b": 1
+          },
+          "classes": [
+            "is-preview",
+            "loaded-profile",
+            "profile-avatar",
+            "profile-bottom",
+            "profile-card",
+            "profile-cover",
+            "profile-heading",
+            "scene",
+            "scene-skeleton",
+            "skeleton-demo"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 8,
+            "span": 4,
+            "strong": 2,
+            "br": 1,
+            "i": 1,
+            "b": 1
+          },
+          "classes": [
+            "is-preview",
+            "loaded-profile",
+            "profile-avatar",
+            "profile-bottom",
+            "profile-card",
+            "profile-cover",
+            "profile-heading",
+            "scene",
+            "scene-skeleton",
+            "skeleton-demo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combobox",
+      "name": "Combobox",
+      "live": {
+        "tags": {
+          "div": 3,
+          "span": 1,
+          "h2": 1,
+          "p": 2,
+          "label": 1,
+          "input": 1,
+          "button": 1,
+          "svg": 1,
+          "path": 1
+        },
+        "classes": [
+          "combo-demo",
+          "combo-input",
+          "demo-chevron",
+          "demo-eyebrow",
+          "demo-help",
+          "demo-label",
+          "scene",
+          "scene-combo"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "combo-demo",
+            "combo-input",
+            "demo-chevron",
+            "demo-label",
+            "is-preview",
+            "scene",
+            "scene-combo"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "combo-demo",
+            "combo-input",
+            "demo-chevron",
+            "demo-label",
+            "is-preview",
+            "scene",
+            "scene-combo"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "combo-demo",
+            "combo-input",
+            "demo-chevron",
+            "demo-label",
+            "is-preview",
+            "scene",
+            "scene-combo"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "combo-demo",
+            "combo-input",
+            "demo-chevron",
+            "demo-label",
+            "is-preview",
+            "scene",
+            "scene-combo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-grid",
+      "name": "Data Grid",
+      "live": {
+        "tags": {
+          "div": 4,
+          "span": 3,
+          "strong": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 5,
+          "th": 3,
+          "tbody": 1,
+          "td": 12,
+          "p": 1
+        },
+        "classes": [
+          "demo-eyebrow",
+          "demo-help",
+          "demo-keyboard-hint",
+          "grid-count",
+          "grid-demo",
+          "grid-heading",
+          "grid-scroll",
+          "scene",
+          "scene-grid",
+          "selected"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "span": 2,
+            "strong": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 5,
+            "th": 3,
+            "tbody": 1,
+            "td": 12
+          },
+          "classes": [
+            "demo-eyebrow",
+            "grid-count",
+            "grid-demo",
+            "grid-heading",
+            "grid-scroll",
+            "is-preview",
+            "scene",
+            "scene-grid",
+            "selected"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "span": 2,
+            "strong": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 5,
+            "th": 3,
+            "tbody": 1,
+            "td": 12
+          },
+          "classes": [
+            "demo-eyebrow",
+            "grid-count",
+            "grid-demo",
+            "grid-heading",
+            "grid-scroll",
+            "is-preview",
+            "scene",
+            "scene-grid",
+            "selected"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "span": 3,
+            "strong": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 5,
+            "th": 3,
+            "tbody": 1,
+            "td": 12,
+            "i": 1
+          },
+          "classes": [
+            "demo-eyebrow",
+            "editing",
+            "grid-count",
+            "grid-demo",
+            "grid-edit-preview",
+            "grid-heading",
+            "grid-scroll",
+            "is-preview",
+            "scene",
+            "scene-grid",
+            "selected"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "span": 2,
+            "strong": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 5,
+            "th": 3,
+            "tbody": 1,
+            "td": 12
+          },
+          "classes": [
+            "demo-eyebrow",
+            "grid-count",
+            "grid-demo",
+            "grid-heading",
+            "grid-scroll",
+            "is-preview",
+            "scene",
+            "scene-grid",
+            "selected"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "live": {
+        "tags": {
+          "div": 3,
+          "span": 3,
+          "h2": 1,
+          "p": 3,
+          "br": 1,
+          "button": 2,
+          "svg": 1,
+          "path": 1
+        },
+        "classes": [
+          "essential-caption",
+          "essential-card",
+          "essential-eyebrow",
+          "essential-help-button",
+          "essential-inline-help",
+          "essential-scene",
+          "essential-tooltip",
+          "scene",
+          "scene-tooltip",
+          "sheet-action-glyph",
+          "tooltip-anchor",
+          "tooltip-demo-card",
+          "tooltip-trigger"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "span": 3,
+            "h2": 1,
+            "p": 1,
+            "br": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-tooltip",
+            "is-preview",
+            "scene",
+            "scene-tooltip",
+            "sheet-action-glyph",
+            "tooltip-anchor",
+            "tooltip-demo-card",
+            "tooltip-trigger"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "span": 3,
+            "h2": 1,
+            "p": 1,
+            "br": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-tooltip",
+            "is-preview",
+            "scene",
+            "scene-tooltip",
+            "sheet-action-glyph",
+            "tooltip-anchor",
+            "tooltip-demo-card",
+            "tooltip-trigger"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "span": 3,
+            "h2": 1,
+            "p": 1,
+            "br": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-tooltip",
+            "is-preview",
+            "scene",
+            "scene-tooltip",
+            "sheet-action-glyph",
+            "tooltip-anchor",
+            "tooltip-demo-card",
+            "tooltip-trigger"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "br": 1,
+            "button": 1,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-tooltip",
+            "is-preview",
+            "scene",
+            "scene-tooltip",
+            "sheet-action-glyph",
+            "tooltip-anchor",
+            "tooltip-demo-card",
+            "tooltip-trigger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "popover",
+      "name": "Popover",
+      "live": {
+        "tags": {
+          "div": 10,
+          "span": 6,
+          "strong": 1,
+          "button": 3,
+          "h2": 1,
+          "p": 2,
+          "fieldset": 1,
+          "legend": 1,
+          "label": 2,
+          "input": 2
+        },
+        "classes": [
+          "choice-group",
+          "choice-row",
+          "demo-primary",
+          "demo-sr-only",
+          "essential-actions",
+          "essential-caption",
+          "essential-card",
+          "essential-eyebrow",
+          "essential-popover",
+          "essential-scene",
+          "popover-list",
+          "popover-toolbar",
+          "scene",
+          "scene-popover"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 8,
+            "span": 4,
+            "strong": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "popover-list",
+            "popover-toolbar",
+            "scene",
+            "scene-popover"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 10,
+            "span": 6,
+            "strong": 1,
+            "button": 3,
+            "h2": 1,
+            "p": 2,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2
+          },
+          "classes": [
+            "choice-group",
+            "choice-row",
+            "demo-primary",
+            "demo-sr-only",
+            "essential-actions",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "popover-list",
+            "popover-preview-panel",
+            "popover-toolbar",
+            "scene",
+            "scene-popover"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 10,
+            "span": 6,
+            "strong": 1,
+            "button": 3,
+            "h2": 1,
+            "p": 2,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2
+          },
+          "classes": [
+            "choice-group",
+            "choice-row",
+            "demo-primary",
+            "demo-sr-only",
+            "essential-actions",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "popover-list",
+            "popover-preview-panel",
+            "popover-toolbar",
+            "scene",
+            "scene-popover"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 8,
+            "span": 4,
+            "strong": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "compact",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "popover-list",
+            "popover-toolbar",
+            "scene",
+            "scene-popover"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "live": {
+        "tags": {
+          "div": 6,
+          "span": 2,
+          "h2": 1,
+          "i": 3,
+          "button": 3,
+          "p": 1,
+          "ul": 1,
+          "li": 1
+        },
+        "classes": [
+          "demo-primary",
+          "demo-sr-only",
+          "essential-actions",
+          "essential-caption",
+          "essential-card",
+          "essential-eyebrow",
+          "essential-help-button",
+          "essential-history",
+          "essential-scene",
+          "essential-toast-slot",
+          "scene",
+          "scene-toast",
+          "toast-note-preview"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 6,
+            "span": 2,
+            "h2": 1,
+            "i": 3,
+            "button": 1
+          },
+          "classes": [
+            "demo-primary",
+            "demo-sr-only",
+            "essential-actions",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-toast-slot",
+            "is-preview",
+            "scene",
+            "scene-toast",
+            "toast-note-preview"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 8,
+            "span": 3,
+            "h2": 1,
+            "i": 3,
+            "button": 2,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "demo-close-glyph",
+            "demo-primary",
+            "demo-sr-only",
+            "essential-actions",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-toast",
+            "essential-toast-slot",
+            "is-preview",
+            "scene",
+            "scene-toast",
+            "toast-check",
+            "toast-note-preview"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 8,
+            "span": 3,
+            "h2": 1,
+            "i": 3,
+            "button": 2,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "demo-close-glyph",
+            "demo-primary",
+            "demo-sr-only",
+            "essential-actions",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-toast",
+            "essential-toast-slot",
+            "is-preview",
+            "scene",
+            "scene-toast",
+            "toast-check",
+            "toast-note-preview"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 6,
+            "span": 2,
+            "h2": 1,
+            "i": 3,
+            "button": 1
+          },
+          "classes": [
+            "demo-primary",
+            "demo-sr-only",
+            "essential-actions",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "essential-toast-slot",
+            "is-preview",
+            "scene",
+            "scene-toast",
+            "toast-note-preview"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "live": {
+        "tags": {
+          "div": 6,
+          "span": 5,
+          "h2": 1,
+          "label": 1,
+          "input": 1,
+          "button": 3,
+          "strong": 3,
+          "p": 4,
+          "ul": 3,
+          "li": 6
+        },
+        "classes": [
+          "essential-caption",
+          "essential-card",
+          "essential-check",
+          "essential-eyebrow",
+          "essential-panel-icon",
+          "essential-scene",
+          "essential-tab-indicator",
+          "essential-tablist",
+          "essential-tabpanel",
+          "scene",
+          "scene-tabs"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 6,
+            "span": 5,
+            "h2": 1,
+            "button": 3,
+            "strong": 3,
+            "p": 3,
+            "ul": 3,
+            "li": 6
+          },
+          "classes": [
+            "essential-card",
+            "essential-eyebrow",
+            "essential-panel-icon",
+            "essential-scene",
+            "essential-tab-indicator",
+            "essential-tablist",
+            "essential-tabpanel",
+            "is-preview",
+            "scene",
+            "scene-tabs"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 6,
+            "span": 5,
+            "h2": 1,
+            "button": 3,
+            "strong": 3,
+            "p": 3,
+            "ul": 3,
+            "li": 6
+          },
+          "classes": [
+            "essential-card",
+            "essential-eyebrow",
+            "essential-panel-icon",
+            "essential-scene",
+            "essential-tab-indicator",
+            "essential-tablist",
+            "essential-tabpanel",
+            "is-preview",
+            "scene",
+            "scene-tabs"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 6,
+            "span": 5,
+            "h2": 1,
+            "button": 3,
+            "strong": 3,
+            "p": 3,
+            "ul": 3,
+            "li": 6
+          },
+          "classes": [
+            "essential-card",
+            "essential-eyebrow",
+            "essential-panel-icon",
+            "essential-scene",
+            "essential-tab-indicator",
+            "essential-tablist",
+            "essential-tabpanel",
+            "is-preview",
+            "scene",
+            "scene-tabs"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 6,
+            "span": 5,
+            "h2": 1,
+            "button": 3,
+            "strong": 3,
+            "p": 3,
+            "ul": 3,
+            "li": 6
+          },
+          "classes": [
+            "essential-card",
+            "essential-eyebrow",
+            "essential-panel-icon",
+            "essential-scene",
+            "essential-tab-indicator",
+            "essential-tablist",
+            "essential-tabpanel",
+            "is-preview",
+            "scene",
+            "scene-tabs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "live": {
+        "tags": {
+          "div": 9,
+          "span": 6,
+          "h2": 1,
+          "p": 2,
+          "svg": 1,
+          "path": 1,
+          "input": 1,
+          "button": 2
+        },
+        "classes": [
+          "active",
+          "demo-chevron",
+          "demo-primary",
+          "essential-actions",
+          "essential-caption",
+          "essential-card",
+          "essential-eyebrow",
+          "essential-label",
+          "essential-scene",
+          "scene",
+          "scene-select",
+          "select-chevron",
+          "select-illustration",
+          "select-popup",
+          "select-preview-options",
+          "select-preview-value",
+          "select-trigger"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 8,
+            "span": 6,
+            "h2": 1,
+            "p": 2,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "demo-chevron",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-label",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-select",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 8,
+            "span": 6,
+            "h2": 1,
+            "p": 2,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "demo-chevron",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-label",
+            "essential-scene",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-select",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 8,
+            "span": 6,
+            "h2": 1,
+            "p": 2,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "active",
+            "demo-chevron",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-label",
+            "essential-scene",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-select",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 8,
+            "span": 6,
+            "h2": 1,
+            "p": 2,
+            "svg": 1,
+            "path": 1
+          },
+          "classes": [
+            "active",
+            "demo-chevron",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-label",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-select",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switch",
+      "name": "Switch",
+      "live": {
+        "tags": {
+          "div": 5,
+          "span": 3,
+          "h2": 1,
+          "p": 2,
+          "label": 2,
+          "input": 2
+        },
+        "classes": [
+          "essential-caption",
+          "essential-card",
+          "essential-check",
+          "essential-eyebrow",
+          "essential-result",
+          "essential-scene",
+          "essential-state-dot",
+          "essential-switch",
+          "scene",
+          "scene-switch",
+          "switch-row"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 5,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "label": 1,
+            "input": 1
+          },
+          "classes": [
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "essential-state-dot",
+            "essential-switch",
+            "is-preview",
+            "scene",
+            "scene-switch",
+            "switch-row"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 5,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "label": 1,
+            "input": 1
+          },
+          "classes": [
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "essential-state-dot",
+            "essential-switch",
+            "is-preview",
+            "on",
+            "scene",
+            "scene-switch",
+            "switch-row"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 5,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "label": 1,
+            "input": 1
+          },
+          "classes": [
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "essential-state-dot",
+            "essential-switch",
+            "is-preview",
+            "on",
+            "scene",
+            "scene-switch",
+            "switch-row"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 5,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "label": 1,
+            "input": 1
+          },
+          "classes": [
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "essential-state-dot",
+            "essential-switch",
+            "is-preview",
+            "on",
+            "scene",
+            "scene-switch",
+            "switch-row"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "live": {
+        "tags": {
+          "div": 3,
+          "span": 5,
+          "h2": 1,
+          "p": 1,
+          "fieldset": 1,
+          "legend": 1,
+          "label": 4,
+          "input": 4,
+          "small": 1
+        },
+        "classes": [
+          "choice-all",
+          "choice-group",
+          "choice-row",
+          "demo-sr-only",
+          "essential-card",
+          "essential-eyebrow",
+          "essential-result",
+          "essential-scene",
+          "scene",
+          "scene-checkbox"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "span": 5,
+            "h2": 1,
+            "p": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 4,
+            "input": 4,
+            "small": 1
+          },
+          "classes": [
+            "choice-all",
+            "choice-group",
+            "choice-row",
+            "demo-sr-only",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-checkbox"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "span": 5,
+            "h2": 1,
+            "p": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 4,
+            "input": 4,
+            "small": 1
+          },
+          "classes": [
+            "choice-all",
+            "choice-group",
+            "choice-row",
+            "demo-sr-only",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-checkbox"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "span": 5,
+            "h2": 1,
+            "p": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 4,
+            "input": 4,
+            "small": 1
+          },
+          "classes": [
+            "choice-all",
+            "choice-group",
+            "choice-row",
+            "demo-sr-only",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-checkbox"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "span": 5,
+            "h2": 1,
+            "p": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 4,
+            "input": 4,
+            "small": 1
+          },
+          "classes": [
+            "choice-all",
+            "choice-group",
+            "choice-row",
+            "demo-sr-only",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-result",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-checkbox"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radio-group",
+      "name": "Radio Group",
+      "live": {
+        "tags": {
+          "div": 3,
+          "span": 3,
+          "h2": 1,
+          "p": 2,
+          "fieldset": 1,
+          "legend": 1,
+          "label": 2,
+          "input": 2,
+          "small": 2,
+          "button": 2
+        },
+        "classes": [
+          "choice-group",
+          "choice-row",
+          "demo-primary",
+          "demo-sr-only",
+          "essential-actions",
+          "essential-caption",
+          "essential-card",
+          "essential-eyebrow",
+          "essential-scene",
+          "scene",
+          "scene-radio"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 2,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "small": 2
+          },
+          "classes": [
+            "choice-group",
+            "choice-row",
+            "demo-sr-only",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-radio"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 2,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "small": 2
+          },
+          "classes": [
+            "choice-group",
+            "choice-row",
+            "choice-selected",
+            "demo-sr-only",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-radio"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 2,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "small": 2
+          },
+          "classes": [
+            "choice-group",
+            "choice-row",
+            "choice-selected",
+            "demo-sr-only",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-radio"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 2,
+            "span": 3,
+            "h2": 1,
+            "p": 2,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "small": 2
+          },
+          "classes": [
+            "choice-group",
+            "choice-row",
+            "choice-selected",
+            "demo-sr-only",
+            "essential-caption",
+            "essential-card",
+            "essential-eyebrow",
+            "essential-scene",
+            "is-preview",
+            "scene",
+            "scene-radio"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "i": 3,
+          "span": 1,
+          "button": 1,
+          "label": 1,
+          "input": 1,
+          "p": 1
+        },
+        "classes": [
+          "demo-primary",
+          "foundation-card",
+          "foundation-document",
+          "foundation-option",
+          "foundation-primary",
+          "foundation-scene",
+          "foundation-status",
+          "scene",
+          "scene-button"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "i": 3,
+            "span": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-document",
+            "foundation-primary",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-button"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "i": 3,
+            "span": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-document",
+            "foundation-primary",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-button"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "i": 3,
+            "span": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-document",
+            "foundation-primary",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-button"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "i": 3,
+            "span": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-document",
+            "foundation-primary",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-button"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "icon-button",
+      "name": "Icon Button",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "button": 3,
+          "svg": 3,
+          "rect": 2,
+          "path": 3,
+          "circle": 3,
+          "strong": 1,
+          "p": 2
+        },
+        "classes": [
+          "foundation-card",
+          "foundation-icon-toolbar",
+          "foundation-note",
+          "foundation-scene",
+          "foundation-status",
+          "scene",
+          "scene-icon-button"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 3,
+            "svg": 3,
+            "rect": 2,
+            "path": 3,
+            "circle": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-icon-toolbar",
+            "foundation-note",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-icon-button"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 3,
+            "svg": 3,
+            "rect": 2,
+            "path": 3,
+            "circle": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-highlight",
+            "foundation-icon-toolbar",
+            "foundation-note",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-icon-button"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 3,
+            "svg": 3,
+            "rect": 2,
+            "path": 3,
+            "circle": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-highlight",
+            "foundation-icon-toolbar",
+            "foundation-note",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-icon-button"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 3,
+            "svg": 3,
+            "rect": 2,
+            "path": 3,
+            "circle": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-highlight",
+            "foundation-icon-toolbar",
+            "foundation-note",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "is-saved",
+            "scene",
+            "scene-icon-button"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toggle-button",
+      "name": "Toggle Button",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "button": 2,
+          "p": 1
+        },
+        "classes": [
+          "foundation-card",
+          "foundation-scene",
+          "foundation-status",
+          "foundation-toggle-tools",
+          "foundation-type-sample",
+          "scene",
+          "scene-toggle-button"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-toggle-tools",
+            "foundation-type-sample",
+            "is-preview",
+            "scene",
+            "scene-toggle-button"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-toggle-tools",
+            "foundation-type-sample",
+            "is-preview",
+            "scene",
+            "scene-toggle-button"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-toggle-tools",
+            "foundation-type-sample",
+            "is-preview",
+            "scene",
+            "scene-toggle-button"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-toggle-tools",
+            "foundation-type-sample",
+            "is-preview",
+            "scene",
+            "scene-toggle-button"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "segmented-control",
+      "name": "Segmented Control",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "fieldset": 1,
+          "legend": 1,
+          "label": 2,
+          "input": 2,
+          "span": 3,
+          "strong": 1,
+          "p": 2
+        },
+        "classes": [
+          "foundation-card",
+          "foundation-price",
+          "foundation-scene",
+          "foundation-segments",
+          "foundation-status",
+          "scene",
+          "scene-segmented-control",
+          "selected"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "span": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-price",
+            "foundation-scene",
+            "foundation-segments",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-segmented-control",
+            "selected"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "span": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-price",
+            "foundation-scene",
+            "foundation-segments",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-segmented-control",
+            "selected"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "span": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-price",
+            "foundation-scene",
+            "foundation-segments",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-segmented-control",
+            "selected"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "span": 3,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-price",
+            "foundation-scene",
+            "foundation-segments",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-segmented-control",
+            "selected"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "text-field",
+      "name": "Text Field",
+      "live": {
+        "tags": {
+          "div": 2,
+          "h2": 1,
+          "form": 1,
+          "label": 1,
+          "p": 3,
+          "input": 1,
+          "button": 1
+        },
+        "classes": [
+          "demo-primary",
+          "foundation-card",
+          "foundation-error",
+          "foundation-hint",
+          "foundation-input",
+          "foundation-label",
+          "foundation-primary",
+          "foundation-scene",
+          "foundation-status",
+          "scene",
+          "scene-text-field"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "input": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-text-field"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "input": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-text-field"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "input": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-text-field"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "input": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-text-field"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "textarea",
+      "name": "Textarea",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "form": 1,
+          "label": 1,
+          "p": 3,
+          "textarea": 1,
+          "button": 1
+        },
+        "classes": [
+          "demo-primary",
+          "foundation-card",
+          "foundation-count",
+          "foundation-error",
+          "foundation-hint",
+          "foundation-label",
+          "foundation-primary",
+          "foundation-scene",
+          "foundation-status",
+          "foundation-textarea",
+          "scene",
+          "scene-textarea"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "textarea": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-count",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-textarea",
+            "is-preview",
+            "scene",
+            "scene-textarea"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "textarea": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-count",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-textarea",
+            "is-preview",
+            "scene",
+            "scene-textarea"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "textarea": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-count",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-textarea",
+            "is-preview",
+            "scene",
+            "scene-textarea"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "p": 3,
+            "textarea": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-count",
+            "foundation-error",
+            "foundation-hint",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-textarea",
+            "is-preview",
+            "scene",
+            "scene-textarea"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "search-field",
+      "name": "Search Field",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "form": 1,
+          "label": 2,
+          "input": 2,
+          "button": 2,
+          "p": 1
+        },
+        "classes": [
+          "demo-primary",
+          "foundation-card",
+          "foundation-input",
+          "foundation-label",
+          "foundation-option",
+          "foundation-scene",
+          "foundation-search-options",
+          "foundation-search-results",
+          "foundation-search-row",
+          "foundation-status",
+          "scene",
+          "scene-search-field"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-search-results",
+            "foundation-search-row",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-search-field"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-search-results",
+            "foundation-search-row",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-search-field"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "ul": 1,
+            "li": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-search-results",
+            "foundation-search-row",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-search-field"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "form": 1,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "ul": 1,
+            "li": 1,
+            "p": 1
+          },
+          "classes": [
+            "demo-primary",
+            "foundation-card",
+            "foundation-input",
+            "foundation-label",
+            "foundation-scene",
+            "foundation-search-results",
+            "foundation-search-row",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-search-field"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slider",
+      "name": "Slider",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "label": 2,
+          "output": 1,
+          "input": 2,
+          "span": 2,
+          "form": 1,
+          "button": 1,
+          "p": 2
+        },
+        "classes": [
+          "foundation-card",
+          "foundation-error",
+          "foundation-input",
+          "foundation-label",
+          "foundation-range",
+          "foundation-range-ends",
+          "foundation-scene",
+          "foundation-search-row",
+          "foundation-status",
+          "foundation-volume",
+          "scene",
+          "scene-slider"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "output": 1,
+            "input": 1,
+            "span": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-label",
+            "foundation-range",
+            "foundation-range-ends",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-volume",
+            "is-preview",
+            "scene",
+            "scene-slider"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "output": 1,
+            "input": 1,
+            "span": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-label",
+            "foundation-range",
+            "foundation-range-ends",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-volume",
+            "is-preview",
+            "scene",
+            "scene-slider"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "output": 1,
+            "input": 1,
+            "span": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-label",
+            "foundation-range",
+            "foundation-range-ends",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-volume",
+            "is-preview",
+            "scene",
+            "scene-slider"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "output": 1,
+            "input": 1,
+            "span": 2,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-label",
+            "foundation-range",
+            "foundation-range-ends",
+            "foundation-scene",
+            "foundation-status",
+            "foundation-volume",
+            "is-preview",
+            "scene",
+            "scene-slider"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "breadcrumb",
+      "name": "Breadcrumb",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 3,
+          "a": 2,
+          "span": 2,
+          "h3": 1,
+          "p": 1,
+          "button": 1
+        },
+        "classes": [
+          "foundation-breadcrumb",
+          "foundation-card",
+          "foundation-destination",
+          "foundation-folder",
+          "foundation-scene",
+          "scene",
+          "scene-breadcrumb"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "nav": 1,
+            "ol": 1,
+            "li": 3,
+            "a": 2,
+            "span": 2,
+            "h3": 1,
+            "p": 1
+          },
+          "classes": [
+            "foundation-breadcrumb",
+            "foundation-card",
+            "foundation-destination",
+            "foundation-folder",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-breadcrumb"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "nav": 1,
+            "ol": 1,
+            "li": 3,
+            "a": 2,
+            "span": 2,
+            "h3": 1,
+            "p": 1
+          },
+          "classes": [
+            "foundation-breadcrumb",
+            "foundation-card",
+            "foundation-destination",
+            "foundation-folder",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-breadcrumb"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "nav": 1,
+            "ol": 1,
+            "li": 2,
+            "a": 1,
+            "span": 2,
+            "h3": 1,
+            "p": 1
+          },
+          "classes": [
+            "foundation-breadcrumb",
+            "foundation-card",
+            "foundation-destination",
+            "foundation-folder",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-breadcrumb"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "nav": 1,
+            "ol": 1,
+            "li": 1,
+            "span": 2,
+            "h3": 1,
+            "p": 1
+          },
+          "classes": [
+            "foundation-breadcrumb",
+            "foundation-card",
+            "foundation-destination",
+            "foundation-folder",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-breadcrumb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "live": {
+        "tags": {
+          "div": 2,
+          "h2": 1,
+          "h3": 1,
+          "ul": 2,
+          "li": 8,
+          "nav": 1,
+          "span": 1,
+          "a": 4,
+          "p": 1
+        },
+        "classes": [
+          "foundation-card",
+          "foundation-page-heading",
+          "foundation-pagination",
+          "foundation-result-list",
+          "foundation-scene",
+          "foundation-status",
+          "scene",
+          "scene-pagination"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "h3": 1,
+            "ul": 2,
+            "li": 8,
+            "nav": 1,
+            "span": 1,
+            "a": 4,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-page-heading",
+            "foundation-pagination",
+            "foundation-result-list",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-pagination"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "h3": 1,
+            "ul": 2,
+            "li": 8,
+            "nav": 1,
+            "span": 1,
+            "a": 4,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-page-heading",
+            "foundation-pagination",
+            "foundation-result-list",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-pagination"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "h3": 1,
+            "ul": 2,
+            "li": 8,
+            "nav": 1,
+            "a": 5,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-page-heading",
+            "foundation-pagination",
+            "foundation-result-list",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-pagination"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "h3": 1,
+            "ul": 2,
+            "li": 8,
+            "nav": 1,
+            "a": 4,
+            "span": 1,
+            "p": 1
+          },
+          "classes": [
+            "foundation-card",
+            "foundation-page-heading",
+            "foundation-pagination",
+            "foundation-result-list",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-pagination"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disclosure",
+      "name": "Disclosure",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "p": 3,
+          "details": 1,
+          "summary": 1,
+          "svg": 1,
+          "path": 1,
+          "span": 1,
+          "ul": 1,
+          "li": 2
+        },
+        "classes": [
+          "demo-chevron",
+          "foundation-card",
+          "foundation-description",
+          "foundation-details",
+          "foundation-scene",
+          "foundation-status",
+          "scene",
+          "scene-disclosure"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "p": 3,
+            "details": 1,
+            "summary": 1,
+            "svg": 1,
+            "path": 1,
+            "span": 1,
+            "ul": 1,
+            "li": 2
+          },
+          "classes": [
+            "demo-chevron",
+            "foundation-card",
+            "foundation-description",
+            "foundation-details",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-disclosure"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "p": 3,
+            "details": 1,
+            "summary": 1,
+            "svg": 1,
+            "path": 1,
+            "span": 1,
+            "ul": 1,
+            "li": 2
+          },
+          "classes": [
+            "demo-chevron",
+            "foundation-card",
+            "foundation-description",
+            "foundation-details",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-disclosure"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "p": 3,
+            "details": 1,
+            "summary": 1,
+            "svg": 1,
+            "path": 1,
+            "span": 1,
+            "ul": 1,
+            "li": 2
+          },
+          "classes": [
+            "demo-chevron",
+            "foundation-card",
+            "foundation-description",
+            "foundation-details",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-disclosure"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "p": 3,
+            "details": 1,
+            "summary": 1,
+            "svg": 1,
+            "path": 1,
+            "span": 1,
+            "ul": 1,
+            "li": 2
+          },
+          "classes": [
+            "demo-chevron",
+            "foundation-card",
+            "foundation-description",
+            "foundation-details",
+            "foundation-scene",
+            "foundation-status",
+            "is-preview",
+            "scene",
+            "scene-disclosure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inline-alert",
+      "name": "Inline Alert",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "button": 4,
+          "section": 1,
+          "span": 1,
+          "strong": 1,
+          "p": 2,
+          "label": 1,
+          "input": 1
+        },
+        "classes": [
+          "foundation-alert-controls",
+          "foundation-alert-icon",
+          "foundation-card",
+          "foundation-description",
+          "foundation-inline-alert",
+          "foundation-option",
+          "foundation-scene",
+          "scene",
+          "scene-inline-alert",
+          "tone-info"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-alert-icon",
+            "foundation-card",
+            "foundation-description",
+            "foundation-inline-alert",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-inline-alert",
+            "tone-info"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-alert-icon",
+            "foundation-card",
+            "foundation-description",
+            "foundation-inline-alert",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-inline-alert",
+            "tone-warning"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-alert-icon",
+            "foundation-card",
+            "foundation-description",
+            "foundation-inline-alert",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-inline-alert",
+            "tone-error"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2
+          },
+          "classes": [
+            "foundation-alert-icon",
+            "foundation-card",
+            "foundation-description",
+            "foundation-inline-alert",
+            "foundation-scene",
+            "is-preview",
+            "scene",
+            "scene-inline-alert",
+            "tone-success"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "floating-action-button",
+      "name": "Floating Action Button",
+      "live": {
+        "tags": {
+          "div": 6,
+          "h2": 1,
+          "button": 9,
+          "ul": 1,
+          "li": 1,
+          "span": 3,
+          "svg": 4,
+          "path": 4,
+          "dialog": 1,
+          "h3": 1,
+          "form": 1,
+          "label": 1,
+          "input": 1,
+          "p": 2
+        },
+        "classes": [
+          "demo-primary",
+          "pattern-actions",
+          "pattern-card",
+          "pattern-delete",
+          "pattern-dialog",
+          "pattern-error",
+          "pattern-fab",
+          "pattern-input",
+          "pattern-label",
+          "pattern-note-list",
+          "pattern-scene",
+          "pattern-speed-actions",
+          "pattern-status",
+          "pattern-undo",
+          "pattern-variants",
+          "pattern-workspace",
+          "scene",
+          "scene-floating-action-button"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "ul": 1,
+            "li": 1,
+            "span": 3,
+            "button": 3,
+            "svg": 3,
+            "path": 3,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-fab",
+            "pattern-note-list",
+            "pattern-scene",
+            "pattern-speed-actions",
+            "pattern-status",
+            "pattern-workspace",
+            "scene",
+            "scene-floating-action-button"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 7,
+            "h2": 1,
+            "ul": 1,
+            "li": 1,
+            "span": 3,
+            "button": 5,
+            "svg": 3,
+            "path": 3,
+            "h3": 1,
+            "form": 1,
+            "label": 1,
+            "input": 1,
+            "p": 2
+          },
+          "classes": [
+            "demo-primary",
+            "is-emphasized",
+            "is-preview",
+            "pattern-actions",
+            "pattern-card",
+            "pattern-error",
+            "pattern-fab",
+            "pattern-input",
+            "pattern-label",
+            "pattern-mini-layer",
+            "pattern-note-list",
+            "pattern-scene",
+            "pattern-speed-actions",
+            "pattern-status",
+            "pattern-workspace",
+            "scene",
+            "scene-floating-action-button"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "ul": 1,
+            "li": 1,
+            "span": 3,
+            "button": 3,
+            "svg": 3,
+            "path": 3,
+            "p": 1
+          },
+          "classes": [
+            "is-emphasized",
+            "is-preview",
+            "pattern-card",
+            "pattern-fab",
+            "pattern-note-list",
+            "pattern-scene",
+            "pattern-speed-actions",
+            "pattern-status",
+            "pattern-workspace",
+            "scene",
+            "scene-floating-action-button"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "ul": 1,
+            "li": 1,
+            "span": 3,
+            "button": 3,
+            "svg": 3,
+            "path": 3,
+            "p": 1
+          },
+          "classes": [
+            "is-emphasized",
+            "is-preview",
+            "pattern-card",
+            "pattern-fab",
+            "pattern-note-list",
+            "pattern-scene",
+            "pattern-speed-actions",
+            "pattern-status",
+            "pattern-workspace",
+            "scene",
+            "scene-floating-action-button"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "date-picker",
+      "name": "Date Picker (Single)",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "form": 1,
+          "label": 1,
+          "p": 5,
+          "input": 1,
+          "button": 47,
+          "dialog": 1,
+          "h3": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 7,
+          "th": 7,
+          "tbody": 1,
+          "td": 42
+        },
+        "classes": [
+          "demo-primary",
+          "is-active",
+          "other-month",
+          "pattern-calendar",
+          "pattern-calendar-header",
+          "pattern-calendar-help",
+          "pattern-card",
+          "pattern-date-dialog",
+          "pattern-dialog",
+          "pattern-error",
+          "pattern-help",
+          "pattern-input",
+          "pattern-input-row",
+          "pattern-label",
+          "pattern-scene",
+          "pattern-status",
+          "scene",
+          "scene-date-picker"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 44,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 7,
+            "th": 7,
+            "tbody": 1,
+            "td": 42,
+            "p": 1
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-picker"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 44,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 7,
+            "th": 7,
+            "tbody": 1,
+            "td": 42,
+            "p": 1
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-picker"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 44,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 7,
+            "th": 7,
+            "tbody": 1,
+            "td": 42,
+            "p": 1
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-picker"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 44,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 7,
+            "th": 7,
+            "tbody": 1,
+            "td": 42,
+            "p": 1
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "is-selected",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-picker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "date-range-picker",
+      "name": "Date Picker (Range)",
+      "live": {
+        "tags": {
+          "div": 8,
+          "h2": 1,
+          "p": 5,
+          "dl": 1,
+          "dt": 3,
+          "dd": 3,
+          "button": 39,
+          "h3": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 6,
+          "th": 7,
+          "tbody": 1,
+          "td": 35
+        },
+        "classes": [
+          "demo-primary",
+          "is-active",
+          "other-month",
+          "pattern-actions",
+          "pattern-calendar",
+          "pattern-calendar-header",
+          "pattern-calendar-help",
+          "pattern-card",
+          "pattern-error",
+          "pattern-help",
+          "pattern-inline-calendar",
+          "pattern-range-prompt",
+          "pattern-range-summary",
+          "pattern-scene",
+          "pattern-status",
+          "scene",
+          "scene-date-range-picker"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 37,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 6,
+            "th": 7,
+            "tbody": 1,
+            "td": 35,
+            "p": 1
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-range-picker"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 37,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 6,
+            "th": 7,
+            "tbody": 1,
+            "td": 35,
+            "p": 1
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "is-selected",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-range-picker"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 37,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 6,
+            "th": 7,
+            "tbody": 1,
+            "td": 35,
+            "p": 1
+          },
+          "classes": [
+            "in-range",
+            "is-active",
+            "is-preview",
+            "is-selected",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-range-picker"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "button": 37,
+            "h3": 1,
+            "table": 1,
+            "thead": 1,
+            "tr": 6,
+            "th": 7,
+            "tbody": 1,
+            "td": 35,
+            "p": 1
+          },
+          "classes": [
+            "in-range",
+            "is-active",
+            "is-preview",
+            "is-selected",
+            "other-month",
+            "pattern-calendar",
+            "pattern-calendar-header",
+            "pattern-card",
+            "pattern-preview-calendar",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-date-range-picker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "file-upload",
+      "name": "File Upload",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "span": 1,
+          "label": 2,
+          "input": 2,
+          "p": 4,
+          "button": 2
+        },
+        "classes": [
+          "demo-primary",
+          "pattern-actions",
+          "pattern-card",
+          "pattern-check",
+          "pattern-error",
+          "pattern-file-name",
+          "pattern-help",
+          "pattern-label",
+          "pattern-scene",
+          "pattern-status",
+          "pattern-upload",
+          "scene",
+          "scene-file-upload"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "span": 1,
+            "label": 1,
+            "p": 4
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-error",
+            "pattern-file-name",
+            "pattern-help",
+            "pattern-label",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-upload",
+            "scene",
+            "scene-file-upload"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "span": 1,
+            "label": 1,
+            "p": 4,
+            "progress": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-error",
+            "pattern-file-name",
+            "pattern-help",
+            "pattern-label",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-upload",
+            "scene",
+            "scene-file-upload"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "span": 1,
+            "label": 1,
+            "p": 4,
+            "progress": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-error",
+            "pattern-file-name",
+            "pattern-help",
+            "pattern-label",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-upload",
+            "scene",
+            "scene-file-upload"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "span": 1,
+            "label": 1,
+            "p": 4,
+            "progress": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-error",
+            "pattern-file-name",
+            "pattern-help",
+            "pattern-label",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-upload",
+            "scene",
+            "scene-file-upload"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "navigation-drawer",
+      "name": "Navigation Drawer",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "button": 2,
+          "h3": 2,
+          "p": 1,
+          "dialog": 1,
+          "nav": 1,
+          "a": 3
+        },
+        "classes": [
+          "pattern-card",
+          "pattern-dialog",
+          "pattern-drawer",
+          "pattern-help",
+          "pattern-scene",
+          "pattern-workspace",
+          "scene",
+          "scene-navigation-drawer"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "button": 1,
+            "h3": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-help",
+            "pattern-scene",
+            "pattern-workspace",
+            "scene",
+            "scene-navigation-drawer"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "button": 2,
+            "h3": 2,
+            "p": 1,
+            "nav": 1,
+            "a": 3
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-drawer-preview",
+            "pattern-help",
+            "pattern-mini-layer",
+            "pattern-scene",
+            "pattern-workspace",
+            "scene",
+            "scene-navigation-drawer"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "button": 2,
+            "h3": 2,
+            "p": 1,
+            "nav": 1,
+            "a": 3
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-drawer-preview",
+            "pattern-help",
+            "pattern-mini-layer",
+            "pattern-scene",
+            "pattern-workspace",
+            "scene",
+            "scene-navigation-drawer"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "button": 1,
+            "h3": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-help",
+            "pattern-scene",
+            "pattern-workspace",
+            "scene",
+            "scene-navigation-drawer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bottom-navigation",
+      "name": "Bottom Navigation",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "h3": 1,
+          "label": 1,
+          "input": 1,
+          "p": 1,
+          "nav": 1,
+          "a": 3,
+          "span": 3
+        },
+        "classes": [
+          "pattern-app-content",
+          "pattern-bottom-nav",
+          "pattern-card",
+          "pattern-help",
+          "pattern-input",
+          "pattern-label",
+          "pattern-mobile-app",
+          "pattern-scene",
+          "scene",
+          "scene-bottom-navigation"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "h3": 1,
+            "label": 1,
+            "input": 1,
+            "p": 1,
+            "nav": 1,
+            "a": 3,
+            "span": 3
+          },
+          "classes": [
+            "is-preview",
+            "pattern-app-content",
+            "pattern-bottom-nav",
+            "pattern-card",
+            "pattern-help",
+            "pattern-input",
+            "pattern-label",
+            "pattern-mobile-app",
+            "pattern-scene",
+            "scene",
+            "scene-bottom-navigation"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "h3": 1,
+            "p": 1,
+            "nav": 1,
+            "a": 3,
+            "span": 3
+          },
+          "classes": [
+            "is-preview",
+            "pattern-app-content",
+            "pattern-bottom-nav",
+            "pattern-card",
+            "pattern-help",
+            "pattern-mobile-app",
+            "pattern-scene",
+            "scene",
+            "scene-bottom-navigation"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "h3": 1,
+            "p": 1,
+            "nav": 1,
+            "a": 3,
+            "span": 3
+          },
+          "classes": [
+            "is-preview",
+            "pattern-app-content",
+            "pattern-bottom-nav",
+            "pattern-card",
+            "pattern-help",
+            "pattern-mobile-app",
+            "pattern-scene",
+            "scene",
+            "scene-bottom-navigation"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "h3": 1,
+            "p": 1,
+            "nav": 1,
+            "a": 3,
+            "span": 3
+          },
+          "classes": [
+            "is-preview",
+            "pattern-app-content",
+            "pattern-bottom-nav",
+            "pattern-card",
+            "pattern-help",
+            "pattern-mobile-app",
+            "pattern-scene",
+            "scene",
+            "scene-bottom-navigation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "menu-button",
+      "name": "Menu Button",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "strong": 1,
+          "button": 5,
+          "p": 2
+        },
+        "classes": [
+          "pattern-action-menu",
+          "pattern-card",
+          "pattern-help",
+          "pattern-menu-anchor",
+          "pattern-note-heading",
+          "pattern-scene",
+          "pattern-status",
+          "scene",
+          "scene-menu-button"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "strong": 1,
+            "button": 5,
+            "p": 2
+          },
+          "classes": [
+            "is-preview",
+            "pattern-action-menu",
+            "pattern-card",
+            "pattern-help",
+            "pattern-menu-anchor",
+            "pattern-note-heading",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-menu-button"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "strong": 1,
+            "button": 5,
+            "p": 2
+          },
+          "classes": [
+            "is-preview",
+            "pattern-action-menu",
+            "pattern-card",
+            "pattern-help",
+            "pattern-menu-anchor",
+            "pattern-note-heading",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-menu-button"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "strong": 1,
+            "button": 5,
+            "p": 2
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "pattern-action-menu",
+            "pattern-card",
+            "pattern-help",
+            "pattern-menu-anchor",
+            "pattern-note-heading",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-menu-button"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "strong": 1,
+            "button": 5,
+            "p": 2
+          },
+          "classes": [
+            "is-active",
+            "is-preview",
+            "pattern-action-menu",
+            "pattern-card",
+            "pattern-help",
+            "pattern-menu-anchor",
+            "pattern-note-heading",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-menu-button"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stepper",
+      "name": "Stepper",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "ol": 1,
+          "li": 3,
+          "span": 3,
+          "strong": 3,
+          "form": 1,
+          "h3": 1,
+          "label": 1,
+          "input": 1,
+          "p": 2,
+          "button": 2
+        },
+        "classes": [
+          "demo-primary",
+          "is-current",
+          "pattern-actions",
+          "pattern-card",
+          "pattern-error",
+          "pattern-input",
+          "pattern-label",
+          "pattern-scene",
+          "pattern-status",
+          "pattern-steps",
+          "scene",
+          "scene-stepper"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "strong": 3,
+            "form": 1,
+            "h3": 1,
+            "label": 1,
+            "input": 1,
+            "p": 2
+          },
+          "classes": [
+            "is-current",
+            "is-preview",
+            "pattern-card",
+            "pattern-error",
+            "pattern-input",
+            "pattern-label",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-steps",
+            "scene",
+            "scene-stepper"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "strong": 3,
+            "form": 1,
+            "h3": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "p": 2
+          },
+          "classes": [
+            "is-complete",
+            "is-current",
+            "is-preview",
+            "pattern-card",
+            "pattern-check",
+            "pattern-error",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-steps",
+            "scene",
+            "scene-stepper"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "strong": 3,
+            "form": 1,
+            "h3": 1,
+            "fieldset": 1,
+            "legend": 1,
+            "label": 2,
+            "input": 2,
+            "p": 2
+          },
+          "classes": [
+            "is-complete",
+            "is-current",
+            "is-preview",
+            "pattern-card",
+            "pattern-check",
+            "pattern-error",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-steps",
+            "scene",
+            "scene-stepper"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "strong": 3,
+            "form": 1,
+            "h3": 1,
+            "dl": 1,
+            "dt": 2,
+            "dd": 2,
+            "p": 2
+          },
+          "classes": [
+            "is-complete",
+            "is-current",
+            "is-preview",
+            "pattern-card",
+            "pattern-error",
+            "pattern-review",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-steps",
+            "scene",
+            "scene-stepper"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "article": 1,
+          "i": 2,
+          "span": 2,
+          "h3": 1,
+          "a": 1,
+          "p": 2,
+          "button": 1
+        },
+        "classes": [
+          "pattern-card",
+          "pattern-card-cover",
+          "pattern-content-body",
+          "pattern-content-card",
+          "pattern-help",
+          "pattern-save",
+          "pattern-scene",
+          "pattern-status",
+          "scene",
+          "scene-card"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "article": 1,
+            "i": 2,
+            "span": 2,
+            "h3": 1,
+            "a": 1,
+            "p": 2,
+            "button": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-card-cover",
+            "pattern-content-body",
+            "pattern-content-card",
+            "pattern-help",
+            "pattern-save",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-card"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "article": 1,
+            "i": 2,
+            "span": 2,
+            "h3": 1,
+            "a": 1,
+            "p": 2,
+            "button": 1
+          },
+          "classes": [
+            "is-hovered",
+            "is-preview",
+            "pattern-card",
+            "pattern-card-cover",
+            "pattern-content-body",
+            "pattern-content-card",
+            "pattern-help",
+            "pattern-save",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-card"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "article": 1,
+            "i": 2,
+            "span": 2,
+            "h3": 1,
+            "a": 1,
+            "p": 2,
+            "button": 1
+          },
+          "classes": [
+            "is-hovered",
+            "is-preview",
+            "pattern-card",
+            "pattern-card-cover",
+            "pattern-content-body",
+            "pattern-content-card",
+            "pattern-help",
+            "pattern-save",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-card"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "article": 1,
+            "i": 2,
+            "span": 2,
+            "h3": 1,
+            "a": 1,
+            "p": 2,
+            "button": 1
+          },
+          "classes": [
+            "is-hovered",
+            "is-preview",
+            "pattern-card",
+            "pattern-card-cover",
+            "pattern-content-body",
+            "pattern-content-card",
+            "pattern-help",
+            "pattern-save",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "list",
+      "name": "List",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "label": 1,
+          "input": 1,
+          "ul": 1,
+          "li": 3,
+          "span": 3,
+          "a": 3,
+          "small": 3,
+          "button": 3,
+          "p": 1
+        },
+        "classes": [
+          "pattern-card",
+          "pattern-check",
+          "pattern-doc-icon",
+          "pattern-document-list",
+          "pattern-scene",
+          "pattern-status",
+          "scene",
+          "scene-list"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "ul": 1,
+            "li": 3,
+            "span": 3,
+            "a": 3,
+            "small": 3,
+            "button": 3,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-doc-icon",
+            "pattern-document-list",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-list"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "ul": 1,
+            "li": 3,
+            "span": 3,
+            "a": 3,
+            "small": 3,
+            "button": 3,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-doc-icon",
+            "pattern-document-list",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-list"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "ul": 1,
+            "li": 3,
+            "span": 3,
+            "a": 3,
+            "small": 3,
+            "button": 3,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-doc-icon",
+            "pattern-document-list",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-list"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "ul": 1,
+            "li": 3,
+            "span": 3,
+            "a": 3,
+            "small": 3,
+            "button": 3,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-doc-icon",
+            "pattern-document-list",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-list"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alert-dialog",
+      "name": "Alert Dialog",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "strong": 1,
+          "label": 1,
+          "input": 1,
+          "button": 3,
+          "dialog": 1,
+          "span": 1,
+          "h3": 1,
+          "p": 3
+        },
+        "classes": [
+          "pattern-actions",
+          "pattern-card",
+          "pattern-check",
+          "pattern-danger",
+          "pattern-dialog",
+          "pattern-error",
+          "pattern-scene",
+          "pattern-status",
+          "pattern-warning-symbol",
+          "pattern-workspace",
+          "scene",
+          "scene-alert-dialog"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "strong": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-workspace",
+            "scene",
+            "scene-alert-dialog"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 6,
+            "h2": 1,
+            "strong": 1,
+            "span": 1,
+            "h3": 1,
+            "p": 3,
+            "button": 2
+          },
+          "classes": [
+            "is-preview",
+            "pattern-actions",
+            "pattern-card",
+            "pattern-danger",
+            "pattern-error",
+            "pattern-mini-layer",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-warning-symbol",
+            "pattern-workspace",
+            "scene",
+            "scene-alert-dialog"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 6,
+            "h2": 1,
+            "strong": 1,
+            "span": 1,
+            "h3": 1,
+            "p": 3,
+            "button": 2
+          },
+          "classes": [
+            "is-preview",
+            "pattern-actions",
+            "pattern-card",
+            "pattern-danger",
+            "pattern-error",
+            "pattern-mini-layer",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-warning-symbol",
+            "pattern-workspace",
+            "scene",
+            "scene-alert-dialog"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "strong": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-scene",
+            "pattern-status",
+            "pattern-workspace",
+            "scene",
+            "scene-alert-dialog"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "progress-bar",
+      "name": "Progress Bar",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "label": 2,
+          "progress": 1,
+          "strong": 1,
+          "input": 1,
+          "button": 1,
+          "p": 1
+        },
+        "classes": [
+          "demo-primary",
+          "pattern-actions",
+          "pattern-card",
+          "pattern-check",
+          "pattern-label",
+          "pattern-percent",
+          "pattern-progress-graphic",
+          "pattern-scene",
+          "pattern-status",
+          "scene",
+          "scene-progress-bar"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "progress": 1,
+            "strong": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-label",
+            "pattern-percent",
+            "pattern-progress-graphic",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-progress-bar"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "progress": 1,
+            "strong": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-label",
+            "pattern-percent",
+            "pattern-progress-graphic",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-progress-bar"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "progress": 1,
+            "strong": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-label",
+            "pattern-percent",
+            "pattern-progress-graphic",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-progress-bar"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "label": 1,
+            "progress": 1,
+            "strong": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-label",
+            "pattern-percent",
+            "pattern-progress-graphic",
+            "pattern-scene",
+            "pattern-status",
+            "scene",
+            "scene-progress-bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loading-spinner",
+      "name": "Loading Spinner",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "fieldset": 1,
+          "legend": 1,
+          "label": 3,
+          "input": 3,
+          "button": 1,
+          "p": 1
+        },
+        "classes": [
+          "demo-primary",
+          "pattern-actions",
+          "pattern-card",
+          "pattern-check",
+          "pattern-scene",
+          "pattern-spinner-area",
+          "pattern-spinner-result",
+          "pattern-status",
+          "scene",
+          "scene-loading-spinner"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-scene",
+            "pattern-spinner-area",
+            "pattern-spinner-result",
+            "pattern-status",
+            "scene",
+            "scene-loading-spinner"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-scene",
+            "pattern-spinner",
+            "pattern-spinner-area",
+            "pattern-status",
+            "scene",
+            "scene-loading-spinner"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-scene",
+            "pattern-spinner",
+            "pattern-spinner-area",
+            "pattern-status",
+            "scene",
+            "scene-loading-spinner"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "ul": 1,
+            "li": 1,
+            "p": 1
+          },
+          "classes": [
+            "is-preview",
+            "pattern-card",
+            "pattern-note-list",
+            "pattern-scene",
+            "pattern-spinner-area",
+            "pattern-spinner-result",
+            "pattern-status",
+            "scene",
+            "scene-loading-spinner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tree-view",
+      "name": "Tree View",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "ul": 4,
+          "li": 7,
+          "span": 14,
+          "i": 7,
+          "svg": 10,
+          "path": 10,
+          "p": 1
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-help",
+          "advanced-result",
+          "advanced-scene",
+          "advanced-tree",
+          "advanced-tree-row",
+          "is-open",
+          "scene",
+          "scene-tree-view"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ul": 4,
+            "li": 7,
+            "span": 14,
+            "i": 7,
+            "svg": 10,
+            "path": 10
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-result",
+            "advanced-scene",
+            "advanced-tree",
+            "advanced-tree-row",
+            "is-preview",
+            "scene",
+            "scene-tree-view"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ul": 4,
+            "li": 7,
+            "span": 14,
+            "i": 7,
+            "svg": 10,
+            "path": 10
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-result",
+            "advanced-scene",
+            "advanced-tree",
+            "advanced-tree-row",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-tree-view"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ul": 4,
+            "li": 7,
+            "span": 14,
+            "i": 7,
+            "svg": 10,
+            "path": 10
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-result",
+            "advanced-scene",
+            "advanced-tree",
+            "advanced-tree-row",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-tree-view"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ul": 4,
+            "li": 7,
+            "span": 14,
+            "i": 7,
+            "svg": 10,
+            "path": 10
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-result",
+            "advanced-scene",
+            "advanced-tree",
+            "advanced-tree-row",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-tree-view"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carousel",
+      "name": "Carousel",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "section": 1,
+          "span": 1,
+          "strong": 1,
+          "p": 2,
+          "button": 5
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-carousel",
+          "advanced-carousel-controls",
+          "advanced-dots",
+          "advanced-kicker",
+          "advanced-scene",
+          "advanced-slide",
+          "advanced-status",
+          "scene",
+          "scene-carousel",
+          "slide-0"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2,
+            "button": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-carousel",
+            "advanced-carousel-controls",
+            "advanced-dots",
+            "advanced-kicker",
+            "advanced-scene",
+            "advanced-slide",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-carousel",
+            "slide-0"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2,
+            "button": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-carousel",
+            "advanced-carousel-controls",
+            "advanced-dots",
+            "advanced-kicker",
+            "advanced-scene",
+            "advanced-slide",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-carousel",
+            "slide-1"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2,
+            "button": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-carousel",
+            "advanced-carousel-controls",
+            "advanced-dots",
+            "advanced-kicker",
+            "advanced-scene",
+            "advanced-slide",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-carousel",
+            "slide-2"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 5,
+            "h2": 1,
+            "section": 1,
+            "span": 1,
+            "strong": 1,
+            "p": 2,
+            "button": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-carousel",
+            "advanced-carousel-controls",
+            "advanced-dots",
+            "advanced-kicker",
+            "advanced-scene",
+            "advanced-slide",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-carousel",
+            "slide-0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-table",
+      "name": "Data Table",
+      "live": {
+        "tags": {
+          "div": 3,
+          "h2": 1,
+          "form": 1,
+          "label": 2,
+          "select": 1,
+          "option": 4,
+          "button": 5,
+          "input": 1,
+          "table": 1,
+          "caption": 1,
+          "thead": 1,
+          "tr": 6,
+          "th": 9,
+          "tbody": 1,
+          "td": 15,
+          "tfoot": 1,
+          "p": 1
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-check",
+          "advanced-controls",
+          "advanced-scene",
+          "advanced-status",
+          "advanced-table",
+          "advanced-table-scroll",
+          "scene",
+          "scene-data-table"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "table": 1,
+            "caption": 1,
+            "thead": 1,
+            "tr": 6,
+            "th": 8,
+            "tbody": 1,
+            "td": 10,
+            "tfoot": 1,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-table",
+            "advanced-table-scroll",
+            "is-preview",
+            "scene",
+            "scene-data-table"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "table": 1,
+            "caption": 1,
+            "thead": 1,
+            "tr": 5,
+            "th": 7,
+            "tbody": 1,
+            "td": 8,
+            "tfoot": 1,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-table",
+            "advanced-table-scroll",
+            "is-preview",
+            "scene",
+            "scene-data-table"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "table": 1,
+            "caption": 1,
+            "thead": 1,
+            "tr": 5,
+            "th": 7,
+            "tbody": 1,
+            "td": 8,
+            "tfoot": 1,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-table",
+            "advanced-table-scroll",
+            "is-preview",
+            "scene",
+            "scene-data-table"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "table": 1,
+            "caption": 1,
+            "thead": 1,
+            "tr": 3,
+            "th": 5,
+            "tbody": 1,
+            "td": 4,
+            "tfoot": 1,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-table",
+            "advanced-table-scroll",
+            "is-preview",
+            "scene",
+            "scene-data-table"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snackbar",
+      "name": "Snackbar",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "svg": 2,
+          "path": 2,
+          "strong": 1,
+          "button": 4,
+          "span": 1,
+          "p": 2
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-controls",
+          "advanced-help",
+          "advanced-note",
+          "advanced-scene",
+          "advanced-snackbar",
+          "advanced-status",
+          "demo-close-glyph",
+          "scene",
+          "scene-snackbar"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "svg": 2,
+            "path": 2,
+            "strong": 1,
+            "span": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-note",
+            "advanced-scene",
+            "advanced-snackbar",
+            "advanced-status",
+            "demo-close-glyph",
+            "is-preview",
+            "scene",
+            "scene-snackbar"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "svg": 2,
+            "path": 2,
+            "strong": 1,
+            "span": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-note",
+            "advanced-scene",
+            "advanced-snackbar",
+            "advanced-status",
+            "demo-close-glyph",
+            "is-preview",
+            "scene",
+            "scene-snackbar"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "svg": 2,
+            "path": 2,
+            "strong": 1,
+            "span": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-note",
+            "advanced-scene",
+            "advanced-snackbar",
+            "advanced-status",
+            "demo-close-glyph",
+            "is-preview",
+            "scene",
+            "scene-snackbar"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "svg": 2,
+            "path": 2,
+            "strong": 1,
+            "span": 1,
+            "button": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-note",
+            "advanced-scene",
+            "advanced-snackbar",
+            "advanced-status",
+            "demo-close-glyph",
+            "is-preview",
+            "scene",
+            "scene-snackbar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty State",
+      "live": {
+        "tags": {
+          "div": 4,
+          "h2": 1,
+          "button": 4,
+          "svg": 1,
+          "rect": 1,
+          "path": 1,
+          "h3": 1,
+          "p": 2
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-empty-area",
+          "advanced-scene",
+          "advanced-segments",
+          "advanced-status",
+          "demo-primary",
+          "scene",
+          "scene-empty-state"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "svg": 1,
+            "rect": 1,
+            "path": 1,
+            "h3": 1,
+            "p": 2,
+            "button": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-empty-area",
+            "advanced-scene",
+            "advanced-status",
+            "demo-primary",
+            "is-preview",
+            "scene",
+            "scene-empty-state"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ul": 1,
+            "li": 1,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-empty-area",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-empty-state"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "svg": 1,
+            "rect": 1,
+            "path": 1,
+            "h3": 1,
+            "p": 2,
+            "button": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-empty-area",
+            "advanced-scene",
+            "advanced-status",
+            "demo-primary",
+            "is-preview",
+            "scene",
+            "scene-empty-state"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "svg": 1,
+            "circle": 1,
+            "path": 1,
+            "h3": 1,
+            "p": 2,
+            "button": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-empty-area",
+            "advanced-scene",
+            "advanced-status",
+            "demo-primary",
+            "is-preview",
+            "scene",
+            "scene-empty-state"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sorting",
+      "name": "Sorting",
+      "live": {
+        "tags": {
+          "div": 2,
+          "h2": 1,
+          "label": 1,
+          "select": 1,
+          "option": 4,
+          "ol": 1,
+          "li": 4,
+          "span": 4,
+          "strong": 4,
+          "p": 1
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-label",
+          "advanced-scene",
+          "advanced-sort-list",
+          "advanced-status",
+          "scene",
+          "scene-sorting"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "ol": 1,
+            "li": 4,
+            "span": 4,
+            "strong": 4,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-sort-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-sorting"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "ol": 1,
+            "li": 4,
+            "span": 4,
+            "strong": 4,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-sort-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-sorting"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "ol": 1,
+            "li": 4,
+            "span": 4,
+            "strong": 4,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-sort-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-sorting"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 2,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "ol": 1,
+            "li": 4,
+            "span": 4,
+            "strong": 4,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-sort-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-sorting"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "filtering",
+      "name": "Filtering",
+      "live": {
+        "tags": {
+          "div": 11,
+          "h2": 1,
+          "span": 11,
+          "svg": 1,
+          "path": 1,
+          "label": 1,
+          "input": 1,
+          "ul": 1,
+          "li": 4,
+          "strong": 4,
+          "p": 1
+        },
+        "classes": [
+          "active",
+          "advanced-card",
+          "advanced-check",
+          "advanced-controls",
+          "advanced-filter-chips",
+          "advanced-filter-controls",
+          "advanced-filter-label",
+          "advanced-filter-mine",
+          "advanced-filter-select",
+          "advanced-scene",
+          "advanced-simple-list",
+          "advanced-status",
+          "demo-chevron",
+          "scene",
+          "scene-filtering",
+          "select-chevron",
+          "select-illustration",
+          "select-popup",
+          "select-preview-options",
+          "select-preview-value",
+          "select-trigger"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 11,
+            "h2": 1,
+            "span": 11,
+            "svg": 1,
+            "path": 1,
+            "label": 1,
+            "input": 1,
+            "ul": 1,
+            "li": 4,
+            "strong": 4,
+            "p": 1
+          },
+          "classes": [
+            "active",
+            "advanced-card",
+            "advanced-check",
+            "advanced-controls",
+            "advanced-filter-chips",
+            "advanced-filter-controls",
+            "advanced-filter-label",
+            "advanced-filter-mine",
+            "advanced-filter-select",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "demo-chevron",
+            "is-preview",
+            "scene",
+            "scene-filtering",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 11,
+            "h2": 1,
+            "span": 9,
+            "svg": 1,
+            "path": 1,
+            "label": 1,
+            "input": 1,
+            "button": 1,
+            "ul": 1,
+            "li": 2,
+            "strong": 2,
+            "p": 1
+          },
+          "classes": [
+            "active",
+            "advanced-card",
+            "advanced-check",
+            "advanced-controls",
+            "advanced-filter-chips",
+            "advanced-filter-controls",
+            "advanced-filter-label",
+            "advanced-filter-mine",
+            "advanced-filter-select",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "demo-chevron",
+            "is-open",
+            "is-preview",
+            "scene",
+            "scene-filtering",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 11,
+            "h2": 1,
+            "span": 9,
+            "svg": 1,
+            "path": 1,
+            "label": 1,
+            "input": 1,
+            "button": 2,
+            "ul": 1,
+            "li": 2,
+            "strong": 2,
+            "p": 1
+          },
+          "classes": [
+            "active",
+            "advanced-card",
+            "advanced-check",
+            "advanced-controls",
+            "advanced-filter-chips",
+            "advanced-filter-controls",
+            "advanced-filter-label",
+            "advanced-filter-mine",
+            "advanced-filter-select",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "demo-chevron",
+            "is-preview",
+            "scene",
+            "scene-filtering",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 12,
+            "h2": 1,
+            "span": 7,
+            "svg": 1,
+            "path": 1,
+            "label": 1,
+            "input": 1,
+            "button": 2,
+            "p": 2
+          },
+          "classes": [
+            "active",
+            "advanced-card",
+            "advanced-check",
+            "advanced-controls",
+            "advanced-filter-chips",
+            "advanced-filter-controls",
+            "advanced-filter-empty",
+            "advanced-filter-label",
+            "advanced-filter-mine",
+            "advanced-filter-select",
+            "advanced-scene",
+            "advanced-status",
+            "demo-chevron",
+            "is-preview",
+            "scene",
+            "scene-filtering",
+            "select-chevron",
+            "select-illustration",
+            "select-popup",
+            "select-preview-options",
+            "select-preview-value",
+            "select-trigger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "load-more",
+      "name": "Load More",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "ul": 1,
+          "li": 2,
+          "button": 4,
+          "label": 1,
+          "input": 1,
+          "p": 2
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-check",
+          "advanced-controls",
+          "advanced-load-controls",
+          "advanced-load-list",
+          "advanced-load-settings",
+          "advanced-reading-slot",
+          "advanced-scene",
+          "advanced-simple-list",
+          "advanced-status",
+          "scene",
+          "scene-load-more"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "ul": 1,
+            "li": 2,
+            "button": 3,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-controls",
+            "advanced-load-controls",
+            "advanced-load-list",
+            "advanced-reading-slot",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-load-more"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "ul": 1,
+            "li": 2,
+            "button": 3,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-controls",
+            "advanced-load-controls",
+            "advanced-load-list",
+            "advanced-reading-slot",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-load-more"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "ul": 1,
+            "li": 4,
+            "button": 5,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-controls",
+            "advanced-load-controls",
+            "advanced-load-list",
+            "advanced-reading-slot",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-load-more"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ul": 1,
+            "li": 6,
+            "button": 6,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-load-list",
+            "advanced-reading-slot",
+            "advanced-scene",
+            "advanced-simple-list",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-load-more"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drag-and-drop",
+      "name": "Drag and Drop",
+      "live": {
+        "tags": {
+          "div": 6,
+          "h2": 1,
+          "ol": 1,
+          "li": 3,
+          "span": 3,
+          "svg": 3,
+          "path": 3,
+          "strong": 3,
+          "button": 7,
+          "p": 1
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-drag-list",
+          "advanced-grip",
+          "advanced-row-actions",
+          "advanced-scene",
+          "advanced-status",
+          "scene",
+          "scene-drag-and-drop"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "svg": 3,
+            "path": 3,
+            "strong": 3,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-drag-list",
+            "advanced-grip",
+            "advanced-scene",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-drag-and-drop"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "svg": 3,
+            "path": 3,
+            "strong": 3,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-drag-list",
+            "advanced-grip",
+            "advanced-scene",
+            "advanced-status",
+            "is-dragging",
+            "is-preview",
+            "scene",
+            "scene-drag-and-drop"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "svg": 3,
+            "path": 3,
+            "strong": 3,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-drag-list",
+            "advanced-grip",
+            "advanced-scene",
+            "advanced-status",
+            "is-dragging",
+            "is-drop-target",
+            "is-preview",
+            "scene",
+            "scene-drag-and-drop"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 3,
+            "h2": 1,
+            "ol": 1,
+            "li": 3,
+            "span": 3,
+            "svg": 3,
+            "path": 3,
+            "strong": 3,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-drag-list",
+            "advanced-grip",
+            "advanced-scene",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-drag-and-drop"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "responsive-layout",
+      "name": "Responsive Layout",
+      "live": {
+        "tags": {
+          "div": 7,
+          "h2": 1,
+          "button": 2,
+          "article": 3,
+          "span": 3,
+          "strong": 3,
+          "p": 4
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-responsive-banner",
+          "advanced-responsive-demo",
+          "advanced-responsive-grid",
+          "advanced-responsive-stage",
+          "advanced-scene",
+          "advanced-segments",
+          "advanced-status",
+          "scene",
+          "scene-responsive-layout"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 6,
+            "h2": 1,
+            "article": 3,
+            "span": 3,
+            "strong": 3,
+            "p": 4
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-responsive-banner",
+            "advanced-responsive-demo",
+            "advanced-responsive-grid",
+            "advanced-responsive-stage",
+            "advanced-scene",
+            "advanced-status",
+            "is-mini-layout",
+            "is-preview",
+            "scene",
+            "scene-responsive-layout"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 6,
+            "h2": 1,
+            "article": 3,
+            "span": 3,
+            "strong": 3,
+            "p": 4
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-responsive-banner",
+            "advanced-responsive-demo",
+            "advanced-responsive-grid",
+            "advanced-responsive-stage",
+            "advanced-scene",
+            "advanced-status",
+            "is-mini-layout",
+            "is-preview",
+            "scene",
+            "scene-responsive-layout"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 6,
+            "h2": 1,
+            "article": 3,
+            "span": 3,
+            "strong": 3,
+            "p": 4
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-responsive-banner",
+            "advanced-responsive-demo",
+            "advanced-responsive-grid",
+            "advanced-responsive-stage",
+            "advanced-scene",
+            "advanced-status",
+            "is-mini-layout",
+            "is-narrow",
+            "is-preview",
+            "scene",
+            "scene-responsive-layout"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 6,
+            "h2": 1,
+            "article": 3,
+            "span": 3,
+            "strong": 3,
+            "p": 4
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-responsive-banner",
+            "advanced-responsive-demo",
+            "advanced-responsive-grid",
+            "advanced-responsive-stage",
+            "advanced-scene",
+            "advanced-status",
+            "is-mini-layout",
+            "is-preview",
+            "scene",
+            "scene-responsive-layout"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sticky-header",
+      "name": "Sticky Header",
+      "live": {
+        "tags": {
+          "div": 5,
+          "h2": 1,
+          "label": 1,
+          "input": 1,
+          "button": 2,
+          "header": 1,
+          "strong": 1,
+          "span": 1,
+          "section": 4,
+          "h3": 4,
+          "p": 5
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-check",
+          "advanced-controls",
+          "advanced-scene",
+          "advanced-status",
+          "advanced-sticky-content",
+          "advanced-sticky-title",
+          "advanced-sticky-viewport",
+          "scene",
+          "scene-sticky-header"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "header": 1,
+            "strong": 1,
+            "span": 1,
+            "section": 4,
+            "h3": 4,
+            "p": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-sticky-content",
+            "advanced-sticky-title",
+            "advanced-sticky-viewport",
+            "is-preview",
+            "scene",
+            "scene-sticky-header"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "header": 1,
+            "strong": 1,
+            "span": 1,
+            "section": 4,
+            "h3": 4,
+            "p": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-sticky-content",
+            "advanced-sticky-title",
+            "advanced-sticky-viewport",
+            "is-preview",
+            "scene",
+            "scene-sticky-header"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "header": 1,
+            "strong": 1,
+            "span": 1,
+            "section": 4,
+            "h3": 4,
+            "p": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-sticky-content",
+            "advanced-sticky-title",
+            "advanced-sticky-viewport",
+            "is-preview",
+            "scene",
+            "scene-sticky-header"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 4,
+            "h2": 1,
+            "header": 1,
+            "strong": 1,
+            "span": 1,
+            "section": 4,
+            "h3": 4,
+            "p": 5
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-scene",
+            "advanced-status",
+            "advanced-sticky-content",
+            "advanced-sticky-title",
+            "advanced-sticky-viewport",
+            "is-preview",
+            "scene",
+            "scene-sticky-header"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "easing",
+      "name": "Easing",
+      "live": {
+        "tags": {
+          "div": 10,
+          "h2": 1,
+          "label": 1,
+          "select": 1,
+          "option": 4,
+          "strong": 2,
+          "span": 2,
+          "i": 2,
+          "button": 2,
+          "p": 1
+        },
+        "classes": [
+          "advanced-card",
+          "advanced-controls",
+          "advanced-ease-label",
+          "advanced-ease-lanes",
+          "advanced-ease-track",
+          "advanced-label",
+          "advanced-scene",
+          "advanced-status",
+          "scene",
+          "scene-easing",
+          "selected-curve"
+        ]
+      },
+      "previewStates": [
+        {
+          "time": 0,
+          "tags": {
+            "div": 9,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "strong": 2,
+            "span": 2,
+            "i": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-ease-label",
+            "advanced-ease-lanes",
+            "advanced-ease-track",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-easing",
+            "selected-curve"
+          ]
+        },
+        {
+          "time": 1000,
+          "tags": {
+            "div": 9,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "strong": 2,
+            "span": 2,
+            "i": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-ease-label",
+            "advanced-ease-lanes",
+            "advanced-ease-track",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-easing",
+            "selected-curve"
+          ]
+        },
+        {
+          "time": 2000,
+          "tags": {
+            "div": 9,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "strong": 2,
+            "span": 2,
+            "i": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-ease-label",
+            "advanced-ease-lanes",
+            "advanced-ease-track",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-easing",
+            "selected-curve"
+          ]
+        },
+        {
+          "time": 3000,
+          "tags": {
+            "div": 9,
+            "h2": 1,
+            "label": 1,
+            "select": 1,
+            "option": 4,
+            "strong": 2,
+            "span": 2,
+            "i": 2,
+            "p": 1
+          },
+          "classes": [
+            "advanced-card",
+            "advanced-ease-label",
+            "advanced-ease-lanes",
+            "advanced-ease-track",
+            "advanced-label",
+            "advanced-scene",
+            "advanced-status",
+            "is-preview",
+            "scene",
+            "scene-easing",
+            "selected-curve"
+          ]
+        }
+      ]
+    }
+  ]
+}

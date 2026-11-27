@@ -1,0 +1,12 @@
+[
+  {
+    "name": "File Upload",
+    "height": 430,
+    "viewport": 430
+  },
+  {
+    "name": "Loading Spinner",
+    "height": 430,
+    "viewport": 430
+  }
+]

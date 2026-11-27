@@ -1,0 +1,34 @@
+[
+  {
+    "width": 1440,
+    "gap": 31,
+    "padding": "28px",
+    "rows": 2,
+    "overflow": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 900,
+    "gap": 31,
+    "padding": "28px",
+    "rows": 2,
+    "overflow": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "gap": 25,
+    "padding": "22px",
+    "rows": 4,
+    "overflow": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "gap": 25,
+    "padding": "22px",
+    "rows": 6,
+    "overflow": false,
+    "pageOverflow": false
+  }
+]

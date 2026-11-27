@@ -1,0 +1,49 @@
+{
+  "terms": {
+    "before": 51,
+    "after": 68,
+    "existingPreserved": true
+  },
+  "published_terms": {
+    "before": 51,
+    "after": 68,
+    "existingPreserved": true
+  },
+  "content_meta": {
+    "before": 51,
+    "after": 68,
+    "existingPreserved": true
+  },
+  "term_versions": {
+    "before": 94,
+    "after": 111,
+    "existingPreserved": true
+  },
+  "settings": {
+    "existingOtherSettingsPreserved": true,
+    "addedCategories": [
+      "커서와 인터랙션",
+      "이미지와 갤러리"
+    ],
+    "effectsMigrationMarker": "true"
+  },
+  "addedIds": [
+    "magnetic-button",
+    "image-trail",
+    "hover-reveal",
+    "blend-cursor",
+    "spotlight",
+    "tilt-card",
+    "cursor-label",
+    "ripple",
+    "cursor-trail",
+    "masonry",
+    "lightbox",
+    "before-after-slider",
+    "ken-burns",
+    "image-magnifier",
+    "image-accordion",
+    "image-hotspot",
+    "halftone"
+  ]
+}

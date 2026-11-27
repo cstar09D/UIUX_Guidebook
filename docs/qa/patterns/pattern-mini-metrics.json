@@ -1,0 +1,50 @@
+[
+  {
+    "kind": "scene pattern-scene scene-floating-action-button is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-date-picker is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-file-upload is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-navigation-drawer is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-bottom-navigation is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-menu-button is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-stepper is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-card is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-list is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-alert-dialog is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-progress-bar is-preview",
+    "overflow": 0
+  },
+  {
+    "kind": "scene pattern-scene scene-loading-spinner is-preview",
+    "overflow": 0
+  }
+]

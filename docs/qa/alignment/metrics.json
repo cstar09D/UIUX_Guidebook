@@ -1,0 +1,772 @@
+{
+  "alignment": [
+    {
+      "label": "Accordion PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Combobox PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Combobox mobile",
+      "delta": 0,
+      "width": 333,
+      "scroll": 333
+    },
+    {
+      "label": "Combobox HTML mobile",
+      "delta": 0,
+      "width": 333,
+      "scroll": 333
+    },
+    {
+      "label": "Select PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Select HTML PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Filtering PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Filtering HTML PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Disclosure PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Disclosure HTML PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Sheet action PC",
+      "delta": 0.5,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Sheet HTML PC",
+      "delta": 0.5,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Dialog close PC",
+      "delta": 0,
+      "width": 549,
+      "scroll": 549
+    },
+    {
+      "label": "Accordion mobile 320",
+      "delta": 0,
+      "width": 248,
+      "scroll": 248
+    },
+    {
+      "label": "Accordion HTML mobile 320",
+      "delta": 0,
+      "width": 263,
+      "scroll": 263
+    }
+  ],
+  "initialViewportAudits": [
+    {
+      "name": "Icon Button",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Icon Button",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Floating Action Button",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Floating Action Button",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Date Picker (Single)",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Date Picker (Single)",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Date Picker (Range)",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Date Picker (Range)",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Menu Button",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Menu Button",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Tree View",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Tree View",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Data Table",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Data Table",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Sorting",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Sorting",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    },
+    {
+      "name": "Easing",
+      "viewport": 1440,
+      "width": 549,
+      "scroll": 549,
+      "scenes": 1
+    },
+    {
+      "name": "Easing",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263,
+      "scenes": 1
+    }
+  ],
+  "previewStats": [
+    {
+      "id": "card-visual visual-modal",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-bottom-sheet",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 8.21875,
+          "h": 8.21875
+        },
+        {
+          "w": 8.21875,
+          "h": 8.21875
+        },
+        {
+          "w": 8.21875,
+          "h": 8.21875
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-accordion",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 12.328125,
+          "h": 12.328125
+        },
+        {
+          "w": 12.328125,
+          "h": 12.328125
+        },
+        {
+          "w": 12.328125,
+          "h": 12.328125
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-skeleton",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-combobox",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 11.506256103515625,
+          "h": 11.5062255859375
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-data-grid",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-tooltip",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-popover",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-toast",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 13.149993896484375,
+          "h": 13.14990234375
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-tabs",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-select",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 8.21875,
+          "h": 8.21875
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-switch",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-checkbox",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-radio-group",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-button",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-icon-button",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 14.7938232421875,
+          "h": 14.793701171875
+        },
+        {
+          "w": 14.793701171875,
+          "h": 14.793701171875
+        },
+        {
+          "w": 14.793701171875,
+          "h": 14.793701171875
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-toggle-button",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-segmented-control",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-text-field",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-textarea",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-search-field",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-slider",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-breadcrumb",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-pagination",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-disclosure",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 8.21875,
+          "h": 8.21875
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-inline-alert",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-floating-action-button",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 19.7249755859375,
+          "h": 19.72509765625
+        },
+        {
+          "w": 16.4375,
+          "h": 16.4375
+        },
+        {
+          "w": 16.4375,
+          "h": 16.4375
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-date-picker",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-file-upload",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-navigation-drawer",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-bottom-navigation",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-menu-button",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-stepper",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-card",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-list",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-alert-dialog",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-progress-bar",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-loading-spinner",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-date-range-picker",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-tree-view",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 7.3968505859375,
+          "h": 7.39697265625
+        },
+        {
+          "w": 9.862548828125,
+          "h": 9.8623046875
+        },
+        {
+          "w": 7.3968505859375,
+          "h": 7.39697265625
+        },
+        {
+          "w": 9.8624267578125,
+          "h": 9.86279296875
+        },
+        {
+          "w": 9.862548828125,
+          "h": 9.86279296875
+        },
+        {
+          "w": 9.862548828125,
+          "h": 9.8623046875
+        },
+        {
+          "w": 9.8624267578125,
+          "h": 9.8623046875
+        },
+        {
+          "w": 7.3968505859375,
+          "h": 7.39697265625
+        },
+        {
+          "w": 9.862548828125,
+          "h": 9.8623046875
+        },
+        {
+          "w": 0,
+          "h": 0
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-carousel",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-data-table",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-snackbar",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 12.328125,
+          "h": 12.328125
+        },
+        {
+          "w": 5.75311279296875,
+          "h": 5.7529296875
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-empty-state",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-sorting",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-filtering",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 7.3968505859375,
+          "h": 7.39697265625
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-load-more",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-drag-and-drop",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": [
+        {
+          "w": 12.328125,
+          "h": 12.328125
+        },
+        {
+          "w": 12.328125,
+          "h": 12.328125
+        },
+        {
+          "w": 12.328125,
+          "h": 12.328125
+        }
+      ]
+    },
+    {
+      "id": "card-visual visual-responsive-layout",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-sticky-header",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    },
+    {
+      "id": "card-visual visual-easing",
+      "width": 265,
+      "height": 165.625,
+      "scrollWidth": 263,
+      "clientWidth": 263,
+      "svg": []
+    }
+  ]
+}

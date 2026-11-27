@@ -1,0 +1,149 @@
+{
+  "alignment": [
+    {
+      "label": "React 1440",
+      "fieldCenter": 187.1484375,
+      "checkCenter": 187.1484375,
+      "width": 406,
+      "scroll": 406
+    },
+    {
+      "label": "HTML 1440",
+      "fieldCenter": 187.1484375,
+      "checkCenter": 187.1484375,
+      "width": 406,
+      "scroll": 406
+    },
+    {
+      "label": "React 390",
+      "fieldCenter": 209.75,
+      "checkCenter": 209.75,
+      "width": 281,
+      "scroll": 281
+    },
+    {
+      "label": "HTML 390",
+      "fieldCenter": 209.75,
+      "checkCenter": 209.75,
+      "width": 281,
+      "scroll": 281
+    },
+    {
+      "label": "HTML 320 (repeat)",
+      "fieldCenter": 132.75,
+      "checkCenter": 132.75,
+      "width": 211,
+      "scroll": 211
+    },
+    {
+      "label": "HTML 320",
+      "fieldCenter": 132.75,
+      "checkCenter": 132.75,
+      "width": 211,
+      "scroll": 211
+    },
+    {
+      "label": "verified React 320",
+      "fieldCenter": 132.75,
+      "checkCenter": 132.75,
+      "width": 211,
+      "scroll": 211
+    }
+  ],
+  "responsive": [
+    {
+      "ui": "filtering",
+      "format": "React",
+      "width": 333,
+      "scroll": 333,
+      "viewport": 390
+    },
+    {
+      "ui": "filtering",
+      "format": "HTML",
+      "viewport": 390,
+      "width": 333,
+      "scroll": 333
+    },
+    {
+      "ui": "filtering",
+      "format": "React",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263
+    },
+    {
+      "ui": "filtering",
+      "format": "HTML",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263
+    },
+    {
+      "ui": "load-document",
+      "format": "React",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263
+    },
+    {
+      "ui": "load-document",
+      "format": "HTML",
+      "viewport": 320,
+      "width": 263,
+      "scroll": 263
+    }
+  ],
+  "miniFrames": [
+    {
+      "client": 174,
+      "scroll": 175,
+      "rows": 4
+    },
+    {
+      "client": 174,
+      "scroll": 175,
+      "rows": 4
+    },
+    {
+      "client": 174,
+      "scroll": 174,
+      "rows": 2
+    },
+    {
+      "client": 174,
+      "scroll": 174,
+      "rows": 2
+    },
+    {
+      "client": 174,
+      "scroll": 174,
+      "rows": 2
+    },
+    {
+      "client": 174,
+      "scroll": 174,
+      "rows": 2
+    },
+    {
+      "client": 174,
+      "scroll": 174,
+      "rows": 0
+    },
+    {
+      "client": 174,
+      "scroll": 174,
+      "rows": 0
+    },
+    {
+      "client": 174,
+      "scroll": 174,
+      "rows": 0
+    },
+    {
+      "client": 174,
+      "scroll": 175,
+      "rows": 4
+    }
+  ]
+}

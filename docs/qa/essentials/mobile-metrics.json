@@ -1,0 +1,194 @@
+[
+  {
+    "viewport": 390,
+    "term": "Tooltip",
+    "live": {
+      "width": 318,
+      "scrollWidth": 318
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 390,
+    "term": "Popover",
+    "live": {
+      "width": 333,
+      "scrollWidth": 333
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 390,
+    "term": "Toast",
+    "live": {
+      "width": 318,
+      "scrollWidth": 318
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 390,
+    "term": "Tabs",
+    "live": {
+      "width": 318,
+      "scrollWidth": 318
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 390,
+    "term": "Select",
+    "live": {
+      "width": 333,
+      "scrollWidth": 333
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 390,
+    "term": "Switch",
+    "live": {
+      "width": 318,
+      "scrollWidth": 318
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 390,
+    "term": "Checkbox",
+    "live": {
+      "width": 318,
+      "scrollWidth": 318
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 390,
+    "term": "Radio Group",
+    "live": {
+      "width": 318,
+      "scrollWidth": 318
+    },
+    "modalHeight": 700,
+    "stageWidth": 333,
+    "sceneWidth": 333,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Tooltip",
+    "live": {
+      "width": 248,
+      "scrollWidth": 248
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Popover",
+    "live": {
+      "width": 248,
+      "scrollWidth": 248
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Toast",
+    "live": {
+      "width": 248,
+      "scrollWidth": 248
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Tabs",
+    "live": {
+      "width": 248,
+      "scrollWidth": 248
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Select",
+    "live": {
+      "width": 263,
+      "scrollWidth": 263
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Switch",
+    "live": {
+      "width": 248,
+      "scrollWidth": 248
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Checkbox",
+    "live": {
+      "width": 248,
+      "scrollWidth": 248
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  },
+  {
+    "viewport": 320,
+    "term": "Radio Group",
+    "live": {
+      "width": 248,
+      "scrollWidth": 248
+    },
+    "modalHeight": 640,
+    "stageWidth": 263,
+    "sceneWidth": 263,
+    "pageOverflow": 0
+  }
+]
