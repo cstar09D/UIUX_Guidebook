@@ -1,0 +1,7 @@
+{
+  "developmentCards": 101,
+  "productionCards": 77,
+  "productionAdminError": {
+    "error": "관리자 로그인이 필요합니다."
+  }
+}

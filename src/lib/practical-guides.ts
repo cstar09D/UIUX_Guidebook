@@ -1,3 +1,4 @@
+import { expansionGuides } from "./expansion-content";
 import { advancedAdvice } from "./advanced-guides";
 import { effectAdvice } from "./effect-guides";
 import { backgroundAdvice } from "./background-content";
@@ -21,6 +22,7 @@ export const practicalGuides: Record<DemoId, Advice> = {
   ...advancedAdvice,
   ...effectAdvice,
   ...backgroundAdvice,
+  ...expansionGuides,
   modal: advice(
     [
       [

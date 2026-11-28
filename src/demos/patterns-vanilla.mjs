@@ -526,6 +526,32 @@ function setupUpload() {
     buttons = root.querySelector(".pattern-actions").querySelectorAll("button"),
     start = buttons[0],
     secondary = buttons[1];
+  const image = document.createElement("img"),
+    imageBox = document.createElement("div"),
+    replace = document.createElement("button");
+  imageBox.className = "pattern-image-preview";
+  imageBox.hidden = true;
+  imageBox.append(image);
+  name.after(imageBox);
+  replace.type = "button";
+  replace.textContent = "파일 교체";
+  replace.hidden = true;
+  imageBox.after(replace);
+  replace.onclick = () => input.click();
+  let imageUrl = "",
+    imageFile = null;
+  const release = () => {
+    if (imageUrl) URL.revokeObjectURL(imageUrl);
+    imageUrl = "";
+    image.removeAttribute("src");
+  };
+  window.addEventListener("pagehide", release);
+  image.onerror = () => {
+    release();
+    image.hidden = true;
+    imageBox.textContent =
+      "이미지를 표시할 수 없어요. 다른 이미지로 교체하거나 삭제하세요.";
+  };
   let file = null,
     phase = "idle",
     percent = 0,
@@ -551,6 +577,21 @@ function setupUpload() {
     return "";
   }
   function render() {
+    replace.hidden = !file;
+    replace.disabled = phase === "uploading";
+    if (file !== imageFile) {
+      release();
+      imageFile = file;
+      imageBox.replaceChildren(image);
+      image.hidden = false;
+      imageBox.hidden = !file || !/\.(png|jpe?g)$/i.test(file.name);
+      if (!imageBox.hidden) {
+        imageUrl = URL.createObjectURL(file);
+        image.src = imageUrl;
+        image.alt = `첨부한 ${file.name} 미리보기`;
+      }
+    }
+
     input.setAttribute("aria-invalid", String(!!error.textContent));
     input.disabled = failure.disabled = start.disabled = phase === "uploading";
     secondary.textContent = phase === "uploading" ? "전송 취소" : "파일 지우기";
@@ -571,7 +612,7 @@ function setupUpload() {
   function choose(selected) {
     if (phase === "uploading") return;
     const invalid = issue(selected);
-    file = invalid ? null : selected;
+    if (!invalid) file = selected;
     phase = invalid ? "error" : "ready";
     percent = 0;
     error.textContent = invalid;
@@ -585,7 +626,6 @@ function setupUpload() {
     e.preventDefault();
     if (phase === "uploading") return;
     if (e.dataTransfer.files.length !== 1) {
-      file = null;
       phase = "error";
       percent = 0;
       error.role = "alert";
@@ -640,33 +680,74 @@ function setupUpload() {
 function setupDrawer() {
   const root = document.querySelector(".pattern-card"),
     dialog = root.querySelector("dialog"),
-    trigger = root.querySelector(".pattern-workspace button"),
+    trigger = root.querySelector("[data-drawer-open]"),
     heading = root.querySelector(".pattern-workspace h3"),
     body = root.querySelector(".pattern-workspace p"),
-    links = [...dialog.querySelectorAll("a")];
+    select = root.querySelector("[data-drawer-mode]"),
+    layout = root.querySelector("[data-drawer-layout]"),
+    inline = root.querySelector("[data-drawer-inline]");
+  const helper = document.createElement("p");
+  helper.className = "pattern-help";
+  helper.textContent =
+    "현재 문서의 관련 자료를 확인합니다. 배경 조작을 막지 않는 보조 패널입니다.";
+  inline.append(helper);
+  let current = "home";
+  const render = () => {
+    const compact = layout.clientWidth < 380,
+      mode = compact ? "modal" : select.value;
+    layout.className = "pattern-drawer-layout mode-" + mode;
+    helper.hidden = mode !== "helper";
+    inline.hidden = mode === "modal";
+    trigger.hidden = mode !== "modal";
+    root.querySelector("[data-drawer-policy]").textContent = compact
+      ? "작은 화면에서는 모달 드로어로 전환합니다. 현재 문서는 유지돼요."
+      : mode === "modal"
+        ? "모달은 배경 조작을 막고 닫으면 호출 버튼으로 돌아갑니다."
+        : "고정·축약·보조 패널은 배경과 함께 조작할 수 있어요.";
+    inline.querySelector("h3").textContent =
+      mode === "helper" ? "문서 보조 정보" : "작업 공간 탐색";
+    root.querySelectorAll("nav a").forEach((link, i) => {
+      const id = ["home", "saved", "profile"][i % 3],
+        label = ["홈", "저장한 노트", "내 정보"][i % 3];
+      link.setAttribute("aria-label", label);
+      link.title = label;
+      link.textContent =
+        inline.contains(link) && mode === "rail"
+          ? ["⌂", "▤", "⚙"][i % 3]
+          : label;
+      if (id === current) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  };
   trigger.onclick = () => {
     dialog.showModal();
-    links[0].focus();
+    dialog.querySelector("a").focus();
   };
   dialog.querySelector("button").onclick = () => dialog.close();
-  links.forEach(
-    (link, index) =>
+  root.querySelectorAll("nav a").forEach(
+    (link, i) =>
       (link.onclick = (e) => {
         e.preventDefault();
-        links.forEach((item, i) => {
-          if (i === index) item.setAttribute("aria-current", "page");
-          else item.removeAttribute("aria-current");
-        });
-        heading.textContent = link.textContent;
+        current = ["home", "saved", "profile"][i % 3];
+        heading.textContent = ["홈", "저장한 노트", "내 정보"][i % 3];
         body.textContent = [
           "팀의 최신 기록을 모았어요.",
           "보관한 자료 3개를 확인하세요.",
           "프로필과 작업 환경을 관리해요.",
-        ][index];
+        ][i % 3];
         dialog.close();
+        render();
         heading.focus();
       }),
   );
+  select.onchange = () => {
+    dialog.close();
+    render();
+  };
+  const ro = new ResizeObserver(render);
+  ro.observe(layout);
+  window.addEventListener("pagehide", () => ro.disconnect(), { once: true });
+  render();
 }
 function setupBottomNav() {
   const root = document.querySelector(".pattern-card"),
@@ -1095,6 +1176,15 @@ function setupProgress() {
   actions.append(cancel);
   function render() {
     progress.value = value;
+    const format = root.querySelector("[data-progress-format]"),
+      circle = root.querySelector("[data-progress-circle]");
+    progress.hidden = format.value === "circular";
+    circle.hidden = format.value === "linear";
+    circle.setAttribute("aria-valuenow", String(value));
+    root
+      .querySelector("[data-progress-arc]")
+      .setAttribute("stroke-dashoffset", String(100 - value));
+    root.querySelector("[data-progress-number]").textContent = value + "%";
     percent.textContent = value + "%";
     start.disabled = failure.disabled = phase === "running";
     cancel.hidden = phase !== "running";
@@ -1135,6 +1225,10 @@ function setupProgress() {
     render();
     start.focus();
   };
+  root.querySelector("[data-progress-format]").onchange = render;
+  window.addEventListener("pagehide", () => clearInterval(timer), {
+    once: true,
+  });
   render();
 }
 function setupSpinner() {

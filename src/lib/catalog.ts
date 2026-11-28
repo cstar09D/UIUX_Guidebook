@@ -1,3 +1,4 @@
+import { expansionSeeds } from "./expansion-content";
 import { advancedSeeds } from "./advanced-seeds";
 import { effectSeeds } from "./effect-seeds";
 import { backgroundSeeds } from "./background-content";
@@ -263,6 +264,7 @@ export const seeds: Term[] = [
   ...advancedSeeds,
   ...effectSeeds,
   ...backgroundSeeds,
+  ...expansionSeeds,
 ];
 // Executable metadata has one source of truth in the developer registry.
 export type Guide = {

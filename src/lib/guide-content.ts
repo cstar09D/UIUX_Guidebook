@@ -1,3 +1,4 @@
+import { expansionGuides } from "./expansion-content";
 import { advancedGuides } from "./advanced-guides";
 import { effectGuides } from "./effect-guides";
 import { backgroundGuides } from "./background-content";
@@ -56,6 +57,7 @@ export const detailedGuides: Record<DemoId, DetailedGuide> = {
   ...advancedGuides,
   ...effectGuides,
   ...backgroundGuides,
+  ...expansionGuides,
   "date-range-picker": rangeGuide,
   modal: {
     introduction:
@@ -150,7 +152,7 @@ export const detailedGuides: Record<DemoId, DetailedGuide> = {
       ),
     ],
     practice:
-      "왼쪽에서 설정을 열고 이름을 수정한 뒤 저장하세요. 다시 열어 취소·Esc를 비교하고, Tab으로 창 안을 이동해 보세요. 저장 실패 화면은 오른쪽 설명용 예시이며 이 데모는 로컬 상태만 변경합니다.",
+      "왼쪽에서 설정을 열고 이름을 수정한 뒤 저장하세요. 다시 열어 취소·Esc를 비교하고, Tab으로 창 안을 이동해 보세요. 저장 실패 시에는 입력을 유지하고 재시도할 수 있어야 합니다. 이 데모는 로컬 상태만 변경합니다.",
     roles: {
       기획: job(
         "무엇을 완료해야 닫히는지, 닫을 때 무엇을 보존하는지 정의합니다.",

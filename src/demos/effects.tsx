@@ -797,7 +797,9 @@ export function BeforeAfterScene({ preview = false, time = 1700 }: SceneProps) {
         <Artwork
           index={0}
           className="fx-before"
-          style={{ clipPath: `inset(0 ${100 - shown}% 0 0)` }}
+          style={{
+            clipPath: `inset(0px ${Number((100 - shown).toFixed(4))}% 0px 0px)`,
+          }}
         />
         <span className="fx-compare-label fx-before-label">보정 전</span>
         <span className="fx-compare-label fx-after-label">보정 후</span>
@@ -1310,7 +1312,7 @@ export function HalftoneScene({ preview = false, time = 1700 }: SceneProps) {
           style={{
             opacity: original ? 0 : 1,
             clipPath: preview
-              ? `inset(0 0 0 ${48 + Math.sin(time / 700) * 20}%)`
+              ? `inset(0px 0px 0px ${Number((48 + Math.sin(time / 700) * 20).toFixed(4))}%)`
               : undefined,
           }}
         />

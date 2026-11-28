@@ -97,6 +97,9 @@ const metricFunctions = metricTree.statements
 const metricComponent = (
   await readFile("src/demos/input-metrics.tsx", "utf8")
 ).replace(/^import[^;]+;\s*/, "");
+const shareMetadata = (
+  await readFile("src/demos/share-services.mjs", "utf8")
+).replace("export const", "const");
 function componentSource(name, file) {
   const { tree } = modules.get(file);
   const declarations = new Map();
@@ -129,7 +132,8 @@ function componentSource(name, file) {
     .filter(
       (node) =>
         ts.isImportDeclaration(node) &&
-        !node.moduleSpecifier.text.startsWith("./input-metrics"),
+        !node.moduleSpecifier.text.startsWith("./input-metrics") &&
+        node.moduleSpecifier.text !== "./share-services.mjs",
     )
     .map((node) => node.getText(tree))
     .join("\n");
@@ -137,7 +141,14 @@ function componentSource(name, file) {
     /\b(InputMetrics|measureText|formatTextMetrics|limitText)\b/.test(body)
       ? metricFunctions + "\n" + metricComponent
       : "";
-  return imports + "\n" + metrics + "\n" + body;
+  return (
+    imports +
+    "\n" +
+    metrics +
+    "\n" +
+    (body.includes("shareServices") ? shareMetadata + "\n" : "") +
+    body
+  );
 }
 function componentCss(source) {
   // Include shared rules and states used by this UI, excluding other UI classes.

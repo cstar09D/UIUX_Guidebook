@@ -11,67 +11,125 @@ export function CheckboxScene({
   time = 1700,
   reduced = false,
 }: SceneProps) {
+  const [mode, setMode] = useState("notifications");
+  const [confirmed, setConfirmed] = useState(false);
+  const options =
+    mode === "consent"
+      ? [
+          "이용약관 (필수)",
+          "개인정보 수집·이용 (필수)",
+          "혜택 소식 수신 (선택)",
+        ]
+      : notificationOptions;
   const [selected, setSelected] = useState<string[]>([]);
   const all = useRef<HTMLInputElement>(null);
   const shown = preview
     ? time < 700
       ? []
       : time < 1700
-        ? [notificationOptions[0]]
+        ? [options[0]]
         : time < 2900
-          ? notificationOptions
-          : notificationOptions.slice(0, 2)
+          ? options
+          : options.slice(0, 2)
     : selected;
   useEffect(() => {
     if (all.current)
       all.current.indeterminate =
-        shown.length > 0 && shown.length < notificationOptions.length;
+        shown.length > 0 && shown.length < options.length;
   }, [shown.length]);
   return (
     <div
       className={`scene essential-scene scene-checkbox ${preview ? "is-preview" : ""} ${reduced ? "is-reduced" : ""}`}
     >
       <div className="essential-card">
-        <span className="essential-eyebrow">NOTIFICATIONS</span>
-        <h2>받고 싶은 소식</h2>
-        <p>필요한 항목을 여러 개 선택하세요.</p>
+        <span className="essential-eyebrow">
+          {mode === "consent" ? "AGREEMENT" : "NOTIFICATIONS"}
+        </span>
+        <h2>{mode === "consent" ? "서비스 이용 동의" : "받고 싶은 소식"}</h2>
+        <p>
+          {mode === "consent"
+            ? "필수 2개에 동의하면 계속할 수 있어요. 선택 동의는 거절해도 됩니다."
+            : "필요한 항목을 여러 개 선택하세요."}
+        </p>
+        {!preview && (
+          <label className="input-demo-label">
+            예제 유형
+            <select
+              className="foundation-input"
+              value={mode}
+              onChange={(e) => {
+                setMode(e.target.value);
+                setSelected([]);
+                setConfirmed(false);
+              }}
+            >
+              <option value="notifications">소식 복수 선택</option>
+              <option value="consent">필수·선택 동의</option>
+            </select>
+          </label>
+        )}
         <fieldset className="choice-group">
-          <legend className="demo-sr-only">받을 소식 선택</legend>
+          <legend className="demo-sr-only">
+            {mode === "consent" ? "서비스 이용 동의 항목" : "받을 소식 선택"}
+          </legend>
           <label className="choice-row choice-all">
             <input
               ref={all}
               type="checkbox"
-              checked={shown.length === notificationOptions.length}
-              onChange={(e) =>
-                setSelected(e.target.checked ? [...notificationOptions] : [])
-              }
+              checked={shown.length === options.length}
+              onChange={(e) => {
+                setSelected(e.target.checked ? [...options] : []);
+                setConfirmed(false);
+              }}
             />
             <span>
-              모두 선택<small>세 가지 소식을 함께 선택해요</small>
+              {mode === "consent" ? "전체 동의" : "모두 선택"}
+              <small>
+                {mode === "consent"
+                  ? "선택 동의까지 3개 모두 포함해요"
+                  : "세 가지 소식을 함께 선택해요"}
+              </small>
             </span>
           </label>
-          {notificationOptions.map((name) => (
+          {options.map((name) => (
             <label key={name} className="choice-row">
               <input
                 type="checkbox"
                 checked={shown.includes(name)}
-                onChange={(e) =>
+                onChange={(e) => {
+                  setConfirmed(false);
                   setSelected((values) =>
                     e.target.checked
                       ? [...values, name]
                       : values.filter((v) => v !== name),
-                  )
-                }
+                  );
+                }}
               />
               <span>{name}</span>
             </label>
           ))}
         </fieldset>
         <div className="essential-result" role={preview ? undefined : "status"}>
-          {shown.length === 0
-            ? "선택한 소식이 없어요."
-            : `${shown.length}개 소식을 선택했어요.`}
+          {mode === "consent"
+            ? confirmed
+              ? "필수 동의를 확인했어요. 실제 가입은 진행하지 않습니다."
+              : options.slice(0, 2).every((x) => shown.includes(x))
+                ? "필수 2개 충족 · 선택 동의 없이도 계속할 수 있어요."
+                : "필수 약관 2개에 동의해 주세요."
+            : shown.length === 0
+              ? "선택한 소식이 없어요."
+              : `${shown.length}개 소식을 선택했어요.`}
         </div>
+        {mode === "consent" && (
+          <button
+            type="button"
+            className="demo-primary"
+            disabled={!options.slice(0, 2).every((x) => shown.includes(x))}
+            onClick={() => setConfirmed(true)}
+          >
+            동의하고 계속
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "split-view",
+    "width": 333,
+    "scroll": 333,
+    "status": "작은 화면에서는 편집·결과를 탭으로 전환해요. 작성한 내용은 유지됩니다.",
+    "result": "모바일🙂"
+  },
+  {
+    "id": "mega-menu",
+    "width": 333,
+    "scroll": 333,
+    "status": "디자인 토큰 예제 문서를 선택했어요. 외부 페이지로 이동하지 않습니다.",
+    "title": "디자인 토큰"
+  },
+  {
+    "id": "scroll-reveal",
+    "width": 333,
+    "scroll": 333,
+    "status": "영역 진입 4 / 4개 · 재진입마다"
+  },
+  {
+    "id": "stagger-animation",
+    "width": 318,
+    "scroll": 318,
+    "status": "160ms 간격 · 총 840ms · 읽기 순서는 그대로예요.",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "id": "scroll-snap",
+    "width": 318,
+    "scroll": 318,
+    "status": "4 / 4 · 항목에 정착"
+  },
+  {
+    "id": "parallax-scroll",
+    "width": 333,
+    "scroll": 333,
+    "status": "100% · 강한 시차",
+    "back": "translateY(48px)"
+  }
+]

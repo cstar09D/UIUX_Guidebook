@@ -1,0 +1,80 @@
+[
+  {
+    "id": "password-field",
+    "state": "valid",
+    "viewport": 320,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    },
+    "body": {
+      "width": 278,
+      "scroll": 278
+    }
+  },
+  {
+    "id": "otp-input",
+    "state": "expired",
+    "viewport": 320,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    },
+    "body": {
+      "width": 278,
+      "scroll": 278
+    }
+  },
+  {
+    "id": "multi-select",
+    "state": "limit",
+    "viewport": 320,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    },
+    "body": {
+      "width": 278,
+      "scroll": 278
+    }
+  },
+  {
+    "id": "number-stepper",
+    "state": "invalid",
+    "viewport": 320,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    },
+    "body": {
+      "width": 278,
+      "scroll": 278
+    }
+  },
+  {
+    "id": "time-picker",
+    "state": "unavailable",
+    "viewport": 320,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    },
+    "body": {
+      "width": 278,
+      "scroll": 278
+    }
+  },
+  {
+    "id": "rating",
+    "state": "readonly",
+    "viewport": 320,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    },
+    "body": {
+      "width": 278,
+      "scroll": 278
+    }
+  }
+]

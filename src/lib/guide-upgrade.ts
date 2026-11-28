@@ -1,3 +1,6 @@
+import { enhanceLayoutGuide } from "./layout-enhancement-guides";
+import { enhanceWorkflowGuide } from "./workflow-enhancement-guides";
+import { enhanceInputGuide } from "./input-enhancement-guides";
 import type { DemoId } from "./catalog";
 import type { DetailedGuide, ScreenExample } from "./guide-content";
 import { practicalGuides } from "./practical-guides";
@@ -94,5 +97,14 @@ export function upgradeGuide(
       });
     }
   }
-  return id === "image-hotspot" ? upgradeHotspotGuide(guide) : guide;
+  return enhanceLayoutGuide(
+    id,
+    enhanceWorkflowGuide(
+      id,
+      enhanceInputGuide(
+        id,
+        id === "image-hotspot" ? upgradeHotspotGuide(guide) : guide,
+      ),
+    ),
+  );
 }

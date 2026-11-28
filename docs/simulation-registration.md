@@ -53,3 +53,25 @@ npm start
 `effects.tsx`는 17개의 독립 실행 컴포넌트와 자체 SVG 장면을 제공합니다. `registry.ts`의 `effectRegistry`, `scenes.tsx` 연결, `effects-vanilla.mjs`의 실행 함수, `effect-definitions.ts`의 원고·검색어·입력 정책을 함께 갱신합니다. 기본 가이드는 `effect-guides.ts`, 새 항목은 `effect-seeds.ts`에서 연결합니다. `catalog-effects-v1`은 기존 원고를 덮지 않고 새 항목만 한 번 추가합니다. 예제 코드는 각 실행 컴포넌트가 실제 사용하는 보조 선언만 추출하므로 다른 효과의 export 함수를 참조하지 마세요.
 
 배경 9종은 `backgrounds.tsx`·`backgrounds-vanilla.mjs`, `registry.ts`의 `backgroundRegistry`, `background-content.ts`의 원고·검색어·가이드·시드로 연결합니다. `catalog-backgrounds-v1`은 새 항목만 추가합니다. 핫스팟은 동일한 컴포넌트 안의 두 모드이며 `hotspotPlacement`는 좌표 배치만 계산합니다. `hotspot-guide.ts`와 `hotspot-popover-v1`은 기존 원고를 보존하면서 새 사용 흐름과 예시를 덧붙입니다.
+
+## 확장 A1·A2·A3·A4의 공통 실행·상태 계약
+
+`expansion.tsx`는 UI별 attach 함수와 React 트리를 제공하고, `expansion-vanilla.mjs`는 같은 트리와 함수를 독립 HTML로 생성합니다. `expansion-registry.mjs`는 Node 빌드에서도 직접 읽는 고정 메타데이터이며 TS의 확장자 없는 런타임 import에 의존하지 않습니다. 명칭·원고·시드는 `expansion-content.ts`에서 관리합니다.
+
+`scenario-contract.mjs`의 키와 원고의 `guide.examples[].id`가 일치해야 합니다. 임의 설명을 실행 상태로 추측하지 않습니다. `createScenarioController`는 상태 적용·중복 피드백 방지·타이머 정리와 nonce/source 검증을 담당합니다. 새 상태를 추가할 때는 Scene의 preset, 계약 키, 기본 원고, HTML/React 검증을 함께 변경하세요. 관리자에서는 등록된 상태를 선택해 설명만 편집합니다.
+
+공통 설명 영역으로 iframe의 높이가 바뀔 수 있으므로 resize에서 상태를 무조건 기본으로 돌리지 마세요. 메뉴는 열린 상태를 유지하고 위치를 다시 계산합니다. 데이터 추가는 Turso에 명시적인 초안 추가 작업으로 수행하며 코드 배포보다 먼저 게시하지 않습니다.
+
+A2 입력 UI는 같은 `expansion.tsx`·`expansion-vanilla.mjs`를 사용한다. 원고는 `input-expansion-content.ts`, 기존 입력 가이드의 추가 설명은 `input-enhancement-guides.ts`에서 관리한다. 기존 4개 초안에 설명을 추가하는 `scripts/refresh-input-guides.mjs`는 기본 미리보기이며 `--apply`에서도 게시본은 변경하지 않는다.
+
+A3 업무 흐름 UI도 같은 Scene·attach 함수로 생성한다. `workflow-expansion-content.ts`가 신규 6개 원고, `workflow-enhancement-guides.ts`가 기존 표·정렬·필터·공유 5개의 추가 설명을 관리한다. `scripts/refresh-workflow-guides.mjs`는 기본 미리보기이며 `--apply`에서도 기존 사용자 원고·게시본을 보존하고 추가 설명만 초안에 반영한다. 현재 실제 상태 계약은 신규 18개에 적용하며 기존 77개 상태 선택은 설명용 화면이다.
+
+포인터 캡처·IntersectionObserver·타이머는 컨트롤러 해제 시 정리한다. 터치 이동을 취소하는 리스너는 `on`의 옵션에 `passive: false`를 명시하고 같은 옵션으로 제거한다. 추가 정리 작업은 컨트롤러의 `cleanup`에 등록한다. `flow-demo-scene [hidden]` 규칙을 유지해 flex/grid 스타일이 숨긴 상태를 다시 표시하지 않도록 한다.
+
+SNS 서비스 목록은 `share-services.mjs`를 공통으로 사용한다. 독립 React 예제에는 빌드 시 해당 메타데이터를 포함하여 저장소 상대 import 없이 실행하게 한다. SNS 게시와 링크 복사는 모의 동작이며 실패·복구·닫기·호출 버튼 초점 복귀를 두 형식에서 검수한다.
+
+A4는 `layout-expansion-content.ts`의 신규 6개 원고와 `layout-enhancement-guides.ts`의 기존 4개 추가 설명을 사용한다. 실제 상태 계약 대상은 신규 24개다. 기존 77개의 상태 선택은 설명용 화면이며 변형은 직접 체험 내부 옵션에서 비교한다. `scripts/refresh-layout-guides.mjs`는 기본 미리보기, `--apply`는 기존 사용자 원고를 보존하는 Turso 초안 추가 작업이다.
+
+분할 비율은 `clampSplit`으로 25~75%를 제한한다. `expansion-vanilla.mjs`는 이 순수 함수를 독립 HTML에 함께 포함한다. ResizeObserver는 입력값을 초기화하지 않고 모바일 탭을 전환한다. 스크롤 리빌은 JS 설치 전 기본 노출, 키보드 초점 진입 즉시 노출을 유지한다. 스크롤 스냅의 가로 overflow는 내부 영역의 의도된 동작이며 사이트 전체의 가로 넘침과 구분한다.
+
+통합 검수 보정: iframe nonce는 브라우저 마운트 뒤에 생성하고 서버 초기 HTML은 준비 안내로 고정한다. demo:ready에서는 명시적 프리셋만 복원하며 새 프레임의 기본 초기화를 중복 실행하지 않는다. 부모는 현재 존재하는 example ID를 기준으로 전달해 관리자에서 선택한 예시를 삭제한 경우 기본 체험으로 돌아간다. Scroll Reveal의 명시적 프리셋은 관찰자의 늦은 콜백에 덮이지 않으며 사용자 스크롤 후 관찰로 전환한다.

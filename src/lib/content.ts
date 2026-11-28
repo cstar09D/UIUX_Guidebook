@@ -1,3 +1,4 @@
+import { scenarioIds } from "../demos/scenario-contract.mjs";
 import { guides, seeds, type DemoId, type Term } from "./catalog";
 import { pointerOnlyEffects } from "./effect-seeds";
 import {
@@ -155,6 +156,13 @@ export function publicationIssues(value: Content): string[] {
   ] as const)
     if (!value[key].trim()) issues.push(label);
   const g = value.guide;
+  const requiredStates = scenarioIds[value.demoId];
+  if (
+    requiredStates &&
+    (g.examples.some((e) => !requiredStates.includes(e.id)) ||
+      requiredStates.some((key) => !g.examples.some((e) => e.id === key)))
+  )
+    issues.push("등록된 실제 시뮬레이션 상태");
   if (!g.introduction.trim()) issues.push("UI 정의");
   for (const [key, label] of [
     ["uses", "사용 상황"],
@@ -178,7 +186,7 @@ export function publicationIssues(value: Content): string[] {
         ].every((v) => v.trim()),
     )
   )
-    issues.push("화면 예시");
+    issues.push("시뮬레이션 상태");
   if (!g.practice.trim()) issues.push("체험 방법");
   for (const role of roleNames) {
     const r = g.roles[role];
@@ -261,43 +269,45 @@ function points(value: unknown, path: string): GuidePoint[] {
 export function validateGuide(value: unknown): DetailedGuide {
   const g = obj(value, "가이드"),
     roles = obj(g.roles, "직무별 안내");
-  const examples: ScreenExample[] = array(g.examples, "화면 예시", 30).map(
-    (v, i) => {
-      const e = obj(v, `화면 예시 ${i + 1}`),
-        s = obj(e.screen, "예시 화면");
-      const tone = s.tone;
-      if (
-        tone !== undefined &&
-        !["error", "success", "loading"].includes(String(tone))
-      )
-        throw new ContentError("예시 화면의 상태를 확인하세요.");
-      const id = text(e.id, "화면 예시 id", 80);
-      if (!/^[a-zA-Z0-9_-]+$/.test(id))
-        throw new ContentError(
-          "화면 예시 id는 영문·숫자·하이픈으로 입력하세요.",
-        );
-      return {
-        id,
-        label: text(e.label, "예시 이름", 100),
-        title: text(e.title, "예시 제목", 200),
-        condition: text(e.condition, "발생 조건"),
-        explanation: text(e.explanation, "처리 방법"),
-        screen: {
-          title: text(s.title, "화면 제목", 200),
-          body: text(s.body, "화면 문구", 2000),
-          ...(s.action !== undefined
-            ? { action: text(s.action, "행동 문구", 100) }
-            : {}),
-          ...(s.items !== undefined
-            ? { items: texts(s.items, "화면 항목", 30, 1000).filter(Boolean) }
-            : {}),
-          ...(tone ? { tone: tone as ScreenExample["screen"]["tone"] } : {}),
-        },
-      };
-    },
-  );
+  const examples: ScreenExample[] = array(
+    g.examples,
+    "시뮬레이션 상태",
+    30,
+  ).map((v, i) => {
+    const e = obj(v, `시뮬레이션 상태 ${i + 1}`),
+      s = obj(e.screen, "예시 화면");
+    const tone = s.tone;
+    if (
+      tone !== undefined &&
+      !["error", "success", "loading"].includes(String(tone))
+    )
+      throw new ContentError("예시 화면의 상태를 확인하세요.");
+    const id = text(e.id, "시뮬레이션 상태 id", 80);
+    if (!/^[a-zA-Z0-9_-]+$/.test(id))
+      throw new ContentError(
+        "시뮬레이션 상태 id는 영문·숫자·하이픈으로 입력하세요.",
+      );
+    return {
+      id,
+      label: text(e.label, "예시 이름", 100),
+      title: text(e.title, "예시 제목", 200),
+      condition: text(e.condition, "발생 조건"),
+      explanation: text(e.explanation, "처리 방법"),
+      screen: {
+        title: text(s.title, "화면 제목", 200),
+        body: text(s.body, "화면 문구", 2000),
+        ...(s.action !== undefined
+          ? { action: text(s.action, "행동 문구", 100) }
+          : {}),
+        ...(s.items !== undefined
+          ? { items: texts(s.items, "화면 항목", 30, 1000).filter(Boolean) }
+          : {}),
+        ...(tone ? { tone: tone as ScreenExample["screen"]["tone"] } : {}),
+      },
+    };
+  });
   if (new Set(examples.map((e) => e.id)).size !== examples.length)
-    throw new ContentError("화면 예시 id가 중복됩니다.");
+    throw new ContentError("시뮬레이션 상태 id가 중복됩니다.");
   return {
     introduction: text(g.introduction, "UI 정의"),
     uses: points(g.uses, "사용 상황"),

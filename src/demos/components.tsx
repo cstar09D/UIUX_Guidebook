@@ -1,3 +1,4 @@
+import { shareServices } from "./share-services.mjs";
 import { InputMetrics } from "./input-metrics";
 import { measureText, limitText } from "./input-metrics.mjs";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
@@ -265,11 +266,20 @@ export function SheetScene({
   time = 1600,
   reduced = false,
 }: SceneProps) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false),
+    [sharing, setSharing] = useState(false),
+    [copyFailure, setCopyFailure] = useState(false),
+    [copyError, setCopyError] = useState("");
   const [choice, setChoice] = useState("선택하지 않음");
   const [offset, setOffset] = useState(0);
   const drag = useRef<number | null>(null);
   const { ref, close } = useNativeDialog(open, reduced, "sheet");
+  useEffect(() => {
+    if (open && sharing)
+      ref.current
+        ?.querySelector<HTMLButtonElement>("[data-share-service]")
+        ?.focus();
+  }, [open, sharing, ref]);
   const e = envelope(time, 600, 320, 2400, 220);
   const options = [
     ["공유하기", "링크로 함께 보기"],
@@ -336,7 +346,7 @@ export function SheetScene({
             <span className="demo-help" role="status">
               {choice === "선택하지 않음"
                 ? "패널을 아래로 끌거나 닫기 버튼을 눌러보세요."
-                : `${choice} 선택 완료`}
+                : choice}
             </span>
           </div>
           <dialog
@@ -349,6 +359,8 @@ export function SheetScene({
             }}
             onClose={() => {
               setOpen(false);
+              setSharing(false);
+              setCopyError("");
               setOffset(0);
             }}
             style={
@@ -398,41 +410,112 @@ export function SheetScene({
                 <path d="m6 6 12 12M18 6 6 18" />
               </svg>
             </button>
-            <h2 id="sheet-title">노트 관리</h2>
+            <h2 id="sheet-title">{sharing ? "공유하기" : "노트 관리"}</h2>
             <p>원하는 작업을 선택하세요.</p>
-            {options.map(([title, sub], i) => (
-              <button
-                className="sheet-option"
-                key={title}
-                onClick={() => {
-                  setChoice(title);
-                  close();
-                }}
-              >
-                <span className="sheet-option-icon">
-                  <SheetActionIcon index={i} />
-                </span>
-                <span>
-                  <strong>{title}</strong>
-                  <small>{sub}</small>
-                </span>
-                <span className="option-chevron" aria-hidden="true">
-                  <svg
-                    className="demo-chevron"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path d="m9 6 6 6-6 6" />
-                  </svg>
-                </span>
-              </button>
-            ))}
+            {!sharing &&
+              options.map(([title, sub], i) => (
+                <button
+                  className="sheet-option"
+                  key={title}
+                  onClick={() => {
+                    if (title === "공유하기") {
+                      setSharing(true);
+                      setCopyError("");
+                      return;
+                    }
+                    setChoice(`${title} 선택 완료`);
+                    close();
+                  }}
+                >
+                  <span className="sheet-option-icon">
+                    <SheetActionIcon index={i} />
+                  </span>
+                  <span>
+                    <strong>{title}</strong>
+                    <small>{sub}</small>
+                  </span>
+                  <span className="option-chevron" aria-hidden="true">
+                    <svg
+                      className="demo-chevron"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="m9 6 6 6-6 6" />
+                    </svg>
+                  </span>
+                </button>
+              ))}
+            {sharing && (
+              <section className="sheet-share-content">
+                <p>서비스를 선택하세요. 외부 게시·전송은 하지 않습니다.</p>
+                <div className="foundation-share-services">
+                  {shareServices.map(([id, name, glyph]) => (
+                    <button
+                      type="button"
+                      key={id}
+                      data-share-service={name}
+                      onClick={() => {
+                        if (id === "link" && copyFailure) {
+                          setCopyError(
+                            "복사 실패 모의예요. 실패 옵션을 해제하고 다시 누르세요.",
+                          );
+                          return;
+                        }
+                        setChoice(
+                          id === "link"
+                            ? "링크 복사를 모의 완료했어요. 실제 클립보드는 변경하지 않습니다."
+                            : `${name} 공유를 선택했어요. 실제 게시·전송은 하지 않습니다.`,
+                        );
+                        close();
+                      }}
+                    >
+                      <span
+                        className={`foundation-share-logo brand-${id}`}
+                        aria-hidden="true"
+                      >
+                        {glyph}
+                      </span>
+                      <span>{name}</span>
+                    </button>
+                  ))}
+                </div>
+                <label className="foundation-option">
+                  <input
+                    data-sheet-copy-failure
+                    type="checkbox"
+                    checked={copyFailure}
+                    onChange={(e) => setCopyFailure(e.target.checked)}
+                  />
+                  링크 복사 실패 모의
+                </label>
+                <p
+                  className="foundation-error"
+                  role={copyError ? "alert" : undefined}
+                >
+                  {copyError}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSharing(false);
+                    setCopyError("");
+                    requestAnimationFrame(() =>
+                      ref.current
+                        ?.querySelector<HTMLButtonElement>(".sheet-option")
+                        ?.focus(),
+                    );
+                  }}
+                >
+                  노트 메뉴로 돌아가기
+                </button>
+              </section>
+            )}
           </dialog>
         </>
       )}

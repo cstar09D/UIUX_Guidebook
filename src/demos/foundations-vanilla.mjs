@@ -1,3 +1,4 @@
+import { shareServices } from "./share-services.mjs";
 const wrap = (id, title, body) =>
   `<div class="scene foundation-scene scene-${id}"><div class="foundation-card"><h2>${title}</h2>${body}</div></div>`;
 export const foundationMarkup = {
@@ -24,12 +25,12 @@ export const foundationMarkup = {
   "text-field": wrap(
     "text-field",
     "프로젝트 이름",
-    '<form id="name-form" novalidate><label class="foundation-label" for="project-name">이름</label><p class="foundation-hint" id="name-hint">2~30자 · 어떤 프로젝트인지 알아볼 수 있게 적으세요.</p><input id="project-name" class="foundation-input" data-metric-limit="30" required aria-describedby="name-hint name-error" placeholder="예: 디자인 팀"><p id="name-error" class="foundation-error" role="alert"></p><button class="demo-primary foundation-primary" type="submit">이름 저장</button><p id="name-status" class="foundation-status" role="status"></p></form>',
+    '<form id="name-form" novalidate><label class="foundation-label" for="project-name">이름</label><p class="foundation-hint" id="name-hint">2~30자 · 어떤 프로젝트인지 알아볼 수 있게 적으세요.</p><input id="project-name" class="foundation-input" data-metric-limit="30" required aria-describedby="name-hint project-name-metrics name-error" placeholder="예: 디자인 팀"><p id="project-name-metrics" class="input-metrics" data-counter-for="project-name" data-max-chars="30">0 / 30자 · 0 byte (UTF-8)</p><p id="name-error" class="foundation-error" role="alert"></p><button class="demo-primary foundation-primary" type="submit">이름 저장</button><p id="name-status" class="foundation-status" role="status"></p></form>',
   ),
   textarea: wrap(
     "textarea",
     "검토 의견 남기기",
-    '<form id="feedback-form" novalidate><label class="foundation-label" for="feedback">검토 의견</label><p class="foundation-hint" id="feedback-hint">10~200자 · Enter는 줄바꿈입니다.</p><textarea id="feedback" class="foundation-textarea" required aria-describedby="feedback-hint feedback-count feedback-error"></textarea><div id="feedback-count" class="foundation-count input-metrics" data-counter-for="feedback" data-max-chars="200">0 / 200자</div><p id="feedback-error" class="foundation-error" role="alert"></p><button type="submit" class="demo-primary foundation-primary">의견 저장</button><p id="feedback-status" class="foundation-status" role="status"></p></form>',
+    '<form id="feedback-form" novalidate><label class="foundation-label" for="feedback">검토 의견 (필수)</label><p class="foundation-hint" id="feedback-hint">10~200자 · Enter는 줄바꿈입니다.</p><textarea id="feedback" class="foundation-textarea" required aria-describedby="feedback-hint feedback-count feedback-error"></textarea><div id="feedback-count" class="foundation-count input-metrics" data-counter-for="feedback" data-max-chars="200">0 / 200자</div><p id="feedback-error" class="foundation-error" role="alert"></p><button type="submit" class="demo-primary foundation-primary">의견 저장</button><p id="feedback-status" class="foundation-status" role="status"></p></form>',
   ),
   "search-field": wrap(
     "search-field",
@@ -76,19 +77,13 @@ export const foundationMarkup = {
 };
 const shareMarkup =
   '<div class="foundation-share-panel" id="icon-share-panel" role="dialog" aria-labelledby="icon-share-title" hidden><div class="foundation-share-heading"><strong id="icon-share-title">공유하기</strong><button type="button" id="share-close" aria-label="공유 목록 닫기">×</button></div><p>공유할 서비스를 선택하세요.</p><div class="foundation-share-services">' +
-  [
-    ["kakao", "카카오톡", "톡"],
-    ["facebook", "페이스북", "f"],
-    ["x", "X", "𝕏"],
-    ["band", "밴드", "B"],
-    ["link", "링크 복사", "↗"],
-  ]
+  shareServices
     .map(
       ([id, name, glyph]) =>
         `<button type="button" data-share-service="${name}"><span class="foundation-share-logo brand-${id}" aria-hidden="true">${glyph}</span><span>${name}</span></button>`,
     )
     .join("") +
-  '</div><p class="foundation-share-hint">체험용 목록 · 실제 게시 없음</p></div>';
+  '</div><label class="foundation-option"><input type="checkbox" id="share-copy-failure">링크 복사 실패 모의</label><p id="share-copy-error" class="foundation-error" role="alert"></p><p class="foundation-share-hint">체험용 목록 · 실제 게시 없음</p></div>';
 foundationMarkup["icon-button"] = foundationMarkup["icon-button"]
   .replace(
     '<div class="foundation-icon-toolbar">',
@@ -150,6 +145,7 @@ function setupIcon() {
       close();
       return;
     }
+    document.querySelector("#share-copy-error").textContent = "";
     panel.hidden = false;
     panel.style.top = "";
     const overflow =
@@ -163,6 +159,14 @@ function setupIcon() {
     const option = event.target.closest("[data-share-service]");
     if (!option) return;
     const name = option.dataset.shareService;
+    if (
+      name === "링크 복사" &&
+      document.querySelector("#share-copy-failure").checked
+    ) {
+      document.querySelector("#share-copy-error").textContent =
+        "복사 실패 모의예요. 실패 옵션을 해제하고 링크 복사를 다시 누르세요.";
+      return;
+    }
     status.textContent =
       name === "링크 복사"
         ? "링크 복사를 모의했어요. 실제 클립보드는 변경하지 않습니다."
@@ -249,6 +253,38 @@ function setupTextField() {
   const input = document.querySelector("#project-name"),
     error = document.querySelector("#name-error"),
     status = document.querySelector("#name-status");
+  const form = input.form,
+    label = form.querySelector("label"),
+    hint = form.querySelector(".foundation-hint"),
+    wrap = document.createElement("div");
+  wrap.className = "foundation-field-wrap";
+  input.before(wrap);
+  wrap.append(input, label);
+  wrap.after(hint);
+  const controls = document.createElement("div");
+  controls.className = "foundation-input-options";
+  controls.innerHTML =
+    '<label class="foundation-option"><input type="checkbox" data-floating>플로팅 라벨</label><label class="foundation-option"><input type="checkbox" data-required checked>필수 입력</label>';
+  form.before(controls);
+  const required = controls.querySelector("[data-required]");
+  const sync = () => {
+    wrap.classList.toggle(
+      "is-floating",
+      controls.querySelector("[data-floating]").checked,
+    );
+    input.placeholder = controls.querySelector("[data-floating]").checked
+      ? " "
+      : "예: 디자인 팀";
+    input.required = required.checked;
+    label.textContent = `이름 (${required.checked ? "필수" : "선택"})`;
+    hint.textContent =
+      (required.checked ? "2~30자" : "선택 입력 · 입력 시 2~30자") +
+      " · 어떤 프로젝트인지 알아볼 수 있게 적으세요.";
+    error.textContent = "";
+    status.textContent = "";
+  };
+  controls.onchange = sync;
+  sync();
   input.oninput = () => {
     error.textContent = "";
     input.setAttribute("aria-invalid", "false");
@@ -258,10 +294,15 @@ function setupTextField() {
     e.preventDefault();
     const value = input.value.trim(),
       invalid =
-        measureText(value).characters < 2 || measureText(value).characters > 30;
+        ((required.checked || !!value) && measureText(value).characters < 2) ||
+        measureText(value).characters > 30;
     input.setAttribute("aria-invalid", String(invalid));
     error.textContent = invalid ? "이름을 2~30자로 입력해 주세요." : "";
-    status.textContent = invalid ? "" : `“${value}” 이름으로 저장했어요.`;
+    status.textContent = invalid
+      ? ""
+      : value
+        ? `“${value}” 이름으로 저장했어요.`
+        : "선택 입력을 비워 두었어요. 실제 프로젝트는 저장하지 않습니다.";
     if (invalid) input.focus();
   };
 }

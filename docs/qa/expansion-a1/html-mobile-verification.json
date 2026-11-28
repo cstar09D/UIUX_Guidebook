@@ -1,0 +1,56 @@
+[
+  {
+    "id": "badge",
+    "format": "html",
+    "viewport": 390,
+    "width": 333,
+    "scrollWidth": 333,
+    "selected": "zero",
+    "text": "숫자로 알려주는 알림\n내 알림\n\n알림 버튼 옆에서 미확인 개수를 확인해요.\n\n알림 추가\n1개 읽기\n모두 읽기\n0개도 표시\n\n미확인 알림 0개"
+  },
+  {
+    "id": "chip-tag",
+    "format": "html",
+    "viewport": 390,
+    "width": 333,
+    "scrollWidth": 333,
+    "selected": "limit",
+    "text": "작은 항목의 세 가지 역할\n사용 형태\n선택 칩\n삭제 가능한 칩\n최대 2개 선택\n읽기 전용 태그\n기획\n디자인\n개발\n\n최대 2개까지 선택할 수 있어요. 선택한 항목은 해제할 수 있습니다.\n\n선택·삭제 초기화"
+  },
+  {
+    "id": "avatar",
+    "format": "html",
+    "viewport": 390,
+    "width": 333,
+    "scrollWidth": 333,
+    "selected": "group",
+    "text": "함께 만드는 사람들\n민지\n서준\n지우\n+3\n사진\n사진 실패\n정보 없음\n참여자 그룹\n\n6명 중 3명만 표시하고 +3으로 전체를 확인해요."
+  },
+  {
+    "id": "command-palette",
+    "format": "html",
+    "viewport": 390,
+    "width": 333,
+    "scrollWidth": 333,
+    "selected": "open",
+    "text": "찾아서 바로 실행하기\n명령이나 페이지 검색\n⌘K\n\n예: 디자인, 설정, 새 문서 · Ctrl+K / ⌘K로도 열 수 있어요.\n\n명령 팔레트\n검색어\n\n3자 · 9 byte (UTF-8)\n\n디자인 노트 열기\n\n1개 명령을 찾았어요.\n\n다음 실행 실패 모의"
+  },
+  {
+    "id": "context-menu",
+    "format": "html",
+    "viewport": 390,
+    "width": 333,
+    "scrollWidth": 333,
+    "selected": "",
+    "text": "대상에 맞는 작업 메뉴\n한A🙂\n\n우클릭 · Shift+F10 · 더보기\n\n보관 권한 없음 모의\n\n노트 이름을 변경했어요."
+  },
+  {
+    "id": "split-button",
+    "format": "html",
+    "viewport": 390,
+    "width": 333,
+    "scrollWidth": 333,
+    "selected": "success",
+    "text": "바로 저장하거나 옵션 고르기\n새로운 서비스 아이디어\n\n기본 동작과 추가 작업을 구분해 보세요.\n\n저장\n다음 저장 실패 모의\n\n문서 사본 저장을 완료했어요."
+  }
+]

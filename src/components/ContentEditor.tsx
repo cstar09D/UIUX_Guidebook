@@ -28,6 +28,8 @@ import {
   type ContentVersion,
 } from "@/lib/content";
 import type { DemoId } from "@/lib/catalog";
+import { SimulationPreview } from "./SimulationExperience";
+import { scenarioIds } from "@/demos/scenario-contract.mjs";
 
 export async function adminRequest<T>(
   url: string,
@@ -262,13 +264,19 @@ function PointsEditor({
     </section>
   );
 }
-function ExamplesEditor({
+function SimulationStatesEditor({
+  demoId,
   items,
   onChange,
 }: {
+  demoId: DemoId;
   items: ScreenExample[];
   onChange: (v: ScreenExample[]) => void;
 }) {
+  const allowed = scenarioIds[demoId];
+  const nextState = allowed?.find(
+    (key) => !items.some((item) => item.id === key),
+  );
   const edit = (index: number, change: Partial<ScreenExample>) =>
     onChange(
       items.map((item, i) => (i === index ? { ...item, ...change } : item)),
@@ -277,30 +285,57 @@ function ExamplesEditor({
     <section className="studio-section">
       <div className="studio-section-heading">
         <div>
-          <h3>상황별 화면 예시</h3>
-          <p>화면 문구와 발생 조건, 사용자가 해야 할 일을 함께 작성하세요.</p>
+          <h3>상태별 화면과 설명</h3>
+          <p>
+            직접 체험에서 선택할 상태입니다. 등록된 동작에 상태 이름·발생
+            조건·처리 방법을 연결합니다.
+          </p>
         </div>
         <button
           type="button"
           className="studio-add"
+          disabled={!!allowed && !nextState}
           onClick={() =>
             onChange([
               ...items,
-              {
-                id: `state-${crypto.randomUUID()}`,
-                label: "",
-                title: "",
-                condition: "",
-                explanation: "",
-                screen: { title: "", body: "" },
-              },
+              allowed && nextState
+                ? structuredClone(
+                    detailedGuides[demoId].examples.find(
+                      (item) => item.id === nextState,
+                    )!,
+                  )
+                : {
+                    id: `state-${crypto.randomUUID()}`,
+                    label: "",
+                    title: "",
+                    condition: "",
+                    explanation: "",
+                    screen: { title: "", body: "" },
+                  },
             ])
           }
         >
           <Plus size={14} />
-          화면 추가
+          상태 추가
         </button>
       </div>
+      {allowed && (
+        <div className="studio-note">
+          <p>
+            이 UI는 상태 선택이 실제 동작에 연결됩니다. 동작·화면 구성은 개발
+            소스에서 관리하고, 여기서는 안내 내용을 편집합니다.
+          </p>
+          <button
+            type="button"
+            className="admin-secondary"
+            onClick={() =>
+              onChange(structuredClone(detailedGuides[demoId].examples))
+            }
+          >
+            등록된 상태 안내로 되돌리기
+          </button>
+        </div>
+      )}
       {items.map((item, index) => (
         <div className="studio-item" key={item.id}>
           <Controls
@@ -309,86 +344,118 @@ function ExamplesEditor({
             move={(from, to) => onChange(reordered(items, from, to))}
             remove={() => onChange(items.filter((_, i) => i !== index))}
           />
+          {allowed && (
+            <label className="studio-field">
+              <span>연결할 실제 동작 상태</span>
+              <select
+                aria-label={`상태 ${index + 1} 동작 연결`}
+                value={item.id}
+                onChange={(event) => edit(index, { id: event.target.value })}
+              >
+                {!allowed.includes(item.id) && (
+                  <option value={item.id}>
+                    연결되지 않은 설명 ({item.id})
+                  </option>
+                )}
+                {allowed.map((key) => (
+                  <option
+                    key={key}
+                    value={key}
+                    disabled={items.some(
+                      (other, i) => i !== index && other.id === key,
+                    )}
+                  >
+                    {detailedGuides[demoId].examples.find(
+                      (example) => example.id === key,
+                    )?.label || key}{" "}
+                    · {key}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
           <div className="studio-pair">
             <Field
-              label={`예시 ${index + 1} 선택 버튼 이름`}
+              label={`상태 ${index + 1} 이름`}
               value={item.label}
               onChange={(v) => edit(index, { label: v })}
             />
             <Field
-              label={`예시 ${index + 1} 설명 제목`}
+              label={`상태 ${index + 1} 설명 제목`}
               value={item.title}
               onChange={(v) => edit(index, { title: v })}
             />
           </div>
           <Field
-            label={`예시 ${index + 1} 발생 조건`}
+            label={`상태 ${index + 1} 발생 조건`}
             large
             value={item.condition}
             onChange={(v) => edit(index, { condition: v })}
           />
           <Field
-            label={`예시 ${index + 1} 처리 방법`}
+            label={`상태 ${index + 1} 처리 방법`}
             large
             value={item.explanation}
             onChange={(v) => edit(index, { explanation: v })}
           />
-          <div className="studio-screen-fields">
-            <span className="studio-eyebrow">화면에 표시할 내용</span>
-            <Field
-              label={`예시 ${index + 1} 화면 제목`}
-              value={item.screen.title}
-              onChange={(v) =>
-                edit(index, { screen: { ...item.screen, title: v } })
-              }
-            />
-            <Field
-              label={`예시 ${index + 1} 화면 문구`}
-              large
-              value={item.screen.body}
-              onChange={(v) =>
-                edit(index, { screen: { ...item.screen, body: v } })
-              }
-            />
-            <div className="studio-pair">
+          {!allowed && (
+            <div className="studio-screen-fields">
+              <span className="studio-eyebrow">화면에 표시할 내용</span>
               <Field
-                label={`예시 ${index + 1} 행동 문구`}
-                value={item.screen.action || ""}
+                label={`상태 ${index + 1} 화면 제목`}
+                value={item.screen.title}
                 onChange={(v) =>
-                  edit(index, { screen: { ...item.screen, action: v } })
+                  edit(index, { screen: { ...item.screen, title: v } })
                 }
               />
-              <label className="studio-field">
-                <span>화면 상태</span>
-                <select
-                  value={item.screen.tone || "default"}
-                  onChange={(e) => {
-                    const tone = e.target.value as
-                      ScreenExample["screen"]["tone"] | "default";
-                    edit(index, {
-                      screen: {
-                        ...item.screen,
-                        tone: tone === "default" ? undefined : tone,
-                      },
-                    });
-                  }}
-                >
-                  <option value="default">기본</option>
-                  <option value="loading">로딩</option>
-                  <option value="success">성공</option>
-                  <option value="error">오류</option>
-                </select>
-              </label>
+              <Field
+                label={`상태 ${index + 1} 화면 문구`}
+                large
+                value={item.screen.body}
+                onChange={(v) =>
+                  edit(index, { screen: { ...item.screen, body: v } })
+                }
+              />
+              <div className="studio-pair">
+                <Field
+                  label={`상태 ${index + 1} 행동 문구`}
+                  value={item.screen.action || ""}
+                  onChange={(v) =>
+                    edit(index, { screen: { ...item.screen, action: v } })
+                  }
+                />
+                <label className="studio-field">
+                  <span>화면 상태</span>
+                  <select
+                    value={item.screen.tone || "default"}
+                    onChange={(e) => {
+                      const tone = e.target.value as
+                        ScreenExample["screen"]["tone"] | "default";
+                      edit(index, {
+                        screen: {
+                          ...item.screen,
+                          tone: tone === "default" ? undefined : tone,
+                        },
+                      });
+                    }}
+                  >
+                    <option value="default">기본</option>
+                    <option value="loading">로딩</option>
+                    <option value="success">성공</option>
+                    <option value="error">오류</option>
+                  </select>
+                </label>
+              </div>
+              <Strings
+                label={`상태 ${index + 1} 화면 항목`}
+                value={item.screen.items || []}
+                onChange={(v) =>
+                  edit(index, { screen: { ...item.screen, items: v } })
+                }
+                help="목록은 한 줄에 하나씩, 그리드의 열은 |로 구분합니다. 비워두면 목록을 표시하지 않습니다."
+              />
             </div>
-            <Strings
-              label={`예시 ${index + 1} 화면 항목`}
-              value={item.screen.items || []}
-              onChange={(v) =>
-                edit(index, { screen: { ...item.screen, items: v } })
-              }
-              help="목록은 한 줄에 하나씩, 그리드의 열은 |로 구분합니다. 비워두면 목록을 표시하지 않습니다."
-            />
-          </div>
+          )}
         </div>
       ))}
     </section>
@@ -398,7 +465,7 @@ const date = (value: string) => new Date(value).toLocaleString("ko-KR");
 const tabs = [
   ["basic", "기본 정보"],
   ["guide", "사용 가이드"],
-  ["examples", "화면 예시"],
+  ["simulation", "시뮬레이션"],
   ["roles", "직무별 안내"],
   ["history", "변경 이력"],
 ] as const;
@@ -578,7 +645,7 @@ export default function ContentEditor({
         {tab === "basic" && (
           <>
             <div className="studio-intro">
-              <h3>이름과 검색, 연결할 동작을 설정하세요.</h3>
+              <h3>이름과 검색 정보를 설정하세요.</h3>
               <p>
                 상세 설명은 각 탭에서 편집합니다. 숨김·휴지통은 목록 화면에서
                 별도로 관리합니다.
@@ -619,23 +686,6 @@ export default function ContentEditor({
                     <option key={name}>{name}</option>
                   ))}
                 </select>
-              </label>
-              <label className="studio-field">
-                <span>연결할 시뮬레이션</span>
-                <select
-                  aria-label="연결할 시뮬레이션"
-                  value={document.demoId}
-                  onChange={(e) => update({ demoId: e.target.value as DemoId })}
-                >
-                  {simulationRegistry.map((demo) => (
-                    <option key={demo.id} value={demo.id}>
-                      {demo.name}
-                    </option>
-                  ))}
-                </select>
-                <small>
-                  연결 동작만 변경됩니다. 작성한 상세 설명은 유지됩니다.
-                </small>
               </label>
             </div>
             <div className="studio-pair">
@@ -715,7 +765,7 @@ export default function ContentEditor({
             <div className="studio-note">
               <strong>기본 가이드로 시작하기</strong>
               <p>
-                선택한 시뮬레이션의 사용 가이드·화면 예시·직무별 안내·출처로
+                선택한 시뮬레이션의 사용 가이드·상태별 화면·직무별 안내·출처로
                 현재 편집 내용을 교체합니다. 저장 전에는 취소할 수 있습니다.
               </p>
               <button
@@ -769,11 +819,45 @@ export default function ContentEditor({
             />
           </>
         )}
-        {tab === "examples" && (
-          <ExamplesEditor
-            items={document.guide.examples}
-            onChange={(v) => guide({ examples: v })}
-          />
+        {tab === "simulation" && (
+          <>
+            <section className="studio-section">
+              <h3>목록 애니메이션 · 직접 체험</h3>
+              <p className="studio-simulation-intro">
+                하나의 시뮬레이션에 목록 미리보기, 직접 체험, 상태별 화면을
+                연결합니다. 아래 미리보기에는 저장 전 편집 내용도 바로
+                반영됩니다.
+              </p>
+              <label className="studio-field">
+                <span>연결할 시뮬레이션</span>
+                <select
+                  aria-label="연결할 시뮬레이션"
+                  value={document.demoId}
+                  onChange={(e) => update({ demoId: e.target.value as DemoId })}
+                >
+                  {simulationRegistry.map((demo) => (
+                    <option key={demo.id} value={demo.id}>
+                      {demo.name}
+                    </option>
+                  ))}
+                </select>
+                <small>
+                  목록 애니메이션과 직접 체험에 같은 UI가 연결됩니다. 상태별
+                  내용은 자동 교체되지 않으므로 연결한 UI에 맞게 확인하세요.
+                </small>
+              </label>
+              <SimulationPreview
+                key={document.id}
+                id={document.demoId}
+                examples={document.guide.examples}
+              />
+            </section>
+            <SimulationStatesEditor
+              demoId={document.demoId}
+              items={document.guide.examples}
+              onChange={(v) => guide({ examples: v })}
+            />
+          </>
         )}
         {tab === "roles" && (
           <>

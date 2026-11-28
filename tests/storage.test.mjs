@@ -124,7 +124,7 @@ test("초안 저장·이력 복원은 게시본을 바꾸지 않으며 게시와
       "unpublish",
     );
     assert.equal(unpublish.status, "draft");
-    assert.equal((await r.listTerms()).length, 76);
+    assert.equal((await r.listTerms()).length, 100);
     assert.ok((await r.getHistory(published.id)).length >= 5);
   }));
 test("미완성 초안은 저장되고 게시 검증·숨김·휴지통·복원은 일관되게 동작한다", () =>
@@ -141,26 +141,26 @@ test("미완성 초안은 저장되고 게시 검증·숨김·휴지통·복원�
       "save",
     );
     assert.equal(item.status, "draft");
-    assert.equal((await r.listTerms()).length, 77);
+    assert.equal((await r.listTerms()).length, 101);
     await assert.rejects(
       async () => await r.saveContent(item, "publish"),
       status(422),
     );
     item = await r.saveContent({ ...item, guide: base.guide }, "publish");
-    assert.equal((await r.listTerms()).length, 78);
+    assert.equal((await r.listTerms()).length, 102);
     item = await r.changeTerm(item.id, item.revision, "hide");
-    assert.equal((await r.listTerms()).length, 77);
+    assert.equal((await r.listTerms()).length, 101);
     await assert.rejects(
       async () => await r.changeTerm(item.id, item.revision - 1, "show"),
       status(409),
     );
     item = await r.changeTerm(item.id, item.revision, "show");
-    assert.equal((await r.listTerms()).length, 78);
+    assert.equal((await r.listTerms()).length, 102);
     item = await r.changeTerm(item.id, item.revision, "trash");
-    assert.equal((await r.listTerms()).length, 77);
+    assert.equal((await r.listTerms()).length, 101);
     await assert.rejects(async () => await r.saveContent(item, "publish"));
     item = await r.changeTerm(item.id, item.revision, "restore");
-    assert.equal((await r.listTerms()).length, 78);
+    assert.equal((await r.listTerms()).length, 102);
     assert.equal(item.deleted, false);
   }));
 test("카테고리·태그 변경은 초안과 게시본 모두 갱신하고 이력 복원에서 폐기된 분류를 되살리지 않는다", () =>
@@ -330,7 +330,7 @@ test("병합은 파일에 없는 콘텐츠를 유지하고 전체 교체는 제�
     const preview = await r.previewImport(legacy, "merge");
     assert.equal(preview.legacy, true);
     await r.importBackup(legacy, "merge", preview.token);
-    assert.equal((await r.listTerms()).length, 77);
+    assert.equal((await r.listTerms()).length, 101);
   }));
 // Simulate an already-managed catalog: expansion must never overwrite existing ids or revisions.
 test("콘텐츠 확장은 기존 초안·게시본·휴지통·분류를 보존하고 한 번만 추가한다", () =>
@@ -357,7 +357,7 @@ test("콘텐츠 확장은 기존 초안·게시본·휴지통·분류를 보존�
         result.terms.find((t) => t.document.id === original.document.id),
         original,
       );
-    assert.equal((await reopened.listTerms(true)).length, 77);
+    assert.equal((await reopened.listTerms(true)).length, 101);
     assert.equal(
       (await reopened.listTerms(true)).find((t) => t.id === "tooltip").deleted,
       true,
@@ -713,10 +713,17 @@ test("효과 17개 추가는 기존 51개 원문·게시·이력과 분류 편�
   }));
 test("배경 효과 9개는 기존 68개 콘텐츠와 이력을 보존해 한 번만 추가한다", () =>
   usingDB(async (r, directory, file) => {
-    const sql = new DatabaseSync(process.env.UI_NOTES_DB_PATH),
-      added = (await r.listTerms(true))
-        .filter((t) => t.order >= 68)
-        .map((t) => t.id);
+    // Reconstruct the historical 77-entry catalog for this migration regression.
+    const sql = new DatabaseSync(process.env.UI_NOTES_DB_PATH);
+    for (const term of (await r.listTerms(true)).filter((t) => t.order >= 77)) {
+      for (const table of ["terms", "published_terms"])
+        sql.prepare(`DELETE FROM ${table} WHERE id=?`).run(term.id);
+      for (const table of ["content_meta", "term_versions"])
+        sql.prepare(`DELETE FROM ${table} WHERE term_id=?`).run(term.id);
+    }
+    const added = (await r.listTerms(true))
+      .filter((t) => t.order >= 68)
+      .map((t) => t.id);
     assert.equal(added.length, 9);
     for (const id of added) {
       for (const table of ["terms", "published_terms"])

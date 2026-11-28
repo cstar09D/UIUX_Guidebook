@@ -379,8 +379,30 @@ export function ParticlesScene({
   reduced = false,
 }: SceneProps) {
   const t = useBackgroundTime(preview, time, paused, reduced),
+    [mode, setMode] = useState("floating"),
+    [burst, setBurst] = useState(0),
+    [celebrated, setCelebrated] = useState(false),
     [density, setDensity] = useState(24),
     count = preview ? 18 : density;
+  const confetti = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!burst) return;
+    const timer = setTimeout(() => setBurst(0), 1200);
+    const stop = () => setBurst(0),
+      visibility = () => {
+        if (document.hidden) stop();
+      };
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries[0]?.isIntersecting) stop();
+    });
+    if (confetti.current) observer.observe(confetti.current);
+    document.addEventListener("visibilitychange", visibility);
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", visibility);
+    };
+  }, [burst]);
   return (
     <BackgroundFrame
       kind="particles"
@@ -388,18 +410,50 @@ export function ParticlesScene({
       preview={preview}
       dark
       controls={
-        <BackgroundRange
-          label="입자 수"
-          value={density}
-          min={8}
-          max={48}
-          step={4}
-          onChange={setDensity}
-          unit="개"
-        />
+        <>
+          <label className="bg-option">
+            입자 용도
+            <select
+              data-particle-mode
+              value={mode}
+              onChange={(e) => {
+                setMode(e.target.value);
+                setBurst(0);
+              }}
+            >
+              <option value="floating">지속 부유 배경</option>
+              <option value="confetti">한 번만 축하하기</option>
+            </select>
+          </label>
+          <button
+            data-confetti-start
+            disabled={burst > 0}
+            onClick={() => {
+              setCelebrated(true);
+              if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+                setBurst((v) => v + 1);
+            }}
+          >
+            작업 완료 · 축하
+          </button>
+          <p data-confetti-status role="status">
+            {celebrated
+              ? "작업 완료! 축하 동작은 모의이며 데이터를 저장하지 않습니다."
+              : "배경과 일회성 성공 모션의 차이를 비교하세요."}
+          </p>
+          <BackgroundRange
+            label="입자 수"
+            value={density}
+            min={8}
+            max={48}
+            step={4}
+            onChange={setDensity}
+            unit="개"
+          />
+        </>
       }
     >
-      <div className="bg-particles">
+      <div className="bg-particles" hidden={!preview && mode === "confetti"}>
         {Array.from({ length: count }, (_, i) => (
           <i
             key={i}
@@ -413,6 +467,21 @@ export function ParticlesScene({
           />
         ))}
       </div>
+      {!preview && burst > 0 && (
+        <div className="bg-confetti" key={burst} ref={confetti}>
+          {Array.from({ length: 24 }, (_, i) => (
+            <i
+              key={i}
+              style={{
+                left: `${10 + i * 3.4}%`,
+                background: ["#6fa5ff", "#f3b658", "#ec8ea8", "#80d0b3"][i % 4],
+                animationDelay: `${i * 8}ms`,
+                rotate: `${i * 37}deg`,
+              }}
+            />
+          ))}
+        </div>
+      )}
     </BackgroundFrame>
   );
 }
@@ -452,12 +521,12 @@ export function StarfieldScene({
             <i
               key={i}
               style={{
-                left: `${50 + Math.cos(angle) * depth * 85}%`,
-                top: `${50 + Math.sin(angle) * depth * 90}%`,
-                width: 0.6 + depth * 4,
-                height: 0.6 + depth * 4,
-                opacity: z,
-                transform: `rotate(${angle}rad) scaleX(${1 + depth * 1.2})`,
+                left: `${Number((50 + Math.cos(angle) * depth * 85).toFixed(3))}%`,
+                top: `${Number((50 + Math.sin(angle) * depth * 90).toFixed(3))}%`,
+                width: Number((0.6 + depth * 4).toFixed(3)),
+                height: Number((0.6 + depth * 4).toFixed(3)),
+                opacity: Number(z.toFixed(3)),
+                transform: `rotate(${Number(angle.toFixed(3))}rad) scaleX(${Number((1 + depth * 1.2).toFixed(3))})`,
               }}
             />
           );

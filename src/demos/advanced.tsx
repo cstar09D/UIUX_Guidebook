@@ -354,12 +354,21 @@ const advancedRows: DataRow[] = [
     kind: "기획",
   },
 ];
+const comparisonRows = [
+  ["월 이용료", "무료", "9,000원", "25,000원"],
+  ["팀원 수", "1명", "5명", "20명"],
+  ["파일 저장", "1GB", "10GB", "100GB"],
+  ["우선 지원", "미제공", "미제공", "제공"],
+  ["외부 계정 연동", "미제공", "확인 필요", "확인 필요"],
+];
 export function DataTableScene({ preview = false, time = 1700 }: SceneProps) {
   const [draft, setDraft] = useState("all"),
     [month, setMonth] = useState("all"),
     [failure, setFailure] = useState(false),
     [error, setError] = useState(""),
-    [selected, setSelected] = useState("");
+    [selected, setSelected] = useState(""),
+    [sort, setSort] = useState("original"),
+    [view, setView] = useState("cost");
   const chosen = preview
       ? time < 1000
         ? "all"
@@ -367,7 +376,11 @@ export function DataTableScene({ preview = false, time = 1700 }: SceneProps) {
           ? "11"
           : "12"
       : month,
-    rows = advancedRows.filter((r) => chosen === "all" || r.month === chosen),
+    shownSort = preview ? (time < 1800 ? "original" : "low") : sort,
+    rows = sortRows(
+      advancedRows.filter((r) => chosen === "all" || r.month === chosen),
+      shownSort,
+    ),
     uid = useId();
   return (
     <AdvancedFrame
@@ -376,105 +389,201 @@ export function DataTableScene({ preview = false, time = 1700 }: SceneProps) {
       preview={preview}
     >
       {!preview && (
-        <form
-          className="advanced-controls"
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (failure) {
-              setError("조회하지 못했어요. 기존 표를 유지합니다.");
-              return;
-            }
-            setMonth(draft);
-            setError("");
-            setSelected("");
-          }}
-        >
-          <label htmlFor={`${uid}-month`}>
-            조회 월
-            <select
-              id={`${uid}-month`}
-              value={draft}
-              onChange={(e) => setDraft(e.target.value)}
-            >
-              <option value="all">전체</option>
-              <option value="11">11월</option>
-              <option value="12">12월</option>
-              <option value="10">10월 · 자료 없음</option>
-            </select>
-          </label>
-          <button type="submit">조회 적용</button>
-          <label className="advanced-check">
-            <input
-              type="checkbox"
-              checked={failure}
-              onChange={(e) => setFailure(e.target.checked)}
-            />
-            조회 실패 모의
-          </label>
-        </form>
+        <label className="advanced-label">
+          표 유형
+          <select
+            data-table-view
+            value={view}
+            onChange={(e) => setView(e.target.value)}
+          >
+            <option value="cost">비용 읽기 표</option>
+            <option value="comparison">플랜 비교 표</option>
+          </select>
+        </label>
       )}
-      <div className="advanced-table-scroll">
-        <table className="advanced-table">
-          <caption>
-            {chosen === "all" ? "전체 기간" : `${chosen}월`} 프로젝트 비용 ·
-            읽기용 표
-          </caption>
+      <div data-cost-view hidden={view !== "cost"}>
+        {!preview && (
+          <form
+            className="advanced-controls"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (failure) {
+                setError("조회하지 못했어요. 기존 표·정렬을 유지합니다.");
+                return;
+              }
+              setMonth(draft);
+              setError("");
+              setSelected("");
+            }}
+          >
+            <label htmlFor={`${uid}-month`}>
+              조회 월
+              <select
+                data-month
+                id={`${uid}-month`}
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+              >
+                <option value="all">전체</option>
+                <option value="11">11월</option>
+                <option value="12">12월</option>
+                <option value="10">10월 · 자료 없음</option>
+              </select>
+            </label>
+            <button type="submit">조회 적용</button>
+            <label className="advanced-check">
+              <input
+                type="checkbox"
+                checked={failure}
+                onChange={(e) => setFailure(e.target.checked)}
+              />
+              조회 실패 모의
+            </label>
+          </form>
+        )}
+        <div className="advanced-table-scroll">
+          <table data-cost-table className="advanced-table">
+            <caption>
+              {chosen === "all" ? "전체 기간" : `${chosen}월`} 프로젝트 비용 ·
+              읽기용 표
+            </caption>
+            <thead>
+              <tr>
+                <th
+                  scope="col"
+                  aria-sort={
+                    shownSort === "name"
+                      ? "ascending"
+                      : shownSort === "name-desc"
+                        ? "descending"
+                        : "none"
+                  }
+                >
+                  <button
+                    type="button"
+                    data-table-sort="name"
+                    aria-label="프로젝트 이름 정렬"
+                    onClick={() =>
+                      setSort(sort === "name" ? "name-desc" : "name")
+                    }
+                  >
+                    프로젝트{" "}
+                    <span aria-hidden="true">
+                      {shownSort === "name"
+                        ? "↑"
+                        : shownSort === "name-desc"
+                          ? "↓"
+                          : "↕"}
+                    </span>
+                  </button>
+                </th>
+                <th scope="col">담당</th>
+                <th
+                  scope="col"
+                  aria-sort={
+                    shownSort === "low"
+                      ? "ascending"
+                      : shownSort === "high"
+                        ? "descending"
+                        : "none"
+                  }
+                >
+                  <button
+                    type="button"
+                    data-table-sort="cost"
+                    aria-label="비용 정렬"
+                    onClick={() => setSort(sort === "low" ? "high" : "low")}
+                  >
+                    비용{" "}
+                    <span aria-hidden="true">
+                      {shownSort === "low"
+                        ? "↑"
+                        : shownSort === "high"
+                          ? "↓"
+                          : "↕"}
+                    </span>
+                  </button>
+                </th>
+                {!preview && <th scope="col">보기</th>}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r) => (
+                <tr key={r.id} data-row={r.id}>
+                  <th scope="row">{r.name}</th>
+                  <td>{r.owner}</td>
+                  <td>{r.cost.toLocaleString("ko-KR")}원</td>
+                  {!preview && (
+                    <td>
+                      <button
+                        type="button"
+                        data-detail={r.id}
+                        aria-label={`${r.name} 상세`}
+                        onClick={() => setSelected(r.name)}
+                      >
+                        상세
+                      </button>
+                    </td>
+                  )}
+                </tr>
+              ))}
+              {!rows.length && (
+                <tr>
+                  <td colSpan={preview ? 3 : 4}>
+                    이 기간의 자료가 없어요. 다른 월을 선택하세요.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">합계</th>
+                <td>{rows.length}건</td>
+                <td>
+                  {rows.reduce((n, r) => n + r.cost, 0).toLocaleString("ko-KR")}
+                  원
+                </td>
+                {!preview && <td />}
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p
+          className={error ? "advanced-error" : "advanced-status"}
+          role={preview ? undefined : error ? "alert" : "status"}
+        >
+          {error ||
+            (selected && `${selected} 비용 항목을 확인했어요.`) ||
+            `${rows.length}개 항목 · 헤더 버튼으로 정렬 · 같은 값은 원래 순서 유지`}
+        </p>
+      </div>
+      <div data-comparison-view hidden={view !== "comparison"}>
+        <table className="advanced-table advanced-comparison">
+          <caption>예제 플랜 비교 · 기능별 제공 여부</caption>
           <thead>
             <tr>
-              <th scope="col">프로젝트</th>
-              <th scope="col">담당</th>
-              <th scope="col">비용</th>
-              {!preview && <th scope="col">보기</th>}
+              <th scope="col">항목</th>
+              <th scope="col">개인</th>
+              <th scope="col">팀</th>
+              <th scope="col">비즈니스</th>
             </tr>
           </thead>
           <tbody>
-            {rows.map((r) => (
-              <tr key={r.id}>
-                <th scope="row">{r.name}</th>
-                <td>{r.owner}</td>
-                <td>{r.cost.toLocaleString("ko-KR")}원</td>
-                {!preview && (
-                  <td>
-                    <button
-                      type="button"
-                      data-detail={r.id}
-                      aria-label={`${r.name} 상세`}
-                      onClick={() => setSelected(r.name)}
-                    >
-                      상세
-                    </button>
-                  </td>
-                )}
+            {comparisonRows.map(([name, ...values]) => (
+              <tr key={name}>
+                <th scope="row">{name}</th>
+                {values.map((value, index) => (
+                  <td key={index}>{value}</td>
+                ))}
               </tr>
             ))}
-            {!rows.length && (
-              <tr>
-                <td colSpan={preview ? 3 : 4}>
-                  이 기간의 자료가 없어요. 다른 월을 선택하세요.
-                </td>
-              </tr>
-            )}
           </tbody>
-          <tfoot>
-            <tr>
-              <th scope="row">합계</th>
-              <td>{rows.length}건</td>
-              <td>
-                {rows.reduce((n, r) => n + r.cost, 0).toLocaleString("ko-KR")}원
-              </td>
-              {!preview && <td />}
-            </tr>
-          </tfoot>
         </table>
+        <p className="advanced-status">
+          미제공: 지원하지 않음 · 확인 필요: 아직 제공 여부를 확인하지 못함.
+          빈칸이나 같은 대시로 묶지 않습니다.
+        </p>
       </div>
-      <p
-        className={error ? "advanced-error" : "advanced-status"}
-        role={preview ? undefined : error ? "alert" : "status"}
-      >
-        {error ||
-          (selected && `${selected} 비용 항목을 확인했어요.`) ||
-          `${rows.length}개 항목 · 셀 편집 없이 비교해요.`}
-      </p>
     </AdvancedFrame>
   );
 }
@@ -747,17 +856,23 @@ export function sortRows(rows: DataRow[], mode: string) {
             ? b.row.cost - a.row.cost
             : mode === "name"
               ? a.row.name.localeCompare(b.row.name, "ko")
-              : 0;
+              : mode === "name-desc"
+                ? b.row.name.localeCompare(a.row.name, "ko")
+                : 0;
       return delta || a.index - b.index;
     })
     .map((v) => v.row);
 }
 export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
-  const [mode, setMode] = useState("original");
+  const [mode, setMode] = useState("original"),
+    [kind, setKind] = useState("all"),
+    [mine, setMine] = useState(false);
+  const kindField = useRef<HTMLSelectElement>(null),
+    mineField = useRef<HTMLInputElement>(null);
   const chosen = preview
       ? ["original", "low", "high", "name"][Math.floor(time / 1000) % 4]
       : mode,
-    rows = sortRows(advancedRows, chosen),
+    rows = sortRows(filterRows(advancedRows, kind, mine), chosen),
     uid = useId(),
     labels: Record<string, string> = {
       original: "기본순",
@@ -767,9 +882,39 @@ export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
     };
   return (
     <AdvancedFrame kind="sorting" title="프로젝트 정렬" preview={preview}>
+      {!preview && (
+        <div className="advanced-controls">
+          <label className="advanced-label">
+            분류
+            <select
+              ref={kindField}
+              data-sort-kind
+              value={kind}
+              onChange={(e) => setKind(e.target.value)}
+            >
+              {filterKinds.map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="advanced-check">
+            <input
+              ref={mineField}
+              data-sort-mine
+              type="checkbox"
+              checked={mine}
+              onChange={(e) => setMine(e.target.checked)}
+            />
+            내 담당만
+          </label>
+        </div>
+      )}
       <label className="advanced-label" htmlFor={`${uid}-sort`}>
         정렬 기준
         <select
+          data-sort-mode
           id={`${uid}-sort`}
           value={chosen}
           onChange={(e) => setMode(e.target.value)}
@@ -781,6 +926,32 @@ export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
           ))}
         </select>
       </label>
+      <div className="advanced-filter-chips">
+        {kind !== "all" && (
+          <button
+            type="button"
+            data-sort-clear-kind
+            onClick={() => {
+              setKind("all");
+              kindField.current?.focus();
+            }}
+          >
+            {kind} 해제
+          </button>
+        )}
+        {mine && (
+          <button
+            type="button"
+            data-sort-clear-mine
+            onClick={() => {
+              setMine(false);
+              mineField.current?.focus();
+            }}
+          >
+            내 담당 해제
+          </button>
+        )}
+      </div>
       <ol className="advanced-sort-list">
         {rows.map((r) => (
           <li key={r.id} data-row={r.id}>
@@ -789,8 +960,30 @@ export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
           </li>
         ))}
       </ol>
-      <p className="advanced-status" role={preview ? undefined : "status"}>
-        {labels[chosen]} · 같은 금액은 원래 순서를 유지해요.
+      {!rows.length && (
+        <p className="advanced-status">
+          조건에 맞는 항목이 없어요. 조건 칩을 제거하거나 초기화하세요.
+        </p>
+      )}
+      {!preview && (
+        <button
+          type="button"
+          data-sort-reset
+          onClick={() => {
+            setKind("all");
+            setMine(false);
+            setMode("original");
+          }}
+        >
+          조건·정렬 초기화
+        </button>
+      )}
+      <p
+        className="advanced-status"
+        data-sort-status
+        role={preview ? undefined : "status"}
+      >
+        {labels[chosen]} · {rows.length}개 · 같은 금액은 원래 순서를 유지해요.
       </p>
     </AdvancedFrame>
   );
@@ -807,6 +1000,9 @@ const filterKinds = [
   ["개발", "개발"],
 ] as const;
 export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
+  const [sort, setSort] = useState("original"),
+    [failure, setFailure] = useState(false),
+    [error, setError] = useState("");
   const [kind, setKind] = useState("all"),
     [mine, setMine] = useState(false),
     [open, setOpen] = useState(false),
@@ -824,7 +1020,7 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
           : "개발"
       : kind,
     onlyMine = preview ? time >= 1800 && time < 3000 : mine,
-    rows = filterRows(advancedRows, chosen, onlyMine),
+    rows = sortRows(filterRows(advancedRows, chosen, onlyMine), sort),
     uid = useId(),
     showList = preview ? time >= 500 && time < 1200 : open;
   const current = () =>
@@ -837,6 +1033,15 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
     setOpen(true);
   };
   const choose = (index: number, focus = true) => {
+    if (failure) {
+      setError(
+        "조회에 실패했어요. 적용 조건과 기존 결과를 유지합니다. 실패 모의를 해제하고 다시 선택하세요.",
+      );
+      setOpen(false);
+      if (focus) select.current?.focus();
+      return;
+    }
+    setError("");
     setKind(filterKinds[index][0]);
     setOpen(false);
     typeahead.current.text = "";
@@ -1029,17 +1234,79 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
             ref={check}
             type="checkbox"
             checked={onlyMine}
-            onChange={(e) => setMine(e.target.checked)}
+            onChange={(e) => {
+              if (failure) {
+                setError(
+                  "조회에 실패했어요. 적용 조건과 기존 결과를 유지합니다.",
+                );
+                return;
+              }
+              setError("");
+              setMine(e.target.checked);
+            }}
           />
           내 담당만
         </label>
       </div>
+      {!preview && (
+        <div className="advanced-controls">
+          <label className="advanced-label">
+            결과 정렬
+            <select
+              data-filter-sort
+              value={sort}
+              onChange={(e) => {
+                if (failure) {
+                  setError(
+                    "조회에 실패했어요. 적용 조건과 기존 결과를 유지합니다.",
+                  );
+                  return;
+                }
+                setError("");
+                setSort(e.target.value);
+              }}
+            >
+              <option value="original">기본순</option>
+              <option value="low">금액 낮은순</option>
+              <option value="high">금액 높은순</option>
+              <option value="name">이름순</option>
+            </select>
+          </label>
+          <label className="advanced-check">
+            <input
+              data-filter-fail
+              type="checkbox"
+              checked={failure}
+              onChange={(e) => setFailure(e.target.checked)}
+            />
+            조회 실패 모의
+          </label>
+          <button
+            type="button"
+            data-filter-reset
+            onClick={() => {
+              setKind("all");
+              setMine(false);
+              setSort("original");
+              setError("");
+            }}
+          >
+            조건·정렬 초기화
+          </button>
+        </div>
+      )}
+      {error && (
+        <p className="advanced-error" role="alert">
+          {error}
+        </p>
+      )}
       <div className="advanced-filter-chips">
         {chosen !== "all" && (
           <button
             type="button"
             data-clear-kind
             onClick={() => {
+              setError("");
               setKind("all");
               select.current?.focus();
             }}
@@ -1052,6 +1319,7 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
             type="button"
             data-clear-mine
             onClick={() => {
+              setError("");
               setMine(false);
               check.current?.focus();
             }}
@@ -1066,7 +1334,7 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
             <li key={r.id} data-row={r.id}>
               <strong>{r.name}</strong>
               <span>
-                {r.kind} · {r.owner}
+                {r.kind} · {r.owner} · {r.cost.toLocaleString("ko-KR")}원
               </span>
             </li>
           ))}
@@ -1078,7 +1346,9 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
             type="button"
             data-clear-all
             onClick={() => {
+              setError("");
               setKind("all");
+              setError("");
               setMine(false);
               select.current?.focus();
             }}
@@ -1692,7 +1962,10 @@ export function StickyHeaderScene({
   time = 1700,
 }: SceneProps) {
   const [pinned, setPinned] = useState(true),
-    [offset, setOffset] = useState(0);
+    [offset, setOffset] = useState(0),
+    [directional, setDirectional] = useState(false),
+    [hidden, setHidden] = useState(false);
+  const last = useRef(0);
   const box = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (preview && box.current)
@@ -1714,6 +1987,19 @@ export function StickyHeaderScene({
               onChange={(e) => setPinned(e.target.checked)}
             />
             헤더 고정
+          </label>
+          <label className="advanced-check">
+            <input
+              data-directional
+              type="checkbox"
+              checked={directional}
+              onChange={(e) => {
+                setDirectional(e.target.checked);
+                setHidden(false);
+                last.current = box.current?.scrollTop || 0;
+              }}
+            />
+            아래로 읽을 때 헤더 숨기기
           </label>
           <button
             type="button"
@@ -1737,14 +2023,33 @@ export function StickyHeaderScene({
         className="advanced-sticky-viewport"
         aria-label="문서 스크롤 영역"
         onScroll={(e) => {
-          if (!preview) setOffset(Math.round(e.currentTarget.scrollTop));
+          if (!preview) {
+            const next = Math.max(0, e.currentTarget.scrollTop);
+            setOffset(Math.round(next));
+            if (Math.abs(next - last.current) > 5) {
+              setHidden(
+                directional && pinned && next > 40 && next > last.current,
+              );
+              last.current = next;
+            }
+          }
         }}
       >
         <header
-          className={`advanced-sticky-title ${pinned ? "" : "is-unpinned"}`}
+          className={`advanced-sticky-title ${pinned ? "" : "is-unpinned"} ${hidden && pinned && directional ? "is-direction-hidden" : ""}`}
+          onFocusCapture={() => setHidden(false)}
         >
           <strong>UI 가이드</strong>
-          <span>문서 목차</span>
+          <a
+            href="#document-index"
+            onClick={(e) => {
+              e.preventDefault();
+              setHidden(false);
+              box.current?.scrollTo({ top: 0 });
+            }}
+          >
+            문서 목차
+          </a>
         </header>
         <div className="advanced-sticky-content">
           {[

@@ -244,13 +244,18 @@ function setupCarousel() {
 }
 function setupTable(rows) {
   const root = document.querySelector(".advanced-card"),
-    table = root.querySelector("table"),
-    select = root.querySelector("select"),
+    table = root.querySelector("[data-cost-table]"),
+    monthSelect = root.querySelector("[data-month]"),
     failure = root.querySelector("[type=checkbox]"),
-    status = root.querySelector(".advanced-status");
-  let month = "all";
+    status = root.querySelector("[data-cost-view] .advanced-status"),
+    view = root.querySelector("[data-table-view]");
+  let month = "all",
+    sort = "original";
   function render() {
-    const shown = rows.filter((r) => month === "all" || r.month === month);
+    const shown = sortRows(
+      rows.filter((r) => month === "all" || r.month === month),
+      sort,
+    );
     table.querySelector("caption").textContent =
       (month === "all" ? "전체 기간" : `${month}월`) +
       " 프로젝트 비용 · 읽기용 표";
@@ -258,36 +263,67 @@ function setupTable(rows) {
       ? shown
           .map(
             (r) =>
-              `<tr><th scope="row">${esc(r.name)}</th><td>${r.owner}</td><td>${r.cost.toLocaleString("ko-KR")}원</td><td><button type="button" data-detail="${r.id}" aria-label="${esc(r.name)} 상세">상세</button></td></tr>`,
+              `<tr data-row="${r.id}"><th scope="row">${esc(r.name)}</th><td>${r.owner}</td><td>${r.cost.toLocaleString("ko-KR")}원</td><td><button type="button" data-detail="${r.id}" aria-label="${esc(r.name)} 상세">상세</button></td></tr>`,
           )
           .join("")
       : '<tr><td colspan="4">이 기간의 자료가 없어요. 다른 월을 선택하세요.</td></tr>';
     table.querySelector("tfoot td").textContent = shown.length + "건";
     table.querySelectorAll("tfoot td")[1].textContent =
       shown.reduce((n, r) => n + r.cost, 0).toLocaleString("ko-KR") + "원";
+    for (const b of table.querySelectorAll("[data-table-sort]")) {
+      const name = b.dataset.tableSort === "name",
+        ascending = name ? sort === "name" : sort === "low",
+        descending = name ? sort === "name-desc" : sort === "high";
+      b.closest("th").setAttribute(
+        "aria-sort",
+        ascending ? "ascending" : descending ? "descending" : "none",
+      );
+      b.querySelector("span").textContent = ascending
+        ? "↑"
+        : descending
+          ? "↓"
+          : "↕";
+    }
     status.className = "advanced-status";
     status.role = "status";
-    status.textContent = `${shown.length}개 항목 · 셀 편집 없이 비교해요.`;
+    status.textContent = `${shown.length}개 항목 · 헤더 버튼으로 정렬 · 같은 값은 원래 순서 유지`;
   }
   root.querySelector("form").onsubmit = (e) => {
     e.preventDefault();
     if (failure.checked) {
-      status.className = "advanced-error";
       status.role = "alert";
-      status.textContent = "조회하지 못했어요. 기존 표를 유지합니다.";
+      status.className = "advanced-error";
+      status.textContent = "조회하지 못했어요. 기존 표·정렬을 유지합니다.";
       return;
     }
-    month = select.value;
+    month = monthSelect.value;
     render();
   };
-  table.onclick = (e) => {
-    const button = e.target.closest("[data-detail]");
-    if (!button) return;
-    status.textContent =
-      rows.find((r) => r.id === button.dataset.detail).name +
-      " 비용 항목을 확인했어요.";
+  view.onchange = () => {
+    root.querySelector("[data-cost-view]").hidden = view.value !== "cost";
+    root.querySelector("[data-comparison-view]").hidden =
+      view.value !== "comparison";
   };
+  table.onclick = (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    if (b.dataset.tableSort) {
+      sort =
+        b.dataset.tableSort === "name"
+          ? sort === "name"
+            ? "name-desc"
+            : "name"
+          : sort === "low"
+            ? "high"
+            : "low";
+      render();
+    } else if (b.dataset.detail)
+      status.textContent =
+        b.getAttribute("aria-label") + " 비용 항목을 확인했어요.";
+  };
+  render();
 }
+
 function setupSnackbar() {
   const root = document.querySelector(".advanced-card"),
     bar = root.querySelector(".advanced-snackbar"),
@@ -477,25 +513,60 @@ function setupEmpty() {
   render();
 }
 function setupSorting(rows) {
-  const select = document.querySelector("select"),
+  const mode = document.querySelector("[data-sort-mode]"),
+    kind = document.querySelector("[data-sort-kind]"),
+    mine = document.querySelector("[data-sort-mine]"),
     list = document.querySelector(".advanced-sort-list"),
-    status = document.querySelector(".advanced-status"),
-    labels = {
-      original: "기본순",
-      low: "금액 낮은순",
-      high: "금액 높은순",
-      name: "이름순",
-    };
-  select.onchange = () => {
-    list.innerHTML = sortRows(rows, select.value)
+    chips = document.querySelector(".advanced-filter-chips"),
+    status = document.querySelector("[data-sort-status]");
+  const labels = {
+    original: "기본순",
+    low: "금액 낮은순",
+    high: "금액 높은순",
+    name: "이름순",
+  };
+  const render = () => {
+    const shown = sortRows(
+      filterRows(rows, kind.value, mine.checked),
+      mode.value,
+    );
+    list.innerHTML = shown
       .map(
         (r) =>
           `<li data-row="${r.id}"><span>${esc(r.name)}</span><strong>${r.cost.toLocaleString("ko-KR")}원</strong></li>`,
       )
       .join("");
+    chips.innerHTML =
+      (kind.value !== "all"
+        ? `<button type="button" data-sort-clear-kind>${esc(kind.value)} 해제</button>`
+        : "") +
+      (mine.checked
+        ? '<button type="button" data-sort-clear-mine>내 담당 해제</button>'
+        : "");
     status.textContent =
-      labels[select.value] + " · 같은 금액은 원래 순서를 유지해요.";
+      labels[mode.value] +
+      ` · ${shown.length}개 · ` +
+      (shown.length
+        ? "같은 금액은 원래 순서를 유지해요."
+        : "조건에 맞는 항목이 없어요. 조건 칩을 제거하거나 초기화하세요.");
   };
+  mode.onchange = kind.onchange = mine.onchange = render;
+  chips.onclick = (e) => {
+    const kindRemoved = !!e.target.closest("[data-sort-clear-kind]"),
+      mineRemoved = !!e.target.closest("[data-sort-clear-mine]");
+    if (kindRemoved) kind.value = "all";
+    if (mineRemoved) mine.checked = false;
+    render();
+    if (kindRemoved) kind.focus();
+    else if (mineRemoved) mine.focus();
+  };
+  document.querySelector("[data-sort-reset]").onclick = () => {
+    kind.value = "all";
+    mine.checked = false;
+    mode.value = "original";
+    render();
+  };
+  render();
 }
 function setupFiltering(rows) {
   const root = document.querySelector(".advanced-card"),
@@ -512,6 +583,21 @@ function setupFiltering(rows) {
     ["디자인", "디자인"],
     ["개발", "개발"],
   ];
+  const sort = root.querySelector("[data-filter-sort]"),
+    failure = root.querySelector("[data-filter-fail]");
+  const error = document.createElement("p");
+  error.className = "advanced-error";
+  error.role = "alert";
+  chips.before(error);
+  const allowed = () => {
+    if (failure.checked) {
+      error.textContent =
+        "조회에 실패했어요. 적용 조건과 기존 결과를 유지합니다. 실패 모의를 해제하고 다시 선택하세요.";
+      return false;
+    }
+    error.textContent = "";
+    return true;
+  };
   let content = root.querySelector(".advanced-simple-list"),
     kind = "all",
     mine = false,
@@ -547,7 +633,8 @@ function setupFiltering(rows) {
     place();
   }
   function render() {
-    const shown = filterRows(rows, kind, mine);
+    error.textContent = "";
+    const shown = sortRows(filterRows(rows, kind, mine), sort.value);
     renderSelect();
     check.checked = mine;
     chips.innerHTML =
@@ -565,7 +652,7 @@ function setupFiltering(rows) {
       ? shown
           .map(
             (r) =>
-              `<li data-row="${r.id}"><strong>${esc(r.name)}</strong><span>${r.kind} · ${r.owner}</span></li>`,
+              `<li data-row="${r.id}"><strong>${esc(r.name)}</strong><span>${r.kind} · ${r.owner} · ${r.cost.toLocaleString("ko-KR")}원</span></li>`,
           )
           .join("")
       : '<p>조건에 맞는 항목이 없어요.</p><button type="button" data-clear-all>필터 초기화</button>';
@@ -580,6 +667,12 @@ function setupFiltering(rows) {
     options[active].scrollIntoView({ block: "nearest" });
   }
   function choose(index, focus = true) {
+    if (!allowed()) {
+      open = false;
+      renderSelect();
+      if (focus) select.focus();
+      return;
+    }
     kind = kinds[index][0];
     open = false;
     typed = "";
@@ -679,6 +772,10 @@ function setupFiltering(rows) {
   window.addEventListener("resize", place);
   window.addEventListener("scroll", place, true);
   check.onchange = () => {
+    if (!allowed()) {
+      check.checked = mine;
+      return;
+    }
     mine = check.checked;
     render();
   };
@@ -901,12 +998,35 @@ function setupSticky() {
     title = box.querySelector(".advanced-sticky-title"),
     check = document.querySelector("[type=checkbox]"),
     status = document.querySelector(".advanced-status");
+  const direction = document.querySelector("[data-directional]");
+  let last = 0;
   function update() {
+    const next = Math.max(0, box.scrollTop);
+    if (Math.abs(next - last) > 5) {
+      title.classList.toggle(
+        "is-direction-hidden",
+        check.checked && direction.checked && next > 40 && next > last,
+      );
+      last = next;
+    }
     status.textContent = `${Math.round(box.scrollTop)}px 이동 · ${check.checked ? "제목 고정 중" : "일반 흐름"}`;
   }
   check.onchange = () => {
     title.classList.toggle("is-unpinned", !check.checked);
+    title.classList.remove("is-direction-hidden");
     update();
+  };
+  direction.onchange = () => {
+    title.classList.remove("is-direction-hidden");
+    last = box.scrollTop;
+  };
+  title.addEventListener("focusin", () =>
+    title.classList.remove("is-direction-hidden"),
+  );
+  title.querySelector("a").onclick = (e) => {
+    e.preventDefault();
+    box.scrollTo({ top: 0 });
+    title.classList.remove("is-direction-hidden");
   };
   box.onscroll = update;
   document
@@ -978,16 +1098,13 @@ const setups = {
 };
 export const advancedScript = Object.fromEntries(
   Object.entries(setups).map(([id, setup]) => {
-    const helpers =
-      id === "sorting"
-        ? `const sortRows=${module.exports.sortRows.toString()};`
-        : id === "filtering"
-          ? `const filterRows=${module.exports.filterRows.toString()};`
-          : id === "drag-and-drop"
-            ? `const reorderItems=${module.exports.reorderItems.toString()};const dragInsertIndex=${module.exports.dragInsertIndex.toString()};const attachSortableDrag=${module.exports.attachSortableDrag.toString()};`
-            : id === "easing"
-              ? `const easingProgress=${module.exports.easingProgress.toString()};`
-              : "";
+    const helpers = ["data-table", "sorting", "filtering"].includes(id)
+      ? `const sortRows=${module.exports.sortRows.toString()};const filterRows=${module.exports.filterRows.toString()};`
+      : id === "drag-and-drop"
+        ? `const reorderItems=${module.exports.reorderItems.toString()};const dragInsertIndex=${module.exports.dragInsertIndex.toString()};const attachSortableDrag=${module.exports.attachSortableDrag.toString()};`
+        : id === "easing"
+          ? `const easingProgress=${module.exports.easingProgress.toString()};`
+          : "";
     return [
       id,
       `(()=>{const esc=${escapeHTML.toString()};${helpers}(${setup.toString()})(${["data-table", "sorting", "filtering"].includes(id) ? JSON.stringify(dataRows) : ""});})();`,

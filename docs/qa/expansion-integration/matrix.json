@@ -1,0 +1,626 @@
+[
+  {
+    "id": "badge",
+    "format": "react",
+    "state": "unread",
+    "root": "badge",
+    "bodyLength": 168,
+    "codeLength": 8353,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "badge",
+    "format": "html",
+    "state": "unread",
+    "root": "badge",
+    "bodyLength": 6692,
+    "codeLength": 1379,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "chip-tag",
+    "format": "react",
+    "state": "selected",
+    "root": "chip-tag",
+    "bodyLength": 180,
+    "codeLength": 9464,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "chip-tag",
+    "format": "html",
+    "state": "selected",
+    "root": "chip-tag",
+    "bodyLength": 9505,
+    "codeLength": 1108,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "avatar",
+    "format": "react",
+    "state": "fallback",
+    "root": "avatar",
+    "bodyLength": 188,
+    "codeLength": 10925,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "avatar",
+    "format": "html",
+    "state": "fallback",
+    "root": "avatar",
+    "bodyLength": 8791,
+    "codeLength": 2750,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "command-palette",
+    "format": "react",
+    "state": "open",
+    "root": "command-palette",
+    "bodyLength": 311,
+    "codeLength": 15825,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "command-palette",
+    "format": "html",
+    "state": "open",
+    "root": "command-palette",
+    "bodyLength": 14766,
+    "codeLength": 2387,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "context-menu",
+    "format": "react",
+    "state": "open",
+    "root": "context-menu",
+    "bodyLength": 256,
+    "codeLength": 16212,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "context-menu",
+    "format": "html",
+    "state": "open",
+    "root": "context-menu",
+    "bodyLength": 14337,
+    "codeLength": 2229,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "split-button",
+    "format": "react",
+    "state": "open",
+    "root": "split-button",
+    "bodyLength": 207,
+    "codeLength": 10865,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "split-button",
+    "format": "html",
+    "state": "open",
+    "root": "split-button",
+    "bodyLength": 9912,
+    "codeLength": 1581,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "password-field",
+    "format": "react",
+    "state": "empty",
+    "root": "password-field",
+    "bodyLength": 222,
+    "codeLength": 12090,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "password-field",
+    "format": "html",
+    "state": "empty",
+    "root": "password-field",
+    "bodyLength": 10608,
+    "codeLength": 1663,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "otp-input",
+    "format": "react",
+    "state": "editing",
+    "root": "otp-input",
+    "bodyLength": 192,
+    "codeLength": 12651,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "otp-input",
+    "format": "html",
+    "state": "editing",
+    "root": "otp-input",
+    "bodyLength": 11770,
+    "codeLength": 1509,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "multi-select",
+    "format": "react",
+    "state": "search",
+    "root": "multi-select",
+    "bodyLength": 196,
+    "codeLength": 14405,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "multi-select",
+    "format": "html",
+    "state": "search",
+    "root": "multi-select",
+    "bodyLength": 13291,
+    "codeLength": 1304,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "number-stepper",
+    "format": "react",
+    "state": "minimum",
+    "root": "number-stepper",
+    "bodyLength": 181,
+    "codeLength": 8573,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "number-stepper",
+    "format": "html",
+    "state": "minimum",
+    "root": "number-stepper",
+    "bodyLength": 8157,
+    "codeLength": 1265,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "time-picker",
+    "format": "react",
+    "state": "empty",
+    "root": "time-picker",
+    "bodyLength": 293,
+    "codeLength": 14928,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "time-picker",
+    "format": "html",
+    "state": "empty",
+    "root": "time-picker",
+    "bodyLength": 12398,
+    "codeLength": 1946,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "rating",
+    "format": "react",
+    "state": "empty",
+    "root": "rating",
+    "bodyLength": 174,
+    "codeLength": 8997,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "rating",
+    "format": "html",
+    "state": "empty",
+    "root": "rating",
+    "bodyLength": 8601,
+    "codeLength": 1950,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "notification-center",
+    "format": "react",
+    "state": "unread",
+    "root": "notification-center",
+    "bodyLength": 358,
+    "codeLength": 17061,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "notification-center",
+    "format": "html",
+    "state": "unread",
+    "root": "notification-center",
+    "bodyLength": 18692,
+    "codeLength": 2857,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "hover-card",
+    "format": "react",
+    "state": "closed",
+    "root": "hover-card",
+    "bodyLength": 246,
+    "codeLength": 11660,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "hover-card",
+    "format": "html",
+    "state": "closed",
+    "root": "hover-card",
+    "bodyLength": 10837,
+    "codeLength": 1952,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "inline-edit",
+    "format": "react",
+    "state": "reading",
+    "root": "inline-edit",
+    "bodyLength": 222,
+    "codeLength": 12807,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "inline-edit",
+    "format": "html",
+    "state": "reading",
+    "root": "inline-edit",
+    "bodyLength": 12060,
+    "codeLength": 1458,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "infinite-scroll",
+    "format": "react",
+    "state": "initial",
+    "root": "infinite-scroll",
+    "bodyLength": 168,
+    "codeLength": 10764,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "infinite-scroll",
+    "format": "html",
+    "state": "initial",
+    "root": "infinite-scroll",
+    "bodyLength": 11877,
+    "codeLength": 1184,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "swipe-actions",
+    "format": "react",
+    "state": "closed",
+    "root": "swipe-actions",
+    "bodyLength": 286,
+    "codeLength": 15668,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "swipe-actions",
+    "format": "html",
+    "state": "closed",
+    "root": "swipe-actions",
+    "bodyLength": 18128,
+    "codeLength": 892,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "pull-to-refresh",
+    "format": "react",
+    "state": "idle",
+    "root": "pull-to-refresh",
+    "bodyLength": 257,
+    "codeLength": 13160,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "pull-to-refresh",
+    "format": "html",
+    "state": "idle",
+    "root": "pull-to-refresh",
+    "bodyLength": 14698,
+    "codeLength": 1166,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "split-view",
+    "format": "react",
+    "state": "balanced",
+    "root": "split-view",
+    "bodyLength": 207,
+    "codeLength": 14597,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "split-view",
+    "format": "html",
+    "state": "balanced",
+    "root": "split-view",
+    "bodyLength": 12798,
+    "codeLength": 1800,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "mega-menu",
+    "format": "react",
+    "state": "closed",
+    "root": "mega-menu",
+    "bodyLength": 320,
+    "codeLength": 10898,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "mega-menu",
+    "format": "html",
+    "state": "closed",
+    "root": "mega-menu",
+    "bodyLength": 9711,
+    "codeLength": 2998,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "stagger-animation",
+    "format": "react",
+    "state": "simultaneous",
+    "root": "stagger-animation",
+    "bodyLength": 216,
+    "codeLength": 8938,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "stagger-animation",
+    "format": "html",
+    "state": "simultaneous",
+    "root": "stagger-animation",
+    "bodyLength": 9189,
+    "codeLength": 1256,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "scroll-snap",
+    "format": "react",
+    "state": "free",
+    "root": "scroll-snap",
+    "bodyLength": 383,
+    "codeLength": 9556,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "scroll-snap",
+    "format": "html",
+    "state": "free",
+    "root": "scroll-snap",
+    "bodyLength": 9650,
+    "codeLength": 1770,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "parallax-scroll",
+    "format": "react",
+    "state": "static",
+    "root": "parallax-scroll",
+    "bodyLength": 283,
+    "codeLength": 9126,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "parallax-scroll",
+    "format": "html",
+    "state": "static",
+    "root": "parallax-scroll",
+    "bodyLength": 8537,
+    "codeLength": 1516,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "scroll-reveal",
+    "format": "react",
+    "state": "before",
+    "root": "scroll-reveal",
+    "bodyLength": 312,
+    "codeLength": 10824,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  },
+  {
+    "id": "scroll-reveal",
+    "format": "html",
+    "state": "before",
+    "root": "scroll-reveal",
+    "bodyLength": 10873,
+    "codeLength": 1724,
+    "partial": "true",
+    "codeWidth": {
+      "width": 466,
+      "scroll": 466
+    }
+  }
+]

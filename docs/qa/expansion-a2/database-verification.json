@@ -1,0 +1,45 @@
+{
+  "publicCount": 77,
+  "adminCount": 89,
+  "publishedUnchanged": true,
+  "changedExistingDrafts": [
+    "checkbox",
+    "text-field",
+    "textarea",
+    "file-upload"
+  ],
+  "newDrafts": [
+    {
+      "id": "password-field",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "otp-input",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "multi-select",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "number-stepper",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "time-picker",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "rating",
+      "status": "draft",
+      "revision": 1
+    }
+  ],
+  "repeatAdds": [],
+  "repeatGuideUpdates": []
+}

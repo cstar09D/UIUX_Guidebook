@@ -719,6 +719,144 @@
       "english": "Starfield",
       "implemented": true,
       "reason": "사용자 지정 배경 효과 참고 9종 확장"
+    },
+    {
+      "candidateId": "expansion-a1-badge",
+      "demoId": "badge",
+      "english": "Badge",
+      "korean": "숫자·상태 표시",
+      "batch": "expansion-a1",
+      "implemented": true
+    },
+    {
+      "candidateId": "expansion-a1-chip-tag",
+      "demoId": "chip-tag",
+      "english": "Chip / Tag",
+      "korean": "선택·제거 가능한 작은 항목",
+      "batch": "expansion-a1",
+      "implemented": true
+    },
+    {
+      "candidateId": "expansion-a1-avatar",
+      "demoId": "avatar",
+      "english": "Avatar",
+      "korean": "사용자 식별 이미지",
+      "batch": "expansion-a1",
+      "implemented": true
+    },
+    {
+      "candidateId": "expansion-a1-command-palette",
+      "demoId": "command-palette",
+      "english": "Command Palette",
+      "korean": "검색으로 실행하는 명령창",
+      "batch": "expansion-a1",
+      "implemented": true
+    },
+    {
+      "candidateId": "expansion-a1-context-menu",
+      "demoId": "context-menu",
+      "english": "Context Menu",
+      "korean": "대상에 맞춰 여는 작업 메뉴",
+      "batch": "expansion-a1",
+      "implemented": true
+    },
+    {
+      "candidateId": "expansion-a1-split-button",
+      "demoId": "split-button",
+      "english": "Split Button",
+      "korean": "기본 실행과 추가 옵션을 나눈 버튼",
+      "batch": "expansion-a1",
+      "implemented": true
+    },
+    {
+      "candidateId": "password-field",
+      "demoId": "password-field",
+      "implemented": true
+    },
+    {
+      "candidateId": "otp-input",
+      "demoId": "otp-input",
+      "implemented": true
+    },
+    {
+      "candidateId": "multi-select",
+      "demoId": "multi-select",
+      "implemented": true
+    },
+    {
+      "candidateId": "number-stepper",
+      "demoId": "number-stepper",
+      "implemented": true
+    },
+    {
+      "candidateId": "time-picker",
+      "demoId": "time-picker",
+      "implemented": true
+    },
+    {
+      "candidateId": "rating",
+      "demoId": "rating",
+      "implemented": true
+    },
+    {
+      "candidateId": "notification-center",
+      "demoId": "notification-center",
+      "implemented": true
+    },
+    {
+      "candidateId": "hover-card",
+      "demoId": "hover-card",
+      "implemented": true
+    },
+    {
+      "candidateId": "inline-edit",
+      "demoId": "inline-edit",
+      "implemented": true
+    },
+    {
+      "candidateId": "infinite-scroll",
+      "demoId": "infinite-scroll",
+      "implemented": true
+    },
+    {
+      "candidateId": "swipe-actions",
+      "demoId": "swipe-actions",
+      "implemented": true
+    },
+    {
+      "candidateId": "pull-to-refresh",
+      "demoId": "pull-to-refresh",
+      "implemented": true
+    },
+    {
+      "candidateId": "split-view",
+      "demoId": "split-view",
+      "implemented": true
+    },
+    {
+      "candidateId": "mega-menu",
+      "demoId": "mega-menu",
+      "implemented": true
+    },
+    {
+      "candidateId": "scroll-reveal",
+      "demoId": "scroll-reveal",
+      "implemented": true
+    },
+    {
+      "candidateId": "stagger-animation",
+      "demoId": "stagger-animation",
+      "implemented": true
+    },
+    {
+      "candidateId": "scroll-snap",
+      "demoId": "scroll-snap",
+      "implemented": true
+    },
+    {
+      "candidateId": "parallax-scroll",
+      "demoId": "parallax-scroll",
+      "implemented": true
     }
   ]
 }

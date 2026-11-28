@@ -21,9 +21,9 @@ writeFileSync(path.join(directory, "catalog.mjs"), code);
 const { seeds, DEMO_IDS, normalizeLegacy, validateContent, publicationIssues } =
   await import(pathToFileURL(path.join(directory, "catalog.mjs")).href);
 rmSync(directory, { recursive: true, force: true });
-test("등록된 77개 UI는 명칭·검색어·전체 가이드·두 코드 형식을 갖춘다", () => {
-  assert.equal(seeds.length, 77);
-  assert.equal(new Set(DEMO_IDS).size, 77);
+test("등록된 101개 UI는 명칭·검색어·전체 가이드·두 코드 형식을 갖춘다", () => {
+  assert.equal(seeds.length, 101);
+  assert.equal(new Set(DEMO_IDS).size, 101);
   const sources = JSON.parse(
     readFileSync("src/generated/sources.json", "utf8"),
   );

@@ -1,3 +1,7 @@
+import { enhanceLayoutGuide } from "./layout-enhancement-guides";
+import { enhanceWorkflowGuide } from "./workflow-enhancement-guides";
+import { enhanceInputGuide } from "./input-enhancement-guides";
+import { expansionSeeds } from "./expansion-content";
 import { upgradeGuide } from "./guide-upgrade";
 import { upgradeHotspotGuide } from "./hotspot-guide";
 import { AsyncLocalStorage } from "node:async_hooks";
@@ -1092,4 +1096,159 @@ export async function clearLoginAttempts(): Promise<void> {
   )
     .prepare("DELETE FROM admin_login_limits WHERE key='administrator'")
     .run();
+}
+
+/** Explicit, idempotent server-side addition. New executable IDs stay unpublished. */
+export async function addExpansionDrafts(apply = false) {
+  return transaction(async () => {
+    const existing = await drafts();
+    const additions = expansionSeeds.filter((seed) => {
+      const sameId = existing.find((term) => term.id === seed.id);
+      if (sameId && sameId.demoId !== seed.demoId)
+        throw new ContentError(`이미 사용 중인 용어 id: ${seed.id}`, 409);
+      return !sameId && !existing.some((term) => term.demoId === seed.demoId);
+    });
+    const taxonomy = await getTaxonomy();
+    let order = Math.max(-1, ...existing.map((term) => term.order)) + 1;
+    const terms = additions.map((seed) =>
+      validateContent(normalizeLegacy({ ...seed, order: order++ }), taxonomy),
+    );
+    for (const term of terms) {
+      const issues = publicationIssues(term);
+      if (issues.length)
+        throw new ContentError(`${term.id}: ${issues.join(", ")}`, 422);
+    }
+    const result = {
+      applied: false,
+      added: terms.map((term) => term.id),
+      skipped: expansionSeeds
+        .filter((seed) => !terms.some((term) => term.id === seed.id))
+        .map((seed) => seed.id),
+      checkpoint: null as Checkpoint | null,
+    };
+    if (!apply || !terms.length) return result;
+    result.checkpoint = await checkpointFile(await exportBackup(), "catalog");
+    for (const term of terms) await put(term, "catalog");
+    return { ...result, applied: true };
+  });
+}
+
+/** Add guide additions to current drafts only. User text and published copies are untouched. */
+export async function addInputEnhancementDrafts(apply = false) {
+  return transaction(async () => {
+    const taxonomy = await getTaxonomy(),
+      existing = await drafts();
+    const changes = existing
+      .filter((t) =>
+        ["text-field", "textarea", "checkbox", "file-upload"].includes(
+          t.demoId,
+        ),
+      )
+      .map((term) => ({
+        term,
+        guide: enhanceInputGuide(term.demoId, term.guide),
+      }))
+      .filter(
+        ({ term, guide }) =>
+          JSON.stringify(term.guide) !== JSON.stringify(guide),
+      );
+    const result = {
+      applied: false,
+      updated: changes.map((x) => x.term.id),
+      checkpoint: null as Checkpoint | null,
+    };
+    if (!apply || !changes.length) return result;
+    result.checkpoint = await checkpointFile(await exportBackup(), "catalog");
+    for (const { term, guide } of changes)
+      await put(
+        validateContent(
+          { ...term, guide, revision: term.revision + 1 },
+          taxonomy,
+        ),
+        "save",
+      );
+    return { ...result, applied: true };
+  });
+}
+
+/** Add guide additions to current drafts only. User text and published copies are untouched. */
+export async function addWorkflowEnhancementDrafts(apply = false) {
+  return transaction(async () => {
+    const taxonomy = await getTaxonomy(),
+      existing = await drafts();
+    const changes = existing
+      .filter((t) =>
+        [
+          "data-table",
+          "sorting",
+          "filtering",
+          "icon-button",
+          "bottom-sheet",
+        ].includes(t.demoId),
+      )
+      .map((term) => ({
+        term,
+        guide: enhanceWorkflowGuide(term.demoId, term.guide),
+      }))
+      .filter(
+        ({ term, guide }) =>
+          JSON.stringify(term.guide) !== JSON.stringify(guide),
+      );
+    const result = {
+      applied: false,
+      updated: changes.map((x) => x.term.id),
+      checkpoint: null as Checkpoint | null,
+    };
+    if (!apply || !changes.length) return result;
+    result.checkpoint = await checkpointFile(await exportBackup(), "catalog");
+    for (const { term, guide } of changes)
+      await put(
+        validateContent(
+          { ...term, guide, revision: term.revision + 1 },
+          taxonomy,
+        ),
+        "save",
+      );
+    return { ...result, applied: true };
+  });
+}
+
+export async function addLayoutEnhancementDrafts(apply = false) {
+  return transaction(async () => {
+    const taxonomy = await getTaxonomy(),
+      existing = await drafts();
+    const changes = existing
+      .filter((t) =>
+        [
+          "navigation-drawer",
+          "progress-bar",
+          "sticky-header",
+          "particles",
+        ].includes(t.demoId),
+      )
+      .map((term) => ({
+        term,
+        guide: enhanceLayoutGuide(term.demoId, term.guide),
+      }))
+      .filter(
+        ({ term, guide }) =>
+          JSON.stringify(term.guide) !== JSON.stringify(guide),
+      );
+    const result = {
+      applied: false,
+      updated: changes.map((x) => x.term.id),
+      checkpoint: null as Checkpoint | null,
+    };
+    if (!apply || !changes.length) return result;
+    result.checkpoint = await checkpointFile(await exportBackup(), "catalog");
+    for (const { term, guide } of changes)
+      await put(
+        validateContent(
+          { ...term, guide, revision: term.revision + 1 },
+          taxonomy,
+        ),
+        "save",
+      );
+    return { ...result, applied: true };
+  });
 }

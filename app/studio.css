@@ -903,3 +903,23 @@
     font-size: 24px;
   }
 }
+
+.studio-simulation-intro{color:#92a0b6;font-size:13px;line-height:1.8;margin:10px 0 20px}
+.studio-simulation-preview{margin-top:20px;min-width:0;border:1px solid #344055;border-radius:12px;overflow:hidden;background:#121a28}
+.studio-simulation-toolbar{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:12px;background:#182233;border-bottom:1px solid #344055}
+.studio-simulation-toolbar>div{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.studio-simulation-toolbar button,.studio-simulation-toolbar select{padding:8px 10px;border:1px solid #3b4a61;border-radius:6px;background:#202e43;color:#b5c3d9;font-size:12px}
+.studio-simulation-toolbar button:hover{background:#2a3d59}
+.studio-simulation-toolbar button[aria-pressed=true]{background:#284677;border-color:#628cce;color:#e1ecff}
+.studio-simulation-preview .simulation-experience{height:620px;padding:12px;background:#121a28}
+.studio-simulation-preview .simulation-state-controls{border-radius:8px;background:#182233;border-color:#344055}
+.studio-simulation-preview .simulation-state-controls>span{color:#a8b9d2}
+.studio-simulation-preview .experience-stage{padding:8px;overflow:hidden;border:1px solid #344055;border-radius:8px;background:#eaf0f8;min-height:0}
+.studio-simulation-preview .stage-inner{height:100%;display:flex;flex-direction:column}
+.studio-simulation-preview .stage-inner iframe{height:100%;width:100%;min-height:0;flex:1;border:0;background:#fbfcfe}
+.studio-motion-preview{max-width:500px;margin:24px auto;padding:0 16px}
+.studio-simulation-help{margin:0;padding:14px;color:#9daec7;font-size:12px;line-height:1.8}
+@media(max-width:600px){.studio-simulation-preview .simulation-experience{height:580px}.studio-simulation-toolbar{padding:10px}.studio-simulation-toolbar button,.studio-simulation-toolbar select{font-size:11px;padding:7px 8px}}
+.studio-simulation-preview .simulation-state-controls select{background:#202e43;border-color:#3b4a61;color:#d3dff1}
+.studio-simulation-preview .experience-caption{background:#182233;color:#9daec7;border-color:#344055;font-size:11px;padding:10px;line-height:1.6}
+.studio-simulation-preview .simulation-live-guide{background:#182233;border-color:#344055;color:#a4b4cd}.studio-simulation-preview .simulation-live-guide summary{color:#aacbff}.studio-simulation-preview .simulation-live-guide strong{color:#d1e0f5}

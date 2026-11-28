@@ -1,0 +1,46 @@
+{
+  "publicCount": 77,
+  "adminCount": 95,
+  "publishedUnchanged": true,
+  "changedExistingDrafts": [
+    "bottom-sheet",
+    "icon-button",
+    "data-table",
+    "sorting",
+    "filtering"
+  ],
+  "newDrafts": [
+    {
+      "id": "notification-center",
+      "status": "draft",
+      "revision": 2
+    },
+    {
+      "id": "hover-card",
+      "status": "draft",
+      "revision": 2
+    },
+    {
+      "id": "inline-edit",
+      "status": "draft",
+      "revision": 2
+    },
+    {
+      "id": "infinite-scroll",
+      "status": "draft",
+      "revision": 2
+    },
+    {
+      "id": "swipe-actions",
+      "status": "draft",
+      "revision": 2
+    },
+    {
+      "id": "pull-to-refresh",
+      "status": "draft",
+      "revision": 2
+    }
+  ],
+  "repeatAdds": [],
+  "repeatGuideUpdates": []
+}

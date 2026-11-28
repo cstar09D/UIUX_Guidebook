@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/api/admin",
+    "status": 200,
+    "count": 101
+  },
+  {
+    "path": "/api/terms",
+    "status": 200,
+    "count": 77
+  }
+]

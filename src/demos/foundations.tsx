@@ -1,3 +1,4 @@
+import { shareServices } from "./share-services.mjs";
 import { InputMetrics } from "./input-metrics";
 import { measureText, limitText } from "./input-metrics.mjs";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
@@ -129,18 +130,13 @@ function ToolIcon({ kind }: { kind: "copy" | "archive" | "share" }) {
     </svg>
   );
 }
-const shareServices = [
-  ["kakao", "카카오톡", "톡"],
-  ["facebook", "페이스북", "f"],
-  ["x", "X", "𝕏"],
-  ["band", "밴드", "B"],
-  ["link", "링크 복사", "↗"],
-] as const;
 export function IconButtonScene({ preview = false, time = 1700 }: SceneProps) {
   const [archived, setArchived] = useState(false),
     [message, setMessage] = useState("아이콘 버튼에 키보드로 이동해 보세요.");
   const archive = useRef<HTMLButtonElement>(null);
-  const [shareOpen, setShareOpen] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false),
+    [copyFailure, setCopyFailure] = useState(false),
+    [copyError, setCopyError] = useState("");
   const shareButton = useRef<HTMLButtonElement>(null),
     sharePanel = useRef<HTMLDivElement>(null),
     shareId = useId();
@@ -217,7 +213,10 @@ export function IconButtonScene({ preview = false, time = 1700 }: SceneProps) {
             aria-haspopup="dialog"
             aria-expanded={shared}
             aria-controls={`${shareId}-panel`}
-            onClick={() => setShareOpen((value) => !value)}
+            onClick={() => {
+              setCopyError("");
+              setShareOpen((value) => !value);
+            }}
           >
             <ToolIcon kind="share" />
           </button>
@@ -255,6 +254,12 @@ export function IconButtonScene({ preview = false, time = 1700 }: SceneProps) {
                   type="button"
                   data-share-service={name}
                   onClick={() => {
+                    if (id === "link" && copyFailure) {
+                      setCopyError(
+                        "복사 실패 모의예요. 실패 옵션을 해제하고 링크 복사를 다시 누르세요.",
+                      );
+                      return;
+                    }
                     setMessage(
                       id === "link"
                         ? "링크 복사를 모의했어요. 실제 클립보드는 변경하지 않습니다."
@@ -273,6 +278,21 @@ export function IconButtonScene({ preview = false, time = 1700 }: SceneProps) {
                 </button>
               ))}
             </div>
+            <label className="foundation-option">
+              <input
+                data-copy-failure
+                type="checkbox"
+                checked={copyFailure}
+                onChange={(e) => setCopyFailure(e.target.checked)}
+              />
+              링크 복사 실패 모의
+            </label>
+            <p
+              className="foundation-error"
+              role={copyError ? "alert" : undefined}
+            >
+              {copyError}
+            </p>
             <p className="foundation-share-hint">
               체험용 목록 · 실제 게시 없음
             </p>
@@ -403,6 +423,8 @@ export function SegmentedScene({ preview = false, time = 1700 }: SceneProps) {
   );
 }
 export function TextFieldScene({ preview = false, time = 1700 }: SceneProps) {
+  const [floating, setFloating] = useState(false),
+    [required, setRequired] = useState(true);
   const [value, setValue] = useState(""),
     [error, setError] = useState(""),
     [saved, setSaved] = useState("");
@@ -417,13 +439,38 @@ export function TextFieldScene({ preview = false, time = 1700 }: SceneProps) {
       : value;
   return (
     <FoundationFrame kind="text-field" title="프로젝트 이름" preview={preview}>
+      {!preview && (
+        <div className="foundation-input-options">
+          <label className="foundation-option">
+            <input
+              type="checkbox"
+              checked={floating}
+              onChange={(e) => setFloating(e.target.checked)}
+            />
+            플로팅 라벨
+          </label>
+          <label className="foundation-option">
+            <input
+              type="checkbox"
+              checked={required}
+              onChange={(e) => {
+                setRequired(e.target.checked);
+                setError("");
+                setSaved("");
+              }}
+            />
+            필수 입력
+          </label>
+        </div>
+      )}
       <form
         noValidate
         onSubmit={(e) => {
           e.preventDefault();
           const text = value.trim();
           if (
-            measureText(text).characters < 2 ||
+            (required && measureText(text).characters < 2) ||
+            (!required && !!text && measureText(text).characters < 2) ||
             measureText(text).characters > 30
           ) {
             setError("이름을 2~30자로 입력해 주세요.");
@@ -432,30 +479,39 @@ export function TextFieldScene({ preview = false, time = 1700 }: SceneProps) {
             return;
           }
           setError("");
-          setSaved(`“${text}” 이름으로 저장했어요.`);
+          setSaved(
+            text
+              ? `“${text}” 이름으로 저장했어요.`
+              : "선택 입력을 비워 두었어요. 실제 프로젝트는 저장하지 않습니다.",
+          );
         }}
       >
-        <label className="foundation-label" htmlFor={`${uid}-name`}>
-          이름
-        </label>
+        <div
+          className={`foundation-field-wrap ${floating ? "is-floating" : ""}`}
+        >
+          <input
+            ref={input}
+            id={`${uid}-name`}
+            className="foundation-input"
+            value={shown}
+            required={required}
+            aria-invalid={!!error}
+            aria-describedby={`${uid}-hint ${uid}-name-metrics ${uid}-error`}
+            placeholder={floating ? " " : "예: 디자인 팀"}
+            onChange={(e) => {
+              setValue(e.target.value);
+              setError("");
+              setSaved("");
+            }}
+          />
+          <label className="foundation-label" htmlFor={`${uid}-name`}>
+            이름 ({required ? "필수" : "선택"})
+          </label>
+        </div>
         <p className="foundation-hint" id={`${uid}-hint`}>
-          2~30자 · 어떤 프로젝트인지 알아볼 수 있게 적으세요.
+          {required ? "2~30자" : "선택 입력 · 입력 시 2~30자"} · 어떤
+          프로젝트인지 알아볼 수 있게 적으세요.
         </p>
-        <input
-          ref={input}
-          id={`${uid}-name`}
-          className="foundation-input"
-          value={shown}
-          required
-          aria-invalid={!!error}
-          aria-describedby={`${uid}-hint ${uid}-name-metrics ${uid}-error`}
-          placeholder="예: 디자인 팀"
-          onChange={(e) => {
-            setValue(e.target.value);
-            setError("");
-            setSaved("");
-          }}
-        />
         <InputMetrics value={shown} inputId={`${uid}-name`} limit={30} />
         <p
           id={`${uid}-error`}
@@ -508,7 +564,7 @@ export function TextareaScene({ preview = false, time = 1700 }: SceneProps) {
         }}
       >
         <label className="foundation-label" htmlFor={`${uid}-feedback`}>
-          검토 의견
+          검토 의견 (필수)
         </label>
         <p className="foundation-hint" id={`${uid}-hint`}>
           10~200자 · Enter는 줄바꿈입니다.

@@ -1,3 +1,5 @@
+import { shareServices } from "./share-services.mjs";
+import { expansionMarkup, expansionScript } from "./expansion-vanilla.mjs";
 import {
   measureText,
   formatTextMetrics,
@@ -17,6 +19,15 @@ import { foundationMarkup, foundationScript } from "./foundations-vanilla.mjs";
 import { essentialMarkup, essentialScript } from "./essentials-vanilla.mjs";
 const base = (name, heading, body) =>
   `<div class="scene scene-${name}"><div class="demo-center"><span class="demo-eyebrow">INTERACTIVE EXAMPLE</span><h2>${heading}</h2>${body}</div></div>`;
+const shareSheetMarkup =
+  '<section id="sheet-share" class="sheet-share-content" hidden><p>서비스를 선택하세요. 외부 게시·전송은 하지 않습니다.</p><div class="foundation-share-services">' +
+  shareServices
+    .map(
+      ([id, name, glyph]) =>
+        `<button type="button" data-share-service="${name}"><span class="foundation-share-logo brand-${id}" aria-hidden="true">${glyph}</span><span>${name}</span></button>`,
+    )
+    .join("") +
+  '</div><label class="foundation-option"><input type="checkbox" id="sheet-copy-failure">링크 복사 실패 모의</label><p class="foundation-error" id="sheet-copy-error" role="alert"></p><button type="button" id="sheet-back">노트 메뉴로 돌아가기</button></section>';
 export const markup = {
   modal:
     base(
@@ -38,6 +49,7 @@ export const markup = {
           `<button class="sheet-option" data-choice="${s}"><span class="sheet-option-icon">${sheetActionIcons[i]}</span><span><strong>${s}</strong><small>노트를 편리하게 관리하세요</small></span><span class="option-chevron" aria-hidden="true"><svg class="demo-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span></button>`,
       )
       .join("") +
+    shareSheetMarkup +
     "</dialog>",
   accordion:
     '<div class="scene scene-accordion"><div class="faq-wrap"><span class="demo-eyebrow">FREQUENT QUESTIONS</span><h2>자주 묻는 질문</h2><label class="demo-check"><input type="checkbox" id="multiple">여러 항목 동시에 열기</label><div class="faq-items">' +
@@ -136,9 +148,47 @@ function setupDialog(kind) {
       close();
     };
   else {
+    const share = dialog.querySelector("#sheet-share"),
+      title = dialog.querySelector("h2");
+    const showShare = (value) => {
+      share.hidden = !value;
+      dialog
+        .querySelectorAll("[data-choice]")
+        .forEach((x) => (x.hidden = value));
+      title.textContent = value ? "공유하기" : "노트 관리";
+      dialog.querySelector("#sheet-copy-error").textContent = "";
+    };
+    dialog.querySelector("#sheet-back").onclick = () => {
+      showShare(false);
+      dialog.querySelector("[data-choice]").focus();
+    };
+    share.onclick = (e) => {
+      const option = e.target.closest("[data-share-service]");
+      if (!option) return;
+      const name = option.dataset.shareService;
+      if (
+        name === "링크 복사" &&
+        dialog.querySelector("#sheet-copy-failure").checked
+      ) {
+        dialog.querySelector("#sheet-copy-error").textContent =
+          "복사 실패 모의예요. 실패 옵션을 해제하고 다시 누르세요.";
+        return;
+      }
+      document.querySelector("#saved").textContent =
+        name === "링크 복사"
+          ? "링크 복사를 모의 완료했어요. 실제 클립보드는 변경하지 않습니다."
+          : `${name} 공유를 선택했어요. 실제 게시·전송은 하지 않습니다.`;
+      close();
+    };
+    dialog.addEventListener("close", () => showShare(false));
     dialog.querySelectorAll("[data-choice]").forEach(
       (b) =>
         (b.onclick = () => {
+          if (b.dataset.choice === "공유하기") {
+            showShare(true);
+            share.querySelector("[data-share-service]").focus();
+            return;
+          }
           document.querySelector("#saved").textContent =
             b.dataset.choice + " 선택 완료";
           close();
@@ -442,6 +492,7 @@ export const script = {
 Object.assign(
   markup,
   essentialMarkup,
+  expansionMarkup,
   foundationMarkup,
   patternMarkup,
   advancedMarkup,
@@ -451,6 +502,7 @@ Object.assign(
 Object.assign(
   script,
   essentialScript,
+  expansionScript,
   foundationScript,
   patternScript,
   advancedScript,
@@ -471,5 +523,5 @@ for (const id of [
     `(()=>{${measureText.toString()};${formatTextMetrics.toString()};${limitText.toString()};${script[id]};(${setupTextMetrics.toString()})();})();`;
 }
 export function vanillaDocument(id, css, reduced = false) {
-  return `<!doctype html>\n<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UI Notes 실행 예제</title><style>body{margin:0}button,input,select{font-family:inherit}[hidden]{display:none!important}${css}</style></head><body>${markup[id]}<script>window.__DEMO__={reduced:${reduced}};if(window.__DEMO__.reduced)document.querySelector('.scene').classList.add('is-reduced');${script[id]}<\/script></body></html>`;
+  return `<!doctype html>\n<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UI Notes 실행 예제</title><style>body{margin:0}button,input,select{font-family:inherit}[hidden]{display:none!important}${css}</style></head><body>${markup[id]}<script>window.__DEMO__={...window.__DEMO__,reduced:${reduced}};if(window.__DEMO__.reduced)document.querySelector('.scene').classList.add('is-reduced');${script[id]}<\/script></body></html>`;
 }

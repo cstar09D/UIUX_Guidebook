@@ -1,0 +1,56 @@
+[
+  {
+    "id": "badge",
+    "width": 263,
+    "scroll": 263,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "chip-tag",
+    "width": 263,
+    "scroll": 263,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "avatar",
+    "width": 263,
+    "scroll": 263,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "command-palette",
+    "width": 263,
+    "scroll": 263,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "context-menu",
+    "width": 263,
+    "scroll": 263,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "split-button",
+    "width": 248,
+    "scroll": 248,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  }
+]

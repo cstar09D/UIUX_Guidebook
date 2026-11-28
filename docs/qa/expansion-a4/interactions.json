@@ -1,0 +1,138 @@
+[
+  {
+    "id": "split-view",
+    "case": "keyboard-minimum",
+    "value": "25",
+    "input": "분할 테스트🙂"
+  },
+  {
+    "id": "split-view",
+    "case": "held-pointer",
+    "ratio": "40"
+  },
+  {
+    "id": "split-view",
+    "case": "mobile-preserves-input",
+    "result": "분할 테스트🙂"
+  },
+  {
+    "id": "mega-menu",
+    "case": "escape-focus",
+    "focused": true,
+    "expanded": "false"
+  },
+  {
+    "id": "scroll-reveal",
+    "case": "scroll-end-reveals",
+    "shown": [
+      "true",
+      "false",
+      "true",
+      "true"
+    ]
+  },
+  {
+    "id": "stagger-animation",
+    "case": "dom-order",
+    "ids": [
+      "3",
+      "2",
+      "1",
+      "0"
+    ]
+  },
+  {
+    "id": "scroll-snap",
+    "case": "last-card",
+    "status": "4 / 4 · 항목에 정착",
+    "nextDisabled": true
+  },
+  {
+    "id": "parallax-scroll",
+    "case": "strong-end",
+    "status": "100% · 강한 시차",
+    "back": "translateY(48px)",
+    "front": "translateY(-30px)"
+  },
+  {
+    "id": "parallax-scroll",
+    "case": "static",
+    "back": "translateY(0px)",
+    "front": "translateY(0px)"
+  },
+  {
+    "id": "navigation-drawer",
+    "case": "mobile-current",
+    "label": "저장한 노트"
+  },
+  {
+    "id": "progress-bar",
+    "case": "failure-same-value",
+    "linear": "60",
+    "circular": "60",
+    "arc": "40"
+  },
+  {
+    "id": "sticky-header",
+    "case": "down-hides",
+    "class": "advanced-sticky-title  is-direction-hidden"
+  },
+  {
+    "id": "sticky-header",
+    "case": "focus-shows",
+    "class": "advanced-sticky-title  "
+  },
+  {
+    "id": "particles",
+    "case": "burst-bounded",
+    "count": 24
+  },
+  {
+    "id": "particles",
+    "case": "cleanup",
+    "count": 0,
+    "status": "작업 완료! 축하 동작은 모의이며 데이터를 저장하지 않습니다."
+  },
+  {
+    "id": "navigation-drawer",
+    "format": "html",
+    "case": "sidebar-selection",
+    "title": "저장한 노트"
+  },
+  {
+    "id": "progress-bar",
+    "format": "html",
+    "case": "completed-same-value",
+    "linear": "100",
+    "circular": "100",
+    "arc": "0"
+  },
+  {
+    "id": "sticky-header",
+    "format": "html",
+    "case": "focus-shows",
+    "class": "advanced-sticky-title is-direction-hidden"
+  },
+  {
+    "id": "particles",
+    "format": "html",
+    "case": "cleanup",
+    "count": 0,
+    "status": "작업 완료! 축하 동작은 모의이며 데이터를 저장하지 않습니다."
+  },
+  {
+    "id": "mega-menu",
+    "case": "destination-after-fix",
+    "title": "디자인 토큰"
+  },
+  {
+    "id": "stagger-animation",
+    "case": "restart-finishes",
+    "opacity": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ]
+  }
+]

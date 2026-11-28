@@ -1,0 +1,98 @@
+[
+  {
+    "id": "split-view",
+    "step": 0,
+    "host": 166,
+    "card": 133,
+    "top": 17,
+    "bottom": 16
+  },
+  {
+    "id": "mega-menu",
+    "step": 0,
+    "host": 166,
+    "card": 165,
+    "top": 0,
+    "bottom": 0
+  },
+  {
+    "id": "mega-menu",
+    "step": 1,
+    "host": 166,
+    "card": 165,
+    "top": 0,
+    "bottom": 0
+  },
+  {
+    "id": "mega-menu",
+    "step": 2,
+    "host": 166,
+    "card": 110,
+    "top": 28,
+    "bottom": 27
+  },
+  {
+    "id": "mega-menu",
+    "step": 3,
+    "host": 166,
+    "card": 110,
+    "top": 28,
+    "bottom": 27
+  },
+  {
+    "id": "scroll-reveal",
+    "step": 0,
+    "host": 166,
+    "card": 141,
+    "top": 13,
+    "bottom": 12
+  },
+  {
+    "id": "stagger-animation",
+    "step": 0,
+    "host": 166,
+    "card": 155,
+    "top": 6,
+    "bottom": 5
+  },
+  {
+    "id": "stagger-animation",
+    "step": 1,
+    "host": 166,
+    "card": 155,
+    "top": 6,
+    "bottom": 5
+  },
+  {
+    "id": "stagger-animation",
+    "step": 2,
+    "host": 166,
+    "card": 155,
+    "top": 6,
+    "bottom": 5
+  },
+  {
+    "id": "stagger-animation",
+    "step": 3,
+    "host": 166,
+    "card": 155,
+    "top": 6,
+    "bottom": 5
+  },
+  {
+    "id": "scroll-snap",
+    "step": 0,
+    "host": 166,
+    "card": 140,
+    "top": 13,
+    "bottom": 12
+  },
+  {
+    "id": "parallax-scroll",
+    "step": 0,
+    "host": 166,
+    "card": 137,
+    "top": 15,
+    "bottom": 14
+  }
+]

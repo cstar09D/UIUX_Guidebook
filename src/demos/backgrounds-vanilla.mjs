@@ -135,7 +135,60 @@ function setupOrb() {
 function setupParticles() {
   const root = document.querySelector(".scene-particles"),
     layer = root.querySelector(".bg-particles");
+  const mode = root.querySelector("[data-particle-mode]"),
+    button = root.querySelector("[data-confetti-start]"),
+    status = root.querySelector("[data-confetti-status]");
+  let timer = 0;
+  mode.onchange = () => {
+    layer.hidden = mode.value === "confetti";
+    root.querySelector(".bg-confetti")?.remove();
+    clearTimeout(timer);
+    button.disabled = false;
+  };
+  button.onclick = () => {
+    status.textContent =
+      "작업 완료! 축하 동작은 모의이며 데이터를 저장하지 않습니다.";
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    root.querySelector(".bg-confetti")?.remove();
+    const burst = document.createElement("div");
+    burst.className = "bg-confetti";
+    for (let i = 0; i < 24; i++) {
+      const dot = document.createElement("i");
+      dot.style.cssText = `left:${10 + i * 3.4}%;background:${["#6fa5ff", "#f3b658", "#ec8ea8", "#80d0b3"][i % 4]};animation-delay:${i * 8}ms;rotate:${i * 37}deg`;
+      burst.append(dot);
+    }
+    root.querySelector(".bg-art").append(burst);
+    button.disabled = true;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      burst.remove();
+      button.disabled = false;
+    }, 1200);
+  };
+  const stopBurst = () => {
+    clearTimeout(timer);
+    root.querySelector(".bg-confetti")?.remove();
+    button.disabled = false;
+  };
+  const visibility = () => {
+    if (document.hidden) stopBurst();
+  };
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries[0]?.isIntersecting) stopBurst();
+  });
+  observer.observe(root);
+  document.addEventListener("visibilitychange", visibility);
+  window.addEventListener(
+    "pagehide",
+    () => {
+      stopBurst();
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", visibility);
+    },
+    { once: true },
+  );
   backgroundClock(root, (t, count) => {
+    if (mode.value === "confetti") return;
     while (layer.children.length > count) layer.lastChild.remove();
     while (layer.children.length < count)
       layer.append(document.createElement("i"));
@@ -152,7 +205,7 @@ function setupStarfield() {
       const angle = backgroundSeed(i) * Math.PI * 2,
         z = (backgroundSeed(i + 20) + clock * speed * 0.09) % 1,
         depth = z * z;
-      el.style.cssText = `left:${50 + Math.cos(angle) * depth * 85}%;top:${50 + Math.sin(angle) * depth * 90}%;width:${0.6 + depth * 4}px;height:${0.6 + depth * 4}px;opacity:${z};transform:rotate(${angle}rad) scaleX(${1 + depth * 1.2})`;
+      el.style.cssText = `left:${Number((50 + Math.cos(angle) * depth * 85).toFixed(3))}%;top:${Number((50 + Math.sin(angle) * depth * 90).toFixed(3))}%;width:${Number((0.6 + depth * 4).toFixed(3))}px;height:${Number((0.6 + depth * 4).toFixed(3))}px;opacity:${Number(z.toFixed(3))};transform:rotate(${Number(angle.toFixed(3))}rad) scaleX(${Number((1 + depth * 1.2).toFixed(3))})`;
     }),
   );
 }

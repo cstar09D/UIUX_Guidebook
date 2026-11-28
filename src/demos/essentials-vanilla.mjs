@@ -127,20 +127,78 @@ export const essentialMarkup = {
 function setupCheckbox() {
   const parent = document.querySelector("#check-all"),
     items = [...document.querySelectorAll("[data-choice]")],
-    status = document.querySelector("#choice-status");
-  function render() {
-    const count = items.filter((item) => item.checked).length;
-    parent.checked = count === items.length;
-    parent.indeterminate = count > 0 && count < items.length;
-    status.textContent = count
-      ? `${count}개 소식을 선택했어요.`
-      : "선택한 소식이 없어요.";
-  }
+    status = document.querySelector("#choice-status"),
+    root = parent.closest(".essential-card");
+  const mode = document.createElement("select");
+  mode.className = "foundation-input";
+  mode.innerHTML =
+    '<option value="notifications">소식 복수 선택</option><option value="consent">필수·선택 동의</option>';
+  const label = document.createElement("label");
+  label.className = "input-demo-label";
+  label.append("예제 유형", mode);
+  root.querySelector("fieldset").before(label);
+  const next = document.createElement("button");
+  next.type = "button";
+  next.className = "demo-primary";
+  next.textContent = "동의하고 계속";
+  next.hidden = true;
+  status.after(next);
+  const render = () => {
+    const count = items.filter((x) => x.checked).length;
+    parent.checked = count === 3;
+    parent.indeterminate = count > 0 && count < 3;
+    next.hidden = mode.value !== "consent";
+    next.disabled = !items.slice(0, 2).every((x) => x.checked);
+    status.textContent =
+      mode.value === "consent"
+        ? next.disabled
+          ? "필수 약관 2개에 동의해 주세요."
+          : "필수 2개 충족 · 선택 동의 없이도 계속할 수 있어요."
+        : count
+          ? `${count}개 소식을 선택했어요.`
+          : "선택한 소식이 없어요.";
+  };
   parent.onchange = () => {
-    items.forEach((item) => (item.checked = parent.checked));
+    items.forEach((x) => (x.checked = parent.checked));
     render();
   };
-  items.forEach((item) => (item.onchange = render));
+  items.forEach((x) => (x.onchange = render));
+  mode.onchange = () => {
+    const consent = mode.value === "consent";
+    root.querySelector("legend").textContent = consent
+      ? "서비스 이용 동의 항목"
+      : "받을 소식 선택";
+    root.querySelector(".essential-eyebrow").textContent = consent
+      ? "AGREEMENT"
+      : "NOTIFICATIONS";
+    const names = consent
+      ? [
+          "이용약관 (필수)",
+          "개인정보 수집·이용 (필수)",
+          "혜택 소식 수신 (선택)",
+        ]
+      : ["댓글 소식", "프로젝트 소식", "업데이트 소식"];
+    items.forEach((x, i) => {
+      x.checked = false;
+      x.value = names[i];
+      x.closest("label").querySelector("span").textContent = names[i];
+    });
+    root.querySelector("h2").textContent = consent
+      ? "서비스 이용 동의"
+      : "받고 싶은 소식";
+    root.querySelector("p").textContent = consent
+      ? "필수 2개에 동의하면 계속할 수 있어요. 선택 동의는 거절해도 됩니다."
+      : "필요한 항목을 여러 개 선택하세요.";
+    parent.nextElementSibling.innerHTML = consent
+      ? "전체 동의<small>선택 동의까지 3개 모두 포함해요</small>"
+      : "모두 선택<small>세 가지 소식을 함께 선택해요</small>";
+    render();
+  };
+  next.onclick = () => {
+    if (!next.disabled)
+      status.textContent =
+        "필수 동의를 확인했어요. 실제 가입은 진행하지 않습니다.";
+  };
   render();
 }
 function setupRadio() {

@@ -1,0 +1,104 @@
+[
+  {
+    "case": "format-restores-live-preset",
+    "status": "미확인 알림 137개 · 화면에는 99+로 표시해요."
+  },
+  {
+    "case": "reset-clears-preset",
+    "selected": "",
+    "status": "미확인 알림 3개"
+  },
+  {
+    "case": "reveal-before-held",
+    "shown": [
+      "false",
+      "false",
+      "false",
+      "false"
+    ],
+    "opacity": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  {
+    "case": "split-arbitrary-ratio-description",
+    "ratio": "45",
+    "selected": ""
+  },
+  {
+    "case": "split-focus-on-mobile",
+    "focusedTab": true,
+    "selected": "compact"
+  },
+  {
+    "case": "admin-shared-preview",
+    "status": "미확인 알림 137개 · 화면에는 99+로 표시해요."
+  },
+  {
+    "case": "admin-motion",
+    "count": 1
+  },
+  {
+    "case": "html-header-focus-clears-hidden",
+    "class": "advanced-sticky-title"
+  },
+  {
+    "case": "full-code-opt-in",
+    "doctype": true
+  },
+  {
+    "case": "mobile-full-code-wrap",
+    "width": 320,
+    "scroll": 320
+  },
+  {
+    "case": "motion-alias-search",
+    "parallax": 1,
+    "count": 1
+  },
+  {
+    "case": "multiple-categories",
+    "selected": [
+      " 레이어와 도움말",
+      " 입력과 검색"
+    ],
+    "categories": [
+      "레이어와 도움말",
+      "레이어와 도움말",
+      "입력과 검색",
+      "레이어와 도움말",
+      "레이어와 도움말",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "레이어와 도움말",
+      "입력과 검색",
+      "레이어와 도움말",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "입력과 검색",
+      "레이어와 도움말",
+      "입력과 검색"
+    ]
+  },
+  {
+    "case": "reveal-resumes-after-scroll",
+    "shown": [
+      "true",
+      "true",
+      "true",
+      "true"
+    ],
+    "selected": "visible"
+  }
+]

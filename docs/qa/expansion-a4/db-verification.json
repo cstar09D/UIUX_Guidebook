@@ -1,0 +1,45 @@
+{
+  "publicCount": 77,
+  "adminCount": 101,
+  "publishedUnchanged": true,
+  "changedExistingDrafts": [
+    "navigation-drawer",
+    "progress-bar",
+    "sticky-header",
+    "particles"
+  ],
+  "newDrafts": [
+    {
+      "id": "split-view",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "mega-menu",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "scroll-reveal",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "stagger-animation",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "scroll-snap",
+      "status": "draft",
+      "revision": 1
+    },
+    {
+      "id": "parallax-scroll",
+      "status": "draft",
+      "revision": 1
+    }
+  ],
+  "repeatAdds": [],
+  "repeatGuideUpdates": []
+}

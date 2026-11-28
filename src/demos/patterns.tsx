@@ -902,6 +902,18 @@ export function FileUploadScene({ preview = false, time = 1700 }: SceneProps) {
     [error, setError] = useState(""),
     [fail, setFail] = useState(false);
   const input = useRef<HTMLInputElement>(null);
+  const [imageUrl, setImageUrl] = useState("");
+  const [imageError, setImageError] = useState(false);
+  useEffect(() => {
+    setImageError(false);
+    if (!file || !/\.(png|jpe?g)$/i.test(file.name)) {
+      setImageUrl("");
+      return;
+    }
+    const url = URL.createObjectURL(file);
+    setImageUrl(url);
+    return () => URL.revokeObjectURL(url);
+  }, [file]);
   const uid = useId();
   useEffect(() => {
     if (preview || phase !== "uploading") return;
@@ -921,7 +933,7 @@ export function FileUploadScene({ preview = false, time = 1700 }: SceneProps) {
   const choose = (selected: File | undefined) => {
     if (phase === "uploading") return;
     const issue = uploadFileError(selected);
-    setFile(issue ? null : selected!);
+    if (!issue) setFile(selected!);
     setError(issue);
     setPhase(issue ? "error" : "ready");
     setPercent(0);
@@ -944,7 +956,6 @@ export function FileUploadScene({ preview = false, time = 1700 }: SceneProps) {
           e.preventDefault();
           if (phase === "uploading") return;
           if (e.dataTransfer.files.length !== 1) {
-            setFile(null);
             setPhase("error");
             setPercent(0);
             setError("한 번에 파일 한 개만 선택해 주세요.");
@@ -966,14 +977,14 @@ export function FileUploadScene({ preview = false, time = 1700 }: SceneProps) {
             aria-invalid={!!error}
             disabled={phase === "uploading"}
             onChange={(e) => choose(e.target.files?.[0])}
-            aria-describedby={`${uid}-hint ${uid}-error`}
+            aria-describedby={`${uid}-hint ${uid}-filename ${uid}-error`}
           />
         )}
         <p id={`${uid}-hint`} className="pattern-help">
           PDF·PNG·JPG · 2MB 이하 · 로컬 전송 모의
         </p>
       </div>
-      <p className="pattern-file-name">
+      <p className="pattern-file-name" id={`${uid}-filename`}>
         {preview
           ? time >= 800
             ? "디자인-가이드.pdf"
@@ -982,6 +993,30 @@ export function FileUploadScene({ preview = false, time = 1700 }: SceneProps) {
             ? `${file.name} · ${Math.ceil(file.size / 1024)}KB`
             : "선택한 파일 없음"}
       </p>
+      {!preview && imageUrl && (
+        <div className="pattern-image-preview">
+          {imageError ? (
+            <p>
+              이미지를 표시할 수 없어요. 다른 이미지로 교체하거나 삭제하세요.
+            </p>
+          ) : (
+            <img
+              src={imageUrl}
+              alt={`첨부한 ${file?.name} 미리보기`}
+              onError={() => setImageError(true)}
+            />
+          )}
+        </div>
+      )}
+      {!preview && file && (
+        <button
+          type="button"
+          disabled={phase === "uploading"}
+          onClick={() => input.current?.click()}
+        >
+          파일 교체
+        </button>
+      )}
       {(status === "uploading" || status === "done") && (
         <progress aria-label="첨부 진행률" value={p} max={100} />
       )}
@@ -1063,32 +1098,63 @@ const destinations = [
   ["profile", "내 정보"],
 ];
 export function DrawerScene({ preview = false, time = 1700 }: SceneProps) {
-  const [view, setView] = useState("home");
+  const [view, setView] = useState("home"),
+    [mode, setMode] = useState("modal"),
+    [compact, setCompact] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null),
-    heading = useRef<HTMLHeadingElement>(null);
+    heading = useRef<HTMLHeadingElement>(null),
+    host = useRef<HTMLDivElement>(null);
   const uid = useId();
-  const shown = preview ? (time < 2000 ? "home" : "saved") : view;
-  const links = (
+  useEffect(() => {
+    if (preview || !host.current) return;
+    const ro = new ResizeObserver(() =>
+      setCompact((host.current?.clientWidth || 0) < 380),
+    );
+    ro.observe(host.current);
+    return () => ro.disconnect();
+  }, [preview]);
+  const effective = compact ? "modal" : mode,
+    shown = preview ? (time < 2000 ? "home" : "saved") : view;
+  const choose = (id: string) => {
+    setView(id);
+    dialog.current?.close();
+    requestAnimationFrame(() => heading.current?.focus());
+  };
+  const links = (modal: boolean) => (
     <>
-      <h3 id={`${uid}-drawer`}>작업 공간 탐색</h3>
-      <nav aria-label="작업 공간 메뉴">
-        {destinations.map(([id, label]) => (
+      <h3 id={modal ? `${uid}-drawer` : undefined}>
+        {mode === "helper" && !modal ? "문서 보조 정보" : "작업 공간 탐색"}
+      </h3>
+      <nav aria-label={modal ? "작업 공간 메뉴" : "고정 작업 공간 메뉴"}>
+        {destinations.map(([id, label], i) => (
           <a
             key={id}
             href={`#drawer-${id}`}
+            aria-label={effective === "rail" && !modal ? label : undefined}
+            title={label}
             aria-current={shown === id ? "page" : undefined}
             onClick={(e) => {
               e.preventDefault();
-              setView(id);
-              dialog.current?.close();
-              requestAnimationFrame(() => heading.current?.focus());
+              choose(id);
             }}
           >
-            {label}
+            {effective === "rail" && !modal ? (
+              <span aria-hidden="true">{["⌂", "▤", "⚙"][i]}</span>
+            ) : (
+              label
+            )}
           </a>
         ))}
       </nav>
-      <button onClick={() => dialog.current?.close()}>탐색 메뉴 닫기</button>
+      {mode === "helper" && !modal && (
+        <p className="pattern-help">
+          현재 문서의 관련 자료를 확인합니다. 배경 조작을 막지 않는 보조
+          패널입니다.
+        </p>
+      )}
+      {modal && (
+        <button onClick={() => dialog.current?.close()}>탐색 메뉴 닫기</button>
+      )}
     </>
   );
   return (
@@ -1097,27 +1163,71 @@ export function DrawerScene({ preview = false, time = 1700 }: SceneProps) {
       title="디자인 작업 공간"
       preview={preview}
     >
-      <div className="pattern-workspace">
-        <button
-          aria-haspopup="dialog"
-          onClick={() => showPatternDialog(dialog.current, "a")}
-        >
-          탐색 메뉴 열기
-        </button>
-        <h3 ref={heading} tabIndex={-1}>
-          {destinations.find((row) => row[0] === shown)?.[1]}
-        </h3>
-        <p className="pattern-help">
-          {shown === "home"
-            ? "팀의 최신 기록을 모았어요."
-            : shown === "saved"
-              ? "보관한 자료 3개를 확인하세요."
-              : "프로필과 작업 환경을 관리해요."}
-        </p>
+      {!preview && (
+        <label className="pattern-label">
+          패널 형태
+          <select
+            data-drawer-mode
+            value={mode}
+            onChange={(e) => {
+              dialog.current?.close();
+              setMode(e.target.value);
+            }}
+          >
+            <option value="modal">모달 탐색 드로어</option>
+            <option value="sidebar">고정 사이드바</option>
+            <option value="rail">아이콘 축약</option>
+            <option value="helper">보조 정보 패널</option>
+          </select>
+        </label>
+      )}
+      <div
+        ref={host}
+        className={`pattern-drawer-layout mode-${effective}`}
+        data-drawer-layout
+      >
+        {!preview && (
+          <aside
+            className="pattern-inline-drawer"
+            data-drawer-inline
+            hidden={effective === "modal"}
+          >
+            {links(false)}
+          </aside>
+        )}
+        <div className="pattern-workspace">
+          <button
+            data-drawer-open
+            hidden={!preview && effective !== "modal"}
+            aria-haspopup="dialog"
+            onClick={() => showPatternDialog(dialog.current, "a")}
+          >
+            탐색 메뉴 열기
+          </button>
+          <h3 ref={heading} tabIndex={-1}>
+            {destinations.find((row) => row[0] === shown)?.[1]}
+          </h3>
+          <p className="pattern-help">
+            {shown === "home"
+              ? "팀의 최신 기록을 모았어요."
+              : shown === "saved"
+                ? "보관한 자료 3개를 확인하세요."
+                : "프로필과 작업 환경을 관리해요."}
+          </p>
+        </div>
       </div>
+      {!preview && (
+        <p className="pattern-help" data-drawer-policy>
+          {compact
+            ? "작은 화면에서는 선택한 형태 대신 모달 드로어로 전환합니다. 현재 문서는 유지돼요."
+            : effective === "modal"
+              ? "모달은 배경 조작을 막고 닫으면 호출 버튼으로 돌아갑니다."
+              : "고정·축약·보조 패널은 비모달이며 배경과 함께 조작할 수 있어요."}
+        </p>
+      )}
       {preview && time >= 700 && time < 2900 ? (
         <div className="pattern-mini-layer pattern-drawer-preview">
-          <div>{links}</div>
+          <div>{links(true)}</div>
         </div>
       ) : null}
       {!preview && (
@@ -1126,7 +1236,7 @@ export function DrawerScene({ preview = false, time = 1700 }: SceneProps) {
           className="pattern-dialog pattern-drawer"
           aria-labelledby={`${uid}-drawer`}
         >
-          {links}
+          {links(true)}
         </dialog>
       )}
     </PatternFrame>
@@ -1848,7 +1958,8 @@ export function AlertDialogScene({ preview = false, time = 1700 }: SceneProps) {
 export function ProgressScene({ preview = false, time = 1700 }: SceneProps) {
   const [phase, setPhase] = useState("idle"),
     [value, setValue] = useState(0),
-    [fail, setFail] = useState(false);
+    [fail, setFail] = useState(false),
+    [format, setFormat] = useState("linear");
   const start = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (preview || phase !== "running") return;
@@ -1879,8 +1990,53 @@ export function ProgressScene({ preview = false, time = 1700 }: SceneProps) {
       <div className="pattern-progress-graphic" aria-hidden="true">
         ▤
       </div>
+      {!preview && (
+        <label className="pattern-label">
+          진행률 표현
+          <select
+            data-progress-format
+            value={format}
+            onChange={(e) => setFormat(e.target.value)}
+          >
+            <option value="linear">선형</option>
+            <option value="circular">원형</option>
+            <option value="both">나란히 비교</option>
+          </select>
+        </label>
+      )}
       <label className="pattern-label">보고서 생성 진행률</label>
-      <progress aria-label="보고서 생성 진행률" value={percent} max={100} />
+      <progress
+        hidden={format === "circular"}
+        aria-label="보고서 생성 진행률"
+        value={percent}
+        max={100}
+      />
+      <div
+        className="pattern-circular"
+        data-progress-circle
+        hidden={format === "linear"}
+        role="progressbar"
+        aria-label="원형 보고서 진행률"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={percent}
+      >
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="40" />
+          <circle
+            data-progress-arc
+            cx="50"
+            cy="50"
+            r="40"
+            pathLength="100"
+            strokeDasharray="100"
+            strokeDashoffset={100 - percent}
+          />
+        </svg>
+        <span data-progress-number aria-hidden="true">
+          {percent}%
+        </span>
+      </div>
       <strong className="pattern-percent" aria-hidden="true">
         {percent}%
       </strong>

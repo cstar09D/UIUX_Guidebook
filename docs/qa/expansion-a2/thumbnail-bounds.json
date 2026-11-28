@@ -1,0 +1,44 @@
+[
+  {
+    "id": "password-field",
+    "host": 171,
+    "card": 140,
+    "top": 16,
+    "bottom": 15
+  },
+  {
+    "id": "otp-input",
+    "host": 171,
+    "card": 136,
+    "top": 18,
+    "bottom": 17
+  },
+  {
+    "id": "multi-select",
+    "host": 171,
+    "card": 123,
+    "top": 25,
+    "bottom": 24
+  },
+  {
+    "id": "number-stepper",
+    "host": 171,
+    "card": 128,
+    "top": 22,
+    "bottom": 21
+  },
+  {
+    "id": "time-picker",
+    "host": 171,
+    "card": 155,
+    "top": 8,
+    "bottom": 8
+  },
+  {
+    "id": "rating",
+    "host": 171,
+    "card": 116,
+    "top": 28,
+    "bottom": 27
+  }
+]

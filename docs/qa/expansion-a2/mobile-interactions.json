@@ -1,0 +1,106 @@
+[
+  {
+    "id": "rating",
+    "format": "html",
+    "viewport": 390,
+    "body": {
+      "width": 348,
+      "scroll": 348
+    },
+    "checked": true
+  },
+  {
+    "id": "password-field",
+    "format": "html",
+    "viewport": 390,
+    "body": {
+      "width": 348,
+      "scroll": 348
+    },
+    "status": "예제 조건을 충족했어요. 실제 계정에는 저장하지 않습니다."
+  },
+  {
+    "id": "otp-input",
+    "case": "leading-zero-and-limit",
+    "value": "001234"
+  },
+  {
+    "id": "otp-input",
+    "format": "html",
+    "viewport": 390,
+    "body": {
+      "width": 348,
+      "scroll": 348
+    },
+    "status": "인증을 모의 완료했어요. 실제 문자·계정은 변경하지 않습니다."
+  },
+  {
+    "id": "multi-select",
+    "format": "html",
+    "viewport": 390,
+    "body": {
+      "width": 348,
+      "scroll": 348
+    },
+    "status": "서울 선택. 1개가 선택됐어요."
+  },
+  {
+    "id": "number-stepper",
+    "format": "html",
+    "viewport": 390,
+    "body": {
+      "width": 348,
+      "scroll": 348
+    },
+    "status": "2개로 수량을 확인했어요. 실제 주문은 하지 않습니다."
+  },
+  {
+    "id": "time-picker",
+    "format": "html",
+    "viewport": 390,
+    "body": {
+      "width": 348,
+      "scroll": 348
+    },
+    "status": "오후 6:00 선택 완료 · 기준 시간대 Asia/Seoul"
+  },
+  {
+    "id": "text-field",
+    "format": "html",
+    "viewport": 390,
+    "counter": "3 / 30자 · 8 byte (UTF-8)",
+    "counterOutsideLabel": true
+  },
+  {
+    "id": "checkbox",
+    "format": "react",
+    "requiredOnlyEnabled": true,
+    "optionalUnchecked": true
+  },
+  {
+    "id": "checkbox",
+    "format": "html",
+    "optionalUnchecked": true,
+    "status": "필수 동의를 확인했어요. 실제 가입은 진행하지 않습니다."
+  },
+  {
+    "id": "file-upload",
+    "format": "react",
+    "invalidReplacementPreserved": true
+  },
+  {
+    "id": "file-upload",
+    "format": "react",
+    "removedImageCount": 0
+  },
+  {
+    "id": "file-upload",
+    "format": "html",
+    "sameFileReselected": true
+  },
+  {
+    "id": "file-upload",
+    "format": "html",
+    "clearedSource": true
+  }
+]

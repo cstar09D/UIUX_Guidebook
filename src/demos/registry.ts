@@ -1,3 +1,4 @@
+import { expansionRegistry } from "./expansion-registry.mjs";
 export const backgroundRegistry = [
   {
     id: "mesh-gradient",
@@ -865,5 +866,6 @@ export const simulationRegistry = [
   ...advancedRegistry,
   ...effectRegistry,
   ...backgroundRegistry,
+  ...expansionRegistry,
 ] as const;
 export type SimulationId = (typeof simulationRegistry)[number]["id"];

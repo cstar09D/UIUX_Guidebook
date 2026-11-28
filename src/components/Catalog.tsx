@@ -31,7 +31,7 @@ import { scoreTerm } from "@/lib/search.mjs";
 import { advanceLoop, createPlayback } from "@/lib/playback.mjs";
 import { sceneMap } from "@/demos/scenes";
 import sources from "@/generated/sources.json";
-import styles from "@/generated/styles.json";
+import SimulationExperience from "./SimulationExperience";
 
 const playback = createPlayback(guides);
 const serverSnapshots = Object.fromEntries(
@@ -40,12 +40,6 @@ const serverSnapshots = Object.fromEntries(
     { time: g.poster, status: "ready", started: false },
   ]),
 );
-const suggestions = [
-  "아래에서 올라오는 창",
-  "접었다 펴는 목록",
-  "회색 박스",
-  "엑셀 같은 표",
-];
 
 function Logo() {
   return (
@@ -209,7 +203,6 @@ function Detail({
   onRelated: (term: Term) => void;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
-  const frame = useRef<HTMLIFrameElement>(null);
   const [tab, setTab] = useState("guide");
   const [mode, setMode] = useState("live");
   const [format, setFormat] = useState<"react" | "html">("react");
@@ -219,7 +212,6 @@ function Detail({
   const [role, setRole] = useState<RoleName>("기획");
   const [codeScope, setCodeScope] = useState<"parts" | "full">("parts");
   const [partIndex, setPartIndex] = useState(0);
-  const [nonce] = useState(() => crypto.randomUUID());
   useEffect(() => {
     const el = dialog.current;
     if (el && !el.open) el.showModal();
@@ -241,20 +233,6 @@ function Detail({
     resize.observe(body);
     return () => resize.disconnect();
   }, []);
-  const send = (command: string, value?: boolean) =>
-    frame.current?.contentWindow?.postMessage({ nonce, command, value }, "*");
-  useEffect(() => {
-    const update = () => send("pause", document.hidden);
-    document.addEventListener("visibilitychange", update);
-    return () => document.removeEventListener("visibilitychange", update);
-  }, []);
-  const srcDoc = useMemo(
-    () =>
-      format === "html"
-        ? sources[term.demoId].html
-        : `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{margin:0;background:#fbfcfe}[hidden]{display:none!important}${styles.css}</style></head><body><div id="root"></div><script>window.__DEMO__=${JSON.stringify({ id: term.demoId, reduced: false, nonce })};<\/script><script src="${typeof window !== "undefined" ? window.location.origin : ""}/demo-bundle.js"><\/script></body></html>`,
-    [term.demoId, format, nonce],
-  );
   const parts = sources[term.demoId].parts[format];
   const part = parts[Math.min(partIndex, parts.length - 1)];
   const code = codeScope === "full" ? sources[term.demoId][format] : part.code;
@@ -382,30 +360,22 @@ function Detail({
                   </button>
                 )}
               </div>
-              <div
-                className={`experience-stage ${mobile ? "mobile-width" : ""}`}
-              >
-                <div className="stage-inner">
-                  {mode === "live" ? (
-                    <iframe
-                      ref={frame}
-                      key={`${format}-${reset}`}
-                      title={`${term.english} ${format === "html" ? "HTML" : "React"} 직접 체험`}
-                      srcDoc={srcDoc}
-                      sandbox="allow-scripts allow-forms"
-                    />
-                  ) : (
+              {mode === "live" ? (
+                <SimulationExperience
+                  key={term.id}
+                  id={term.demoId}
+                  examples={term.guide.examples}
+                  format={format}
+                  mobile={mobile}
+                  reset={reset}
+                />
+              ) : (
+                <div
+                  className={`experience-stage ${mobile ? "mobile-width" : ""}`}
+                >
+                  <div className="stage-inner">
                     <Observation id={term.demoId} />
-                  )}
-                </div>
-              </div>
-              {mode === "live" && (
-                <div className="experience-caption">
-                  <MousePointer2 size={14} />
-                  <span>화면 안의 UI를 직접 조작해 보세요.</span>
-                  <span className="frame-format">
-                    {format === "react" ? "React · TS" : "HTML · JS"}
-                  </span>
+                  </div>
                 </div>
               )}
             </section>
@@ -616,6 +586,7 @@ export default function Catalog({
   const [sort, setSort] = useState("recommended");
   const [selected, setSelected] = useState<Term | null>(null);
   const [showInfo, setShowInfo] = useState(false);
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [notice, setNotice] = useState("");
   const opener = useRef<HTMLElement | null>(null);
 
@@ -696,6 +667,19 @@ export default function Catalog({
         .map((t) => t.term),
     [initialTerms, query, selectedCategories, sort],
   );
+  useEffect(() => {
+    const main = document.querySelector<HTMLElement>(".catalog-main");
+    const header = document.querySelector<HTMLElement>(".catalog-header");
+    if (!main || !header) return;
+    const top = main.getBoundingClientRect().top;
+    const bottom = header.getBoundingClientRect().bottom;
+    if (top < bottom) {
+      window.scrollTo({
+        top: Math.max(0, window.scrollY + top - bottom - 20),
+        behavior: "instant",
+      });
+    }
+  }, [query, selectedCategories]);
   const open = (term: Term, trigger?: HTMLElement) => {
     opener.current = trigger || (document.activeElement as HTMLElement);
     setSelected(term);
@@ -731,107 +715,85 @@ export default function Catalog({
           <a href="/admin">관리자로 돌아가기</a>
         </div>
       )}
-      <header className="site-header">
-        <div className="header-inner">
-          <a href="/" aria-label="UI Notes 홈">
-            <Logo />
-          </a>
-          <nav>
-            <button
-              className={showInfo ? "nav-info active" : "nav-info"}
-              onClick={() => setShowInfo((v) => !v)}
-            >
-              프로토타입 안내
-            </button>
-            <a className="admin-link" href="/admin">
-              <Settings2 size={14} />
-              <span>관리자</span>
-            </a>
-          </nav>
-        </div>
-      </header>
-      <main className="main-container">
-        <section className="hero">
-          <div className="hero-content">
-            <div className="hero-eyebrow">
-              <span className="eyebrow-line" />
-              실무자를 위한 인터랙티브 UI 레퍼런스
+      <header className="catalog-header">
+        <div className="catalog-header-inner">
+          <div className="catalog-heading-row">
+            <div className="catalog-heading">
+              <p>실무자를 위한 인터랙티브 UI 레퍼런스</p>
+              <h1>
+                <a href="/">UI 용어 사전</a> <span>{initialTerms.length}</span>
+              </h1>
             </div>
-            <h1>
-              UI의 이름부터
-              <br />
-              <span>움직임까지.</span>
-            </h1>
-            <p className="hero-description">
-              모양과 움직임으로 찾고, 직접 사용하며 이해해 보세요.
-            </p>
-            <div className="search-box">
-              <Search size={21} />
+            <div className="search-box catalog-search" role="search">
+              <Search size={21} aria-hidden="true" />
               <input
+                type="search"
                 aria-label="UI 용어 검색"
-                placeholder="이름이 떠오르지 않으면, 움직임으로 찾아보세요"
+                placeholder="용어·움직임 검색: 드로어, 알림, sticky…"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
               {query && (
-                <button aria-label="검색 지우기" onClick={() => search("")}>
+                <button aria-label="검색 지우기" onClick={() => setQuery("")}>
                   <X size={17} />
                 </button>
               )}
-              <kbd>/</kbd>
+              <kbd aria-hidden="true">/</kbd>
             </div>
-            <div className="search-suggestions">
-              <span>이렇게 찾아보세요</span>
-              {suggestions.map((s) => (
-                <button key={s} onClick={() => search(s)}>
-                  {s}
-                </button>
-              ))}
-            </div>
+            <nav className="catalog-links" aria-label="사이트 메뉴">
+              <button
+                className="nav-info"
+                aria-expanded={showInfo}
+                onClick={() => setShowInfo((v) => !v)}
+              >
+                이용 안내
+              </button>
+              <a className="admin-link" href="/admin" aria-label="관리자">
+                <Settings2 size={16} />
+              </a>
+            </nav>
           </div>
-          <div className="hero-note" aria-label="프로토타입 범위">
-            <div className="note-icon">
-              <Layers2 size={22} />
-            </div>
-            <span>LEARN BY DOING</span>
-            <strong>
-              보는 것에서,
-              <br />
-              써보는 것으로.
-            </strong>
-            <p>
-              대표 UI {initialTerms.length}개를
-              <br />
-              직접 조작할 수 있어요.
-            </p>
-            <div className="note-tags">
-              <span>실제 동작</span>
-              <span>코드 예제</span>
-            </div>
-          </div>
-        </section>
-        {showInfo && (
-          <aside className="prototype-info">
-            <Sparkles size={18} />
-            <div>
-              <strong>직접 사용하며 UI 패턴을 비교해 보세요.</strong>
-              <p>
-                대표 UI의 시연·직접 체험·코드 예제를 확인할 수 있어요.
-                관리자에서는 상세 콘텐츠의 초안·게시·이력·분류와 백업을 DB 서버에
-                저장합니다. 콘텐츠는 순차적으로 확장합니다.
-              </p>
-            </div>
-            <button
-              className="icon-button"
-              onClick={() => setShowInfo(false)}
-              aria-label="안내 닫기"
-            >
-              <X size={17} />
-            </button>
-          </aside>
-        )}
-        <section className="dictionary" aria-label="UI 용어 목록">
-          <div className="category-bar" role="group" aria-label="주제별 필터">
+          <button
+            className="category-disclosure"
+            aria-expanded={categoriesOpen}
+            aria-controls="catalog-categories"
+            onClick={() => setCategoriesOpen((v) => !v)}
+          >
+            <Layers2 size={16} />
+            <span>
+              {selectedCategories.length
+                ? `카테고리 ${selectedCategories.length}개 선택`
+                : "전체 카테고리"}
+            </span>
+            <ChevronDown size={16} />
+          </button>
+          {showInfo && (
+            <aside className="prototype-info">
+              <Sparkles size={18} />
+              <div>
+                <strong>직접 사용하며 UI 패턴을 비교해 보세요.</strong>
+                <p>
+                  대표 UI의 시연·직접 체험·코드 예제를 확인할 수 있어요.
+                  관리자에서는 상세 콘텐츠의 초안·게시·이력·분류와 백업을 DB
+                  서버에 저장합니다. 콘텐츠는 순차적으로 확장합니다.
+                </p>
+              </div>
+              <button
+                className="icon-button"
+                onClick={() => setShowInfo(false)}
+                aria-label="안내 닫기"
+              >
+                <X size={17} />
+              </button>
+            </aside>
+          )}
+          <div
+            id="catalog-categories"
+            className="category-bar"
+            data-expanded={categoriesOpen}
+            role="group"
+            aria-label="주제별 필터"
+          >
             {groupNames.map((c) => (
               <button
                 key={c}
@@ -864,6 +826,10 @@ export default function Catalog({
               </button>
             ))}
           </div>
+        </div>
+      </header>
+      <main className="main-container catalog-main">
+        <section className="dictionary" aria-label="UI 용어 목록">
           <div className="results-toolbar">
             <h2>
               {query

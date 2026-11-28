@@ -1,0 +1,44 @@
+[
+  {
+    "id": "notification-center",
+    "host": 166,
+    "card": 147,
+    "top": 10,
+    "bottom": 9
+  },
+  {
+    "id": "hover-card",
+    "host": 166,
+    "card": 143,
+    "top": 12,
+    "bottom": 11
+  },
+  {
+    "id": "inline-edit",
+    "host": 166,
+    "card": 110,
+    "top": 28,
+    "bottom": 28
+  },
+  {
+    "id": "infinite-scroll",
+    "host": 166,
+    "card": 145,
+    "top": 11,
+    "bottom": 10
+  },
+  {
+    "id": "swipe-actions",
+    "host": 166,
+    "card": 142,
+    "top": 12,
+    "bottom": 11
+  },
+  {
+    "id": "pull-to-refresh",
+    "host": 166,
+    "card": 144,
+    "top": 11,
+    "bottom": 10
+  }
+]

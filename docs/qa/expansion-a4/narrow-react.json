@@ -1,0 +1,62 @@
+[
+  {
+    "id": "split-view",
+    "state": "compact",
+    "width": 248,
+    "scroll": 248,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "mega-menu",
+    "state": "mobile",
+    "width": 248,
+    "scroll": 248,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "scroll-reveal",
+    "state": "visible",
+    "width": 248,
+    "scroll": 248,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "stagger-animation",
+    "state": "static",
+    "width": 248,
+    "scroll": 248,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "scroll-snap",
+    "state": "last",
+    "width": 248,
+    "scroll": 248,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "id": "parallax-scroll",
+    "state": "strong",
+    "width": 263,
+    "scroll": 263,
+    "outer": {
+      "width": 320,
+      "scroll": 320
+    }
+  }
+]
