@@ -1,4 +1,5 @@
 "use client";
+import { DemoSelect } from "@/demos/select-controls";
 import {
   useEffect,
   useMemo,
@@ -17,7 +18,6 @@ import {
   MousePointer2,
   RotateCcw,
   Search,
-  Settings2,
   Smartphone,
   Sparkles,
   Repeat2,
@@ -587,6 +587,69 @@ export default function Catalog({
   const [selected, setSelected] = useState<Term | null>(null);
   const [showInfo, setShowInfo] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const [compactHeader, setCompactHeader] = useState(false);
+  const [expandedHeaderHeight, setExpandedHeaderHeight] = useState(0);
+  const catalogHeader = useRef<HTMLElement>(null);
+  const categoryTrigger = useRef<HTMLButtonElement>(null);
+  const categoryLayer = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      setCompactHeader(window.scrollY > 64);
+    };
+    const scroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", scroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scroll);
+    };
+  }, []);
+  useEffect(() => {
+    if (compactHeader || !catalogHeader.current) return;
+    const header = catalogHeader.current;
+    const measure = () =>
+      setExpandedHeaderHeight(header.getBoundingClientRect().height);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, [compactHeader]);
+  useEffect(() => {
+    const layer = categoryLayer.current;
+    if (!layer) return;
+    const position = () => {
+      const box = categoryTrigger.current?.getBoundingClientRect();
+      if (!box) return;
+      const width = Math.min(320, window.innerWidth - 32);
+      layer.style.width = `${width}px`;
+      layer.style.left = `${Math.max(16, Math.min(box.right - width, window.innerWidth - width - 16))}px`;
+      layer.style.top = `${box.bottom + 10}px`;
+      layer.style.maxHeight = `${Math.max(100, window.innerHeight - box.bottom - 26)}px`;
+    };
+    const before = (event: Event) => {
+      if ((event as ToggleEvent).newState === "open") position();
+    };
+    const toggle = (event: Event) =>
+      setCategoriesOpen((event as ToggleEvent).newState === "open");
+    layer.addEventListener("beforetoggle", before);
+    layer.addEventListener("toggle", toggle);
+    window.addEventListener("resize", position);
+    window.addEventListener("scroll", position, { passive: true });
+    return () => {
+      layer.removeEventListener("beforetoggle", before);
+      layer.removeEventListener("toggle", toggle);
+      window.removeEventListener("resize", position);
+      window.removeEventListener("scroll", position);
+    };
+  }, []);
+  useEffect(() => {
+    categoryLayer.current?.hidePopover();
+  }, [compactHeader]);
   const [notice, setNotice] = useState("");
   const opener = useRef<HTMLElement | null>(null);
 
@@ -668,7 +731,7 @@ export default function Catalog({
     [initialTerms, query, selectedCategories, sort],
   );
   useEffect(() => {
-    const main = document.querySelector<HTMLElement>(".catalog-main");
+    const main = document.querySelector<HTMLElement>(".dictionary");
     const header = document.querySelector<HTMLElement>(".catalog-header");
     if (!main || !header) return;
     const top = main.getBoundingClientRect().top;
@@ -707,21 +770,66 @@ export default function Catalog({
     setQuery(value);
     setSelectedCategories([]);
   };
+  const categoryButtons = groupNames.map((c) => (
+    <button
+      key={c}
+      className={
+        (
+          c === "전체"
+            ? !selectedCategories.length
+            : selectedCategories.includes(c)
+        )
+          ? "selected"
+          : ""
+      }
+      aria-pressed={
+        c === "전체"
+          ? !selectedCategories.length
+          : selectedCategories.includes(c)
+      }
+      onClick={() =>
+        setSelectedCategories((previous) =>
+          c === "전체"
+            ? []
+            : previous.includes(c)
+              ? previous.filter((value) => value !== c)
+              : [...previous, c],
+        )
+      }
+    >
+      {c === "전체" && <Layers2 size={14} />} {c}
+      {c === "전체" && <span>{initialTerms.length}</span>}
+    </button>
+  ));
   return (
     <>
       {preview && (
         <div className="draft-preview-banner">
           저장된 초안 미리보기 · 사이트에는 게시 전까지 반영되지 않습니다.
-          <a href="/admin">관리자로 돌아가기</a>
         </div>
       )}
-      <header className="catalog-header">
+      {compactHeader && (
+        <div
+          className="catalog-header-placeholder"
+          style={{ height: expandedHeaderHeight }}
+          aria-hidden="true"
+        />
+      )}
+      <header
+        ref={catalogHeader}
+        className="catalog-header"
+        data-compact={compactHeader}
+      >
         <div className="catalog-header-inner">
           <div className="catalog-heading-row">
             <div className="catalog-heading">
               <p>실무자를 위한 인터랙티브 UI 레퍼런스</p>
               <h1>
-                <a href="/">UI 용어 사전</a> <span>{initialTerms.length}</span>
+                <a href="/" aria-label="UI 용어 사전 홈">
+                  <span className="catalog-title-full">UI 용어 사전</span>
+                  <span className="catalog-title-short">UI 사전</span>
+                </a>{" "}
+                <span>{initialTerms.length}</span>
               </h1>
             </div>
             <div className="search-box catalog-search" role="search">
@@ -748,25 +856,37 @@ export default function Catalog({
               >
                 이용 안내
               </button>
-              <a className="admin-link" href="/admin" aria-label="관리자">
-                <Settings2 size={16} />
-              </a>
+              <button
+                ref={categoryTrigger}
+                className="catalog-category-trigger"
+                aria-label={
+                  selectedCategories.length
+                    ? `카테고리 선택 · ${selectedCategories.length}개 선택됨`
+                    : "카테고리 선택"
+                }
+                aria-expanded={categoriesOpen}
+                aria-controls="catalog-category-layer"
+                popoverTarget="catalog-category-layer"
+                title="카테고리 선택"
+                onKeyDown={(event) => {
+                  if (event.key === "ArrowDown") {
+                    event.preventDefault();
+                    categoryLayer.current?.showPopover();
+                    categoryLayer.current
+                      ?.querySelector<HTMLButtonElement>(".category-bar button")
+                      ?.focus();
+                  }
+                }}
+              >
+                <Layers2 size={19} />
+                {selectedCategories.length > 0 && (
+                  <span className="category-selection-count">
+                    {selectedCategories.length}
+                  </span>
+                )}
+              </button>
             </nav>
           </div>
-          <button
-            className="category-disclosure"
-            aria-expanded={categoriesOpen}
-            aria-controls="catalog-categories"
-            onClick={() => setCategoriesOpen((v) => !v)}
-          >
-            <Layers2 size={16} />
-            <span>
-              {selectedCategories.length
-                ? `카테고리 ${selectedCategories.length}개 선택`
-                : "전체 카테고리"}
-            </span>
-            <ChevronDown size={16} />
-          </button>
           {showInfo && (
             <aside className="prototype-info">
               <Sparkles size={18} />
@@ -774,8 +894,7 @@ export default function Catalog({
                 <strong>직접 사용하며 UI 패턴을 비교해 보세요.</strong>
                 <p>
                   대표 UI의 시연·직접 체험·코드 예제를 확인할 수 있어요.
-                  관리자에서는 상세 콘텐츠의 초안·게시·이력·분류와 백업을 DB
-                  서버에 저장합니다. 콘텐츠는 순차적으로 확장합니다.
+                  콘텐츠는 순차적으로 확장합니다.
                 </p>
               </div>
               <button
@@ -794,40 +913,46 @@ export default function Catalog({
             role="group"
             aria-label="주제별 필터"
           >
-            {groupNames.map((c) => (
-              <button
-                key={c}
-                className={
-                  (
-                    c === "전체"
-                      ? !selectedCategories.length
-                      : selectedCategories.includes(c)
-                  )
-                    ? "selected"
-                    : ""
-                }
-                aria-pressed={
-                  c === "전체"
-                    ? !selectedCategories.length
-                    : selectedCategories.includes(c)
-                }
-                onClick={() =>
-                  setSelectedCategories((previous) =>
-                    c === "전체"
-                      ? []
-                      : previous.includes(c)
-                        ? previous.filter((value) => value !== c)
-                        : [...previous, c],
-                  )
-                }
-              >
-                {c === "전체" && <Layers2 size={14} />} {c}
-                {c === "전체" && <span>{initialTerms.length}</span>}
-              </button>
-            ))}
+            {categoryButtons}
           </div>
         </div>
       </header>
+      <div
+        id="catalog-category-layer"
+        ref={categoryLayer}
+        className="catalog-category-layer"
+        popover="auto"
+        aria-labelledby="catalog-category-title"
+      >
+        <div className="category-layer-heading">
+          <strong id="catalog-category-title">카테고리 선택</strong>
+          <button
+            type="button"
+            aria-label="카테고리 선택 닫기"
+            onClick={() => categoryLayer.current?.hidePopover()}
+          >
+            <X size={17} />
+          </button>
+        </div>
+        <p>여러 카테고리를 함께 선택할 수 있어요.</p>
+        <div
+          className="category-bar"
+          role="group"
+          aria-label="레이어 카테고리 필터"
+        >
+          {categoryButtons}
+        </div>
+        <button
+          className="category-layer-done"
+          type="button"
+          onClick={() => categoryLayer.current?.hidePopover()}
+        >
+          선택 완료
+          {selectedCategories.length > 0
+            ? ` · ${selectedCategories.length}개`
+            : ""}
+        </button>
+      </div>
       <main className="main-container catalog-main">
         <section className="dictionary" aria-label="UI 용어 목록">
           <div className="results-toolbar">
@@ -843,7 +968,7 @@ export default function Catalog({
             </h2>
             <div className="list-options">
               <div className="select-wrap">
-                <select
+                <DemoSelect
                   aria-label="목록 정렬"
                   value={sort}
                   onChange={(e) => setSort(e.target.value)}
@@ -852,8 +977,7 @@ export default function Catalog({
                     {query ? "관련도순" : "기본순"}
                   </option>
                   <option value="alphabet">영문 이름순</option>
-                </select>
-                <ChevronDown size={13} />
+                </DemoSelect>
               </div>
             </div>
           </div>

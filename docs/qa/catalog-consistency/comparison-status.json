@@ -1,0 +1,5145 @@
+{
+  "checkedAt": "2026-11-28",
+  "referenceCount": 277,
+  "referenceNamesUnchanged": true,
+  "publicCount": 77,
+  "registeredCount": 101,
+  "counts": {
+    "2차 미구현": 24,
+    "기존 대응": 50,
+    "기존 통합·확장 대상": 46,
+    "구현·초안": 24,
+    "후속 미구현": 48,
+    "스타일·기초 후속": 83,
+    "보류": 2
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "Hero Section",
+      "category": "레이아웃",
+      "sourceId": "hero",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#hero",
+      "decision": "N",
+      "targetIds": [
+        "hero-section"
+      ],
+      "reason": "현재 페이지에 히어로는 있지만 용어로 등록된 독립 데모는 없다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 2,
+      "name": "Responsive Layout",
+      "category": "레이아웃",
+      "sourceId": "responsive",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#responsive",
+      "decision": "I",
+      "targetIds": [
+        "responsive-layout"
+      ],
+      "reason": "화면 폭에 따른 배치 전환을 기존 데모에서 체험할 수 있다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "responsive-layout"
+      ],
+      "publishedTargets": [
+        "responsive-layout"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Card Layout",
+      "category": "레이아웃",
+      "sourceId": "card",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#card",
+      "decision": "E",
+      "targetIds": [
+        "responsive-layout",
+        "card"
+      ],
+      "reason": "단일 Card와 반응형 데모에 균일 카드 그리드·목록 전환 비교를 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "responsive-layout",
+        "card"
+      ],
+      "publishedTargets": [
+        "responsive-layout",
+        "card"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Bento Grid",
+      "category": "레이아웃",
+      "sourceId": "bento",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#bento",
+      "decision": "N",
+      "targetIds": [
+        "bento-grid"
+      ],
+      "reason": "Masonry의 빈틈 채우기와 달리 정해진 격자에서 카드가 여러 칸을 차지한다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 5,
+      "name": "Sidebar Layout",
+      "category": "레이아웃",
+      "sourceId": "sidebar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#sidebar",
+      "decision": "E",
+      "targetIds": [
+        "navigation-drawer",
+        "responsive-layout"
+      ],
+      "reason": "기존 드로어에 넓은 화면 고정 사이드바와 콘텐츠 폭 변화를 비교한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E02"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "navigation-drawer",
+        "responsive-layout"
+      ],
+      "publishedTargets": [
+        "navigation-drawer",
+        "responsive-layout"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "Sticky Header",
+      "category": "레이아웃",
+      "sourceId": "sticky",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#sticky",
+      "decision": "I",
+      "targetIds": [
+        "sticky-header"
+      ],
+      "reason": "스크롤 영역에 붙는 헤더와 고정 해제 기능이 있다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "sticky-header"
+      ],
+      "publishedTargets": [
+        "sticky-header"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "Split Layout",
+      "category": "레이아웃",
+      "sourceId": "split",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#split",
+      "decision": "N",
+      "targetIds": [
+        "split-view"
+      ],
+      "reason": "단순 반응형 배치와 구분해 두 패널 폭 조절과 접힘을 체험한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "split-view"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 8,
+      "name": "Navbar / GNB",
+      "category": "레이아웃",
+      "sourceId": "navbar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#navbar",
+      "decision": "N",
+      "targetIds": [
+        "navigation-bar"
+      ],
+      "reason": "여러 목적지·현재 위치·모바일 메뉴 전환을 다루는 독립 상단 탐색이 필요하다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 9,
+      "name": "Footer",
+      "category": "레이아웃",
+      "sourceId": "footer",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#footer",
+      "decision": "N",
+      "targetIds": [
+        "footer"
+      ],
+      "reason": "사이트 공통 하단 정보는 앱에 존재하지만 콘텐츠용 독립 데모는 없다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 10,
+      "name": "Masonry Layout",
+      "category": "레이아웃",
+      "sourceId": "masonry",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#masonry",
+      "decision": "I",
+      "targetIds": [
+        "masonry"
+      ],
+      "reason": "높이가 다른 이미지의 격자 배치가 등록되어 있다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "masonry"
+      ],
+      "publishedTargets": [
+        "masonry"
+      ]
+    },
+    {
+      "index": 11,
+      "name": "Grid System (12-column)",
+      "category": "레이아웃",
+      "sourceId": "grid12",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#grid12",
+      "decision": "L",
+      "targetIds": [
+        "grid-system"
+      ],
+      "reason": "열 수·거터·영역 span을 조절하는 배치 비교 학습으로 설계한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 12,
+      "name": "Container / Max-width",
+      "category": "레이아웃",
+      "sourceId": "container",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#container",
+      "decision": "L",
+      "targetIds": [
+        "container-width"
+      ],
+      "reason": "최대 너비·좌우 여백·유동 폭 비교를 같은 화면으로 보여준다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 13,
+      "name": "Above the Fold",
+      "category": "레이아웃",
+      "sourceId": "fold",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#fold",
+      "decision": "L",
+      "targetIds": [
+        "above-the-fold"
+      ],
+      "reason": "기기 높이에 따라 첫 화면 범위가 달라지는 개념이며 컴포넌트가 아니다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 14,
+      "name": "Dashboard Layout",
+      "category": "레이아웃",
+      "sourceId": "dashboard",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#dashboard",
+      "decision": "N",
+      "targetIds": [
+        "dashboard-layout"
+      ],
+      "reason": "사이드바·KPI·표·빈 상태를 결합한 대시보드 구성 데모가 없다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 15,
+      "name": "List-Detail Layout",
+      "category": "레이아웃",
+      "sourceId": "listdetail",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#listdetail",
+      "decision": "N",
+      "targetIds": [
+        "list-detail"
+      ],
+      "reason": "목록 선택과 상세 내용의 동기화·뒤로 가기를 체험할 독립 패턴이 필요하다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 16,
+      "name": "Mega Menu",
+      "category": "레이아웃",
+      "sourceId": "megamenu",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#megamenu",
+      "decision": "N",
+      "targetIds": [
+        "mega-menu"
+      ],
+      "reason": "일반 Menu Button과 다른 다열 탐색·그룹·모바일 접힘을 다룬다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "mega-menu"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 17,
+      "name": "Table of Contents",
+      "category": "레이아웃",
+      "sourceId": "toc",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#toc",
+      "decision": "N",
+      "targetIds": [
+        "table-of-contents"
+      ],
+      "reason": "문서 항목으로 이동하고 현재 읽는 절을 표시하는 기능을 추가한다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 18,
+      "name": "F / Z Pattern",
+      "category": "레이아웃",
+      "sourceId": "fzpattern",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#fzpattern",
+      "decision": "L",
+      "targetIds": [
+        "reading-patterns"
+      ],
+      "reason": "F/Z는 모든 화면의 필수 규칙으로 단정하지 않고 읽기 흐름 비교로 다룬다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 19,
+      "name": "Zigzag Layout",
+      "category": "레이아웃",
+      "sourceId": "zigzag",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#zigzag",
+      "decision": "L",
+      "targetIds": [
+        "zigzag-layout"
+      ],
+      "reason": "이미지·문구 배치와 모바일 읽기 순서를 비교하는 구성 학습으로 다룬다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 20,
+      "name": "Sticky Sidebar",
+      "category": "레이아웃",
+      "sourceId": "stickysidebar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#stickysidebar",
+      "decision": "N",
+      "targetIds": [
+        "sticky-sidebar"
+      ],
+      "reason": "헤더와 달리 본문 옆 요약·구매 영역의 높이와 부모 경계를 다룬다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 21,
+      "name": "Centered Layout",
+      "category": "레이아웃",
+      "sourceId": "centered",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#centered",
+      "decision": "E",
+      "targetIds": [
+        "responsive-layout"
+      ],
+      "reason": "기존 반응형 데모에 세로·가로 가운데 배치와 긴 내용 예외를 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "responsive-layout"
+      ],
+      "publishedTargets": [
+        "responsive-layout"
+      ]
+    },
+    {
+      "index": 22,
+      "name": "Full-screen Section",
+      "category": "레이아웃",
+      "sourceId": "fullscreen",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#fullscreen",
+      "decision": "E",
+      "targetIds": [
+        "responsive-layout"
+      ],
+      "reason": "전체 높이 화면과 작은 기기·주소창·키보드 영향 비교를 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "responsive-layout"
+      ],
+      "publishedTargets": [
+        "responsive-layout"
+      ]
+    },
+    {
+      "index": 23,
+      "name": "Horizontal Scroll",
+      "category": "레이아웃",
+      "sourceId": "hscroll",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#hscroll",
+      "decision": "N",
+      "targetIds": [
+        "horizontal-scroll"
+      ],
+      "reason": "Carousel과 달리 콘텐츠를 연속적으로 옆으로 탐색하는 스크롤 영역이다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 24,
+      "name": "Collapsible Sidebar",
+      "category": "레이아웃",
+      "sourceId": "minisidebar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#minisidebar",
+      "decision": "E",
+      "targetIds": [
+        "navigation-drawer"
+      ],
+      "reason": "사이드바의 아이콘 축약·라벨 복귀·현재 위치 유지 형태를 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E02"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "navigation-drawer"
+      ],
+      "publishedTargets": [
+        "navigation-drawer"
+      ]
+    },
+    {
+      "index": 25,
+      "name": "Feature Section",
+      "category": "랜딩 섹션",
+      "sourceId": "feature",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#feature",
+      "decision": "N",
+      "targetIds": [
+        "feature-section"
+      ],
+      "reason": "기능을 이미지·설명으로 묶는 랜딩 섹션 데모가 없다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 26,
+      "name": "Pricing Table",
+      "category": "랜딩 섹션",
+      "sourceId": "pricing",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#pricing",
+      "decision": "N",
+      "targetIds": [
+        "pricing-table"
+      ],
+      "reason": "플랜·기능·가격·선택 상태를 비교할 독립 구성이다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 27,
+      "name": "Pricing Toggle",
+      "category": "랜딩 섹션",
+      "sourceId": "pricetoggle",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#pricetoggle",
+      "decision": "E",
+      "targetIds": [
+        "segmented-control"
+      ],
+      "reason": "월간/연간 선택과 금액·청구 단위 동기화 예제를 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "segmented-control"
+      ],
+      "publishedTargets": [
+        "segmented-control"
+      ]
+    },
+    {
+      "index": 28,
+      "name": "Testimonial",
+      "category": "랜딩 섹션",
+      "sourceId": "testimonial",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#testimonial",
+      "decision": "N",
+      "targetIds": [
+        "testimonial"
+      ],
+      "reason": "후기 카드·작성자·출처·길이 차이를 비교하는 구성이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 29,
+      "name": "FAQ Section",
+      "category": "랜딩 섹션",
+      "sourceId": "faq",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#faq",
+      "decision": "E",
+      "targetIds": [
+        "accordion"
+      ],
+      "reason": "FAQ는 기존 아코디언을 목적별 예제로 확장하면 충분하다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "accordion"
+      ],
+      "publishedTargets": [
+        "accordion"
+      ]
+    },
+    {
+      "index": 30,
+      "name": "Logo Cloud",
+      "category": "랜딩 섹션",
+      "sourceId": "logocloud",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#logocloud",
+      "decision": "N",
+      "targetIds": [
+        "logo-cloud"
+      ],
+      "reason": "정적 로고 묶음과 작은 화면 줄바꿈을 다룬다. 무한 이동은 Marquee에 연결한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 31,
+      "name": "Stats Section",
+      "category": "랜딩 섹션",
+      "sourceId": "stats",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#stats",
+      "decision": "N",
+      "targetIds": [
+        "stats-section"
+      ],
+      "reason": "여러 수치의 단위·기준 시점·변화 방향을 묶는 독립 구성이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 32,
+      "name": "CTA Section",
+      "category": "랜딩 섹션",
+      "sourceId": "ctasection",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#ctasection",
+      "decision": "N",
+      "targetIds": [
+        "cta-section"
+      ],
+      "reason": "행동 버튼만 있는 Button과 달리 설명·보조 행동을 포함한 섹션을 다룬다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 33,
+      "name": "Comparison Table",
+      "category": "랜딩 섹션",
+      "sourceId": "comparison",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#comparison",
+      "decision": "E",
+      "targetIds": [
+        "data-table"
+      ],
+      "reason": "테이블에 플랜별 기능 비교·제공/미제공/불명 구분 형태를 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E07"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "data-table"
+      ],
+      "publishedTargets": [
+        "data-table"
+      ]
+    },
+    {
+      "index": 34,
+      "name": "How It Works",
+      "category": "랜딩 섹션",
+      "sourceId": "howitworks",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#howitworks",
+      "decision": "E",
+      "targetIds": [
+        "stepper"
+      ],
+      "reason": "정적인 이용 안내와 입력 단계 진행기의 차이를 기존 Stepper에서 비교한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "stepper"
+      ],
+      "publishedTargets": [
+        "stepper"
+      ]
+    },
+    {
+      "index": 35,
+      "name": "Newsletter / Waitlist Form",
+      "category": "랜딩 섹션",
+      "sourceId": "newsletter",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#newsletter",
+      "decision": "N",
+      "targetIds": [
+        "newsletter-form"
+      ],
+      "reason": "이메일 입력만이 아니라 제출·중복·실패·완료 피드백의 조합이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 36,
+      "name": "Contact Section",
+      "category": "랜딩 섹션",
+      "sourceId": "contact",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#contact",
+      "decision": "N",
+      "targetIds": [
+        "contact-form"
+      ],
+      "reason": "문의를 보내는 복합 폼과 오류 요약·입력 보존을 다루는 새 예제다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 37,
+      "name": "Trust Badges",
+      "category": "랜딩 섹션",
+      "sourceId": "trustbadge",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#trustbadge",
+      "decision": "L",
+      "targetIds": [
+        "trust-signals"
+      ],
+      "reason": "보증·후기·운영 정보의 역할을 비교하며 실제로 없는 인증을 표기하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 38,
+      "name": "App Store Badges",
+      "category": "랜딩 섹션",
+      "sourceId": "appbadge",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#appbadge",
+      "decision": "H",
+      "targetIds": [
+        "app-store-badges"
+      ],
+      "reason": "독립 상호작용 가치가 낮다. 실제 앱 목적지와 공식 배지 자산 사용 범위 결정 후 다룬다.",
+      "priority": "hold",
+      "auditStatus": "보류",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 39,
+      "name": "Tabs",
+      "category": "컴포넌트",
+      "sourceId": "tabs",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#tabs",
+      "decision": "I",
+      "targetIds": [
+        "tabs"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "tabs"
+      ],
+      "publishedTargets": [
+        "tabs"
+      ]
+    },
+    {
+      "index": 40,
+      "name": "Accordion",
+      "category": "컴포넌트",
+      "sourceId": "accordion",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#accordion",
+      "decision": "I",
+      "targetIds": [
+        "accordion"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "accordion"
+      ],
+      "publishedTargets": [
+        "accordion"
+      ]
+    },
+    {
+      "index": 41,
+      "name": "Modal / Dialog",
+      "category": "컴포넌트",
+      "sourceId": "modal",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#modal",
+      "decision": "I",
+      "targetIds": [
+        "modal"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "modal"
+      ],
+      "publishedTargets": [
+        "modal"
+      ]
+    },
+    {
+      "index": 42,
+      "name": "Drawer",
+      "category": "컴포넌트",
+      "sourceId": "drawer",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#drawer",
+      "decision": "E",
+      "targetIds": [
+        "navigation-drawer"
+      ],
+      "reason": "탐색 메뉴 구현은 있다. 보조 내용·편집 패널과 모달/비모달 차이는 추가해야 한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E02"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "navigation-drawer"
+      ],
+      "publishedTargets": [
+        "navigation-drawer"
+      ]
+    },
+    {
+      "index": 43,
+      "name": "Dropdown",
+      "category": "컴포넌트",
+      "sourceId": "dropdown",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#dropdown",
+      "decision": "E",
+      "targetIds": [
+        "select",
+        "menu-button",
+        "combobox"
+      ],
+      "reason": "Dropdown은 통칭이다. 값 선택·행동 메뉴·검색형 선택으로 나눠 연결한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E01"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "select",
+        "menu-button",
+        "combobox"
+      ],
+      "publishedTargets": [
+        "select",
+        "menu-button",
+        "combobox"
+      ]
+    },
+    {
+      "index": 44,
+      "name": "Tooltip",
+      "category": "컴포넌트",
+      "sourceId": "tooltip",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#tooltip",
+      "decision": "I",
+      "targetIds": [
+        "tooltip"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "tooltip"
+      ],
+      "publishedTargets": [
+        "tooltip"
+      ]
+    },
+    {
+      "index": 45,
+      "name": "Toast / Snackbar",
+      "category": "컴포넌트",
+      "sourceId": "toast",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#toast",
+      "decision": "I",
+      "targetIds": [
+        "toast",
+        "snackbar"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "toast",
+        "snackbar"
+      ],
+      "publishedTargets": [
+        "toast",
+        "snackbar"
+      ]
+    },
+    {
+      "index": 46,
+      "name": "Carousel",
+      "category": "컴포넌트",
+      "sourceId": "carousel",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#carousel",
+      "decision": "I",
+      "targetIds": [
+        "carousel"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "carousel"
+      ],
+      "publishedTargets": [
+        "carousel"
+      ]
+    },
+    {
+      "index": 47,
+      "name": "Skeleton Loading",
+      "category": "컴포넌트",
+      "sourceId": "skeleton",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#skeleton",
+      "decision": "I",
+      "targetIds": [
+        "skeleton"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "skeleton"
+      ],
+      "publishedTargets": [
+        "skeleton"
+      ]
+    },
+    {
+      "index": 48,
+      "name": "Popover",
+      "category": "컴포넌트",
+      "sourceId": "popover",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#popover",
+      "decision": "I",
+      "targetIds": [
+        "popover"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "popover"
+      ],
+      "publishedTargets": [
+        "popover"
+      ]
+    },
+    {
+      "index": 49,
+      "name": "Bottom Sheet",
+      "category": "컴포넌트",
+      "sourceId": "bottomsheet",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#bottomsheet",
+      "decision": "I",
+      "targetIds": [
+        "bottom-sheet"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "bottom-sheet"
+      ],
+      "publishedTargets": [
+        "bottom-sheet"
+      ]
+    },
+    {
+      "index": 50,
+      "name": "Hamburger Menu",
+      "category": "컴포넌트",
+      "sourceId": "hamburger",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#hamburger",
+      "decision": "E",
+      "targetIds": [
+        "navigation-drawer",
+        "menu-button"
+      ],
+      "reason": "햄버거는 메뉴를 여는 아이콘 형태다. 아이콘·라벨·확장 상태를 기존 데모에 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E02"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "navigation-drawer",
+        "menu-button"
+      ],
+      "publishedTargets": [
+        "navigation-drawer",
+        "menu-button"
+      ]
+    },
+    {
+      "index": 51,
+      "name": "Breadcrumb",
+      "category": "컴포넌트",
+      "sourceId": "breadcrumb",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#breadcrumb",
+      "decision": "I",
+      "targetIds": [
+        "breadcrumb"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "breadcrumb"
+      ],
+      "publishedTargets": [
+        "breadcrumb"
+      ]
+    },
+    {
+      "index": 52,
+      "name": "Pagination",
+      "category": "컴포넌트",
+      "sourceId": "pagination",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#pagination",
+      "decision": "I",
+      "targetIds": [
+        "pagination"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "pagination"
+      ],
+      "publishedTargets": [
+        "pagination"
+      ]
+    },
+    {
+      "index": 53,
+      "name": "Badge",
+      "category": "컴포넌트",
+      "sourceId": "badge",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#badge",
+      "decision": "N",
+      "targetIds": [
+        "badge"
+      ],
+      "reason": "서비스 내부 상태 배지는 있으나 숫자 초과·미확인·0개를 체험할 독립 데모가 없다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "badge"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 54,
+      "name": "Chip / Tag",
+      "category": "컴포넌트",
+      "sourceId": "chip",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#chip",
+      "decision": "N",
+      "targetIds": [
+        "chip-tag"
+      ],
+      "reason": "정적 분류 라벨과 선택·삭제 가능한 칩을 구분해 체험해야 한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "chip-tag"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 55,
+      "name": "Avatar",
+      "category": "컴포넌트",
+      "sourceId": "avatar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#avatar",
+      "decision": "N",
+      "targetIds": [
+        "avatar"
+      ],
+      "reason": "이미지 실패·이니셜·그룹 초과 인원 등 독립 상태가 필요하다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "avatar"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 56,
+      "name": "Toggle Switch",
+      "category": "컴포넌트",
+      "sourceId": "toggle",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#toggle",
+      "decision": "I",
+      "targetIds": [
+        "switch"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "switch"
+      ],
+      "publishedTargets": [
+        "switch"
+      ]
+    },
+    {
+      "index": 57,
+      "name": "Stepper",
+      "category": "컴포넌트",
+      "sourceId": "stepper",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#stepper",
+      "decision": "I",
+      "targetIds": [
+        "stepper"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "stepper"
+      ],
+      "publishedTargets": [
+        "stepper"
+      ]
+    },
+    {
+      "index": 58,
+      "name": "Progress Bar",
+      "category": "컴포넌트",
+      "sourceId": "progress",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#progress",
+      "decision": "I",
+      "targetIds": [
+        "progress-bar"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "progress-bar"
+      ],
+      "publishedTargets": [
+        "progress-bar"
+      ]
+    },
+    {
+      "index": 59,
+      "name": "Spinner / Loader",
+      "category": "컴포넌트",
+      "sourceId": "spinner",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#spinner",
+      "decision": "I",
+      "targetIds": [
+        "loading-spinner"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "loading-spinner"
+      ],
+      "publishedTargets": [
+        "loading-spinner"
+      ]
+    },
+    {
+      "index": 60,
+      "name": "Command Palette",
+      "category": "컴포넌트",
+      "sourceId": "command",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#command",
+      "decision": "N",
+      "targetIds": [
+        "command-palette"
+      ],
+      "reason": "검색 입력과 명령 실행·단축키·키보드 선택을 결합한 새 패턴이다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "command-palette"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 61,
+      "name": "Segmented Control",
+      "category": "컴포넌트",
+      "sourceId": "segmented",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#segmented",
+      "decision": "I",
+      "targetIds": [
+        "segmented-control"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "segmented-control"
+      ],
+      "publishedTargets": [
+        "segmented-control"
+      ]
+    },
+    {
+      "index": 62,
+      "name": "Data Table",
+      "category": "컴포넌트",
+      "sourceId": "datatable",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#datatable",
+      "decision": "E",
+      "targetIds": [
+        "data-table",
+        "sorting"
+      ],
+      "reason": "현재 읽기 표와 별도 정렬을 표 헤더 정렬·현재 정렬 안내로 결합한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E07"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "data-table",
+        "sorting"
+      ],
+      "publishedTargets": [
+        "data-table",
+        "sorting"
+      ]
+    },
+    {
+      "index": 63,
+      "name": "Floating Action Button",
+      "category": "컴포넌트",
+      "sourceId": "fab",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#fab",
+      "decision": "I",
+      "targetIds": [
+        "floating-action-button"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "floating-action-button"
+      ],
+      "publishedTargets": [
+        "floating-action-button"
+      ]
+    },
+    {
+      "index": 64,
+      "name": "Empty State",
+      "category": "컴포넌트",
+      "sourceId": "empty",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#empty",
+      "decision": "I",
+      "targetIds": [
+        "empty-state"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "empty-state"
+      ],
+      "publishedTargets": [
+        "empty-state"
+      ]
+    },
+    {
+      "index": 65,
+      "name": "Alert / Banner",
+      "category": "컴포넌트",
+      "sourceId": "banner",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#banner",
+      "decision": "E",
+      "targetIds": [
+        "inline-alert"
+      ],
+      "reason": "인라인 오류와 페이지 전체 공지 띠는 범위가 다르므로 배너 형태·닫기 규칙을 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "inline-alert"
+      ],
+      "publishedTargets": [
+        "inline-alert"
+      ]
+    },
+    {
+      "index": 66,
+      "name": "Bottom Navigation",
+      "category": "컴포넌트",
+      "sourceId": "bottomnav",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#bottomnav",
+      "decision": "I",
+      "targetIds": [
+        "bottom-navigation"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "bottom-navigation"
+      ],
+      "publishedTargets": [
+        "bottom-navigation"
+      ]
+    },
+    {
+      "index": 67,
+      "name": "Kebab / Meatball Menu",
+      "category": "컴포넌트",
+      "sourceId": "kebab",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#kebab",
+      "decision": "E",
+      "targetIds": [
+        "menu-button",
+        "icon-button"
+      ],
+      "reason": "가로/세로 점 아이콘을 누르는 기존 동작 메뉴의 파생 형태로 관리한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "menu-button",
+        "icon-button"
+      ],
+      "publishedTargets": [
+        "menu-button",
+        "icon-button"
+      ]
+    },
+    {
+      "index": 68,
+      "name": "Context Menu",
+      "category": "컴포넌트",
+      "sourceId": "contextmenu",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#contextmenu",
+      "decision": "N",
+      "targetIds": [
+        "context-menu"
+      ],
+      "reason": "우클릭·길게 누르기·키보드 메뉴 열기와 화면 경계 보정이 필요하다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "context-menu"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 69,
+      "name": "Split Button",
+      "category": "컴포넌트",
+      "sourceId": "splitbutton",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#splitbutton",
+      "decision": "N",
+      "targetIds": [
+        "split-button"
+      ],
+      "reason": "기본 실행과 추가 메뉴를 서로 다른 초점 대상으로 분리한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "split-button"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 70,
+      "name": "Lightbox",
+      "category": "컴포넌트",
+      "sourceId": "lightbox",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#lightbox",
+      "decision": "I",
+      "targetIds": [
+        "lightbox"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "lightbox"
+      ],
+      "publishedTargets": [
+        "lightbox"
+      ]
+    },
+    {
+      "index": 71,
+      "name": "Timeline",
+      "category": "컴포넌트",
+      "sourceId": "timeline",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#timeline",
+      "decision": "N",
+      "targetIds": [
+        "timeline"
+      ],
+      "reason": "시간순 기록과 단계 진행 표시기는 의미가 다르다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 72,
+      "name": "Kanban Board",
+      "category": "컴포넌트",
+      "sourceId": "kanban",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#kanban",
+      "decision": "N",
+      "targetIds": [
+        "kanban-board"
+      ],
+      "reason": "현재 한 목록의 정렬과 달리 열 사이 이동·빈 열·이동 취소가 필요하다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 73,
+      "name": "Tree View",
+      "category": "컴포넌트",
+      "sourceId": "treeview",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#treeview",
+      "decision": "I",
+      "targetIds": [
+        "tree-view"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "tree-view"
+      ],
+      "publishedTargets": [
+        "tree-view"
+      ]
+    },
+    {
+      "index": 74,
+      "name": "Stat / KPI Card",
+      "category": "컴포넌트",
+      "sourceId": "statcard",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#statcard",
+      "decision": "E",
+      "targetIds": [
+        "card",
+        "progress-bar"
+      ],
+      "reason": "일반 카드에 지표의 단위·기준·증감 표기를 추가한다. 차트 전체 구현과 구분한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "card",
+        "progress-bar"
+      ],
+      "publishedTargets": [
+        "card",
+        "progress-bar"
+      ]
+    },
+    {
+      "index": 75,
+      "name": "Coachmark / Product Tour",
+      "category": "컴포넌트",
+      "sourceId": "coachmark",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#coachmark",
+      "decision": "N",
+      "targetIds": [
+        "product-tour"
+      ],
+      "reason": "단계별 대상 강조·다음·이전·건너뛰기·완료가 필요한 안내 패턴이다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 76,
+      "name": "Cookie Consent Bar",
+      "category": "컴포넌트",
+      "sourceId": "cookie",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#cookie",
+      "decision": "N",
+      "targetIds": [
+        "consent-banner"
+      ],
+      "reason": "동의·거부·세부 설정을 비교하는 모의 설정 UI로 설계한다. 실제 추적 도구 연동은 별도다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 77,
+      "name": "Back to Top Button",
+      "category": "컴포넌트",
+      "sourceId": "backtotop",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#backtotop",
+      "decision": "N",
+      "targetIds": [
+        "back-to-top"
+      ],
+      "reason": "기존 헤더 데모의 상단 이동과 구분해 스크롤 임계점에 따라 표시되는 버튼을 다룬다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 78,
+      "name": "Code Block + Copy Button",
+      "category": "컴포넌트",
+      "sourceId": "codeblock",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#codeblock",
+      "decision": "N",
+      "targetIds": [
+        "code-block"
+      ],
+      "reason": "사이트 자체 코드 탭과 별개로 코드 줄바꿈·복사 성공/실패를 가르치는 독립 데모는 없다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 79,
+      "name": "Chat Bubble",
+      "category": "컴포넌트",
+      "sourceId": "chatbubble",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#chatbubble",
+      "decision": "N",
+      "targetIds": [
+        "chat-thread"
+      ],
+      "reason": "말풍선·전송 중·실패·재전송·시간 순서를 다루는 독립 대화 UI다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 80,
+      "name": "Info Button / Toggletip",
+      "category": "컴포넌트",
+      "sourceId": "infobutton",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#infobutton",
+      "decision": "E",
+      "targetIds": [
+        "popover",
+        "tooltip"
+      ],
+      "reason": "클릭해서 유지되는 설명은 Tooltip과 달라 Popover의 설명형 변형으로 연결한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "popover",
+        "tooltip"
+      ],
+      "publishedTargets": [
+        "popover",
+        "tooltip"
+      ]
+    },
+    {
+      "index": 81,
+      "name": "Callout / Info Box",
+      "category": "컴포넌트",
+      "sourceId": "callout",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#callout",
+      "decision": "E",
+      "targetIds": [
+        "inline-alert"
+      ],
+      "reason": "행동 없는 보충 설명 상자와 긴급 상태 알림의 차이를 기존 안내 예제로 비교한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "inline-alert"
+      ],
+      "publishedTargets": [
+        "inline-alert"
+      ]
+    },
+    {
+      "index": 82,
+      "name": "Confirm Dialog",
+      "category": "컴포넌트",
+      "sourceId": "confirm",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#confirm",
+      "decision": "I",
+      "targetIds": [
+        "alert-dialog"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "alert-dialog"
+      ],
+      "publishedTargets": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "index": 83,
+      "name": "Action Sheet",
+      "category": "컴포넌트",
+      "sourceId": "actionsheet",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#actionsheet",
+      "decision": "E",
+      "targetIds": [
+        "bottom-sheet",
+        "menu-button"
+      ],
+      "reason": "하단 패널에 단일 행동 목록·취소·위험 행동 구분을 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "bottom-sheet",
+        "menu-button"
+      ],
+      "publishedTargets": [
+        "bottom-sheet",
+        "menu-button"
+      ]
+    },
+    {
+      "index": 84,
+      "name": "Share Sheet",
+      "category": "컴포넌트",
+      "sourceId": "sharesheet",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#sharesheet",
+      "decision": "E",
+      "targetIds": [
+        "icon-button",
+        "bottom-sheet"
+      ],
+      "reason": "SNS 선택 목록은 이미 Icon Button 안에 있다. 독립 중복 구현 대신 모바일 시트 형태와 연결을 보강한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E09"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "icon-button",
+        "bottom-sheet"
+      ],
+      "publishedTargets": [
+        "icon-button",
+        "bottom-sheet"
+      ]
+    },
+    {
+      "index": 85,
+      "name": "Notification Center",
+      "category": "컴포넌트",
+      "sourceId": "notifcenter",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#notifcenter",
+      "decision": "N",
+      "targetIds": [
+        "notification-center"
+      ],
+      "reason": "미확인 개수·읽음·모두 읽음·빈 목록·재시도 상태를 다룬다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "notification-center"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 86,
+      "name": "Profile Menu",
+      "category": "컴포넌트",
+      "sourceId": "profilemenu",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#profilemenu",
+      "decision": "E",
+      "targetIds": [
+        "menu-button"
+      ],
+      "reason": "프로필·설정·계정 전환·로그아웃 예제를 기존 메뉴에 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "menu-button"
+      ],
+      "publishedTargets": [
+        "menu-button"
+      ]
+    },
+    {
+      "index": 87,
+      "name": "Hover Card",
+      "category": "컴포넌트",
+      "sourceId": "hovercard",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#hovercard",
+      "decision": "N",
+      "targetIds": [
+        "hover-card"
+      ],
+      "reason": "짧은 Tooltip과 달리 구조화된 사용자/링크 미리보기를 제공한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "hover-card"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 88,
+      "name": "Promo Popup",
+      "category": "컴포넌트",
+      "sourceId": "promopopup",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#promopopup",
+      "decision": "E",
+      "targetIds": [
+        "modal"
+      ],
+      "reason": "이벤트 모달은 노출 조건·다시 보지 않기·닫기 상태를 기존 모달에 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "modal"
+      ],
+      "publishedTargets": [
+        "modal"
+      ]
+    },
+    {
+      "index": 89,
+      "name": "Chat Widget",
+      "category": "컴포넌트",
+      "sourceId": "chatwidget",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#chatwidget",
+      "decision": "N",
+      "targetIds": [
+        "chat-widget"
+      ],
+      "reason": "구석 실행 버튼과 상담창 열기·최소화·미확인 수를 결합한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 90,
+      "name": "Sticky Bottom Bar",
+      "category": "컴포넌트",
+      "sourceId": "stickybar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#stickybar",
+      "decision": "N",
+      "targetIds": [
+        "sticky-bottom-bar"
+      ],
+      "reason": "FAB와 달리 가격·선택 요약·주요 행동이 함께 붙는 영역이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 91,
+      "name": "Top App Bar",
+      "category": "컴포넌트",
+      "sourceId": "appbar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#appbar",
+      "decision": "N",
+      "targetIds": [
+        "top-app-bar"
+      ],
+      "reason": "뒤로 가기·문맥 제목·보조 행동과 화면 내비게이션을 다룬다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 92,
+      "name": "Divider",
+      "category": "컴포넌트",
+      "sourceId": "divider",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#divider",
+      "decision": "L",
+      "targetIds": [
+        "divider"
+      ],
+      "reason": "장식 구분선·의미 있는 구분·텍스트 구분자를 비교한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 93,
+      "name": "Status Indicator",
+      "category": "컴포넌트",
+      "sourceId": "statusdot",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#statusdot",
+      "decision": "N",
+      "targetIds": [
+        "status-indicator"
+      ],
+      "reason": "색깔 점에 상태 텍스트·변경 안내를 함께 제공하는 작은 독립 예제다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 94,
+      "name": "Countdown Timer",
+      "category": "컴포넌트",
+      "sourceId": "countdown",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#countdown",
+      "decision": "N",
+      "targetIds": [
+        "countdown"
+      ],
+      "reason": "남은 시간·만료·일시 정지·기준 시각을 다루는 타이머 UI다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 95,
+      "name": "Chart (Bar / Line / Donut)",
+      "category": "컴포넌트",
+      "sourceId": "chart",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#chart",
+      "decision": "N",
+      "targetIds": [
+        "charts"
+      ],
+      "reason": "막대·선·도넛의 질문 차이와 데이터 표 대안을 함께 제공한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 96,
+      "name": "Progress Ring",
+      "category": "컴포넌트",
+      "sourceId": "progressring",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#progressring",
+      "decision": "E",
+      "targetIds": [
+        "progress-bar"
+      ],
+      "reason": "선형·원형 표현은 같은 진행값을 공유하는 비교 형태로 확장한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E10"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "progress-bar"
+      ],
+      "publishedTargets": [
+        "progress-bar"
+      ]
+    },
+    {
+      "index": 97,
+      "name": "Video Player",
+      "category": "컴포넌트",
+      "sourceId": "videoplayer",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#videoplayer",
+      "decision": "N",
+      "targetIds": [
+        "video-player"
+      ],
+      "reason": "재생·탐색·음량·자막·포스터·재생 실패를 다루는 독립 플레이어다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 98,
+      "name": "Product Card",
+      "category": "컴포넌트",
+      "sourceId": "productcard",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#productcard",
+      "decision": "E",
+      "targetIds": [
+        "card",
+        "toggle-button"
+      ],
+      "reason": "상품 카드에 가격·할인·찜·품절 등 의미가 다른 요소를 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "card",
+        "toggle-button"
+      ],
+      "publishedTargets": [
+        "card",
+        "toggle-button"
+      ]
+    },
+    {
+      "index": 99,
+      "name": "Image Gallery",
+      "category": "컴포넌트",
+      "sourceId": "imggallery",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#imggallery",
+      "decision": "N",
+      "targetIds": [
+        "image-gallery"
+      ],
+      "reason": "Masonry/Lightbox와 달리 큰 이미지와 썸네일의 선택을 동기화한다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 100,
+      "name": "Comment Thread",
+      "category": "컴포넌트",
+      "sourceId": "comment",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#comment",
+      "decision": "N",
+      "targetIds": [
+        "comment-thread"
+      ],
+      "reason": "대댓글 깊이·접힘·작성·삭제·실패를 다루는 독립 패턴이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 101,
+      "name": "Filter & Sort",
+      "category": "컴포넌트",
+      "sourceId": "filterbar",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#filterbar",
+      "decision": "E",
+      "targetIds": [
+        "filtering",
+        "sorting"
+      ],
+      "reason": "조건과 정렬을 함께 적용하고 칩 제거·전체 초기화·URL 상태 예제를 결합한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E08"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "filtering",
+        "sorting"
+      ],
+      "publishedTargets": [
+        "filtering",
+        "sorting"
+      ]
+    },
+    {
+      "index": 102,
+      "name": "Calendar View",
+      "category": "컴포넌트",
+      "sourceId": "calendarview",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#calendarview",
+      "decision": "N",
+      "targetIds": [
+        "calendar-view"
+      ],
+      "reason": "날짜 값을 고르는 Date Picker와 달리 일정 정보를 월·주·목록으로 탐색한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 103,
+      "name": "Show More / Read More",
+      "category": "컴포넌트",
+      "sourceId": "readmore",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#readmore",
+      "decision": "E",
+      "targetIds": [
+        "disclosure",
+        "load-more"
+      ],
+      "reason": "기존 내용 펼치기와 새 데이터 추가 조회를 구분하고 별칭으로 연결한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "disclosure",
+        "load-more"
+      ],
+      "publishedTargets": [
+        "disclosure",
+        "load-more"
+      ]
+    },
+    {
+      "index": 104,
+      "name": "Icon Button",
+      "category": "컴포넌트",
+      "sourceId": "iconbutton",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#iconbutton",
+      "decision": "I",
+      "targetIds": [
+        "icon-button"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "icon-button"
+      ],
+      "publishedTargets": [
+        "icon-button"
+      ]
+    },
+    {
+      "index": 105,
+      "name": "404 / Error Page",
+      "category": "컴포넌트",
+      "sourceId": "errorpage",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#errorpage",
+      "decision": "N",
+      "targetIds": [
+        "error-page"
+      ],
+      "reason": "404·권한 거부·서버 오류를 다른 원인/행동으로 보여주는 페이지 패턴이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 106,
+      "name": "Onboarding Screens",
+      "category": "컴포넌트",
+      "sourceId": "onboarding",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#onboarding",
+      "decision": "N",
+      "targetIds": [
+        "onboarding"
+      ],
+      "reason": "처음 실행 소개·건너뛰기·완료·다시 보기를 다루는 흐름이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 107,
+      "name": "Before / After Slider",
+      "category": "컴포넌트",
+      "sourceId": "beforeafter",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#beforeafter",
+      "decision": "I",
+      "targetIds": [
+        "before-after-slider"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "before-after-slider"
+      ],
+      "publishedTargets": [
+        "before-after-slider"
+      ]
+    },
+    {
+      "index": 108,
+      "name": "Input / Text Field",
+      "category": "입력·폼",
+      "sourceId": "textfield",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#textfield",
+      "decision": "I",
+      "targetIds": [
+        "text-field"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "text-field"
+      ],
+      "publishedTargets": [
+        "text-field"
+      ]
+    },
+    {
+      "index": 109,
+      "name": "Floating Label",
+      "category": "입력·폼",
+      "sourceId": "floating",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#floating",
+      "decision": "E",
+      "targetIds": [
+        "text-field"
+      ],
+      "reason": "placeholder 대신 보이는 라벨을 유지하는 Floating Label 형태를 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E04"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "text-field"
+      ],
+      "publishedTargets": [
+        "text-field"
+      ]
+    },
+    {
+      "index": 110,
+      "name": "Checkbox",
+      "category": "입력·폼",
+      "sourceId": "checkbox",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#checkbox",
+      "decision": "I",
+      "targetIds": [
+        "checkbox"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "checkbox"
+      ],
+      "publishedTargets": [
+        "checkbox"
+      ]
+    },
+    {
+      "index": 111,
+      "name": "Radio Button",
+      "category": "입력·폼",
+      "sourceId": "radio",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#radio",
+      "decision": "I",
+      "targetIds": [
+        "radio-group"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "radio-group"
+      ],
+      "publishedTargets": [
+        "radio-group"
+      ]
+    },
+    {
+      "index": 112,
+      "name": "Autocomplete / Combobox",
+      "category": "입력·폼",
+      "sourceId": "combobox",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#combobox",
+      "decision": "I",
+      "targetIds": [
+        "combobox"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "combobox"
+      ],
+      "publishedTargets": [
+        "combobox"
+      ]
+    },
+    {
+      "index": 113,
+      "name": "Range Slider",
+      "category": "입력·폼",
+      "sourceId": "slider",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#slider",
+      "decision": "I",
+      "targetIds": [
+        "slider"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "slider"
+      ],
+      "publishedTargets": [
+        "slider"
+      ]
+    },
+    {
+      "index": 114,
+      "name": "Search Bar",
+      "category": "입력·폼",
+      "sourceId": "search",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#search",
+      "decision": "I",
+      "targetIds": [
+        "search-field"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "search-field"
+      ],
+      "publishedTargets": [
+        "search-field"
+      ]
+    },
+    {
+      "index": 115,
+      "name": "Validation / Error State",
+      "category": "입력·폼",
+      "sourceId": "validation",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#validation",
+      "decision": "E",
+      "targetIds": [
+        "text-field",
+        "textarea"
+      ],
+      "reason": "필드 오류·오류 요약·성공 피드백은 기존 폼 체험의 확장이다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E04"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "text-field",
+        "textarea"
+      ],
+      "publishedTargets": [
+        "text-field",
+        "textarea"
+      ]
+    },
+    {
+      "index": 116,
+      "name": "Disabled State",
+      "category": "입력·폼",
+      "sourceId": "disabled",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#disabled",
+      "decision": "E",
+      "targetIds": [
+        "button",
+        "text-field"
+      ],
+      "reason": "비활성 이유·진행 중·읽기 전용을 기존 예제에서 나눠 설명한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E03"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "button",
+        "text-field"
+      ],
+      "publishedTargets": [
+        "button",
+        "text-field"
+      ]
+    },
+    {
+      "index": 117,
+      "name": "Focus State / Focus Ring",
+      "category": "입력·폼",
+      "sourceId": "focus",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#focus",
+      "decision": "E",
+      "targetIds": [
+        "button",
+        "text-field"
+      ],
+      "reason": "포커스 링은 이미 있으나 클릭/키보드 초점 차이·고대비 비교 설명을 보강한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E03"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "button",
+        "text-field"
+      ],
+      "publishedTargets": [
+        "button",
+        "text-field"
+      ]
+    },
+    {
+      "index": 118,
+      "name": "Date Picker",
+      "category": "입력·폼",
+      "sourceId": "datepicker",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#datepicker",
+      "decision": "I",
+      "targetIds": [
+        "date-picker"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "date-picker"
+      ],
+      "publishedTargets": [
+        "date-picker"
+      ]
+    },
+    {
+      "index": 119,
+      "name": "File Upload / Dropzone",
+      "category": "입력·폼",
+      "sourceId": "dropzone",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#dropzone",
+      "decision": "I",
+      "targetIds": [
+        "file-upload"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "file-upload"
+      ],
+      "publishedTargets": [
+        "file-upload"
+      ]
+    },
+    {
+      "index": 120,
+      "name": "Select",
+      "category": "입력·폼",
+      "sourceId": "select",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#select",
+      "decision": "I",
+      "targetIds": [
+        "select"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "select"
+      ],
+      "publishedTargets": [
+        "select"
+      ]
+    },
+    {
+      "index": 121,
+      "name": "Textarea",
+      "category": "입력·폼",
+      "sourceId": "textarea",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#textarea",
+      "decision": "I",
+      "targetIds": [
+        "textarea"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "textarea"
+      ],
+      "publishedTargets": [
+        "textarea"
+      ]
+    },
+    {
+      "index": 122,
+      "name": "Password Field",
+      "category": "입력·폼",
+      "sourceId": "password",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#password",
+      "decision": "N",
+      "targetIds": [
+        "password-field"
+      ],
+      "reason": "보기/숨기기·조건·붙여넣기·오류 안내가 필요한 전용 입력이다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "password-field"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 123,
+      "name": "OTP / PIN Input",
+      "category": "입력·폼",
+      "sourceId": "otp",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#otp",
+      "decision": "N",
+      "targetIds": [
+        "otp-input"
+      ],
+      "reason": "전체 붙여넣기·삭제·입력 모드·만료/재전송 상태가 필요하다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "otp-input"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 124,
+      "name": "Tag Input / Multi-select",
+      "category": "입력·폼",
+      "sourceId": "taginput",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#taginput",
+      "decision": "N",
+      "targetIds": [
+        "multi-select"
+      ],
+      "reason": "단일 Combobox와 달리 복수 선택·칩 삭제·중복 방지·자유 입력 정책을 다룬다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "multi-select"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 125,
+      "name": "Number Stepper",
+      "category": "입력·폼",
+      "sourceId": "numberstepper",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#numberstepper",
+      "decision": "N",
+      "targetIds": [
+        "number-stepper"
+      ],
+      "reason": "단계 진행기 Stepper와 다른 숫자 증감 입력이다. 최소·최대·단위가 필요하다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "number-stepper"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 126,
+      "name": "Date Range Picker",
+      "category": "입력·폼",
+      "sourceId": "daterange",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#daterange",
+      "decision": "I",
+      "targetIds": [
+        "date-range-picker"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "date-range-picker"
+      ],
+      "publishedTargets": [
+        "date-range-picker"
+      ]
+    },
+    {
+      "index": 127,
+      "name": "Time Picker",
+      "category": "입력·폼",
+      "sourceId": "timepicker",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#timepicker",
+      "decision": "N",
+      "targetIds": [
+        "time-picker"
+      ],
+      "reason": "날짜 선택기와 별개로 시각·간격·사용 불가 시간·범위를 입력한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "time-picker"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 128,
+      "name": "Input Mask",
+      "category": "입력·폼",
+      "sourceId": "inputmask",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#inputmask",
+      "decision": "N",
+      "targetIds": [
+        "input-mask"
+      ],
+      "reason": "표시용 구분자와 실제 저장값, 붙여넣기/커서 위치의 관계를 체험한다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 129,
+      "name": "Character Counter",
+      "category": "입력·폼",
+      "sourceId": "charcount",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#charcount",
+      "decision": "I",
+      "targetIds": [
+        "text-field",
+        "textarea"
+      ],
+      "reason": "8개 텍스트 입력에 글자 수와 UTF-8 byte 표시가 이미 적용되어 있다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "text-field",
+        "textarea"
+      ],
+      "publishedTargets": [
+        "text-field",
+        "textarea"
+      ]
+    },
+    {
+      "index": 130,
+      "name": "Helper Text",
+      "category": "입력·폼",
+      "sourceId": "helpertext",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#helpertext",
+      "decision": "E",
+      "targetIds": [
+        "text-field",
+        "textarea"
+      ],
+      "reason": "도움말·오류·카운터를 필드와 연결하는 설명을 기존 예제에서 보강한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E04"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "text-field",
+        "textarea"
+      ],
+      "publishedTargets": [
+        "text-field",
+        "textarea"
+      ]
+    },
+    {
+      "index": 131,
+      "name": "Required Indicator",
+      "category": "입력·폼",
+      "sourceId": "required",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#required",
+      "decision": "E",
+      "targetIds": [
+        "text-field",
+        "radio-group"
+      ],
+      "reason": "별표만 사용하는 경우와 필수/선택 텍스트를 함께 쓰는 경우를 비교한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E04"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "text-field",
+        "radio-group"
+      ],
+      "publishedTargets": [
+        "text-field",
+        "radio-group"
+      ]
+    },
+    {
+      "index": 132,
+      "name": "Rich Text Editor",
+      "category": "입력·폼",
+      "sourceId": "richtext",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#richtext",
+      "decision": "N",
+      "targetIds": [
+        "rich-text-editor"
+      ],
+      "reason": "일반 Textarea와 다른 서식·선택 영역·실행 취소·정리된 출력이 필요하다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 133,
+      "name": "Social Login Button",
+      "category": "입력·폼",
+      "sourceId": "sociallogin",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#sociallogin",
+      "decision": "N",
+      "targetIds": [
+        "social-login"
+      ],
+      "reason": "제공자 버튼·처리 중·취소·실패를 모의 체험한다. 실제 OAuth 연결은 범위 밖이다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 134,
+      "name": "Rating",
+      "category": "입력·폼",
+      "sourceId": "rating",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#rating",
+      "decision": "N",
+      "targetIds": [
+        "rating"
+      ],
+      "reason": "입력용 별점과 읽기 전용 평점은 역할·키보드 동작이 다르다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "rating"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 135,
+      "name": "Agree to All",
+      "category": "입력·폼",
+      "sourceId": "agreeall",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#agreeall",
+      "decision": "E",
+      "targetIds": [
+        "checkbox"
+      ],
+      "reason": "이미 전체 선택/부분 선택이 있다. 필수·선택 동의와 제출 조건 예제를 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E05"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "checkbox"
+      ],
+      "publishedTargets": [
+        "checkbox"
+      ]
+    },
+    {
+      "index": 136,
+      "name": "Color Picker",
+      "category": "입력·폼",
+      "sourceId": "colorpicker",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#colorpicker",
+      "decision": "N",
+      "targetIds": [
+        "color-picker"
+      ],
+      "reason": "색상 선택과 코드 직접 입력·형식 변환·잘못된 값 복구를 다룬다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 137,
+      "name": "Image Upload Preview",
+      "category": "입력·폼",
+      "sourceId": "imgupload",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#imgupload",
+      "decision": "E",
+      "targetIds": [
+        "file-upload"
+      ],
+      "reason": "기존 파일 검증에 실제 이미지 미리보기·교체·삭제·URL 해제를 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E06"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "file-upload"
+      ],
+      "publishedTargets": [
+        "file-upload"
+      ]
+    },
+    {
+      "index": 138,
+      "name": "Autosave Indicator",
+      "category": "입력·폼",
+      "sourceId": "autosave",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#autosave",
+      "decision": "N",
+      "targetIds": [
+        "autosave"
+      ],
+      "reason": "입력 대기·저장 중·완료·오프라인·실패·다시 저장을 구분한다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 139,
+      "name": "Inline Edit",
+      "category": "입력·폼",
+      "sourceId": "inlineedit",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#inlineedit",
+      "decision": "N",
+      "targetIds": [
+        "inline-edit"
+      ],
+      "reason": "읽기→편집→저장/취소와 실패 시 입력 보존을 제자리에서 체험한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "inline-edit"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 140,
+      "name": "Address Search",
+      "category": "입력·폼",
+      "sourceId": "address",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#address",
+      "decision": "N",
+      "targetIds": [
+        "address-search"
+      ],
+      "reason": "주소 후보·빈 결과·선택·상세 주소를 로컬 예제 데이터로 체험한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 141,
+      "name": "Login / Sign-up Form",
+      "category": "입력·폼",
+      "sourceId": "authform",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#authform",
+      "decision": "N",
+      "targetIds": [
+        "auth-form"
+      ],
+      "reason": "여러 입력과 폼 단위 오류·진행·완료를 묶는 로그인/가입 패턴이다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 142,
+      "name": "Hover Effect",
+      "category": "효과",
+      "sourceId": "hover",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#hover",
+      "decision": "E",
+      "targetIds": [
+        "button",
+        "card",
+        "hover-reveal"
+      ],
+      "reason": "Hover는 통칭이므로 기존 hover·focus·tap 예제들을 묶어 검색한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "button",
+        "card",
+        "hover-reveal"
+      ],
+      "publishedTargets": [
+        "button",
+        "card",
+        "hover-reveal"
+      ]
+    },
+    {
+      "index": 143,
+      "name": "Scroll Reveal",
+      "category": "효과",
+      "sourceId": "reveal",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#reveal",
+      "decision": "N",
+      "targetIds": [
+        "scroll-reveal"
+      ],
+      "reason": "뷰포트 진입 여부로 등장 시점을 결정하는 스크롤 패턴이다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "scroll-reveal"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 144,
+      "name": "Stagger Animation",
+      "category": "효과",
+      "sourceId": "stagger",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#stagger",
+      "decision": "N",
+      "targetIds": [
+        "stagger-animation"
+      ],
+      "reason": "여러 항목의 시작 시점을 순차 지연하는 모션을 비교한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "stagger-animation"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 145,
+      "name": "Smooth Transition",
+      "category": "효과",
+      "sourceId": "smooth",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#smooth",
+      "decision": "E",
+      "targetIds": [
+        "easing"
+      ],
+      "reason": "속도 곡선뿐 아니라 속성·지속 시간·중간 취소를 비교하도록 확장한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "easing"
+      ],
+      "publishedTargets": [
+        "easing"
+      ]
+    },
+    {
+      "index": 146,
+      "name": "Glassmorphism",
+      "category": "효과",
+      "sourceId": "glass",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#glass",
+      "decision": "L",
+      "targetIds": [
+        "glassmorphism"
+      ],
+      "reason": "흐린 배경·불투명도·텍스트 대비를 조절하는 시각 비교다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 147,
+      "name": "Parallax Scrolling",
+      "category": "효과",
+      "sourceId": "parallax",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#parallax",
+      "decision": "N",
+      "targetIds": [
+        "parallax-scroll"
+      ],
+      "reason": "포인터 기울기와 달리 스크롤 진행에 따른 여러 레이어의 이동량 차이를 다룬다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "parallax-scroll"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 148,
+      "name": "Scroll Snap",
+      "category": "효과",
+      "sourceId": "snap",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#snap",
+      "decision": "N",
+      "targetIds": [
+        "scroll-snap"
+      ],
+      "reason": "자유 스크롤과 지정 지점 정착을 비교하며 과도한 스크롤 제어를 피한다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "scroll-snap"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 149,
+      "name": "Micro-interaction",
+      "category": "효과",
+      "sourceId": "micro",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#micro",
+      "decision": "L",
+      "targetIds": [
+        "micro-interaction"
+      ],
+      "reason": "기존 선택·실행 피드백을 묶는 상위 개념이며 새 버튼 하나로 정의하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 150,
+      "name": "Fade In / Out",
+      "category": "효과",
+      "sourceId": "fade",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#fade",
+      "decision": "N",
+      "targetIds": [
+        "fade-transition"
+      ],
+      "reason": "투명도 전환과 DOM 제거/초점 처리의 차이를 조작한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 151,
+      "name": "Ripple Effect",
+      "category": "효과",
+      "sourceId": "ripple",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#ripple",
+      "decision": "I",
+      "targetIds": [
+        "ripple"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "ripple"
+      ],
+      "publishedTargets": [
+        "ripple"
+      ]
+    },
+    {
+      "index": 152,
+      "name": "Marquee / Logo Slider",
+      "category": "효과",
+      "sourceId": "marquee",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#marquee",
+      "decision": "N",
+      "targetIds": [
+        "marquee"
+      ],
+      "reason": "끊김 없이 흐르는 텍스트/로고와 정지·정적 목록 대안을 다룬다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 153,
+      "name": "Typewriter Effect",
+      "category": "효과",
+      "sourceId": "typewriter",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#typewriter",
+      "decision": "N",
+      "targetIds": [
+        "typewriter"
+      ],
+      "reason": "타이핑·삭제·반복과 읽기 가능한 전체 문장 제공을 다룬다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 154,
+      "name": "Count-up / Number Ticker",
+      "category": "효과",
+      "sourceId": "countup",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#countup",
+      "decision": "N",
+      "targetIds": [
+        "count-up"
+      ],
+      "reason": "0부터 목표값 증가, 재시작, 단위와 최종값의 즉시 읽기를 제공한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 155,
+      "name": "Infinite Scroll",
+      "category": "효과",
+      "sourceId": "infinite",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#infinite",
+      "decision": "N",
+      "targetIds": [
+        "infinite-scroll"
+      ],
+      "reason": "Load More와 달리 스크롤 경계로 다음 데이터를 가져오는 패턴이다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "infinite-scroll"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 156,
+      "name": "Easing",
+      "category": "효과",
+      "sourceId": "easing",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#easing",
+      "decision": "I",
+      "targetIds": [
+        "easing"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "easing"
+      ],
+      "publishedTargets": [
+        "easing"
+      ]
+    },
+    {
+      "index": 157,
+      "name": "Animated Gradient",
+      "category": "효과",
+      "sourceId": "gradanim",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#gradanim",
+      "decision": "E",
+      "targetIds": [
+        "mesh-gradient",
+        "aurora"
+      ],
+      "reason": "기존 색면·빛띠 애니메이션에 선형 그라디언트 이동을 비교 형태로 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "mesh-gradient",
+        "aurora"
+      ],
+      "publishedTargets": [
+        "mesh-gradient",
+        "aurora"
+      ]
+    },
+    {
+      "index": 158,
+      "name": "Spotlight / Cursor Glow",
+      "category": "효과",
+      "sourceId": "spotlight",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#spotlight",
+      "decision": "I",
+      "targetIds": [
+        "spotlight"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "spotlight"
+      ],
+      "publishedTargets": [
+        "spotlight"
+      ]
+    },
+    {
+      "index": 159,
+      "name": "Drag & Drop Reorder",
+      "category": "효과",
+      "sourceId": "dragdrop",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#dragdrop",
+      "decision": "I",
+      "targetIds": [
+        "drag-and-drop"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "drag-and-drop"
+      ],
+      "publishedTargets": [
+        "drag-and-drop"
+      ]
+    },
+    {
+      "index": 160,
+      "name": "Swipe Action",
+      "category": "효과",
+      "sourceId": "swipe",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#swipe",
+      "decision": "N",
+      "targetIds": [
+        "swipe-actions"
+      ],
+      "reason": "스크롤과 가로 제스처 판별·행동 노출·실행 취소가 필요하다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "swipe-actions"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 161,
+      "name": "Pull to Refresh",
+      "category": "효과",
+      "sourceId": "pullrefresh",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#pullrefresh",
+      "decision": "N",
+      "targetIds": [
+        "pull-to-refresh"
+      ],
+      "reason": "맨 위에서 당기는 거리·임계값·조회·복구가 필요한 터치 패턴이다.",
+      "priority": "P1",
+      "wave": 1,
+      "auditStatus": "구현·초안",
+      "registeredTargets": [
+        "pull-to-refresh"
+      ],
+      "publishedTargets": []
+    },
+    {
+      "index": 162,
+      "name": "Shake Animation",
+      "category": "효과",
+      "sourceId": "shake",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#shake",
+      "decision": "E",
+      "targetIds": [
+        "text-field"
+      ],
+      "reason": "오류 강조의 보조 효과로 진동을 추가하되 오류 텍스트/초점 이동을 대신하지 않는다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E04"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "text-field"
+      ],
+      "publishedTargets": [
+        "text-field"
+      ]
+    },
+    {
+      "index": 163,
+      "name": "Lazy Loading",
+      "category": "효과",
+      "sourceId": "lazyload",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#lazyload",
+      "decision": "N",
+      "targetIds": [
+        "lazy-loading"
+      ],
+      "reason": "스크롤 진입 시 자원 로드·자리 확보·실패 대체를 비교한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 164,
+      "name": "Optimistic UI",
+      "category": "효과",
+      "sourceId": "optimistic",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#optimistic",
+      "decision": "N",
+      "targetIds": [
+        "optimistic-ui"
+      ],
+      "reason": "먼저 반영→성공 유지/실패 롤백·재시도의 비동기 상태 패턴이다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 165,
+      "name": "Hide-on-Scroll Header",
+      "category": "효과",
+      "sourceId": "hideonscroll",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#hideonscroll",
+      "decision": "E",
+      "targetIds": [
+        "sticky-header"
+      ],
+      "reason": "고정 헤더에 아래로 스크롤 시 숨김·위로 이동/초점 진입 시 복귀를 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E11"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "sticky-header"
+      ],
+      "publishedTargets": [
+        "sticky-header"
+      ]
+    },
+    {
+      "index": 166,
+      "name": "Image Zoom",
+      "category": "효과",
+      "sourceId": "imagezoom",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#imagezoom",
+      "decision": "E",
+      "targetIds": [
+        "image-magnifier",
+        "lightbox",
+        "hover-reveal"
+      ],
+      "reason": "전체 확대·부분 돋보기·호버 확대를 기존 이미지 데모의 변형으로 구분한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "image-magnifier",
+        "lightbox",
+        "hover-reveal"
+      ],
+      "publishedTargets": [
+        "image-magnifier",
+        "lightbox",
+        "hover-reveal"
+      ]
+    },
+    {
+      "index": 167,
+      "name": "Smooth Scroll",
+      "category": "효과",
+      "sourceId": "smoothscroll",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#smoothscroll",
+      "decision": "N",
+      "targetIds": [
+        "smooth-scroll"
+      ],
+      "reason": "위치 즉시 이동과 부드러운 이동·중단·초점 복귀를 비교한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 168,
+      "name": "Ping / Pulse Dot",
+      "category": "효과",
+      "sourceId": "ping",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#ping",
+      "decision": "E",
+      "targetIds": [
+        "status-indicator"
+      ],
+      "reason": "계속 맥동하는 점은 새 상태 점의 표현 옵션으로 추가한다. 상태를 색/모션에만 의존하지 않는다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 169,
+      "name": "Neumorphism",
+      "category": "스타일",
+      "sourceId": "neumorphism",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#neumorphism",
+      "decision": "L",
+      "targetIds": [
+        "neumorphism"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 170,
+      "name": "Claymorphism",
+      "category": "스타일",
+      "sourceId": "claymorphism",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#claymorphism",
+      "decision": "L",
+      "targetIds": [
+        "claymorphism"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 171,
+      "name": "Flat Design",
+      "category": "스타일",
+      "sourceId": "flat",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#flat",
+      "decision": "L",
+      "targetIds": [
+        "flat-design"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 172,
+      "name": "Minimalism",
+      "category": "스타일",
+      "sourceId": "minimal",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#minimal",
+      "decision": "L",
+      "targetIds": [
+        "minimalism"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 173,
+      "name": "Neo-brutalism",
+      "category": "스타일",
+      "sourceId": "brutalism",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#brutalism",
+      "decision": "L",
+      "targetIds": [
+        "neo-brutalism"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 174,
+      "name": "Gradient",
+      "category": "스타일",
+      "sourceId": "gradient",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#gradient",
+      "decision": "L",
+      "targetIds": [
+        "gradient"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 175,
+      "name": "Mesh / Aurora Gradient",
+      "category": "스타일",
+      "sourceId": "aurora",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#aurora",
+      "decision": "I",
+      "targetIds": [
+        "mesh-gradient",
+        "aurora"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "mesh-gradient",
+        "aurora"
+      ],
+      "publishedTargets": [
+        "mesh-gradient",
+        "aurora"
+      ]
+    },
+    {
+      "index": 176,
+      "name": "Dark Mode",
+      "category": "스타일",
+      "sourceId": "darkmode",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#darkmode",
+      "decision": "L",
+      "targetIds": [
+        "dark-mode"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 177,
+      "name": "Glow / Neon",
+      "category": "스타일",
+      "sourceId": "neon",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#neon",
+      "decision": "L",
+      "targetIds": [
+        "glow-neon"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 178,
+      "name": "Drop Shadow / Elevation",
+      "category": "스타일",
+      "sourceId": "shadow",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#shadow",
+      "decision": "L",
+      "targetIds": [
+        "elevation"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 179,
+      "name": "Border Radius",
+      "category": "스타일",
+      "sourceId": "radius",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#radius",
+      "decision": "L",
+      "targetIds": [
+        "border-radius"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 180,
+      "name": "Button Variants",
+      "category": "스타일",
+      "sourceId": "buttons",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#buttons",
+      "decision": "E",
+      "targetIds": [
+        "button"
+      ],
+      "reason": "Primary/Secondary/Outline/Ghost/Destructive 표현과 역할 구분을 기존 버튼에 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E03"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "button"
+      ],
+      "publishedTargets": [
+        "button"
+      ]
+    },
+    {
+      "index": 181,
+      "name": "Color Palette",
+      "category": "스타일",
+      "sourceId": "palette",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#palette",
+      "decision": "L",
+      "targetIds": [
+        "color-palette"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 182,
+      "name": "Liquid Glass",
+      "category": "스타일",
+      "sourceId": "liquidglass",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#liquidglass",
+      "decision": "L",
+      "targetIds": [
+        "liquid-glass"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 183,
+      "name": "Grain / Noise Texture",
+      "category": "스타일",
+      "sourceId": "grain",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#grain",
+      "decision": "I",
+      "targetIds": [
+        "grain"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "grain"
+      ],
+      "publishedTargets": [
+        "grain"
+      ]
+    },
+    {
+      "index": 184,
+      "name": "Y2K / Chrome",
+      "category": "스타일",
+      "sourceId": "y2k",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#y2k",
+      "decision": "L",
+      "targetIds": [
+        "y2k-chrome"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 185,
+      "name": "Frutiger Aero",
+      "category": "스타일",
+      "sourceId": "aero",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#aero",
+      "decision": "L",
+      "targetIds": [
+        "frutiger-aero"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 186,
+      "name": "Synthwave / Retro Grid",
+      "category": "스타일",
+      "sourceId": "synthwave",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#synthwave",
+      "decision": "L",
+      "targetIds": [
+        "synthwave"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 187,
+      "name": "Cyberpunk",
+      "category": "스타일",
+      "sourceId": "cyberpunk",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#cyberpunk",
+      "decision": "L",
+      "targetIds": [
+        "cyberpunk"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 188,
+      "name": "Holographic / Iridescent",
+      "category": "스타일",
+      "sourceId": "holo",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#holo",
+      "decision": "L",
+      "targetIds": [
+        "iridescence"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 189,
+      "name": "Duotone",
+      "category": "스타일",
+      "sourceId": "duotone",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#duotone",
+      "decision": "L",
+      "targetIds": [
+        "duotone"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 190,
+      "name": "Halftone / Risograph",
+      "category": "스타일",
+      "sourceId": "halftone",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#halftone",
+      "decision": "E",
+      "targetIds": [
+        "halftone"
+      ],
+      "reason": "망점은 구현되어 있다. Risograph의 잉크 겹침/인쇄 질감은 같은 것으로 단정하지 않고 추가 비교한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "halftone"
+      ],
+      "publishedTargets": [
+        "halftone"
+      ]
+    },
+    {
+      "index": 191,
+      "name": "Pixel Art / 8-bit",
+      "category": "스타일",
+      "sourceId": "pixel",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#pixel",
+      "decision": "L",
+      "targetIds": [
+        "pixel-art"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 192,
+      "name": "Dithering",
+      "category": "스타일",
+      "sourceId": "dither",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#dither",
+      "decision": "L",
+      "targetIds": [
+        "dithering"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 193,
+      "name": "ASCII / Terminal",
+      "category": "스타일",
+      "sourceId": "ascii",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#ascii",
+      "decision": "L",
+      "targetIds": [
+        "terminal-style"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 194,
+      "name": "Bauhaus / Geometric",
+      "category": "스타일",
+      "sourceId": "bauhaus",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#bauhaus",
+      "decision": "L",
+      "targetIds": [
+        "bauhaus"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 195,
+      "name": "Swiss Style",
+      "category": "스타일",
+      "sourceId": "swiss",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#swiss",
+      "decision": "L",
+      "targetIds": [
+        "swiss-style"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 196,
+      "name": "Memphis Design",
+      "category": "스타일",
+      "sourceId": "memphis",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#memphis",
+      "decision": "L",
+      "targetIds": [
+        "memphis"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 197,
+      "name": "Hand-drawn / Doodle",
+      "category": "스타일",
+      "sourceId": "handdrawn",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#handdrawn",
+      "decision": "L",
+      "targetIds": [
+        "hand-drawn"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 198,
+      "name": "Torn Paper / Collage",
+      "category": "스타일",
+      "sourceId": "collage",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#collage",
+      "decision": "L",
+      "targetIds": [
+        "collage"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 199,
+      "name": "Isometric",
+      "category": "스타일",
+      "sourceId": "isometric",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#isometric",
+      "decision": "L",
+      "targetIds": [
+        "isometric"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 200,
+      "name": "Skeuomorphism",
+      "category": "스타일",
+      "sourceId": "skeuo",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#skeuo",
+      "decision": "L",
+      "targetIds": [
+        "skeuomorphism"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 201,
+      "name": "Editorial / Magazine",
+      "category": "스타일",
+      "sourceId": "editorial",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#editorial",
+      "decision": "L",
+      "targetIds": [
+        "editorial"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 202,
+      "name": "Oversized Typography",
+      "category": "스타일",
+      "sourceId": "bigtype",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#bigtype",
+      "decision": "L",
+      "targetIds": [
+        "oversized-type"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 203,
+      "name": "Inflated / Puffy 3D",
+      "category": "스타일",
+      "sourceId": "inflated",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#inflated",
+      "decision": "L",
+      "targetIds": [
+        "puffy-3d"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 204,
+      "name": "Wireframe / Blueprint",
+      "category": "스타일",
+      "sourceId": "blueprint",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#blueprint",
+      "decision": "L",
+      "targetIds": [
+        "blueprint"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 205,
+      "name": "Dot / Grid Pattern",
+      "category": "스타일",
+      "sourceId": "pattern",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#pattern",
+      "decision": "I",
+      "targetIds": [
+        "dot-grid"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "dot-grid"
+      ],
+      "publishedTargets": [
+        "dot-grid"
+      ]
+    },
+    {
+      "index": 206,
+      "name": "Progressive Blur",
+      "category": "스타일",
+      "sourceId": "progblur",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#progblur",
+      "decision": "L",
+      "targetIds": [
+        "progressive-blur"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 207,
+      "name": "Light Rays / God Rays",
+      "category": "스타일",
+      "sourceId": "lightrays",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#lightrays",
+      "decision": "E",
+      "targetIds": [
+        "beams"
+      ],
+      "reason": "현재 움직이는 선형 빛줄기와 원점에서 퍼지는 광선을 구분해 변형을 추가한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "beams"
+      ],
+      "publishedTargets": [
+        "beams"
+      ]
+    },
+    {
+      "index": 208,
+      "name": "Sticker Style",
+      "category": "스타일",
+      "sourceId": "sticker",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#sticker",
+      "decision": "L",
+      "targetIds": [
+        "sticker-style"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 209,
+      "name": "Material Design",
+      "category": "스타일",
+      "sourceId": "material",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#material",
+      "decision": "L",
+      "targetIds": [
+        "material-design"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 210,
+      "name": "iOS Style",
+      "category": "스타일",
+      "sourceId": "cupertino",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#cupertino",
+      "decision": "L",
+      "targetIds": [
+        "ios-guidelines"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 211,
+      "name": "Icon Style",
+      "category": "스타일",
+      "sourceId": "iconstyle",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#iconstyle",
+      "decision": "L",
+      "targetIds": [
+        "icon-style"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 212,
+      "name": "Toss-like Clean UI",
+      "category": "스타일",
+      "sourceId": "tossstyle",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#tossstyle",
+      "decision": "H",
+      "targetIds": [
+        "clean-financial-ui"
+      ],
+      "reason": "특정 브랜드 닮기를 공식 용어로 등록하지 않는다. 간결한 정보 위계·여백·명확한 피드백 원칙으로 재정의 후 검토한다.",
+      "priority": "hold",
+      "auditStatus": "보류",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 213,
+      "name": "Section Divider (Wave / Slant)",
+      "category": "스타일",
+      "sourceId": "sectiondivider",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#sectiondivider",
+      "decision": "L",
+      "targetIds": [
+        "section-divider"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 214,
+      "name": "Text Highlight",
+      "category": "스타일",
+      "sourceId": "texthighlight",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#texthighlight",
+      "decision": "L",
+      "targetIds": [
+        "text-highlight"
+      ],
+      "reason": "동일 콘텐츠에서 시각 속성을 바꾸는 비교 학습으로 설계한다. 스타일 명칭을 공식 컴포넌트 규격으로 단정하지 않는다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 215,
+      "name": "Card Style",
+      "category": "스타일",
+      "sourceId": "cardstyle",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#cardstyle",
+      "decision": "E",
+      "targetIds": [
+        "card"
+      ],
+      "reason": "테두리·그림자·이미지·클릭 영역 변형을 기존 카드의 표현 비교로 관리한다.",
+      "priority": "P3",
+      "enhancementIds": [],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "card"
+      ],
+      "publishedTargets": [
+        "card"
+      ]
+    },
+    {
+      "index": 216,
+      "name": "Kinetic Typography",
+      "category": "모션",
+      "sourceId": "kinetic",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#kinetic",
+      "decision": "N",
+      "targetIds": [
+        "kinetic-typography"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 217,
+      "name": "Text Scramble / Decode",
+      "category": "모션",
+      "sourceId": "scramble",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#scramble",
+      "decision": "N",
+      "targetIds": [
+        "text-scramble"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 218,
+      "name": "Word Rotate",
+      "category": "모션",
+      "sourceId": "wordrotate",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#wordrotate",
+      "decision": "N",
+      "targetIds": [
+        "word-rotate"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 219,
+      "name": "Text Reveal / Mask Reveal",
+      "category": "모션",
+      "sourceId": "textreveal",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#textreveal",
+      "decision": "N",
+      "targetIds": [
+        "text-reveal"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 220,
+      "name": "Shiny Text / Shimmer",
+      "category": "모션",
+      "sourceId": "shinytext",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#shinytext",
+      "decision": "N",
+      "targetIds": [
+        "shimmer"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 221,
+      "name": "Blur Fade / Blur-in",
+      "category": "모션",
+      "sourceId": "blurfade",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#blurfade",
+      "decision": "N",
+      "targetIds": [
+        "blur-fade"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 222,
+      "name": "Shape Morphing / Blob",
+      "category": "모션",
+      "sourceId": "morph",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#morph",
+      "decision": "I",
+      "targetIds": [
+        "blob"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "blob"
+      ],
+      "publishedTargets": [
+        "blob"
+      ]
+    },
+    {
+      "index": 223,
+      "name": "Gooey / Metaball",
+      "category": "모션",
+      "sourceId": "gooey",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#gooey",
+      "decision": "N",
+      "targetIds": [
+        "gooey"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 224,
+      "name": "Particles / Confetti",
+      "category": "모션",
+      "sourceId": "confetti",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#confetti",
+      "decision": "E",
+      "targetIds": [
+        "particles"
+      ],
+      "reason": "기존 부유 입자와 성공 시 한 번 터지는 Confetti는 다르다. 트리거·수명·정리를 가진 형태를 추가한다.",
+      "priority": "P1",
+      "enhancementIds": [
+        "E12"
+      ],
+      "auditStatus": "기존 통합·확장 대상",
+      "registeredTargets": [
+        "particles"
+      ],
+      "publishedTargets": [
+        "particles"
+      ]
+    },
+    {
+      "index": 225,
+      "name": "Meteors / Shooting Stars",
+      "category": "모션",
+      "sourceId": "meteors",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#meteors",
+      "decision": "N",
+      "targetIds": [
+        "meteors"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 226,
+      "name": "Border Beam",
+      "category": "모션",
+      "sourceId": "borderbeam",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#borderbeam",
+      "decision": "N",
+      "targetIds": [
+        "border-beam"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 227,
+      "name": "Animated Beam",
+      "category": "모션",
+      "sourceId": "beam",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#beam",
+      "decision": "N",
+      "targetIds": [
+        "animated-beam"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 228,
+      "name": "Orbiting Circles",
+      "category": "모션",
+      "sourceId": "orbit",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#orbit",
+      "decision": "N",
+      "targetIds": [
+        "orbiting-elements"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 229,
+      "name": "3D Tilt Card",
+      "category": "모션",
+      "sourceId": "tilt",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#tilt",
+      "decision": "I",
+      "targetIds": [
+        "tilt-card"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "tilt-card"
+      ],
+      "publishedTargets": [
+        "tilt-card"
+      ]
+    },
+    {
+      "index": 230,
+      "name": "Card Flip",
+      "category": "모션",
+      "sourceId": "flip",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#flip",
+      "decision": "N",
+      "targetIds": [
+        "card-flip"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 231,
+      "name": "Magnetic Button",
+      "category": "모션",
+      "sourceId": "magnetic",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#magnetic",
+      "decision": "I",
+      "targetIds": [
+        "magnetic-button"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "magnetic-button"
+      ],
+      "publishedTargets": [
+        "magnetic-button"
+      ]
+    },
+    {
+      "index": 232,
+      "name": "Glitch Effect",
+      "category": "모션",
+      "sourceId": "glitch",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#glitch",
+      "decision": "N",
+      "targetIds": [
+        "glitch"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 233,
+      "name": "Dispersion / Pixel Dissolve",
+      "category": "모션",
+      "sourceId": "dispersion",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#dispersion",
+      "decision": "N",
+      "targetIds": [
+        "pixel-dissolve"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 234,
+      "name": "Scroll Progress",
+      "category": "모션",
+      "sourceId": "scrollprogress",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#scrollprogress",
+      "decision": "N",
+      "targetIds": [
+        "scroll-progress"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 235,
+      "name": "Scrollytelling / Sticky Scroll",
+      "category": "모션",
+      "sourceId": "scrollytelling",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#scrollytelling",
+      "decision": "N",
+      "targetIds": [
+        "scrollytelling"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 236,
+      "name": "Dock Magnification",
+      "category": "모션",
+      "sourceId": "dock",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#dock",
+      "decision": "N",
+      "targetIds": [
+        "dock-magnification"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 237,
+      "name": "Line Drawing (SVG Path)",
+      "category": "모션",
+      "sourceId": "linedraw",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#linedraw",
+      "decision": "N",
+      "targetIds": [
+        "svg-line-drawing"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 238,
+      "name": "Ken Burns Effect",
+      "category": "모션",
+      "sourceId": "kenburns",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#kenburns",
+      "decision": "I",
+      "targetIds": [
+        "ken-burns"
+      ],
+      "reason": "동일한 핵심 동작의 등록된 시뮬레이션이 있다. 별칭과 검색어만 검토한다.",
+      "priority": "existing",
+      "auditStatus": "기존 대응",
+      "registeredTargets": [
+        "ken-burns"
+      ],
+      "publishedTargets": [
+        "ken-burns"
+      ]
+    },
+    {
+      "index": 239,
+      "name": "Squash & Stretch",
+      "category": "모션",
+      "sourceId": "squash",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#squash",
+      "decision": "N",
+      "targetIds": [
+        "squash-stretch"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 240,
+      "name": "Page / View Transition",
+      "category": "모션",
+      "sourceId": "viewtransition",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#viewtransition",
+      "decision": "N",
+      "targetIds": [
+        "view-transition"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P2",
+      "wave": 2,
+      "auditStatus": "2차 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 241,
+      "name": "Liquid Fill / Wave",
+      "category": "모션",
+      "sourceId": "liquidfill",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#liquidfill",
+      "decision": "N",
+      "targetIds": [
+        "liquid-fill"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 242,
+      "name": "Lottie Animation",
+      "category": "모션",
+      "sourceId": "lottie",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#lottie",
+      "decision": "N",
+      "targetIds": [
+        "lottie-animation"
+      ],
+      "reason": "기존 데모와 작동 조건·표현 대상이 달라 별도 모션 시뮬레이션 후보로 관리한다.",
+      "priority": "P3",
+      "wave": 3,
+      "auditStatus": "후속 미구현",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 243,
+      "name": "Padding / Margin / Gap",
+      "category": "디자인 기본",
+      "sourceId": "spacing",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#spacing",
+      "decision": "L",
+      "targetIds": [
+        "spacing"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 244,
+      "name": "Whitespace",
+      "category": "디자인 기본",
+      "sourceId": "whitespace",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#whitespace",
+      "decision": "L",
+      "targetIds": [
+        "whitespace"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 245,
+      "name": "Typography",
+      "category": "디자인 기본",
+      "sourceId": "typography",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#typography",
+      "decision": "L",
+      "targetIds": [
+        "typography"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 246,
+      "name": "Line Height / Letter Spacing",
+      "category": "디자인 기본",
+      "sourceId": "lineheight",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#lineheight",
+      "decision": "L",
+      "targetIds": [
+        "type-spacing"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 247,
+      "name": "Visual Hierarchy",
+      "category": "디자인 기본",
+      "sourceId": "hierarchy",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#hierarchy",
+      "decision": "L",
+      "targetIds": [
+        "visual-hierarchy"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 248,
+      "name": "Contrast",
+      "category": "디자인 기본",
+      "sourceId": "contrast",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#contrast",
+      "decision": "L",
+      "targetIds": [
+        "contrast"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 249,
+      "name": "Alignment",
+      "category": "디자인 기본",
+      "sourceId": "alignment",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#alignment",
+      "decision": "L",
+      "targetIds": [
+        "alignment"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 250,
+      "name": "CTA (Call to Action)",
+      "category": "디자인 기본",
+      "sourceId": "cta",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#cta",
+      "decision": "L",
+      "targetIds": [
+        "call-to-action"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 251,
+      "name": "Viewport (vh / vw)",
+      "category": "디자인 기본",
+      "sourceId": "viewport",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#viewport",
+      "decision": "L",
+      "targetIds": [
+        "viewport-units"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 252,
+      "name": "Breakpoint",
+      "category": "디자인 기본",
+      "sourceId": "breakpoint",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#breakpoint",
+      "decision": "L",
+      "targetIds": [
+        "breakpoints"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 253,
+      "name": "Flexbox / CSS Grid",
+      "category": "디자인 기본",
+      "sourceId": "flexgrid",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#flexgrid",
+      "decision": "L",
+      "targetIds": [
+        "flex-grid"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 254,
+      "name": "Z-index / Layer",
+      "category": "디자인 기본",
+      "sourceId": "zindex",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#zindex",
+      "decision": "L",
+      "targetIds": [
+        "stacking"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 255,
+      "name": "Aspect Ratio",
+      "category": "디자인 기본",
+      "sourceId": "ratio",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#ratio",
+      "decision": "L",
+      "targetIds": [
+        "aspect-ratio"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 256,
+      "name": "Favicon",
+      "category": "디자인 기본",
+      "sourceId": "favicon",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#favicon",
+      "decision": "L",
+      "targetIds": [
+        "favicon"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 257,
+      "name": "OG Image (Open Graph)",
+      "category": "디자인 기본",
+      "sourceId": "og",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#og",
+      "decision": "L",
+      "targetIds": [
+        "open-graph"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 258,
+      "name": "Design System / Tokens",
+      "category": "디자인 기본",
+      "sourceId": "designsystem",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#designsystem",
+      "decision": "L",
+      "targetIds": [
+        "design-tokens"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 259,
+      "name": "Spacing Scale (8pt Grid)",
+      "category": "디자인 기본",
+      "sourceId": "spacingscale",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#spacingscale",
+      "decision": "L",
+      "targetIds": [
+        "spacing-scale"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 260,
+      "name": "UI States",
+      "category": "디자인 기본",
+      "sourceId": "uistates",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#uistates",
+      "decision": "L",
+      "targetIds": [
+        "ui-states"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 261,
+      "name": "Truncate / Line Clamp",
+      "category": "디자인 기본",
+      "sourceId": "truncate",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#truncate",
+      "decision": "L",
+      "targetIds": [
+        "text-truncation"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 262,
+      "name": "Touch Target Size",
+      "category": "디자인 기본",
+      "sourceId": "touchtarget",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#touchtarget",
+      "decision": "L",
+      "targetIds": [
+        "target-size"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 263,
+      "name": "Safe Area",
+      "category": "디자인 기본",
+      "sourceId": "safearea",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#safearea",
+      "decision": "L",
+      "targetIds": [
+        "safe-area"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 264,
+      "name": "Accessibility (a11y)",
+      "category": "디자인 기본",
+      "sourceId": "a11y",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#a11y",
+      "decision": "L",
+      "targetIds": [
+        "accessibility"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 265,
+      "name": "Wireframe → Mockup → Prototype",
+      "category": "디자인 기본",
+      "sourceId": "wireframe",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#wireframe",
+      "decision": "L",
+      "targetIds": [
+        "design-deliverables"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 266,
+      "name": "Microcopy",
+      "category": "디자인 기본",
+      "sourceId": "microcopy",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#microcopy",
+      "decision": "L",
+      "targetIds": [
+        "microcopy"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 267,
+      "name": "Overlay / Backdrop",
+      "category": "디자인 기본",
+      "sourceId": "overlay",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#overlay",
+      "decision": "L",
+      "targetIds": [
+        "overlay-backdrop"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 268,
+      "name": "Position (fixed / sticky / absolute)",
+      "category": "디자인 기본",
+      "sourceId": "position",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#position",
+      "decision": "L",
+      "targetIds": [
+        "positioning"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 269,
+      "name": "Overflow",
+      "category": "디자인 기본",
+      "sourceId": "overflow",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#overflow",
+      "decision": "L",
+      "targetIds": [
+        "overflow"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 270,
+      "name": "Units (px / rem / % / vh)",
+      "category": "디자인 기본",
+      "sourceId": "units",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#units",
+      "decision": "L",
+      "targetIds": [
+        "css-units"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 271,
+      "name": "Semantic Colors",
+      "category": "디자인 기본",
+      "sourceId": "semantic",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#semantic",
+      "decision": "L",
+      "targetIds": [
+        "semantic-colors"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 272,
+      "name": "Font Weight",
+      "category": "디자인 기본",
+      "sourceId": "fontweight",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#fontweight",
+      "decision": "L",
+      "targetIds": [
+        "font-weight"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 273,
+      "name": "Size Variants (sm / md / lg)",
+      "category": "디자인 기본",
+      "sourceId": "sizes",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#sizes",
+      "decision": "L",
+      "targetIds": [
+        "size-variants"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 274,
+      "name": "Mobile First",
+      "category": "디자인 기본",
+      "sourceId": "mobilefirst",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#mobilefirst",
+      "decision": "L",
+      "targetIds": [
+        "mobile-first"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 275,
+      "name": "Color Code (HEX / RGB)",
+      "category": "디자인 기본",
+      "sourceId": "colorcode",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#colorcode",
+      "decision": "L",
+      "targetIds": [
+        "color-formats"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 276,
+      "name": "Layout Shift",
+      "category": "디자인 기본",
+      "sourceId": "layoutshift",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#layoutshift",
+      "decision": "L",
+      "targetIds": [
+        "layout-shift"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    },
+    {
+      "index": 277,
+      "name": "Word Break (keep-all)",
+      "category": "디자인 기본",
+      "sourceId": "wordbreak",
+      "sourceUrl": "https://ui-terms-cheatsheet.pages.dev/#wordbreak",
+      "decision": "L",
+      "targetIds": [
+        "word-break"
+      ],
+      "reason": "개념 설명과 값 조절/전후 비교로 이해하는 학습 콘텐츠다. 관련 기존 UI와 연결한다.",
+      "priority": "later-learning",
+      "auditStatus": "스타일·기초 후속",
+      "registeredTargets": [],
+      "publishedTargets": []
+    }
+  ]
+}

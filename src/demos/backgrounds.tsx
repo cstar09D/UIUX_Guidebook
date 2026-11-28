@@ -1,3 +1,4 @@
+import { DemoSelect } from "./select-controls";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 type SceneProps = {
   preview?: boolean;
@@ -413,7 +414,7 @@ export function ParticlesScene({
         <>
           <label className="bg-option">
             입자 용도
-            <select
+            <DemoSelect
               data-particle-mode
               value={mode}
               onChange={(e) => {
@@ -423,7 +424,7 @@ export function ParticlesScene({
             >
               <option value="floating">지속 부유 배경</option>
               <option value="confetti">한 번만 축하하기</option>
-            </select>
+            </DemoSelect>
           </label>
           <button
             data-confetti-start

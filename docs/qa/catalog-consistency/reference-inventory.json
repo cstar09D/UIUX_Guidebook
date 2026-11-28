@@ -1,0 +1,1110 @@
+[
+  {
+    "id": "",
+    "name": "Hero Section"
+  },
+  {
+    "id": "",
+    "name": "Responsive Layout"
+  },
+  {
+    "id": "",
+    "name": "Card Layout"
+  },
+  {
+    "id": "",
+    "name": "Bento Grid"
+  },
+  {
+    "id": "",
+    "name": "Sidebar Layout"
+  },
+  {
+    "id": "",
+    "name": "Sticky Header"
+  },
+  {
+    "id": "",
+    "name": "Split Layout"
+  },
+  {
+    "id": "",
+    "name": "Navbar / GNB"
+  },
+  {
+    "id": "",
+    "name": "Footer"
+  },
+  {
+    "id": "",
+    "name": "Masonry Layout"
+  },
+  {
+    "id": "",
+    "name": "Grid System (12-column)"
+  },
+  {
+    "id": "",
+    "name": "Container / Max-width"
+  },
+  {
+    "id": "",
+    "name": "Above the Fold"
+  },
+  {
+    "id": "",
+    "name": "Dashboard Layout"
+  },
+  {
+    "id": "",
+    "name": "List-Detail Layout"
+  },
+  {
+    "id": "",
+    "name": "Mega Menu"
+  },
+  {
+    "id": "",
+    "name": "Table of Contents"
+  },
+  {
+    "id": "",
+    "name": "F / Z Pattern"
+  },
+  {
+    "id": "",
+    "name": "Zigzag Layout"
+  },
+  {
+    "id": "",
+    "name": "Sticky Sidebar"
+  },
+  {
+    "id": "",
+    "name": "Centered Layout"
+  },
+  {
+    "id": "",
+    "name": "Full-screen Section"
+  },
+  {
+    "id": "",
+    "name": "Horizontal Scroll"
+  },
+  {
+    "id": "",
+    "name": "Collapsible Sidebar"
+  },
+  {
+    "id": "",
+    "name": "Feature Section"
+  },
+  {
+    "id": "",
+    "name": "Pricing Table"
+  },
+  {
+    "id": "",
+    "name": "Pricing Toggle"
+  },
+  {
+    "id": "",
+    "name": "Testimonial"
+  },
+  {
+    "id": "",
+    "name": "FAQ Section"
+  },
+  {
+    "id": "",
+    "name": "Logo Cloud"
+  },
+  {
+    "id": "",
+    "name": "Stats Section"
+  },
+  {
+    "id": "",
+    "name": "CTA Section"
+  },
+  {
+    "id": "",
+    "name": "Comparison Table"
+  },
+  {
+    "id": "",
+    "name": "How It Works"
+  },
+  {
+    "id": "",
+    "name": "Newsletter / Waitlist Form"
+  },
+  {
+    "id": "",
+    "name": "Contact Section"
+  },
+  {
+    "id": "",
+    "name": "Trust Badges"
+  },
+  {
+    "id": "",
+    "name": "App Store Badges"
+  },
+  {
+    "id": "",
+    "name": "Tabs"
+  },
+  {
+    "id": "",
+    "name": "Accordion"
+  },
+  {
+    "id": "",
+    "name": "Modal / Dialog"
+  },
+  {
+    "id": "",
+    "name": "Drawer"
+  },
+  {
+    "id": "",
+    "name": "Dropdown"
+  },
+  {
+    "id": "",
+    "name": "Tooltip"
+  },
+  {
+    "id": "",
+    "name": "Toast / Snackbar"
+  },
+  {
+    "id": "",
+    "name": "Carousel"
+  },
+  {
+    "id": "",
+    "name": "Skeleton Loading"
+  },
+  {
+    "id": "",
+    "name": "Popover"
+  },
+  {
+    "id": "",
+    "name": "Bottom Sheet"
+  },
+  {
+    "id": "",
+    "name": "Hamburger Menu"
+  },
+  {
+    "id": "",
+    "name": "Breadcrumb"
+  },
+  {
+    "id": "",
+    "name": "Pagination"
+  },
+  {
+    "id": "",
+    "name": "Badge"
+  },
+  {
+    "id": "",
+    "name": "Chip / Tag"
+  },
+  {
+    "id": "",
+    "name": "Avatar"
+  },
+  {
+    "id": "",
+    "name": "Toggle Switch"
+  },
+  {
+    "id": "",
+    "name": "Stepper"
+  },
+  {
+    "id": "",
+    "name": "Progress Bar"
+  },
+  {
+    "id": "",
+    "name": "Spinner / Loader"
+  },
+  {
+    "id": "",
+    "name": "Command Palette"
+  },
+  {
+    "id": "",
+    "name": "Segmented Control"
+  },
+  {
+    "id": "",
+    "name": "Data Table"
+  },
+  {
+    "id": "",
+    "name": "Floating Action Button"
+  },
+  {
+    "id": "",
+    "name": "Empty State"
+  },
+  {
+    "id": "",
+    "name": "Alert / Banner"
+  },
+  {
+    "id": "",
+    "name": "Bottom Navigation"
+  },
+  {
+    "id": "",
+    "name": "Kebab / Meatball Menu"
+  },
+  {
+    "id": "",
+    "name": "Context Menu"
+  },
+  {
+    "id": "",
+    "name": "Split Button"
+  },
+  {
+    "id": "",
+    "name": "Lightbox"
+  },
+  {
+    "id": "",
+    "name": "Timeline"
+  },
+  {
+    "id": "",
+    "name": "Kanban Board"
+  },
+  {
+    "id": "",
+    "name": "Tree View"
+  },
+  {
+    "id": "",
+    "name": "Stat / KPI Card"
+  },
+  {
+    "id": "",
+    "name": "Coachmark / Product Tour"
+  },
+  {
+    "id": "",
+    "name": "Cookie Consent Bar"
+  },
+  {
+    "id": "",
+    "name": "Back to Top Button"
+  },
+  {
+    "id": "",
+    "name": "Code Block + Copy Button"
+  },
+  {
+    "id": "",
+    "name": "Chat Bubble"
+  },
+  {
+    "id": "",
+    "name": "Info Button / Toggletip"
+  },
+  {
+    "id": "",
+    "name": "Callout / Info Box"
+  },
+  {
+    "id": "",
+    "name": "Confirm Dialog"
+  },
+  {
+    "id": "",
+    "name": "Action Sheet"
+  },
+  {
+    "id": "",
+    "name": "Share Sheet"
+  },
+  {
+    "id": "",
+    "name": "Notification Center"
+  },
+  {
+    "id": "",
+    "name": "Profile Menu"
+  },
+  {
+    "id": "",
+    "name": "Hover Card"
+  },
+  {
+    "id": "",
+    "name": "Promo Popup"
+  },
+  {
+    "id": "",
+    "name": "Chat Widget"
+  },
+  {
+    "id": "",
+    "name": "Sticky Bottom Bar"
+  },
+  {
+    "id": "",
+    "name": "Top App Bar"
+  },
+  {
+    "id": "",
+    "name": "Divider"
+  },
+  {
+    "id": "",
+    "name": "Status Indicator"
+  },
+  {
+    "id": "",
+    "name": "Countdown Timer"
+  },
+  {
+    "id": "",
+    "name": "Chart (Bar / Line / Donut)"
+  },
+  {
+    "id": "",
+    "name": "Progress Ring"
+  },
+  {
+    "id": "",
+    "name": "Video Player"
+  },
+  {
+    "id": "",
+    "name": "Product Card"
+  },
+  {
+    "id": "",
+    "name": "Image Gallery"
+  },
+  {
+    "id": "",
+    "name": "Comment Thread"
+  },
+  {
+    "id": "",
+    "name": "Filter & Sort"
+  },
+  {
+    "id": "",
+    "name": "Calendar View"
+  },
+  {
+    "id": "",
+    "name": "Show More / Read More"
+  },
+  {
+    "id": "",
+    "name": "Icon Button"
+  },
+  {
+    "id": "",
+    "name": "404 / Error Page"
+  },
+  {
+    "id": "",
+    "name": "Onboarding Screens"
+  },
+  {
+    "id": "",
+    "name": "Before / After Slider"
+  },
+  {
+    "id": "",
+    "name": "Input / Text Field"
+  },
+  {
+    "id": "",
+    "name": "Floating Label"
+  },
+  {
+    "id": "",
+    "name": "Checkbox"
+  },
+  {
+    "id": "",
+    "name": "Radio Button"
+  },
+  {
+    "id": "",
+    "name": "Autocomplete / Combobox"
+  },
+  {
+    "id": "",
+    "name": "Range Slider"
+  },
+  {
+    "id": "",
+    "name": "Search Bar"
+  },
+  {
+    "id": "",
+    "name": "Validation / Error State"
+  },
+  {
+    "id": "",
+    "name": "Disabled State"
+  },
+  {
+    "id": "",
+    "name": "Focus State / Focus Ring"
+  },
+  {
+    "id": "",
+    "name": "Date Picker"
+  },
+  {
+    "id": "",
+    "name": "File Upload / Dropzone"
+  },
+  {
+    "id": "",
+    "name": "Select"
+  },
+  {
+    "id": "",
+    "name": "Textarea"
+  },
+  {
+    "id": "",
+    "name": "Password Field"
+  },
+  {
+    "id": "",
+    "name": "OTP / PIN Input"
+  },
+  {
+    "id": "",
+    "name": "Tag Input / Multi-select"
+  },
+  {
+    "id": "",
+    "name": "Number Stepper"
+  },
+  {
+    "id": "",
+    "name": "Date Range Picker"
+  },
+  {
+    "id": "",
+    "name": "Time Picker"
+  },
+  {
+    "id": "",
+    "name": "Input Mask"
+  },
+  {
+    "id": "",
+    "name": "Character Counter"
+  },
+  {
+    "id": "",
+    "name": "Helper Text"
+  },
+  {
+    "id": "",
+    "name": "Required Indicator"
+  },
+  {
+    "id": "",
+    "name": "Rich Text Editor"
+  },
+  {
+    "id": "",
+    "name": "Social Login Button"
+  },
+  {
+    "id": "",
+    "name": "Rating"
+  },
+  {
+    "id": "",
+    "name": "Agree to All"
+  },
+  {
+    "id": "",
+    "name": "Color Picker"
+  },
+  {
+    "id": "",
+    "name": "Image Upload Preview"
+  },
+  {
+    "id": "",
+    "name": "Autosave Indicator"
+  },
+  {
+    "id": "",
+    "name": "Inline Edit"
+  },
+  {
+    "id": "",
+    "name": "Address Search"
+  },
+  {
+    "id": "",
+    "name": "Login / Sign-up Form"
+  },
+  {
+    "id": "",
+    "name": "Hover Effect"
+  },
+  {
+    "id": "",
+    "name": "Scroll Reveal"
+  },
+  {
+    "id": "",
+    "name": "Stagger Animation"
+  },
+  {
+    "id": "",
+    "name": "Smooth Transition"
+  },
+  {
+    "id": "",
+    "name": "Glassmorphism"
+  },
+  {
+    "id": "",
+    "name": "Parallax Scrolling"
+  },
+  {
+    "id": "",
+    "name": "Scroll Snap"
+  },
+  {
+    "id": "",
+    "name": "Micro-interaction"
+  },
+  {
+    "id": "",
+    "name": "Fade In / Out"
+  },
+  {
+    "id": "",
+    "name": "Ripple Effect"
+  },
+  {
+    "id": "",
+    "name": "Marquee / Logo Slider"
+  },
+  {
+    "id": "",
+    "name": "Typewriter Effect"
+  },
+  {
+    "id": "",
+    "name": "Count-up / Number Ticker"
+  },
+  {
+    "id": "",
+    "name": "Infinite Scroll"
+  },
+  {
+    "id": "",
+    "name": "Easing"
+  },
+  {
+    "id": "",
+    "name": "Animated Gradient"
+  },
+  {
+    "id": "",
+    "name": "Spotlight / Cursor Glow"
+  },
+  {
+    "id": "",
+    "name": "Drag & Drop Reorder"
+  },
+  {
+    "id": "",
+    "name": "Swipe Action"
+  },
+  {
+    "id": "",
+    "name": "Pull to Refresh"
+  },
+  {
+    "id": "",
+    "name": "Shake Animation"
+  },
+  {
+    "id": "",
+    "name": "Lazy Loading"
+  },
+  {
+    "id": "",
+    "name": "Optimistic UI"
+  },
+  {
+    "id": "",
+    "name": "Hide-on-Scroll Header"
+  },
+  {
+    "id": "",
+    "name": "Image Zoom"
+  },
+  {
+    "id": "",
+    "name": "Smooth Scroll"
+  },
+  {
+    "id": "",
+    "name": "Ping / Pulse Dot"
+  },
+  {
+    "id": "",
+    "name": "Neumorphism"
+  },
+  {
+    "id": "",
+    "name": "Claymorphism"
+  },
+  {
+    "id": "",
+    "name": "Flat Design"
+  },
+  {
+    "id": "",
+    "name": "Minimalism"
+  },
+  {
+    "id": "",
+    "name": "Neo-brutalism"
+  },
+  {
+    "id": "",
+    "name": "Gradient"
+  },
+  {
+    "id": "",
+    "name": "Mesh / Aurora Gradient"
+  },
+  {
+    "id": "",
+    "name": "Dark Mode"
+  },
+  {
+    "id": "",
+    "name": "Glow / Neon"
+  },
+  {
+    "id": "",
+    "name": "Drop Shadow / Elevation"
+  },
+  {
+    "id": "",
+    "name": "Border Radius"
+  },
+  {
+    "id": "",
+    "name": "Button Variants"
+  },
+  {
+    "id": "",
+    "name": "Color Palette"
+  },
+  {
+    "id": "",
+    "name": "Liquid Glass"
+  },
+  {
+    "id": "",
+    "name": "Grain / Noise Texture"
+  },
+  {
+    "id": "",
+    "name": "Y2K / Chrome"
+  },
+  {
+    "id": "",
+    "name": "Frutiger Aero"
+  },
+  {
+    "id": "",
+    "name": "Synthwave / Retro Grid"
+  },
+  {
+    "id": "",
+    "name": "Cyberpunk"
+  },
+  {
+    "id": "",
+    "name": "Holographic / Iridescent"
+  },
+  {
+    "id": "",
+    "name": "Duotone"
+  },
+  {
+    "id": "",
+    "name": "Halftone / Risograph"
+  },
+  {
+    "id": "",
+    "name": "Pixel Art / 8-bit"
+  },
+  {
+    "id": "",
+    "name": "Dithering"
+  },
+  {
+    "id": "",
+    "name": "ASCII / Terminal"
+  },
+  {
+    "id": "",
+    "name": "Bauhaus / Geometric"
+  },
+  {
+    "id": "",
+    "name": "Swiss Style"
+  },
+  {
+    "id": "",
+    "name": "Memphis Design"
+  },
+  {
+    "id": "",
+    "name": "Hand-drawn / Doodle"
+  },
+  {
+    "id": "",
+    "name": "Torn Paper / Collage"
+  },
+  {
+    "id": "",
+    "name": "Isometric"
+  },
+  {
+    "id": "",
+    "name": "Skeuomorphism"
+  },
+  {
+    "id": "",
+    "name": "Editorial / Magazine"
+  },
+  {
+    "id": "",
+    "name": "Oversized Typography"
+  },
+  {
+    "id": "",
+    "name": "Inflated / Puffy 3D"
+  },
+  {
+    "id": "",
+    "name": "Wireframe / Blueprint"
+  },
+  {
+    "id": "",
+    "name": "Dot / Grid Pattern"
+  },
+  {
+    "id": "",
+    "name": "Progressive Blur"
+  },
+  {
+    "id": "",
+    "name": "Light Rays / God Rays"
+  },
+  {
+    "id": "",
+    "name": "Sticker Style"
+  },
+  {
+    "id": "",
+    "name": "Material Design"
+  },
+  {
+    "id": "",
+    "name": "iOS Style"
+  },
+  {
+    "id": "",
+    "name": "Icon Style"
+  },
+  {
+    "id": "",
+    "name": "Toss-like Clean UI"
+  },
+  {
+    "id": "",
+    "name": "Section Divider (Wave / Slant)"
+  },
+  {
+    "id": "",
+    "name": "Text Highlight"
+  },
+  {
+    "id": "",
+    "name": "Card Style"
+  },
+  {
+    "id": "",
+    "name": "Kinetic Typography"
+  },
+  {
+    "id": "",
+    "name": "Text Scramble / Decode"
+  },
+  {
+    "id": "",
+    "name": "Word Rotate"
+  },
+  {
+    "id": "",
+    "name": "Text Reveal / Mask Reveal"
+  },
+  {
+    "id": "",
+    "name": "Shiny Text / Shimmer"
+  },
+  {
+    "id": "",
+    "name": "Blur Fade / Blur-in"
+  },
+  {
+    "id": "",
+    "name": "Shape Morphing / Blob"
+  },
+  {
+    "id": "",
+    "name": "Gooey / Metaball"
+  },
+  {
+    "id": "",
+    "name": "Particles / Confetti"
+  },
+  {
+    "id": "",
+    "name": "Meteors / Shooting Stars"
+  },
+  {
+    "id": "",
+    "name": "Border Beam"
+  },
+  {
+    "id": "",
+    "name": "Animated Beam"
+  },
+  {
+    "id": "",
+    "name": "Orbiting Circles"
+  },
+  {
+    "id": "",
+    "name": "3D Tilt Card"
+  },
+  {
+    "id": "",
+    "name": "Card Flip"
+  },
+  {
+    "id": "",
+    "name": "Magnetic Button"
+  },
+  {
+    "id": "",
+    "name": "Glitch Effect"
+  },
+  {
+    "id": "",
+    "name": "Dispersion / Pixel Dissolve"
+  },
+  {
+    "id": "",
+    "name": "Scroll Progress"
+  },
+  {
+    "id": "",
+    "name": "Scrollytelling / Sticky Scroll"
+  },
+  {
+    "id": "",
+    "name": "Dock Magnification"
+  },
+  {
+    "id": "",
+    "name": "Line Drawing (SVG Path)"
+  },
+  {
+    "id": "",
+    "name": "Ken Burns Effect"
+  },
+  {
+    "id": "",
+    "name": "Squash & Stretch"
+  },
+  {
+    "id": "",
+    "name": "Page / View Transition"
+  },
+  {
+    "id": "",
+    "name": "Liquid Fill / Wave"
+  },
+  {
+    "id": "",
+    "name": "Lottie Animation"
+  },
+  {
+    "id": "",
+    "name": "Padding / Margin / Gap"
+  },
+  {
+    "id": "",
+    "name": "Whitespace"
+  },
+  {
+    "id": "",
+    "name": "Typography"
+  },
+  {
+    "id": "",
+    "name": "Line Height / Letter Spacing"
+  },
+  {
+    "id": "",
+    "name": "Visual Hierarchy"
+  },
+  {
+    "id": "",
+    "name": "Contrast"
+  },
+  {
+    "id": "",
+    "name": "Alignment"
+  },
+  {
+    "id": "",
+    "name": "CTA (Call to Action)"
+  },
+  {
+    "id": "",
+    "name": "Viewport (vh / vw)"
+  },
+  {
+    "id": "",
+    "name": "Breakpoint"
+  },
+  {
+    "id": "",
+    "name": "Flexbox / CSS Grid"
+  },
+  {
+    "id": "",
+    "name": "Z-index / Layer"
+  },
+  {
+    "id": "",
+    "name": "Aspect Ratio"
+  },
+  {
+    "id": "",
+    "name": "Favicon"
+  },
+  {
+    "id": "",
+    "name": "OG Image (Open Graph)"
+  },
+  {
+    "id": "",
+    "name": "Design System / Tokens"
+  },
+  {
+    "id": "",
+    "name": "Spacing Scale (8pt Grid)"
+  },
+  {
+    "id": "",
+    "name": "UI States"
+  },
+  {
+    "id": "",
+    "name": "Truncate / Line Clamp"
+  },
+  {
+    "id": "",
+    "name": "Touch Target Size"
+  },
+  {
+    "id": "",
+    "name": "Safe Area"
+  },
+  {
+    "id": "",
+    "name": "Accessibility (a11y)"
+  },
+  {
+    "id": "",
+    "name": "Wireframe → Mockup → Prototype"
+  },
+  {
+    "id": "",
+    "name": "Microcopy"
+  },
+  {
+    "id": "",
+    "name": "Overlay / Backdrop"
+  },
+  {
+    "id": "",
+    "name": "Position (fixed / sticky / absolute)"
+  },
+  {
+    "id": "",
+    "name": "Overflow"
+  },
+  {
+    "id": "",
+    "name": "Units (px / rem / % / vh)"
+  },
+  {
+    "id": "",
+    "name": "Semantic Colors"
+  },
+  {
+    "id": "",
+    "name": "Font Weight"
+  },
+  {
+    "id": "",
+    "name": "Size Variants (sm / md / lg)"
+  },
+  {
+    "id": "",
+    "name": "Mobile First"
+  },
+  {
+    "id": "",
+    "name": "Color Code (HEX / RGB)"
+  },
+  {
+    "id": "",
+    "name": "Layout Shift"
+  },
+  {
+    "id": "",
+    "name": "Word Break (keep-all)"
+  }
+]

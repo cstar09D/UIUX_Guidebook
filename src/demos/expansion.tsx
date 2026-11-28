@@ -1,3 +1,4 @@
+import { DemoSelect } from "./select-controls";
 import { useEffect, useId, useRef, type ReactNode } from "react";
 import { formatTextMetrics, measureText } from "./input-metrics.mjs";
 
@@ -422,12 +423,12 @@ export function ChipScene({ preview = false, time = 0 }: ExpansionProps) {
     >
       <label className="expansion-label">
         사용 형태
-        <select data-chip-mode defaultValue="select">
+        <DemoSelect data-chip-mode defaultValue="select">
           <option value="select">선택 칩</option>
           <option value="removable">삭제 가능한 칩</option>
           <option value="limit">최대 2개 선택</option>
           <option value="readonly">읽기 전용 태그</option>
-        </select>
+        </DemoSelect>
       </label>
       <div data-chips className="expansion-chips">
         <span className="expansion-chip">
@@ -1579,10 +1580,10 @@ export function PasswordScene({ preview = false, time = 0 }: ExpansionProps) {
     >
       <label className="expansion-label">
         입력 용도
-        <select data-password-mode defaultValue="new">
+        <DemoSelect data-password-mode defaultValue="new">
           <option value="new">새 비밀번호 설정</option>
           <option value="login">로그인</option>
-        </select>
+        </DemoSelect>
       </label>
       <form noValidate>
         <label className="input-demo-label" htmlFor={id}>
@@ -2607,11 +2608,11 @@ export function RatingScene({ preview = false, time = 0 }: ExpansionProps) {
     >
       <label className="expansion-label">
         예제 유형
-        <select data-rating-mode defaultValue="input">
+        <DemoSelect data-rating-mode defaultValue="input">
           <option value="input">별점 입력</option>
           <option value="readonly">평균 평점 표시</option>
           <option value="disabled">평가 변경 불가</option>
-        </select>
+        </DemoSelect>
       </label>
       <fieldset className="input-demo-rating" data-stars>
         <legend>만족도 (1~5점)</legend>
@@ -2970,10 +2971,10 @@ export function NotificationScene({
           <div className="flow-controls">
             <label className="flow-label">
               목록
-              <select data-notify-filter defaultValue="all">
+              <DemoSelect data-notify-filter defaultValue="all">
                 <option value="all">전체</option>
                 <option value="unread">미확인만</option>
-              </select>
+              </DemoSelect>
             </label>
             <button data-notify-all type="button">
               모두 읽음
@@ -5004,17 +5005,17 @@ export function RevealScene({ preview = false, time = 0 }: ExpansionProps) {
       <div className="layout-controls layout-extra">
         <label>
           실행 횟수
-          <select data-reveal-mode defaultValue="once">
+          <DemoSelect data-reveal-mode defaultValue="once">
             <option value="once">한 번만</option>
             <option value="repeat">재진입마다</option>
-          </select>
+          </DemoSelect>
         </label>
         <label>
           진입 비율
-          <select data-reveal-threshold defaultValue="0.2">
+          <DemoSelect data-reveal-threshold defaultValue="0.2">
             <option value="0.2">20%</option>
             <option value="0.6">60%</option>
-          </select>
+          </DemoSelect>
         </label>
         <button data-reveal-reset>처음부터</button>
       </div>
@@ -5180,11 +5181,11 @@ export function StaggerScene({ preview = false, time = 0 }: ExpansionProps) {
       <div className="layout-controls layout-extra">
         <label>
           항목 간격
-          <select data-stagger-delay defaultValue="80">
+          <DemoSelect data-stagger-delay defaultValue="80">
             <option value="0">0ms · 동시에</option>
             <option value="80">80ms</option>
             <option value="160">160ms</option>
-          </select>
+          </DemoSelect>
         </label>
         <button data-stagger-start>다시 재생</button>
         <button data-stagger-order>순서 뒤집기</button>
@@ -5339,11 +5340,11 @@ export function SnapScene({ preview = false, time = 0 }: ExpansionProps) {
     >
       <label className="layout-select layout-extra">
         정착 강도
-        <select data-snap-mode defaultValue="mandatory">
+        <DemoSelect data-snap-mode defaultValue="mandatory">
           <option value="none">자유 스크롤</option>
           <option value="proximity">가까운 위치 정착</option>
           <option value="mandatory">항목에 정착</option>
-        </select>
+        </DemoSelect>
       </label>
       <div
         data-snap-viewport
@@ -5479,11 +5480,11 @@ export function ParallaxScene({ preview = false, time = 0 }: ExpansionProps) {
       <div className="layout-controls layout-extra">
         <label>
           배경 움직임
-          <select data-depth-mode defaultValue="weak">
+          <DemoSelect data-depth-mode defaultValue="weak">
             <option value="static">정적</option>
             <option value="weak">약한 시차</option>
             <option value="strong">강한 시차</option>
-          </select>
+          </DemoSelect>
         </label>
         <button data-depth-reset>맨 위로</button>
       </div>

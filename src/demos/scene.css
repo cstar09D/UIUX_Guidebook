@@ -7081,3 +7081,14 @@
 .is-preview.scene-mega-menu .expansion-card,.is-preview.scene-stagger-animation .expansion-card{padding-top:8px;padding-bottom:8px}
 .is-preview .layout-stagger-list li{padding-top:4px;padding-bottom:4px}
 [data-mega-compact=true] .layout-mega-panel>div{grid-template-columns:1fr}
+
+.flow-controls{align-items:flex-end;}
+.input-demo-controls:has(>.input-demo-label),.expansion-controls:has(>.expansion-label){align-items:flex-end;}
+.flow-controls>button,.flow-controls .demo-select-trigger{min-height:40px;}
+.flow-controls .expansion-check{align-self:center;margin:0;}
+
+/* Align checkbox labels with the control below a stacked field label. */
+.advanced-controls:has(>label:not(.advanced-check))>.advanced-check{align-self:flex-end;min-height:40px;margin:0;}
+.scene:not(.is-preview) .advanced-controls>button,.scene:not(.is-preview) .expansion-controls>button{min-height:40px;}
+.expansion-controls>.expansion-check{align-self:flex-end;min-height:40px;margin:0;}
+.advanced-controls>label:not(.advanced-check){margin:0;}

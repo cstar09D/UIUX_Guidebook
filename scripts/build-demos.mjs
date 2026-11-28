@@ -6,7 +6,10 @@ import { format } from "prettier";
 import { simulationRegistry } from "../src/demos/registry.ts";
 import { markup, script, vanillaDocument } from "../src/demos/vanilla.mjs";
 
-const css = await readFile("src/demos/scene.css", "utf8");
+const css =
+  (await readFile("src/demos/scene.css", "utf8")) +
+  "\n" +
+  (await readFile("src/demos/select-controls.css", "utf8"));
 const sceneModule = await readFile("src/demos/scenes.tsx", "utf8");
 const modules = new Map();
 for (const file of new Set(simulationRegistry.map((demo) => demo.file))) {
@@ -100,6 +103,9 @@ const metricComponent = (
 const shareMetadata = (
   await readFile("src/demos/share-services.mjs", "utf8")
 ).replace("export const", "const");
+const selectComponent = (
+  await readFile("src/demos/select-controls.tsx", "utf8")
+).replace(/export function/g, "function");
 function componentSource(name, file) {
   const { tree } = modules.get(file);
   const declarations = new Map();
@@ -133,7 +139,8 @@ function componentSource(name, file) {
       (node) =>
         ts.isImportDeclaration(node) &&
         !node.moduleSpecifier.text.startsWith("./input-metrics") &&
-        node.moduleSpecifier.text !== "./share-services.mjs",
+        node.moduleSpecifier.text !== "./share-services.mjs" &&
+        node.moduleSpecifier.text !== "./select-controls",
     )
     .map((node) => node.getText(tree))
     .join("\n");
@@ -146,6 +153,7 @@ function componentSource(name, file) {
     "\n" +
     metrics +
     "\n" +
+    (body.includes("DemoSelect") ? selectComponent + "\n" : "") +
     (body.includes("shareServices") ? shareMetadata + "\n" : "") +
     body
   );

@@ -1,3 +1,4 @@
+import { DemoSelect } from "./select-controls";
 import {
   useEffect,
   useId,
@@ -391,14 +392,14 @@ export function DataTableScene({ preview = false, time = 1700 }: SceneProps) {
       {!preview && (
         <label className="advanced-label">
           표 유형
-          <select
+          <DemoSelect
             data-table-view
             value={view}
             onChange={(e) => setView(e.target.value)}
           >
             <option value="cost">비용 읽기 표</option>
             <option value="comparison">플랜 비교 표</option>
-          </select>
+          </DemoSelect>
         </label>
       )}
       <div data-cost-view hidden={view !== "cost"}>
@@ -418,7 +419,7 @@ export function DataTableScene({ preview = false, time = 1700 }: SceneProps) {
           >
             <label htmlFor={`${uid}-month`}>
               조회 월
-              <select
+              <DemoSelect
                 data-month
                 id={`${uid}-month`}
                 value={draft}
@@ -428,7 +429,7 @@ export function DataTableScene({ preview = false, time = 1700 }: SceneProps) {
                 <option value="11">11월</option>
                 <option value="12">12월</option>
                 <option value="10">10월 · 자료 없음</option>
-              </select>
+              </DemoSelect>
             </label>
             <button type="submit">조회 적용</button>
             <label className="advanced-check">
@@ -886,7 +887,7 @@ export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
         <div className="advanced-controls">
           <label className="advanced-label">
             분류
-            <select
+            <DemoSelect
               ref={kindField}
               data-sort-kind
               value={kind}
@@ -897,7 +898,7 @@ export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
                   {label}
                 </option>
               ))}
-            </select>
+            </DemoSelect>
           </label>
           <label className="advanced-check">
             <input
@@ -913,7 +914,7 @@ export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
       )}
       <label className="advanced-label" htmlFor={`${uid}-sort`}>
         정렬 기준
-        <select
+        <DemoSelect
           data-sort-mode
           id={`${uid}-sort`}
           value={chosen}
@@ -924,7 +925,7 @@ export function SortingScene({ preview = false, time = 1700 }: SceneProps) {
               {label}
             </option>
           ))}
-        </select>
+        </DemoSelect>
       </label>
       <div className="advanced-filter-chips">
         {kind !== "all" && (
@@ -1252,7 +1253,7 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
         <div className="advanced-controls">
           <label className="advanced-label">
             결과 정렬
-            <select
+            <DemoSelect
               data-filter-sort
               value={sort}
               onChange={(e) => {
@@ -1270,7 +1271,7 @@ export function FilteringScene({ preview = false, time = 1700 }: SceneProps) {
               <option value="low">금액 낮은순</option>
               <option value="high">금액 높은순</option>
               <option value="name">이름순</option>
-            </select>
+            </DemoSelect>
           </label>
           <label className="advanced-check">
             <input
@@ -2129,7 +2130,7 @@ export function EasingScene({ preview = false, time = 1700 }: SceneProps) {
     <AdvancedFrame kind="easing" title="같은 시간, 다른 속도" preview={preview}>
       <label className="advanced-label" htmlFor={`${uid}-curve`}>
         속도 곡선
-        <select
+        <DemoSelect
           id={`${uid}-curve`}
           value={curve}
           onChange={(e) => {
@@ -2142,7 +2143,7 @@ export function EasingScene({ preview = false, time = 1700 }: SceneProps) {
           {["linear", "ease-in", "ease-out", "ease-in-out"].map((value) => (
             <option key={value}>{value}</option>
           ))}
-        </select>
+        </DemoSelect>
       </label>
       <div className="advanced-ease-lanes">
         {positions.map((value, i) => (

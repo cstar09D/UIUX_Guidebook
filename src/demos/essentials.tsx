@@ -1,3 +1,4 @@
+import { DemoSelect } from "./select-controls";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 export type SceneProps = {
   preview?: boolean;
@@ -54,7 +55,7 @@ export function CheckboxScene({
         {!preview && (
           <label className="input-demo-label">
             예제 유형
-            <select
+            <DemoSelect
               className="foundation-input"
               value={mode}
               onChange={(e) => {
@@ -65,7 +66,7 @@ export function CheckboxScene({
             >
               <option value="notifications">소식 복수 선택</option>
               <option value="consent">필수·선택 동의</option>
-            </select>
+            </DemoSelect>
           </label>
         )}
         <fieldset className="choice-group">

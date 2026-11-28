@@ -1,3 +1,21 @@
+import { readFileSync } from "node:fs";
+import ts from "typescript";
+const selectEnhancerSource = ts.transpileModule(
+  readFileSync(new URL("./select-controls.tsx", import.meta.url), "utf8"),
+  {
+    compilerOptions: {
+      target: ts.ScriptTarget.ES2020,
+      module: ts.ModuleKind.ESNext,
+      jsx: ts.JsxEmit.ReactJSX,
+    },
+  },
+).outputText;
+const selectEnhancer = selectEnhancerSource
+  .slice(
+    selectEnhancerSource.indexOf("export function enhanceDemoSelects"),
+    selectEnhancerSource.indexOf("export function DemoSelect"),
+  )
+  .replace("export function", "function");
 import { shareServices } from "./share-services.mjs";
 import { expansionMarkup, expansionScript } from "./expansion-vanilla.mjs";
 import {
@@ -521,6 +539,15 @@ for (const id of [
 ]) {
   script[id] =
     `(()=>{${measureText.toString()};${formatTextMetrics.toString()};${limitText.toString()};${script[id]};(${setupTextMetrics.toString()})();})();`;
+}
+for (const id of Object.keys(script)) {
+  if (
+    markup[id].includes("<select") ||
+    script[id].includes("<select") ||
+    /createElement\([\x27\x22]select[\x27\x22]\)/.test(script[id])
+  )
+    script[id] =
+      `(()=>{${selectEnhancer};${script[id]};enhanceDemoSelects(document.body);})();`;
 }
 export function vanillaDocument(id, css, reduced = false) {
   return `<!doctype html>\n<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UI Notes 실행 예제</title><style>body{margin:0}button,input,select{font-family:inherit}[hidden]{display:none!important}${css}</style></head><body>${markup[id]}<script>window.__DEMO__={...window.__DEMO__,reduced:${reduced}};if(window.__DEMO__.reduced)document.querySelector('.scene').classList.add('is-reduced');${script[id]}<\/script></body></html>`;

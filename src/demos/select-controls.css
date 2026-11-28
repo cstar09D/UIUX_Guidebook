@@ -1,0 +1,14 @@
+/* Shared select: the same field and list presentation in every hands-on demo. */
+.demo-select-host{display:inline-flex;align-items:center;max-width:100%;min-width:0;vertical-align:middle;}
+.demo-select{display:inline-flex;min-width:120px;max-width:100%;vertical-align:middle;}
+select[data-enhanced-select]{display:none!important;}
+.demo-select>button.demo-select-trigger{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:40px;margin:0;padding:9px 12px;border:1px solid #cbdcf5;border-radius:8px;background:#fff;color:#3b5c86;font:inherit;font-size:13px;font-weight:400;line-height:1.5;text-align:left;box-shadow:none;}
+.demo-select>button.demo-select-trigger:hover{background:#f7faff;border-color:#8fb0e7;}
+.demo-select>button.demo-select-trigger[aria-expanded=true]{border-color:#3478ed;outline:2px solid #3478ed;outline-offset:2px;}
+.demo-select>button.demo-select-trigger>span{min-width:0;overflow-wrap:anywhere;}
+.demo-select>button.demo-select-trigger>svg{display:block;width:16px;height:16px;flex:none;}
+.demo-select-popup{z-index:1000;padding:5px;border:1px solid #d2e0f6;border-radius:10px;background:#fff;color:#3b5c86;box-shadow:0 10px 25px #263e6026;overflow:auto;overscroll-behavior:contain;font:13px/1.5 Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+.demo-select-popup [role=option]{padding:8px 10px;border-radius:6px;cursor:pointer;overflow-wrap:anywhere;}
+.demo-select-popup [role=option].is-active{background:#edf4ff;color:#2464dc;}
+.demo-select-popup [role=option][aria-selected=true]{font-weight:700;}
+.demo-select-popup [role=option][aria-disabled=true]{opacity:.45;cursor:default;}

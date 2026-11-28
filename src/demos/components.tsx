@@ -1,3 +1,4 @@
+import { DemoSelect } from "./select-controls";
 import { shareServices } from "./share-services.mjs";
 import { InputMetrics } from "./input-metrics";
 import { measureText, limitText } from "./input-metrics.mjs";
@@ -696,7 +697,7 @@ export function SkeletonScene({
           <div className="loading-options">
             <label>
               결과
-              <select
+              <DemoSelect
                 aria-label="로딩 결과"
                 value={result}
                 onChange={(e) => setResult(e.target.value)}
@@ -704,11 +705,11 @@ export function SkeletonScene({
                 <option value="success">성공</option>
                 <option value="empty">빈 결과</option>
                 <option value="error">오류</option>
-              </select>
+              </DemoSelect>
             </label>
             <label>
               대기 시간
-              <select
+              <DemoSelect
                 aria-label="대기 시간"
                 value={delay}
                 onChange={(e) => setDelay(Number(e.target.value))}
@@ -716,7 +717,7 @@ export function SkeletonScene({
                 <option value={800}>0.8초</option>
                 <option value={1400}>1.4초</option>
                 <option value={3000}>3초</option>
-              </select>
+              </DemoSelect>
             </label>
             <button className="demo-primary" onClick={reload}>
               다시 불러오기

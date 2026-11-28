@@ -1,3 +1,4 @@
+import { DemoSelect } from "./select-controls";
 import { InputMetrics } from "./input-metrics";
 import { measureText, limitText } from "./input-metrics.mjs";
 import {
@@ -1166,7 +1167,7 @@ export function DrawerScene({ preview = false, time = 1700 }: SceneProps) {
       {!preview && (
         <label className="pattern-label">
           패널 형태
-          <select
+          <DemoSelect
             data-drawer-mode
             value={mode}
             onChange={(e) => {
@@ -1178,7 +1179,7 @@ export function DrawerScene({ preview = false, time = 1700 }: SceneProps) {
             <option value="sidebar">고정 사이드바</option>
             <option value="rail">아이콘 축약</option>
             <option value="helper">보조 정보 패널</option>
-          </select>
+          </DemoSelect>
         </label>
       )}
       <div
@@ -1993,7 +1994,7 @@ export function ProgressScene({ preview = false, time = 1700 }: SceneProps) {
       {!preview && (
         <label className="pattern-label">
           진행률 표현
-          <select
+          <DemoSelect
             data-progress-format
             value={format}
             onChange={(e) => setFormat(e.target.value)}
@@ -2001,7 +2002,7 @@ export function ProgressScene({ preview = false, time = 1700 }: SceneProps) {
             <option value="linear">선형</option>
             <option value="circular">원형</option>
             <option value="both">나란히 비교</option>
-          </select>
+          </DemoSelect>
         </label>
       )}
       <label className="pattern-label">보고서 생성 진행률</label>

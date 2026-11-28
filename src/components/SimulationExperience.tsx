@@ -1,4 +1,5 @@
 "use client";
+import { DemoSelect } from "@/demos/select-controls";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import type { DemoId } from "@/lib/catalog";
 import type { ScreenExample } from "@/lib/guide-content";
@@ -129,7 +130,7 @@ function Experience({
       {examples.length > 0 && (
         <label className="simulation-state-controls">
           <span>체험 상태</span>
-          <select
+          <DemoSelect
             aria-label="시뮬레이션 상태"
             aria-controls={panelId}
             value={example?.id || ""}
@@ -141,7 +142,7 @@ function Experience({
                 {item.label || `상태 ${index + 1}`}
               </option>
             ))}
-          </select>
+          </DemoSelect>
         </label>
       )}
       <div
@@ -275,7 +276,7 @@ export function SimulationPreview({
             </button>
             <label>
               <span className="sr-only">미리보기 코드 형식</span>
-              <select
+              <DemoSelect
                 value={format}
                 onChange={(event) =>
                   setFormat(event.target.value as "react" | "html")
@@ -283,7 +284,7 @@ export function SimulationPreview({
               >
                 <option value="react">React · TS</option>
                 <option value="html">HTML · JS</option>
-              </select>
+              </DemoSelect>
             </label>
             <button
               type="button"
